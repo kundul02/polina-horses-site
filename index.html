@@ -88,27 +88,6 @@
     line-height: 1.5;
   }
   .callout strong { display: block; margin-bottom: 2px; }
-  .action-buttons {
-    display: flex;
-    gap: 8px;
-    padding: 0 16px 12px;
-  }
-  .action-btn {
-    flex: 1;
-    border: 1.5px solid var(--sep);
-    background: var(--card);
-    color: var(--text);
-    border-radius: 10px;
-    padding: 10px 12px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  .action-btn.primary {
-    background: var(--blue);
-    border-color: var(--blue);
-    color: #fff;
-  }
   /* FILTERS */
   .filters {
     padding: 0 0 8px;
@@ -379,11 +358,6 @@
 <div class="callout">
   <strong>Срочно — подавать немедленно</strong>
   BHS Caron Roberts (27 июня), Anna Hilton (7 июля) и Clonshire (1-2 места). Нажми «Срочно» ниже.
-</div>
-
-<div class="action-buttons">
-  <button class="action-btn primary" onclick="startLeadSearch()">Начать поиск</button>
-  <button class="action-btn" onclick="scheduleSearch()">Периодический поиск</button>
 </div>
 
 <div class="filters">
@@ -819,23 +793,6 @@ function setAge(btn) {
 function toggleCard(id) {
   const card = document.getElementById('card-' + id);
   card.classList.toggle('open');
-}
-
-function startLeadSearch() {
-  const prompt = `Ищи по всему миру opportunities для ребёнка/подростка с опытом верховой езды.
-Страны: Schengen + Ireland, UK, USA, Canada, Australia, New Zealand, Georgia, South Africa, Argentina.
-Условие: хотя бы одно из — жильё, оплата, обучение, компенсация дороги, бесплатная программа.
-Верни: title, country, age range, type, pay, travel support, accommodation, training, deadline, link.
-Помечай неочевидное как needs manual check.`;
-  navigator.clipboard.writeText(prompt).then(() => {
-    alert("Промпт для поиска скопирован. Вставь его в AI и обнови список программ.");
-  }).catch(() => {
-    alert("Не удалось скопировать автоматически. Открой README и скопируй промпт вручную.");
-  });
-}
-
-function scheduleSearch() {
-  alert("Рекомендуемый режим: запускать поиск 1 раз в неделю и переносить закрытые программы в Архив (closed: true).");
 }
 
 function render() {
