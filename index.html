@@ -342,10 +342,10 @@
 </div>
 
 <div class="stats">
-  <div class="stat"><span class="stat-value" id="total-count">20</span><span class="stat-label">программ</span></div>
+  <div class="stat"><span class="stat-value" id="total-count">31</span><span class="stat-label">программ</span></div>
   <div class="stat"><span class="stat-value">7</span><span class="stat-label">стипендий</span></div>
   <div class="stat"><span class="stat-value danger" id="urgent-count">2</span><span class="stat-label">срочных</span></div>
-  <div class="stat"><span class="stat-value">5</span><span class="stat-label">стран</span></div>
+  <div class="stat"><span class="stat-value">11</span><span class="stat-label">стран</span></div>
 </div>
 
 <div class="callout">
@@ -356,11 +356,11 @@
 <div class="filters">
   <div class="filter-label">Тип программы</div>
   <div class="filter-scroll" id="cat-filter">
-    <button class="chip active" data-cat="all" onclick="setCategory(this)">Все (20)</button>
+    <button class="chip active" data-cat="all" onclick="setCategory(this)">Все (31)</button>
     <button class="chip urgent" data-cat="urgent" onclick="setCategory(this)">Срочно (2)</button>
     <button class="chip" data-cat="Стипендии" onclick="setCategory(this)">Стипендии (7)</button>
-    <button class="chip" data-cat="Лагери" onclick="setCategory(this)">Лагери (4)</button>
-    <button class="chip" data-cat="Стажировки" onclick="setCategory(this)">Стажировки (4)</button>
+    <button class="chip" data-cat="Лагери" onclick="setCategory(this)">Лагери (9)</button>
+    <button class="chip" data-cat="Стажировки" onclick="setCategory(this)">Стажировки (10)</button>
     <button class="chip" data-cat="Обмен" onclick="setCategory(this)">Обмен (3)</button>
     <button class="chip" data-cat="Кастинги" onclick="setCategory(this)">Кастинги (2)</button>
   </div>
@@ -369,14 +369,20 @@
   <div class="filter-scroll" id="country-filter">
     <button class="chip active" data-country="all" onclick="setCountry(this)">Все страны</button>
     <button class="chip" data-country="USA" onclick="setCountry(this)">USA (9)</button>
-    <button class="chip" data-country="UK" onclick="setCountry(this)">UK (9)</button>
+    <button class="chip" data-country="UK" onclick="setCountry(this)">UK (10)</button>
+    <button class="chip" data-country="Ирландия" onclick="setCountry(this)">Ирландия (3)</button>
+    <button class="chip" data-country="Германия" onclick="setCountry(this)">Германия (3)</button>
+    <button class="chip" data-country="Испания" onclick="setCountry(this)">Испания (1)</button>
+    <button class="chip" data-country="Португалия" onclick="setCountry(this)">Португалия (1)</button>
+    <button class="chip" data-country="Дания" onclick="setCountry(this)">Дания (1)</button>
     <button class="chip" data-country="Австралия" onclick="setCountry(this)">Австралия (1)</button>
-    <button class="chip" data-country="Германия" onclick="setCountry(this)">Германия (1)</button>
+    <button class="chip" data-country="ЮАР" onclick="setCountry(this)">ЮАР (1)</button>
+    <button class="chip" data-country="Аргентина" onclick="setCountry(this)">Аргентина (1)</button>
     <button class="chip" data-country="Словения" onclick="setCountry(this)">Словения (1)</button>
   </div>
 </div>
 
-<div class="count-bar" id="count-bar">Показано: 20 программ</div>
+<div class="count-bar" id="count-bar">Показано: 31 программ</div>
 
 <div class="programs" id="programs-list"></div>
 
@@ -397,7 +403,7 @@
 </div>
 
 <div class="footer">
-  Источники: Джимини · Грок · Перплексити · ЧатГПТ · Клод · Обновлено: 6 июня 2026
+  Источники: Джимини · Грок · Перплексити · ЧатГПТ · Клод · Ирландия · Испания · Португалия · Германия · Дания · ЮАР · Аргентина · Обновлено: 6 июня 2026
 </div>
 
 <script>
@@ -621,6 +627,127 @@ const PROGRAMS = [
     desc: "Профессиональный проект ищет ребёнка смешанного происхождения 5–9 лет, уверенно сидящего в седле. Реальный опыт работы с лошадьми обязателен. Оплачиваемая роль.",
     url: "https://projectcasting.com/job/casting-call-confident-horse-riders-needed",
     urgent: false, check: "Проверить текущий статус проекта напрямую"
+  },
+  {
+    id: 21, name: "Crossogue Equestrian Teen Camp",
+    org: "Crossogue Equestrian, Ireland",
+    category: "Лагери", baseCountry: "Ирландия", country: "Ирландия",
+    age: "11–18 лет", deadline: "13 июня – 15 августа 2026", tone: "orange",
+    support: ["Жильё","Питание","Обучение"],
+    pay: "Платный лагерь; жильё + питание включены. Трансфер с аэропорта Дублина организован",
+    desc: "Самый известный конный лагерь Ирландии — «дом вдали от дома» для подростков 11–18 лет. Каждый гость получает своего коня на всё время проживания. Сопровождение в аэропорту Дублина. Все уровни езды, дружеская атмосфера, множество возвращающихся каждый год.",
+    url: "http://www.crossogue-equestrian.ie/teen-camps/",
+    urgent: false, check: "Уточнить наличие финансовой поддержки или стипендий"
+  },
+  {
+    id: 22, name: "Summer in Horse Haven — Clonshire",
+    org: "Clonshire Equestrian Centre, Adare",
+    category: "Лагери", baseCountry: "Ирландия", country: "Ирландия (Adare)",
+    age: "12–19 лет", deadline: "Август 2026 — осталось 1–2 места", tone: "red",
+    support: ["Жильё","Питание","Обучение"],
+    pay: "Платная резидентная программа; полный пансион в лесном коттедже",
+    desc: "Резидентные конные каникулы 1–3 недели в лесном коттедже у конюшни в Adare. Программа дня: выездка, прыжки, кросс-кантри, уход за лошадьми, вечерние активности. «Хозяйка дома» Katrina живёт там круглый год. Большинство смен лета 2026 заполнено — нужно срочно написать.",
+    url: "https://www.clonshire.com/summer-in-horse-haven.html",
+    urgent: false, check: "Остались буквально 1–2 места — связаться немедленно по email"
+  },
+  {
+    id: 23, name: "English + Equestrian Camp — AirLinguée",
+    org: "AirLinguée Language & Equestrian School",
+    category: "Лагери", baseCountry: "Ирландия", country: "Ирландия (Atlantic coast)",
+    age: "11–17 лет", deadline: "Июль–Август 2026", tone: "green",
+    support: ["Жильё","Обучение"],
+    pay: "Платная; жильё + уроки английского + верховая езда включены в стоимость",
+    desc: "Уникальная программа на атлантическом побережье Ирландии: 15 ч/нед английского (ACELS-аккредитация) + 1.5–2 ч верховой езды ежедневно. Пляжные прогулки на конях. Проживание в резиденции с видом на океан. Макс. 8 всадников в группе. Нужен средний уровень езды.",
+    url: "https://airlinguee.com/teenage-equestrian-camps-in-ireland/english-and-equestrian-horse-riding-camp-ireland/",
+    urgent: false, check: null
+  },
+  {
+    id: 24, name: "Volunteer Work Exchange — Pegasus",
+    org: "Pegasus Riding Centre, Andalucia",
+    category: "Стажировки", baseCountry: "Испания", country: "Испания (Andalucia)",
+    age: "13+ лет", deadline: "Круглый год (мин. 1 месяц)", tone: "green",
+    support: ["Жильё","Питание","Обучение"],
+    pay: "Бесплатно: жильё (кемпинг/вагон) + питание + скидки на уроки — в обмен на помощь в конюшне",
+    desc: "Волонтёрство в Андалусии: помощь в конюшне (кормление, уборка, грумминг) в обмен на жильё + питание. Опытные всадники работают непосредственно с лошадьми. Wi-Fi, кухня, горячий душ. Мин. 1 месяц. Принимают волонтёров-подростков от 13 лет.",
+    url: "https://horse-riding-in-spain.com/volunteer/",
+    urgent: false, check: "Уточнить условия для участников младше 18 лет"
+  },
+  {
+    id: 25, name: "Holiday Internship with Horses — RB Horses",
+    org: "Rui Barroso Equitação, Portugal",
+    category: "Стажировки", baseCountry: "Португалия", country: "Португалия",
+    age: "от 6 лет", deadline: "Школьные каникулы круглый год", tone: "green",
+    support: ["Обучение"],
+    pay: "Дневная платная программа; обучение + диплом участника включены",
+    desc: "Каникулярные стажировки на португальской ферме: уход за лошадьми, верховая езда, уроки с профессиональными инструкторами. Программа Пн–Пт 9:00–17:00 для детей от 6 лет. Сертификат участника. Подходит для семейных поездок в Португалию — удобное дополнение к отдыху.",
+    url: "https://www.rbhorses.pt/en/holiday-internships",
+    urgent: false, check: null
+  },
+  {
+    id: 26, name: "School/Holiday Internship — Pferdeglück",
+    org: "Erlebnishof Pferdeglück Pappenheimer, Bayern",
+    category: "Стажировки", baseCountry: "Германия", country: "Германия (Бавария)",
+    age: "от 14 лет", deadline: "Круглый год — Пасха, Лето, Осень, Рождество", tone: "green",
+    support: ["Жильё","Питание","Обучение"],
+    pay: "Жильё + питание на ферме включены. Возможно небольшое карманное деньги при длительных стажировках",
+    desc: "Педагогическая конно-приключенческая ферма в Баварии ищет практикантов от 14 лет. Форматы: Schülerpraktikum (1–3 нед), каникулярный (Пасха/лето/осень) или долгосрочный (мес.). Работа с детьми, уход за лошадьми (шетти, боденарбайт), рейтунтеррихт. Нужен немецкий или желание учиться.",
+    url: "https://pferdeglueck-pappenheimer.de/praktikanten-gesucht-fuer-2026",
+    urgent: false, check: "Уточнить возможность для иностранных участников и требования к немецкому"
+  },
+  {
+    id: 27, name: "LWEA Summer Camp — Riesenbeck International",
+    org: "Longines World Equestrian Academy, Germany",
+    category: "Лагери", baseCountry: "Германия", country: "Германия (Hörstel)",
+    age: "14–25 лет", deadline: "16–23 августа 2026", tone: "orange",
+    support: ["Жильё","Питание","Обучение"],
+    pay: "Платный full-board лагерь: жильё + питание включены. Уточнить стоимость на сайте",
+    desc: "Недельный конный лагерь полного пансиона при Riesenbeck International — одном из ведущих конных центров мира. Шоу-джамперы 14–25 лет со всего мира под руководством топ-тренеров LWEA. Требуемый уровень: уверенные прыжки 1.00–1.10 м. До 16 лет — с сопровождающим взрослым.",
+    url: "https://riesenbeck-international.com/en/lwea/summer-camp/",
+    urgent: false, check: "Уточнить, открыта ли ещё регистрация на август 2026"
+  },
+  {
+    id: 28, name: "Internship — Enggaarden (Academic Art of Riding)",
+    org: "Enggaarden Skolen for Akademisk Ridekunst, Denmark",
+    category: "Стажировки", baseCountry: "Дания", country: "Дания",
+    age: "от 18 лет", deadline: "Свободные места: май–декабрь 2026", tone: "green",
+    support: ["Жильё","Обучение"],
+    pay: "Бесплатное жильё (своя комната) + 5 уроков в неделю бесплатно. Питание за свой счёт",
+    desc: "Стажировка в датской школе академической верховой езды (метод Bent Branderup). 3 месяца минимум. Своя лошадь или школьные. Бесплатное жильё + 5 уроков/неделю. Нужен базовый конный опыт и английский или скандинавский. Несколько слотов свободно в 2026.",
+    url: "https://www.akademiskridekunst.dk/internship/",
+    urgent: false, check: null
+  },
+  {
+    id: 29, name: "Work Placement — BTRC (Thoroughbred Retraining)",
+    org: "British Thoroughbred Retraining Centre, Lancashire",
+    category: "Стажировки", baseCountry: "UK", country: "UK (Lancashire)",
+    age: "от 16 лет", deadline: "Заявки 2026 открыты; стажировки 3+ мес — сейчас", tone: "orange",
+    support: ["Жильё","Обучение"],
+    pay: "Жильё на месте (self-catering, общий формат). Обучение с чистокровными рысаками бесплатно",
+    desc: "Уникальный опыт: ретрейнинг скаковых чистокровных лошадей при BTRC. Принимают участников из UK и других стран от 16 лет. Жильё на территории. Короткие стажировки забиты; для 2026 подавать сейчас. Стажировки 3 мес+ — связываться с Harriet напрямую.",
+    url: "https://thebtrc.co.uk/home/education/",
+    urgent: false, check: null
+  },
+  {
+    id: 30, name: "Pony Camp — Klein Karoo Horse Adventures",
+    org: "Klein Karoo Horse Adventures, Western Cape",
+    category: "Лагери", baseCountry: "ЮАР", country: "ЮАР (Western Cape)",
+    age: "дети (все уровни, даже нулевой)", deadline: "30 июня / 29 сентября / 9 декабря 2026", tone: "green",
+    support: ["Жильё","Питание","Обучение"],
+    pay: "Платный 3-дневный лагерь; всё включено — жильё + питание + езда + инструкторы",
+    desc: "Трёхдневный конный лагерь с проживанием для детей на ранчо Cape Horse в Западном Кейпе. Надзор 24/7 квалифицированными инструкторами (в т.ч. детским психологом). Все уровни от нуля. Рядом альпаки, кенгуру, козы. Уникальный детский опыт в ЮАР.",
+    url: "https://kleinkaroohorseadventures.com/?page_id=20",
+    urgent: false, check: null
+  },
+  {
+    id: 31, name: "Volunteer Rider — Estancia Argentina",
+    org: "HelpStay / Estancia, Buenos Aires Province",
+    category: "Стажировки", baseCountry: "Аргентина", country: "Аргентина",
+    age: "18+ (опытные всадники)", deadline: "Круглый год (мин. 1 мес, лучше 3+)", tone: "green",
+    support: ["Жильё","Питание"],
+    pay: "Полностью бесплатно: жильё + питание в обмен на работу 30–40 ч/нед",
+    desc: "Волонтёрство на аргентинской эстансии: гид по конным маршрутам для гостей, уход за лошадьми, работа с молодыми лошадьми. Жильё + питание бесплатно. Нужен хороший уровень езды + базовый испанский. 280 км от Буэнос-Айреса. Настоящая жизнь гаучо.",
+    url: "https://freevolunteering.net/horse-riding-estancia-argentina/",
+    urgent: false, check: "Требуется 18+, испанский язык и опыт конного туризма"
   }
 ];
 
