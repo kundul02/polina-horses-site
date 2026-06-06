@@ -88,6 +88,27 @@
     line-height: 1.5;
   }
   .callout strong { display: block; margin-bottom: 2px; }
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+    padding: 0 16px 12px;
+  }
+  .action-btn {
+    flex: 1;
+    border: 1.5px solid var(--sep);
+    background: var(--card);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .action-btn.primary {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+  }
   /* FILTERS */
   .filters {
     padding: 0 0 8px;
@@ -351,20 +372,25 @@
 <div class="stats">
   <div class="stat"><span class="stat-value" id="total-count">31</span><span class="stat-label">программ</span></div>
   <div class="stat"><span class="stat-value">7</span><span class="stat-label">стипендий</span></div>
-  <div class="stat"><span class="stat-value danger" id="urgent-count">2</span><span class="stat-label">срочных</span></div>
+  <div class="stat"><span class="stat-value danger" id="urgent-count">3</span><span class="stat-label">срочных</span></div>
   <div class="stat"><span class="stat-value">11</span><span class="stat-label">стран</span></div>
 </div>
 
 <div class="callout">
   <strong>Срочно — подавать немедленно</strong>
-  BHS Caron Roberts (27 июня) и Anna Hilton (7 июля). Нажми «Срочно» ниже.
+  BHS Caron Roberts (27 июня), Anna Hilton (7 июля) и Clonshire (1-2 места). Нажми «Срочно» ниже.
+</div>
+
+<div class="action-buttons">
+  <button class="action-btn primary" onclick="startLeadSearch()">Начать поиск</button>
+  <button class="action-btn" onclick="scheduleSearch()">Периодический поиск</button>
 </div>
 
 <div class="filters">
   <div class="filter-label">Тип программы</div>
   <div class="filter-scroll" id="cat-filter">
     <button class="chip active" data-cat="all" onclick="setCategory(this)">Все (31)</button>
-    <button class="chip urgent" data-cat="urgent" onclick="setCategory(this)">Срочно (2)</button>
+    <button class="chip urgent" data-cat="urgent" onclick="setCategory(this)">Срочно (3)</button>
     <button class="chip" data-cat="Стипендии" onclick="setCategory(this)">Стипендии (7)</button>
     <button class="chip" data-cat="Лагери" onclick="setCategory(this)">Лагери (9)</button>
     <button class="chip" data-cat="Стажировки" onclick="setCategory(this)">Стажировки (10)</button>
@@ -390,10 +416,7 @@
   </div>
   <div class="filter-label" style="margin-top:8px">Возраст</div>
   <div class="filter-scroll" id="age-filter">
-    <button class="chip active" data-age="all" onclick="setAge(this)">Все возрасты</button>
-    <button class="chip" data-age="u13" onclick="setAge(this)">до 13 лет</button>
-    <button class="chip" data-age="14" onclick="setAge(this)">14+</button>
-    <button class="chip" data-age="16" onclick="setAge(this)">16+</button>
+    <button class="chip active" data-age="16" onclick="setAge(this)">16+</button>
     <button class="chip" data-age="17" onclick="setAge(this)">17+</button>
     <button class="chip" data-age="18" onclick="setAge(this)">18+</button>
   </div>
@@ -665,7 +688,7 @@ const PROGRAMS = [
     pay: "Платная резидентная программа; полный пансион в лесном коттедже",
     desc: "Резидентные конные каникулы 1–3 недели в лесном коттедже у конюшни в Adare. Программа дня: выездка, прыжки, кросс-кантри, уход за лошадьми, вечерние активности. «Хозяйка дома» Katrina живёт там круглый год. Большинство смен лета 2026 заполнено — нужно срочно написать.",
     url: "https://www.clonshire.com/summer-in-horse-haven.html",
-    urgent: false, check: "Остались буквально 1–2 места — связаться немедленно по email"
+    urgent: true, check: "Остались буквально 1–2 места — связаться немедленно по email"
   },
   {
     id: 23, name: "English + Equestrian Camp — AirLinguée",
@@ -770,7 +793,7 @@ const PROGRAMS = [
 
 let activeCategory = "all";
 let activeCountry = "all";
-let activeAge = "all";
+let activeAge = "16";
 
 function setCategory(btn) {
   document.querySelectorAll('#cat-filter .chip').forEach(b => b.classList.remove('active'));
@@ -798,6 +821,23 @@ function toggleCard(id) {
   card.classList.toggle('open');
 }
 
+function startLeadSearch() {
+  const prompt = `Ищи по всему миру opportunities для ребёнка/подростка с опытом верховой езды.
+Страны: Schengen + Ireland, UK, USA, Canada, Australia, New Zealand, Georgia, South Africa, Argentina.
+Условие: хотя бы одно из — жильё, оплата, обучение, компенсация дороги, бесплатная программа.
+Верни: title, country, age range, type, pay, travel support, accommodation, training, deadline, link.
+Помечай неочевидное как needs manual check.`;
+  navigator.clipboard.writeText(prompt).then(() => {
+    alert("Промпт для поиска скопирован. Вставь его в AI и обнови список программ.");
+  }).catch(() => {
+    alert("Не удалось скопировать автоматически. Открой README и скопируй промпт вручную.");
+  });
+}
+
+function scheduleSearch() {
+  alert("Рекомендуемый режим: запускать поиск 1 раз в неделю и переносить закрытые программы в Архив (closed: true).");
+}
+
 function render() {
   const archiveCount = PROGRAMS.filter(p => p.closed).length;
   const archiveBtn = document.querySelector('#cat-filter [data-cat="archive"]');
@@ -806,6 +846,16 @@ function render() {
   }
 
   const openPrograms = PROGRAMS.filter(p => !p.closed);
+  const urgentCount = openPrograms.filter(p => p.urgent).length;
+  const urgentBtn = document.querySelector('#cat-filter [data-cat="urgent"]');
+  const urgentCountEl = document.getElementById('urgent-count');
+  if (urgentBtn) {
+    urgentBtn.textContent = `Срочно (${urgentCount})`;
+  }
+  if (urgentCountEl) {
+    urgentCountEl.textContent = String(urgentCount);
+  }
+
   let filtered = activeCategory === 'archive'
     ? PROGRAMS.filter(p => p.closed)
     : openPrograms;
@@ -820,12 +870,8 @@ function render() {
   if (activeCountry !== 'all') {
     filtered = filtered.filter(p => p.baseCountry === activeCountry);
   }
-  if (activeAge === 'u13') {
-    filtered = filtered.filter(p => p.minAge <= 13);
-  } else if (activeAge !== 'all') {
-    const targetAge = Number(activeAge);
-    filtered = filtered.filter(p => p.minAge <= targetAge);
-  }
+  const targetAge = Number(activeAge);
+  filtered = filtered.filter(p => p.minAge <= targetAge);
 
   const list = document.getElementById('programs-list');
   const bar = document.getElementById('count-bar');
