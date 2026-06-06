@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>Конные программы — Полина</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #007AFF;
+    --red: #FF3B30;
+    --orange: #FF9500;
+    --green: #34C759;
+    --bg: #F2F2F7;
+    --card: #FFFFFF;
+    --text: #000000;
+    --text2: #6C6C70;
+    --text3: #AEAEB2;
+    --sep: #E5E5EA;
+    --fill: #F2F2F7;
+    --radius: 12px;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: calc(80px + var(--safe-bottom));
+  }
+  /* HEADER */
+  .header {
+    background: var(--card);
+    padding: calc(16px + var(--safe-top)) 16px 12px;
+    border-bottom: 1px solid var(--sep);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  .header p {
+    font-size: 13px;
+    color: var(--text2);
+    margin-top: 3px;
+  }
+  /* STATS */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 12px 16px;
+  }
+  .stat {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 10px;
+    color: var(--text2);
+    margin-top: 2px;
+    display: block;
+    line-height: 1.2;
+  }
+  .stat-value.danger { color: var(--red); }
+  /* CALLOUT */
+  .callout {
+    margin: 0 16px 12px;
+    background: #FFF3CD;
+    border-left: 3px solid var(--orange);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .callout strong { display: block; margin-bottom: 2px; }
+  /* FILTERS */
+  .filters {
+    padding: 0 0 8px;
+  }
+  .filter-label {
+    font-size: 12px;
+    color: var(--text2);
+    padding: 8px 16px 4px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .filter-scroll {
+    display: flex;
+    gap: 8px;
+    padding: 0 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .filter-scroll::-webkit-scrollbar { display: none; }
+  .chip {
+    flex-shrink: 0;
+    border: 1.5px solid var(--sep);
+    background: var(--card);
+    color: var(--text2);
+    border-radius: 20px;
+    padding: 7px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+  .chip.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+  }
+  .chip.urgent.active {
+    background: var(--red);
+    border-color: var(--red);
+  }
+  /* PROGRAM COUNT */
+  .count-bar {
+    padding: 10px 16px 4px;
+    font-size: 13px;
+    color: var(--text2);
+  }
+  /* PROGRAMS LIST */
+  .programs {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  /* CARD */
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1.5px solid var(--sep);
+    transition: border-color 0.15s;
+  }
+  .card.urgent {
+    border-color: var(--red);
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    cursor: pointer;
+    gap: 10px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .card-header-left {
+    flex: 1;
+    min-width: 0;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.1px;
+  }
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 5px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 500;
+    background: var(--fill);
+    color: var(--text2);
+    border-radius: 6px;
+    padding: 2px 7px;
+  }
+  .badge.green { background: #E8F8EE; color: #1A7A40; }
+  .badge.orange { background: #FFF3E0; color: #B25900; }
+  .badge.red { background: #FFECEC; color: #CC1500; }
+  .badge.blue { background: #E5F0FF; color: #0055D0; }
+  .chevron {
+    width: 22px;
+    height: 22px;
+    background: var(--fill);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .chevron svg { display: block; }
+  .card.open .chevron { transform: rotate(180deg); }
+  /* CARD BODY */
+  .card-body {
+    display: none;
+    border-top: 1px solid var(--sep);
+    padding: 14px 16px;
+  }
+  .card.open .card-body { display: block; }
+  .field {
+    margin-bottom: 12px;
+  }
+  .field-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text3);
+    margin-bottom: 3px;
+  }
+  .field-value {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .field-value.highlight {
+    font-weight: 600;
+    color: var(--text);
+  }
+  /* SUPPORT TAGS */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tag {
+    font-size: 12px;
+    font-weight: 500;
+    background: var(--fill);
+    color: var(--text2);
+    border-radius: 8px;
+    padding: 4px 10px;
+    border: 1px solid var(--sep);
+  }
+  /* DESCRIPTION */
+  .desc {
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  /* URGENT CALLOUT IN CARD */
+  .inner-callout {
+    background: #FFF3CD;
+    border-left: 3px solid var(--orange);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    color: #5C3D00;
+  }
+  .inner-callout.info {
+    background: #E5F0FF;
+    border-left-color: var(--blue);
+    color: #0038A0;
+  }
+  /* OPEN BUTTON */
+  .open-btn {
+    display: block;
+    width: 100%;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 13px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 4px;
+    -webkit-tap-highlight-color: transparent;
+    letter-spacing: -0.2px;
+  }
+  .open-btn:active { opacity: 0.85; }
+  .open-btn.urgent-btn { background: var(--red); }
+  /* DIVIDER */
+  .sep {
+    height: 1px;
+    background: var(--sep);
+    margin: 12px 0;
+  }
+  /* TIPS SECTION */
+  .tips {
+    padding: 16px 16px 0;
+  }
+  .tips h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+  }
+  .tip-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border: 1px solid var(--sep);
+  }
+  .tip-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+  .tip-card p { font-size: 13px; color: var(--text2); line-height: 1.5; }
+  /* EMPTY STATE */
+  .empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text2);
+    font-size: 15px;
+  }
+  /* FOOTER */
+  .footer {
+    padding: 20px 16px;
+    font-size: 11px;
+    color: var(--text3);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Конные программы</h1>
+  <p>Глобальная подборка · жильё, дорога, обучение, оплата</p>
+</div>
+
+<div class="stats">
+  <div class="stat"><span class="stat-value" id="total-count">20</span><span class="stat-label">программ</span></div>
+  <div class="stat"><span class="stat-value">7</span><span class="stat-label">стипендий</span></div>
+  <div class="stat"><span class="stat-value danger" id="urgent-count">2</span><span class="stat-label">срочных</span></div>
+  <div class="stat"><span class="stat-value">5</span><span class="stat-label">стран</span></div>
+</div>
+
+<div class="callout">
+  <strong>Срочно — подавать немедленно</strong>
+  BHS Caron Roberts (27 июня) и Anna Hilton (7 июля). Нажми «Срочно» ниже.
+</div>
+
+<div class="filters">
+  <div class="filter-label">Тип программы</div>
+  <div class="filter-scroll" id="cat-filter">
+    <button class="chip active" data-cat="all" onclick="setCategory(this)">Все (20)</button>
+    <button class="chip urgent" data-cat="urgent" onclick="setCategory(this)">Срочно (2)</button>
+    <button class="chip" data-cat="Стипендии" onclick="setCategory(this)">Стипендии (7)</button>
+    <button class="chip" data-cat="Лагери" onclick="setCategory(this)">Лагери (4)</button>
+    <button class="chip" data-cat="Стажировки" onclick="setCategory(this)">Стажировки (4)</button>
+    <button class="chip" data-cat="Обмен" onclick="setCategory(this)">Обмен (3)</button>
+    <button class="chip" data-cat="Кастинги" onclick="setCategory(this)">Кастинги (2)</button>
+  </div>
+
+  <div class="filter-label" style="margin-top:8px">Страна</div>
+  <div class="filter-scroll" id="country-filter">
+    <button class="chip active" data-country="all" onclick="setCountry(this)">Все страны</button>
+    <button class="chip" data-country="USA" onclick="setCountry(this)">USA (9)</button>
+    <button class="chip" data-country="UK" onclick="setCountry(this)">UK (9)</button>
+    <button class="chip" data-country="Австралия" onclick="setCountry(this)">Австралия (1)</button>
+    <button class="chip" data-country="Германия" onclick="setCountry(this)">Германия (1)</button>
+    <button class="chip" data-country="Словения" onclick="setCountry(this)">Словения (1)</button>
+  </div>
+</div>
+
+<div class="count-bar" id="count-bar">Показано: 20 программ</div>
+
+<div class="programs" id="programs-list"></div>
+
+<div class="tips">
+  <h2>Быстрые советы</h2>
+  <div class="tip-card">
+    <h3>Портфолио всадника</h3>
+    <p>Конное резюме с дисциплинами и высотами. Видео до 5 мин — три аллюра, прыжки, работа на земле. Рекомендации от сертифицированного тренера.</p>
+  </div>
+  <div class="tip-card">
+    <h3>Страхование</h3>
+    <p>Стандартные полисы не покрывают травмы с лошадьми. Нужен специальный полис с покрытием конного спорта и работы на конюшне (stable duties).</p>
+  </div>
+  <div class="tip-card">
+    <h3>Мониторинг кастингов</h3>
+    <p>Backstage.com · ProjectCasting.com · KidsCasting.com · CastingNetworks.com — кастинги появляются внезапно, следить постоянно.</p>
+  </div>
+</div>
+
+<div class="footer">
+  Источники: Джимини · Грок · Перплексити · ЧатГПТ · Клод · Обновлено: 6 июня 2026
+</div>
+
+<script>
+const PROGRAMS = [
+  {
+    id: 1, name: "Ever So Sweet Camp",
+    org: "Strides for Equality Equestrians (SEE)",
+    category: "Стипендии", baseCountry: "USA", country: "USA",
+    age: "16+", deadline: "Открыт (приём в мае 2026)", tone: "green",
+    support: ["Жильё","Дорога","Обучение"],
+    pay: "Полностью бесплатно. Дорога + трансфер лошади возмещаются",
+    desc: "Полностью финансируемый лагерь для Equestrians of Color. Лето 2026: Overlook Farm (Virginia) с 5* тренером Sara Kozumplik и Wolfert Eventing (Kansas). Mounted и unmounted уроки, жильё и конюшня бесплатно. Лошадь своя или лагерная.",
+    url: "https://www.stridesforequality.org/eversosweethome",
+    urgent: false, check: null
+  },
+  {
+    id: 2, name: "Riding a Dream Academy — Residential Week",
+    org: "British Racing School, Newmarket",
+    category: "Стипендии", baseCountry: "UK", country: "UK",
+    age: "14–16 лет", deadline: "20–24 июля 2026", tone: "orange",
+    support: ["Жильё","Питание","Обучение"],
+    pay: "Полностью бесплатно (финансируется The Racing Foundation)",
+    desc: "Бесплатная неделя при British Racing School — сердце британских скачек. Для 14–16-летних из малообеспеченных и разнообразных сообществ. Верховая езда, уход за лошадьми, знакомство с индустрией. Опыт езды не обязателен. Вес не более 64 кг.",
+    url: "https://www.ridingadreamacademy.com/residential-application-form-2026",
+    urgent: false, check: null
+  },
+  {
+    id: 3, name: "Khadijah Mellah Scholarship",
+    org: "Riding a Dream Academy / British Racing School",
+    category: "Стипендии", baseCountry: "UK", country: "UK",
+    age: "14–16 лет", deadline: "Приём открыт, старт октябрь 2026", tone: "green",
+    support: ["Жильё","Обучение"],
+    pay: "Полностью бесплатно — год обучения при BRS",
+    desc: "Годичная стипендия — резиденция в BRS октябрь 2026, ежемесячные занятия до августа 2027. Для молодёжи из разнообразных и малообеспеченных семей. Вдохновлена историей первой британской мусульманки, выигравшей скачки.",
+    url: "https://www.ridingadreamacademy.com/scholarshipapplication2026",
+    urgent: false, check: null
+  },
+  {
+    id: 4, name: "Jud Little '65 Scholarship — Culver Academies",
+    org: "Culver Academies",
+    category: "Стипендии", baseCountry: "USA", country: "USA (Indiana)",
+    age: "14–15 лет", deadline: "15 января ежегодно", tone: "neutral",
+    support: ["Жильё","Дорога","Обучение"],
+    pay: "Свыше $200,000 за 4 года + 1 авиабилет ежегодно",
+    desc: "Одна из самых щедрых конных стипендий в мире. Culver Academies — элитная школа-пансион с мировым конным отделением. Полный пансион, академическое образование, профессиональные тренировки. Конкурсный отбор. Приоритет — Оклахома, открыто глобально.",
+    url: "https://www.culver.org/admissions/scholarships/little",
+    urgent: false, check: null
+  },
+  {
+    id: 5, name: "Riding Scholarship + Bursary — Stonar School",
+    org: "Stonar School",
+    category: "Стипендии", baseCountry: "UK", country: "UK (Wiltshire)",
+    age: "11–18 лет", deadline: "Конец ноября ежегодно", tone: "neutral",
+    support: ["Жильё","Обучение"],
+    pay: "Стипендия до 10% + грант до 100% при подтверждении нуждаемости",
+    desc: "Элитная конная школа-пансион. Механика: конная стипендия (10%) открывает доступ к социальному гранту (bursary). При финансовой проверке семьи грант покрывает до 100% стоимости. Практический тест в седле + академический конкурс.",
+    url: "https://www.stonarschool.com/admissions/scholarships-and-bursaries",
+    urgent: false, check: null
+  },
+  {
+    id: 6, name: "Equestrian Scholarship + Bursary — Millfield",
+    org: "Millfield School",
+    category: "Стипендии", baseCountry: "UK", country: "UK (Somerset)",
+    age: "13–18 лет", deadline: "1 дек. (Year 9) / 7 окт. (Sixth Form)", tone: "neutral",
+    support: ["Жильё","Обучение"],
+    pay: "Стипендия 10–15% + грант до 100% стоимости",
+    desc: "Лучшая спортивная школа UK с олимпийской инфраструктурой. Стипендия + means-tested bursary = потенциально 100% покрытие. Тренировки олимпийского уровня. Высокие требования: конный уровень + академические результаты.",
+    url: "https://www.millfieldschool.com/admissions/scholarship-bursaries",
+    urgent: false, check: null
+  },
+  {
+    id: 7, name: "US Equestrian Youth Scholarships (USEF)",
+    org: "US Equestrian Federation",
+    category: "Стипендии", baseCountry: "USA", country: "USA",
+    age: "Старшеклассники", deadline: "Разные (напр. 31 июля)", tone: "orange",
+    support: ["Обучение"],
+    pay: "Гранты $1,000–$2,500+ на лагеря, тренировки, соревнования",
+    desc: "Несколько стипендиальных программ USEF для молодых американских всадников. Гранты на участие в лагерях и соревнованиях. Можно комбинировать с другими программами. Актуальные дедлайны — на официальном сайте.",
+    url: "https://www.usef.org/learning-center/youth-programs",
+    urgent: false, check: null
+  },
+  {
+    id: 8, name: "Junior Counselor — Camp Friendship",
+    org: "Camp Friendship",
+    category: "Лагери", baseCountry: "USA", country: "USA (Virginia)",
+    age: "16–17 лет", deadline: "Рекомендуется до февраля", tone: "neutral",
+    support: ["Жильё","Питание","Обучение","Оплата"],
+    pay: "$300/нед + бесплатное жильё в конной деревне + питание",
+    desc: "Оплачиваемая позиция помощника вожатого в конном лагере Вирджинии. Работа с детьми, обучение верховой езде, уход за лошадьми. Визовая поддержка J-1 для международных участников.",
+    url: "https://campfriendship.com/staff/",
+    urgent: false, check: null
+  },
+  {
+    id: 9, name: "Riding Staff — Camp Olson YMCA",
+    org: "Camp Olson YMCA",
+    category: "Лагери", baseCountry: "USA", country: "USA (Minnesota)",
+    age: "17 лет", deadline: "Набор открывается в ноябре", tone: "neutral",
+    support: ["Жильё","Питание","Обучение","Оплата"],
+    pay: "$350/нед (+$10/нед за сертификат) + полное проживание и питание",
+    desc: "Специальная квота для 17-летних всадников. Помощник вожатого с фокусом на верховую езду. Участие в конных клиниках и семинарах. Первый профессиональный опыт.",
+    url: "https://campolson.org/positions/",
+    urgent: false, check: null
+  },
+  {
+    id: 10, name: "International Riding Camp (NY Catskills)",
+    org: "Rocking Horse Ranch",
+    category: "Лагери", baseCountry: "USA", country: "USA (New York)",
+    age: "7–17 лет", deadline: "Набор на лето 2026 открыт", tone: "green",
+    support: ["Жильё","Обучение"],
+    pay: "Платный; стипендии возможны — уточнять",
+    desc: "Интенсивный конный лагерь до 6 часов езды в день: охота, прыжки, поло. Жильё с кондиционером. Принимают международных участников. Стипендии возможны — рекомендуется уточнять напрямую.",
+    url: "https://horseridingcamp.com",
+    urgent: false, check: "Уточнить наличие стипендий и поддержки дороги"
+  },
+  {
+    id: 11, name: "Youth Horsemanship Camp — Colorado State Univ.",
+    org: "Colorado State University",
+    category: "Лагери", baseCountry: "USA", country: "USA (Colorado)",
+    age: "10–15 (ночной), до 18 (дневной)", deadline: "Лето 2026", tone: "orange",
+    support: ["Жильё","Питание","Обучение"],
+    pay: "Платный; стипендии по нуждаемости — уточнять",
+    desc: "Университетский конный лагерь: западная и английская езда, horsemanship, уход за лошадьми. Ночной формат: жильё в общежитии + питание. Профессиональные тренеры.",
+    url: "https://agsci.colostate.edu/animsci/youth-programs/",
+    urgent: false, check: "Уточнить наличие стипендий и актуальные даты сессий"
+  },
+  {
+    id: 12, name: "BHS Apprenticeship — Caron Roberts",
+    org: "Caron Roberts Equestrian, Wiltshire",
+    category: "Стажировки", baseCountry: "UK", country: "UK (Wiltshire)",
+    age: "От 16 лет", deadline: "27 ИЮНЯ 2026 — СРОЧНО", tone: "red",
+    support: ["Жильё","Обучение","Оплата"],
+    pay: "£16,640/год (~£320/нед) + жильё на ферме",
+    desc: "Официальная оплачиваемая стажировка BHS Equine Groom Level 2 в Wiltshire. Полноценное обучение: стрижка, заплетание, BHS Stage 1–4. Цель — управление конюшней или карьера тренера. Можно привезти свою лошадь. Гос. финансирование обучения 100% для 16–18 лет.",
+    url: "https://www.findapprenticeship.service.gov.uk/apprenticeship/VAC1000250777",
+    urgent: true, check: null
+  },
+  {
+    id: 13, name: "BHS Apprenticeship — Anna Hilton",
+    org: "Anna Hilton Equestrian, Sussex/Kent",
+    category: "Стажировки", baseCountry: "UK", country: "UK (Sussex/Kent)",
+    age: "От 16 лет", deadline: "7 ИЮЛЯ 2026 — СРОЧНО", tone: "red",
+    support: ["Жильё","Обучение","Оплата"],
+    pay: "£16,640/год + жильё £55/нед + личные тренировки от Anna Hilton",
+    desc: "BHS Level 2 стажировка с регулярными личными уроками от Anna Hilton. Работа с лошадьми конкурсного уровня в Sussex/Kent. Возможность привезти свою лошадь (livery £70/нед).",
+    url: "https://www.findapprenticeship.service.gov.uk/apprenticeship/VAC2000007321",
+    urgent: true, check: null
+  },
+  {
+    id: 14, name: "Working Pupil — Newcastle Equestrian Centre",
+    org: "Ryan's Horses, NSW",
+    category: "Стажировки", baseCountry: "Австралия", country: "Australia (NSW)",
+    age: "17–25 лет", deadline: "Круглый год", tone: "green",
+    support: ["Жильё","Обучение"],
+    pay: "Нет прямой оплаты — работа в обмен на жильё и интенсивное обучение",
+    desc: "Working Pupil при профессиональном конном центре NSW. Работа 6 дней/нед + 4 недели отпуска. Интенсивное обучение с целью международных соревнований. 4-недельный пробный период. Принимают международных участников.",
+    url: "https://www.ryanshorses.com.au/page/working_pupil_positions.html",
+    urgent: false, check: "Уточнить визовые требования для иностранных участников"
+  },
+  {
+    id: 15, name: "Working Pupil — Sheepcote Equestrian Centre",
+    org: "Sheepcote (David & Serena Pincus)",
+    category: "Стажировки", baseCountry: "UK", country: "UK (Herefordshire)",
+    age: "От 16 лет", deadline: "Постоянный набор", tone: "green",
+    support: ["Жильё","Питание","Обучение"],
+    pay: "Нет прямой оплаты: жильё + питание + ежедневные уроки",
+    desc: "Традиционный Working Pupil в Herefordshire. Уход за лошадьми, работа с молодыми лошадьми, участие в соревнованиях. Ежедневные уроки от тренеров. Можно привезти свою лошадь. Принимают международных студентов, всё на английском.",
+    url: "http://www.sheepcote.co.uk/workingpupils.html",
+    urgent: false, check: null
+  },
+  {
+    id: 16, name: "FEIF Youth Cup 2026",
+    org: "FEIF (Федерация исландских лошадей)",
+    category: "Обмен", baseCountry: "Германия", country: "Германия (Rieden)",
+    age: "14–17 лет", deadline: "13–19 июля 2026", tone: "orange",
+    support: ["Жильё","Питание","Обучение"],
+    pay: "€1,015 — всё включено кроме дороги: жильё, питание, тренировки, соревнования",
+    desc: "15-й международный молодёжный кубок по исландским лошадям. Участвуют сборные из всех стран FEIF. Жильё + питание + тренировки от профессионалов. Лошадей можно арендовать на месте. Дисциплины: T3, T6, V2, F3, trail, dressage и др.",
+    url: "https://www.ipzv.de/jugend/feif-youth-cup-2026-english.html",
+    urgent: false, check: "Нужна исландская лошадь или аренда — уточнять через нац. федерацию"
+  },
+  {
+    id: 17, name: "Pony Club Inter-Pacific Exchange",
+    org: "Pony Club International Alliance (PCIA)",
+    category: "Обмен", baseCountry: "USA", country: "USA / Canada / AUS / NZ",
+    age: "17–25 лет", deadline: "2027 год (сейчас — время подготовки)", tone: "neutral",
+    support: ["Жильё","Дорога","Обучение"],
+    pay: "Принимающая сторона: жильё, питание, лошади, тренировки",
+    desc: "Двухлетний международный обмен стран Тихоокеанского региона. Следующий — 2027, принимает Канада. Соревнования по eventing и show jumping на лошадях принимающей страны. Требования: сертификат B Pony Club, eventing Training level, прыжки 3'6\".",
+    url: "https://www.ponyclub.org/activities/international-exchanges",
+    urgent: false, check: null
+  },
+  {
+    id: 18, name: "ESC Volunteering — Škatlica, Slovenia",
+    org: "European Solidarity Corps / Škatlica",
+    category: "Обмен", baseCountry: "Словения", country: "Словения (EU)",
+    age: "18–30 лет", deadline: "Сентябрь 2026 – август 2027", tone: "green",
+    support: ["Жильё","Питание","Дорога","Оплата"],
+    pay: "Полное покрытие: жильё + питание + карманные деньги + дорога (EU funded)",
+    desc: "Долгосрочное волонтёрство при конном и молодёжном центре в сельской Словении. Работа с детьми, уход за лошадьми, организация лагерей. Своя комната, питание, карманные деньги. Финансируется ЕС.",
+    url: "https://youthworkshub.org/11224/",
+    urgent: false, check: "Проверить список стран-участников ESC для вашего гражданства"
+  },
+  {
+    id: 19, name: "Sportswear Commercial — Road Casting",
+    org: "Road Casting (UK)",
+    category: "Кастинги", baseCountry: "UK", country: "UK (London)",
+    age: "12–18 лет", deadline: "Мониторить постоянно", tone: "neutral",
+    support: ["Оплата","Дорога"],
+    pay: "Конкурентная ставка + возможное покрытие дороги и проживания",
+    desc: "Кастинг для рекламы крупного спортивного бренда. Молодые всадники 12–18 лет с реальным опытом верховой езды. Выполнение манёвров, профессиональная съёмка. Хорошее пополнение портфолио.",
+    url: "https://projectcasting.com/job/sportswear-london-commercial-casting-call-for-horse-back-riders",
+    urgent: false, check: "Проверить актуальность статуса кастинга напрямую"
+  },
+  {
+    id: 20, name: "Child Horse Rider — Real London Casting",
+    org: "Real London Casting",
+    category: "Кастинги", baseCountry: "UK", country: "UK (London)",
+    age: "5–9 лет (Mixed Race)", deadline: "Мониторить постоянно", tone: "neutral",
+    support: ["Оплата"],
+    pay: "Paid role — конкурентные ставки за съёмочный день",
+    desc: "Профессиональный проект ищет ребёнка смешанного происхождения 5–9 лет, уверенно сидящего в седле. Реальный опыт работы с лошадьми обязателен. Оплачиваемая роль.",
+    url: "https://projectcasting.com/job/casting-call-confident-horse-riders-needed",
+    urgent: false, check: "Проверить текущий статус проекта напрямую"
+  }
+];
+
+let activeCategory = "all";
+let activeCountry = "all";
+
+function setCategory(btn) {
+  document.querySelectorAll('#cat-filter .chip').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeCategory = btn.dataset.cat;
+  render();
+}
+
+function setCountry(btn) {
+  document.querySelectorAll('#country-filter .chip').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeCountry = btn.dataset.country;
+  render();
+}
+
+function toggleCard(id) {
+  const card = document.getElementById('card-' + id);
+  card.classList.toggle('open');
+}
+
+function render() {
+  let filtered = PROGRAMS;
+  if (activeCategory === 'urgent') {
+    filtered = filtered.filter(p => p.urgent);
+  } else if (activeCategory !== 'all') {
+    filtered = filtered.filter(p => p.category === activeCategory);
+  }
+  if (activeCountry !== 'all') {
+    filtered = filtered.filter(p => p.baseCountry === activeCountry);
+  }
+
+  const list = document.getElementById('programs-list');
+  const bar = document.getElementById('count-bar');
+  bar.textContent = 'Показано: ' + filtered.length + ' программ';
+
+  if (filtered.length === 0) {
+    list.innerHTML = '<div class="empty">Нет программ по выбранным фильтрам.<br>Попробуй другую комбинацию.</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(p => {
+    const toneMap = { green: 'green', orange: 'orange', red: 'red', neutral: '', blue: 'blue' };
+    const toneClass = toneMap[p.tone] || '';
+    const deadlineEl = toneClass
+      ? `<span class="badge ${toneClass}">${p.deadline}</span>`
+      : `<span class="badge">${p.deadline}</span>`;
+
+    const supportTags = p.support.map(s => `<span class="tag">${s}</span>`).join('');
+
+    const checkEl = p.check
+      ? `<div class="inner-callout info"><strong>Требует проверки:</strong> ${p.check}</div>`
+      : '';
+
+    const urgentEl = p.urgent
+      ? `<div class="inner-callout"><strong>Срочный дедлайн</strong> — подавать немедленно, осталось несколько недель.</div>`
+      : '';
+
+    const btnClass = p.urgent ? 'open-btn urgent-btn' : 'open-btn';
+
+    return `
+<div class="card${p.urgent ? ' urgent' : ''}" id="card-${p.id}">
+  <div class="card-header" onclick="toggleCard(${p.id})">
+    <div class="card-header-left">
+      <div class="card-title">${p.name}</div>
+      <div class="card-meta">
+        <span class="badge blue">${p.country}</span>
+        <span class="badge">возраст: ${p.age}</span>
+        ${deadlineEl}
+      </div>
+    </div>
+    <div class="chevron">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <path d="M2 4L6 8L10 4" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="field">
+      <div class="field-label">Организация</div>
+      <div class="field-value">${p.org}</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Что покрывается</div>
+      <div class="tags">${supportTags}</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Финансирование / Оплата</div>
+      <div class="field-value highlight">${p.pay}</div>
+    </div>
+    <div class="sep"></div>
+    <p class="desc">${p.desc}</p>
+    ${urgentEl}
+    ${checkEl}
+    <a href="${p.url}" target="_blank" rel="noopener" class="${btnClass}">Открыть программу →</a>
+  </div>
+</div>`;
+  }).join('');
+}
+
+render();
+</script>
+</body>
+</html>
