@@ -157,6 +157,13 @@
   .card.urgent {
     border-color: var(--red);
   }
+  .card.closed {
+    opacity: 0.78;
+    border-color: #c8c7cc;
+  }
+  .card.closed .card-title {
+    color: var(--text2);
+  }
   .card-header {
     display: flex;
     align-items: center;
@@ -363,6 +370,7 @@
     <button class="chip" data-cat="Стажировки" onclick="setCategory(this)">Стажировки (10)</button>
     <button class="chip" data-cat="Обмен" onclick="setCategory(this)">Обмен (3)</button>
     <button class="chip" data-cat="Кастинги" onclick="setCategory(this)">Кастинги (2)</button>
+    <button class="chip" data-cat="archive" onclick="setCategory(this)">Архив (0)</button>
   </div>
 
   <div class="filter-label" style="margin-top:8px">Страна</div>
@@ -379,6 +387,15 @@
     <button class="chip" data-country="ЮАР" onclick="setCountry(this)">ЮАР (1)</button>
     <button class="chip" data-country="Аргентина" onclick="setCountry(this)">Аргентина (1)</button>
     <button class="chip" data-country="Словения" onclick="setCountry(this)">Словения (1)</button>
+  </div>
+  <div class="filter-label" style="margin-top:8px">Возраст</div>
+  <div class="filter-scroll" id="age-filter">
+    <button class="chip active" data-age="all" onclick="setAge(this)">Все возрасты</button>
+    <button class="chip" data-age="u13" onclick="setAge(this)">до 13 лет</button>
+    <button class="chip" data-age="14" onclick="setAge(this)">14+</button>
+    <button class="chip" data-age="16" onclick="setAge(this)">16+</button>
+    <button class="chip" data-age="17" onclick="setAge(this)">17+</button>
+    <button class="chip" data-age="18" onclick="setAge(this)">18+</button>
   </div>
 </div>
 
@@ -412,7 +429,7 @@ const PROGRAMS = [
     id: 1, name: "Ever So Sweet Camp",
     org: "Strides for Equality Equestrians (SEE)",
     category: "Стипендии", baseCountry: "USA", country: "USA",
-    age: "16+", deadline: "Открыт (приём в мае 2026)", tone: "green",
+    age: "16+", minAge: 16, deadline: "Открыт (приём в мае 2026)", tone: "green",
     support: ["Жильё","Дорога","Обучение"],
     pay: "Полностью бесплатно. Дорога + трансфер лошади возмещаются",
     desc: "Полностью финансируемый лагерь для Equestrians of Color. Лето 2026: Overlook Farm (Virginia) с 5* тренером Sara Kozumplik и Wolfert Eventing (Kansas). Mounted и unmounted уроки, жильё и конюшня бесплатно. Лошадь своя или лагерная.",
@@ -423,7 +440,7 @@ const PROGRAMS = [
     id: 2, name: "Riding a Dream Academy — Residential Week",
     org: "British Racing School, Newmarket",
     category: "Стипендии", baseCountry: "UK", country: "UK",
-    age: "14–16 лет", deadline: "20–24 июля 2026", tone: "orange",
+    age: "14–16 лет", minAge: 14, deadline: "20–24 июля 2026", tone: "orange",
     support: ["Жильё","Питание","Обучение"],
     pay: "Полностью бесплатно (финансируется The Racing Foundation)",
     desc: "Бесплатная неделя при British Racing School — сердце британских скачек. Для 14–16-летних из малообеспеченных и разнообразных сообществ. Верховая езда, уход за лошадьми, знакомство с индустрией. Опыт езды не обязателен. Вес не более 64 кг.",
@@ -434,7 +451,7 @@ const PROGRAMS = [
     id: 3, name: "Khadijah Mellah Scholarship",
     org: "Riding a Dream Academy / British Racing School",
     category: "Стипендии", baseCountry: "UK", country: "UK",
-    age: "14–16 лет", deadline: "Приём открыт, старт октябрь 2026", tone: "green",
+    age: "14–16 лет", minAge: 14, deadline: "Приём открыт, старт октябрь 2026", tone: "green",
     support: ["Жильё","Обучение"],
     pay: "Полностью бесплатно — год обучения при BRS",
     desc: "Годичная стипендия — резиденция в BRS октябрь 2026, ежемесячные занятия до августа 2027. Для молодёжи из разнообразных и малообеспеченных семей. Вдохновлена историей первой британской мусульманки, выигравшей скачки.",
@@ -445,7 +462,7 @@ const PROGRAMS = [
     id: 4, name: "Jud Little '65 Scholarship — Culver Academies",
     org: "Culver Academies",
     category: "Стипендии", baseCountry: "USA", country: "USA (Indiana)",
-    age: "14–15 лет", deadline: "15 января ежегодно", tone: "neutral",
+    age: "14–15 лет", minAge: 14, deadline: "15 января ежегодно", tone: "neutral",
     support: ["Жильё","Дорога","Обучение"],
     pay: "Свыше $200,000 за 4 года + 1 авиабилет ежегодно",
     desc: "Одна из самых щедрых конных стипендий в мире. Culver Academies — элитная школа-пансион с мировым конным отделением. Полный пансион, академическое образование, профессиональные тренировки. Конкурсный отбор. Приоритет — Оклахома, открыто глобально.",
@@ -456,7 +473,7 @@ const PROGRAMS = [
     id: 5, name: "Riding Scholarship + Bursary — Stonar School",
     org: "Stonar School",
     category: "Стипендии", baseCountry: "UK", country: "UK (Wiltshire)",
-    age: "11–18 лет", deadline: "Конец ноября ежегодно", tone: "neutral",
+    age: "11–18 лет", minAge: 11, deadline: "Конец ноября ежегодно", tone: "neutral",
     support: ["Жильё","Обучение"],
     pay: "Стипендия до 10% + грант до 100% при подтверждении нуждаемости",
     desc: "Элитная конная школа-пансион. Механика: конная стипендия (10%) открывает доступ к социальному гранту (bursary). При финансовой проверке семьи грант покрывает до 100% стоимости. Практический тест в седле + академический конкурс.",
@@ -467,7 +484,7 @@ const PROGRAMS = [
     id: 6, name: "Equestrian Scholarship + Bursary — Millfield",
     org: "Millfield School",
     category: "Стипендии", baseCountry: "UK", country: "UK (Somerset)",
-    age: "13–18 лет", deadline: "1 дек. (Year 9) / 7 окт. (Sixth Form)", tone: "neutral",
+    age: "13–18 лет", minAge: 13, deadline: "1 дек. (Year 9) / 7 окт. (Sixth Form)", tone: "neutral",
     support: ["Жильё","Обучение"],
     pay: "Стипендия 10–15% + грант до 100% стоимости",
     desc: "Лучшая спортивная школа UK с олимпийской инфраструктурой. Стипендия + means-tested bursary = потенциально 100% покрытие. Тренировки олимпийского уровня. Высокие требования: конный уровень + академические результаты.",
@@ -478,7 +495,7 @@ const PROGRAMS = [
     id: 7, name: "US Equestrian Youth Scholarships (USEF)",
     org: "US Equestrian Federation",
     category: "Стипендии", baseCountry: "USA", country: "USA",
-    age: "Старшеклассники", deadline: "Разные (напр. 31 июля)", tone: "orange",
+    age: "Старшеклассники", minAge: 14, deadline: "Разные (напр. 31 июля)", tone: "orange",
     support: ["Обучение"],
     pay: "Гранты $1,000–$2,500+ на лагеря, тренировки, соревнования",
     desc: "Несколько стипендиальных программ USEF для молодых американских всадников. Гранты на участие в лагерях и соревнованиях. Можно комбинировать с другими программами. Актуальные дедлайны — на официальном сайте.",
@@ -489,7 +506,7 @@ const PROGRAMS = [
     id: 8, name: "Junior Counselor — Camp Friendship",
     org: "Camp Friendship",
     category: "Лагери", baseCountry: "USA", country: "USA (Virginia)",
-    age: "16–17 лет", deadline: "Рекомендуется до февраля", tone: "neutral",
+    age: "16–17 лет", minAge: 16, deadline: "Рекомендуется до февраля", tone: "neutral",
     support: ["Жильё","Питание","Обучение","Оплата"],
     pay: "$300/нед + бесплатное жильё в конной деревне + питание",
     desc: "Оплачиваемая позиция помощника вожатого в конном лагере Вирджинии. Работа с детьми, обучение верховой езде, уход за лошадьми. Визовая поддержка J-1 для международных участников.",
@@ -500,7 +517,7 @@ const PROGRAMS = [
     id: 9, name: "Riding Staff — Camp Olson YMCA",
     org: "Camp Olson YMCA",
     category: "Лагери", baseCountry: "USA", country: "USA (Minnesota)",
-    age: "17 лет", deadline: "Набор открывается в ноябре", tone: "neutral",
+    age: "17 лет", minAge: 17, deadline: "Набор открывается в ноябре", tone: "neutral",
     support: ["Жильё","Питание","Обучение","Оплата"],
     pay: "$350/нед (+$10/нед за сертификат) + полное проживание и питание",
     desc: "Специальная квота для 17-летних всадников. Помощник вожатого с фокусом на верховую езду. Участие в конных клиниках и семинарах. Первый профессиональный опыт.",
@@ -511,7 +528,7 @@ const PROGRAMS = [
     id: 10, name: "International Riding Camp (NY Catskills)",
     org: "Rocking Horse Ranch",
     category: "Лагери", baseCountry: "USA", country: "USA (New York)",
-    age: "7–17 лет", deadline: "Набор на лето 2026 открыт", tone: "green",
+    age: "7–17 лет", minAge: 7, deadline: "Набор на лето 2026 открыт", tone: "green",
     support: ["Жильё","Обучение"],
     pay: "Платный; стипендии возможны — уточнять",
     desc: "Интенсивный конный лагерь до 6 часов езды в день: охота, прыжки, поло. Жильё с кондиционером. Принимают международных участников. Стипендии возможны — рекомендуется уточнять напрямую.",
@@ -522,7 +539,7 @@ const PROGRAMS = [
     id: 11, name: "Youth Horsemanship Camp — Colorado State Univ.",
     org: "Colorado State University",
     category: "Лагери", baseCountry: "USA", country: "USA (Colorado)",
-    age: "10–15 (ночной), до 18 (дневной)", deadline: "Лето 2026", tone: "orange",
+    age: "10–15 (ночной), до 18 (дневной)", minAge: 10, deadline: "Лето 2026", tone: "orange",
     support: ["Жильё","Питание","Обучение"],
     pay: "Платный; стипендии по нуждаемости — уточнять",
     desc: "Университетский конный лагерь: западная и английская езда, horsemanship, уход за лошадьми. Ночной формат: жильё в общежитии + питание. Профессиональные тренеры.",
@@ -533,7 +550,7 @@ const PROGRAMS = [
     id: 12, name: "BHS Apprenticeship — Caron Roberts",
     org: "Caron Roberts Equestrian, Wiltshire",
     category: "Стажировки", baseCountry: "UK", country: "UK (Wiltshire)",
-    age: "От 16 лет", deadline: "27 ИЮНЯ 2026 — СРОЧНО", tone: "red",
+    age: "От 16 лет", minAge: 16, deadline: "27 ИЮНЯ 2026 — СРОЧНО", tone: "red",
     support: ["Жильё","Обучение","Оплата"],
     pay: "£16,640/год (~£320/нед) + жильё на ферме",
     desc: "Официальная оплачиваемая стажировка BHS Equine Groom Level 2 в Wiltshire. Полноценное обучение: стрижка, заплетание, BHS Stage 1–4. Цель — управление конюшней или карьера тренера. Можно привезти свою лошадь. Гос. финансирование обучения 100% для 16–18 лет.",
@@ -544,7 +561,7 @@ const PROGRAMS = [
     id: 13, name: "BHS Apprenticeship — Anna Hilton",
     org: "Anna Hilton Equestrian, Sussex/Kent",
     category: "Стажировки", baseCountry: "UK", country: "UK (Sussex/Kent)",
-    age: "От 16 лет", deadline: "7 ИЮЛЯ 2026 — СРОЧНО", tone: "red",
+    age: "От 16 лет", minAge: 16, deadline: "7 ИЮЛЯ 2026 — СРОЧНО", tone: "red",
     support: ["Жильё","Обучение","Оплата"],
     pay: "£16,640/год + жильё £55/нед + личные тренировки от Anna Hilton",
     desc: "BHS Level 2 стажировка с регулярными личными уроками от Anna Hilton. Работа с лошадьми конкурсного уровня в Sussex/Kent. Возможность привезти свою лошадь (livery £70/нед).",
@@ -555,7 +572,7 @@ const PROGRAMS = [
     id: 14, name: "Working Pupil — Newcastle Equestrian Centre",
     org: "Ryan's Horses, NSW",
     category: "Стажировки", baseCountry: "Австралия", country: "Australia (NSW)",
-    age: "17–25 лет", deadline: "Круглый год", tone: "green",
+    age: "17–25 лет", minAge: 17, deadline: "Круглый год", tone: "green",
     support: ["Жильё","Обучение"],
     pay: "Нет прямой оплаты — работа в обмен на жильё и интенсивное обучение",
     desc: "Working Pupil при профессиональном конном центре NSW. Работа 6 дней/нед + 4 недели отпуска. Интенсивное обучение с целью международных соревнований. 4-недельный пробный период. Принимают международных участников.",
@@ -566,7 +583,7 @@ const PROGRAMS = [
     id: 15, name: "Working Pupil — Sheepcote Equestrian Centre",
     org: "Sheepcote (David & Serena Pincus)",
     category: "Стажировки", baseCountry: "UK", country: "UK (Herefordshire)",
-    age: "От 16 лет", deadline: "Постоянный набор", tone: "green",
+    age: "От 16 лет", minAge: 16, deadline: "Постоянный набор", tone: "green",
     support: ["Жильё","Питание","Обучение"],
     pay: "Нет прямой оплаты: жильё + питание + ежедневные уроки",
     desc: "Традиционный Working Pupil в Herefordshire. Уход за лошадьми, работа с молодыми лошадьми, участие в соревнованиях. Ежедневные уроки от тренеров. Можно привезти свою лошадь. Принимают международных студентов, всё на английском.",
@@ -577,7 +594,7 @@ const PROGRAMS = [
     id: 16, name: "FEIF Youth Cup 2026",
     org: "FEIF (Федерация исландских лошадей)",
     category: "Обмен", baseCountry: "Германия", country: "Германия (Rieden)",
-    age: "14–17 лет", deadline: "13–19 июля 2026", tone: "orange",
+    age: "14–17 лет", minAge: 14, deadline: "13–19 июля 2026", tone: "orange",
     support: ["Жильё","Питание","Обучение"],
     pay: "€1,015 — всё включено кроме дороги: жильё, питание, тренировки, соревнования",
     desc: "15-й международный молодёжный кубок по исландским лошадям. Участвуют сборные из всех стран FEIF. Жильё + питание + тренировки от профессионалов. Лошадей можно арендовать на месте. Дисциплины: T3, T6, V2, F3, trail, dressage и др.",
@@ -588,7 +605,7 @@ const PROGRAMS = [
     id: 17, name: "Pony Club Inter-Pacific Exchange",
     org: "Pony Club International Alliance (PCIA)",
     category: "Обмен", baseCountry: "USA", country: "USA / Canada / AUS / NZ",
-    age: "17–25 лет", deadline: "2027 год (сейчас — время подготовки)", tone: "neutral",
+    age: "17–25 лет", minAge: 17, deadline: "2027 год (сейчас — время подготовки)", tone: "neutral",
     support: ["Жильё","Дорога","Обучение"],
     pay: "Принимающая сторона: жильё, питание, лошади, тренировки",
     desc: "Двухлетний международный обмен стран Тихоокеанского региона. Следующий — 2027, принимает Канада. Соревнования по eventing и show jumping на лошадях принимающей страны. Требования: сертификат B Pony Club, eventing Training level, прыжки 3'6\".",
@@ -599,7 +616,7 @@ const PROGRAMS = [
     id: 18, name: "ESC Volunteering — Škatlica, Slovenia",
     org: "European Solidarity Corps / Škatlica",
     category: "Обмен", baseCountry: "Словения", country: "Словения (EU)",
-    age: "18–30 лет", deadline: "Сентябрь 2026 – август 2027", tone: "green",
+    age: "18–30 лет", minAge: 18, deadline: "Сентябрь 2026 – август 2027", tone: "green",
     support: ["Жильё","Питание","Дорога","Оплата"],
     pay: "Полное покрытие: жильё + питание + карманные деньги + дорога (EU funded)",
     desc: "Долгосрочное волонтёрство при конном и молодёжном центре в сельской Словении. Работа с детьми, уход за лошадьми, организация лагерей. Своя комната, питание, карманные деньги. Финансируется ЕС.",
@@ -610,7 +627,7 @@ const PROGRAMS = [
     id: 19, name: "Sportswear Commercial — Road Casting",
     org: "Road Casting (UK)",
     category: "Кастинги", baseCountry: "UK", country: "UK (London)",
-    age: "12–18 лет", deadline: "Мониторить постоянно", tone: "neutral",
+    age: "12–18 лет", minAge: 12, deadline: "Мониторить постоянно", tone: "neutral",
     support: ["Оплата","Дорога"],
     pay: "Конкурентная ставка + возможное покрытие дороги и проживания",
     desc: "Кастинг для рекламы крупного спортивного бренда. Молодые всадники 12–18 лет с реальным опытом верховой езды. Выполнение манёвров, профессиональная съёмка. Хорошее пополнение портфолио.",
@@ -621,7 +638,7 @@ const PROGRAMS = [
     id: 20, name: "Child Horse Rider — Real London Casting",
     org: "Real London Casting",
     category: "Кастинги", baseCountry: "UK", country: "UK (London)",
-    age: "5–9 лет (Mixed Race)", deadline: "Мониторить постоянно", tone: "neutral",
+    age: "5–9 лет (Mixed Race)", minAge: 5, deadline: "Мониторить постоянно", tone: "neutral",
     support: ["Оплата"],
     pay: "Paid role — конкурентные ставки за съёмочный день",
     desc: "Профессиональный проект ищет ребёнка смешанного происхождения 5–9 лет, уверенно сидящего в седле. Реальный опыт работы с лошадьми обязателен. Оплачиваемая роль.",
@@ -632,7 +649,7 @@ const PROGRAMS = [
     id: 21, name: "Crossogue Equestrian Teen Camp",
     org: "Crossogue Equestrian, Ireland",
     category: "Лагери", baseCountry: "Ирландия", country: "Ирландия",
-    age: "11–18 лет", deadline: "13 июня – 15 августа 2026", tone: "orange",
+    age: "11–18 лет", minAge: 11, deadline: "13 июня – 15 августа 2026", tone: "orange",
     support: ["Жильё","Питание","Обучение"],
     pay: "Платный лагерь; жильё + питание включены. Трансфер с аэропорта Дублина организован",
     desc: "Самый известный конный лагерь Ирландии — «дом вдали от дома» для подростков 11–18 лет. Каждый гость получает своего коня на всё время проживания. Сопровождение в аэропорту Дублина. Все уровни езды, дружеская атмосфера, множество возвращающихся каждый год.",
@@ -643,7 +660,7 @@ const PROGRAMS = [
     id: 22, name: "Summer in Horse Haven — Clonshire",
     org: "Clonshire Equestrian Centre, Adare",
     category: "Лагери", baseCountry: "Ирландия", country: "Ирландия (Adare)",
-    age: "12–19 лет", deadline: "Август 2026 — осталось 1–2 места", tone: "red",
+    age: "12–19 лет", minAge: 12, deadline: "Август 2026 — осталось 1–2 места", tone: "red",
     support: ["Жильё","Питание","Обучение"],
     pay: "Платная резидентная программа; полный пансион в лесном коттедже",
     desc: "Резидентные конные каникулы 1–3 недели в лесном коттедже у конюшни в Adare. Программа дня: выездка, прыжки, кросс-кантри, уход за лошадьми, вечерние активности. «Хозяйка дома» Katrina живёт там круглый год. Большинство смен лета 2026 заполнено — нужно срочно написать.",
@@ -654,7 +671,7 @@ const PROGRAMS = [
     id: 23, name: "English + Equestrian Camp — AirLinguée",
     org: "AirLinguée Language & Equestrian School",
     category: "Лагери", baseCountry: "Ирландия", country: "Ирландия (Atlantic coast)",
-    age: "11–17 лет", deadline: "Июль–Август 2026", tone: "green",
+    age: "11–17 лет", minAge: 11, deadline: "Июль–Август 2026", tone: "green",
     support: ["Жильё","Обучение"],
     pay: "Платная; жильё + уроки английского + верховая езда включены в стоимость",
     desc: "Уникальная программа на атлантическом побережье Ирландии: 15 ч/нед английского (ACELS-аккредитация) + 1.5–2 ч верховой езды ежедневно. Пляжные прогулки на конях. Проживание в резиденции с видом на океан. Макс. 8 всадников в группе. Нужен средний уровень езды.",
@@ -665,7 +682,7 @@ const PROGRAMS = [
     id: 24, name: "Volunteer Work Exchange — Pegasus",
     org: "Pegasus Riding Centre, Andalucia",
     category: "Стажировки", baseCountry: "Испания", country: "Испания (Andalucia)",
-    age: "13+ лет", deadline: "Круглый год (мин. 1 месяц)", tone: "green",
+    age: "13+ лет", minAge: 13, deadline: "Круглый год (мин. 1 месяц)", tone: "green",
     support: ["Жильё","Питание","Обучение"],
     pay: "Бесплатно: жильё (кемпинг/вагон) + питание + скидки на уроки — в обмен на помощь в конюшне",
     desc: "Волонтёрство в Андалусии: помощь в конюшне (кормление, уборка, грумминг) в обмен на жильё + питание. Опытные всадники работают непосредственно с лошадьми. Wi-Fi, кухня, горячий душ. Мин. 1 месяц. Принимают волонтёров-подростков от 13 лет.",
@@ -676,7 +693,7 @@ const PROGRAMS = [
     id: 25, name: "Holiday Internship with Horses — RB Horses",
     org: "Rui Barroso Equitação, Portugal",
     category: "Стажировки", baseCountry: "Португалия", country: "Португалия",
-    age: "от 6 лет", deadline: "Школьные каникулы круглый год", tone: "green",
+    age: "от 6 лет", minAge: 6, deadline: "Школьные каникулы круглый год", tone: "green",
     support: ["Обучение"],
     pay: "Дневная платная программа; обучение + диплом участника включены",
     desc: "Каникулярные стажировки на португальской ферме: уход за лошадьми, верховая езда, уроки с профессиональными инструкторами. Программа Пн–Пт 9:00–17:00 для детей от 6 лет. Сертификат участника. Подходит для семейных поездок в Португалию — удобное дополнение к отдыху.",
@@ -687,7 +704,7 @@ const PROGRAMS = [
     id: 26, name: "School/Holiday Internship — Pferdeglück",
     org: "Erlebnishof Pferdeglück Pappenheimer, Bayern",
     category: "Стажировки", baseCountry: "Германия", country: "Германия (Бавария)",
-    age: "от 14 лет", deadline: "Круглый год — Пасха, Лето, Осень, Рождество", tone: "green",
+    age: "от 14 лет", minAge: 14, deadline: "Круглый год — Пасха, Лето, Осень, Рождество", tone: "green",
     support: ["Жильё","Питание","Обучение"],
     pay: "Жильё + питание на ферме включены. Возможно небольшое карманное деньги при длительных стажировках",
     desc: "Педагогическая конно-приключенческая ферма в Баварии ищет практикантов от 14 лет. Форматы: Schülerpraktikum (1–3 нед), каникулярный (Пасха/лето/осень) или долгосрочный (мес.). Работа с детьми, уход за лошадьми (шетти, боденарбайт), рейтунтеррихт. Нужен немецкий или желание учиться.",
@@ -698,7 +715,7 @@ const PROGRAMS = [
     id: 27, name: "LWEA Summer Camp — Riesenbeck International",
     org: "Longines World Equestrian Academy, Germany",
     category: "Лагери", baseCountry: "Германия", country: "Германия (Hörstel)",
-    age: "14–25 лет", deadline: "16–23 августа 2026", tone: "orange",
+    age: "14–25 лет", minAge: 14, deadline: "16–23 августа 2026", tone: "orange",
     support: ["Жильё","Питание","Обучение"],
     pay: "Платный full-board лагерь: жильё + питание включены. Уточнить стоимость на сайте",
     desc: "Недельный конный лагерь полного пансиона при Riesenbeck International — одном из ведущих конных центров мира. Шоу-джамперы 14–25 лет со всего мира под руководством топ-тренеров LWEA. Требуемый уровень: уверенные прыжки 1.00–1.10 м. До 16 лет — с сопровождающим взрослым.",
@@ -709,7 +726,7 @@ const PROGRAMS = [
     id: 28, name: "Internship — Enggaarden (Academic Art of Riding)",
     org: "Enggaarden Skolen for Akademisk Ridekunst, Denmark",
     category: "Стажировки", baseCountry: "Дания", country: "Дания",
-    age: "от 18 лет", deadline: "Свободные места: май–декабрь 2026", tone: "green",
+    age: "от 18 лет", minAge: 18, deadline: "Свободные места: май–декабрь 2026", tone: "green",
     support: ["Жильё","Обучение"],
     pay: "Бесплатное жильё (своя комната) + 5 уроков в неделю бесплатно. Питание за свой счёт",
     desc: "Стажировка в датской школе академической верховой езды (метод Bent Branderup). 3 месяца минимум. Своя лошадь или школьные. Бесплатное жильё + 5 уроков/неделю. Нужен базовый конный опыт и английский или скандинавский. Несколько слотов свободно в 2026.",
@@ -720,7 +737,7 @@ const PROGRAMS = [
     id: 29, name: "Work Placement — BTRC (Thoroughbred Retraining)",
     org: "British Thoroughbred Retraining Centre, Lancashire",
     category: "Стажировки", baseCountry: "UK", country: "UK (Lancashire)",
-    age: "от 16 лет", deadline: "Заявки 2026 открыты; стажировки 3+ мес — сейчас", tone: "orange",
+    age: "от 16 лет", minAge: 16, deadline: "Заявки 2026 открыты; стажировки 3+ мес — сейчас", tone: "orange",
     support: ["Жильё","Обучение"],
     pay: "Жильё на месте (self-catering, общий формат). Обучение с чистокровными рысаками бесплатно",
     desc: "Уникальный опыт: ретрейнинг скаковых чистокровных лошадей при BTRC. Принимают участников из UK и других стран от 16 лет. Жильё на территории. Короткие стажировки забиты; для 2026 подавать сейчас. Стажировки 3 мес+ — связываться с Harriet напрямую.",
@@ -731,7 +748,7 @@ const PROGRAMS = [
     id: 30, name: "Pony Camp — Klein Karoo Horse Adventures",
     org: "Klein Karoo Horse Adventures, Western Cape",
     category: "Лагери", baseCountry: "ЮАР", country: "ЮАР (Western Cape)",
-    age: "дети (все уровни, даже нулевой)", deadline: "30 июня / 29 сентября / 9 декабря 2026", tone: "green",
+    age: "дети (все уровни, даже нулевой)", minAge: 7, deadline: "30 июня / 29 сентября / 9 декабря 2026", tone: "green",
     support: ["Жильё","Питание","Обучение"],
     pay: "Платный 3-дневный лагерь; всё включено — жильё + питание + езда + инструкторы",
     desc: "Трёхдневный конный лагерь с проживанием для детей на ранчо Cape Horse в Западном Кейпе. Надзор 24/7 квалифицированными инструкторами (в т.ч. детским психологом). Все уровни от нуля. Рядом альпаки, кенгуру, козы. Уникальный детский опыт в ЮАР.",
@@ -742,17 +759,18 @@ const PROGRAMS = [
     id: 31, name: "Volunteer Rider — Estancia Argentina",
     org: "HelpStay / Estancia, Buenos Aires Province",
     category: "Стажировки", baseCountry: "Аргентина", country: "Аргентина",
-    age: "18+ (опытные всадники)", deadline: "Круглый год (мин. 1 мес, лучше 3+)", tone: "green",
+    age: "18+ (опытные всадники)", minAge: 18, deadline: "Круглый год (мин. 1 мес, лучше 3+)", tone: "green",
     support: ["Жильё","Питание"],
     pay: "Полностью бесплатно: жильё + питание в обмен на работу 30–40 ч/нед",
     desc: "Волонтёрство на аргентинской эстансии: гид по конным маршрутам для гостей, уход за лошадьми, работа с молодыми лошадьми. Жильё + питание бесплатно. Нужен хороший уровень езды + базовый испанский. 280 км от Буэнос-Айреса. Настоящая жизнь гаучо.",
     url: "https://freevolunteering.net/horse-riding-estancia-argentina/",
     urgent: false, check: "Требуется 18+, испанский язык и опыт конного туризма"
   }
-];
+].map(program => ({ closed: false, ...program }));
 
 let activeCategory = "all";
 let activeCountry = "all";
+let activeAge = "all";
 
 function setCategory(btn) {
   document.querySelectorAll('#cat-filter .chip').forEach(b => b.classList.remove('active'));
@@ -768,20 +786,45 @@ function setCountry(btn) {
   render();
 }
 
+function setAge(btn) {
+  document.querySelectorAll('#age-filter .chip').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeAge = btn.dataset.age;
+  render();
+}
+
 function toggleCard(id) {
   const card = document.getElementById('card-' + id);
   card.classList.toggle('open');
 }
 
 function render() {
-  let filtered = PROGRAMS;
+  const archiveCount = PROGRAMS.filter(p => p.closed).length;
+  const archiveBtn = document.querySelector('#cat-filter [data-cat="archive"]');
+  if (archiveBtn) {
+    archiveBtn.textContent = `Архив (${archiveCount})`;
+  }
+
+  const openPrograms = PROGRAMS.filter(p => !p.closed);
+  let filtered = activeCategory === 'archive'
+    ? PROGRAMS.filter(p => p.closed)
+    : openPrograms;
+
   if (activeCategory === 'urgent') {
-    filtered = filtered.filter(p => p.urgent);
+    filtered = filtered.filter(p => p.urgent && !p.closed);
   } else if (activeCategory !== 'all') {
-    filtered = filtered.filter(p => p.category === activeCategory);
+    if (activeCategory !== 'archive') {
+      filtered = filtered.filter(p => p.category === activeCategory);
+    }
   }
   if (activeCountry !== 'all') {
     filtered = filtered.filter(p => p.baseCountry === activeCountry);
+  }
+  if (activeAge === 'u13') {
+    filtered = filtered.filter(p => p.minAge <= 13);
+  } else if (activeAge !== 'all') {
+    const targetAge = Number(activeAge);
+    filtered = filtered.filter(p => p.minAge <= targetAge);
   }
 
   const list = document.getElementById('programs-list');
@@ -796,9 +839,11 @@ function render() {
   list.innerHTML = filtered.map(p => {
     const toneMap = { green: 'green', orange: 'orange', red: 'red', neutral: '', blue: 'blue' };
     const toneClass = toneMap[p.tone] || '';
-    const deadlineEl = toneClass
-      ? `<span class="badge ${toneClass}">${p.deadline}</span>`
-      : `<span class="badge">${p.deadline}</span>`;
+    const deadlineEl = p.closed
+      ? `<span class="badge">Закрыта</span>`
+      : toneClass
+        ? `<span class="badge ${toneClass}">${p.deadline}</span>`
+        : `<span class="badge">${p.deadline}</span>`;
 
     const supportTags = p.support.map(s => `<span class="tag">${s}</span>`).join('');
 
@@ -811,9 +856,12 @@ function render() {
       : '';
 
     const btnClass = p.urgent ? 'open-btn urgent-btn' : 'open-btn';
+    const closedEl = p.closed
+      ? `<div class="inner-callout"><strong>Программа закрыта</strong> — дедлайн прошёл или набор завершён.</div>`
+      : '';
 
     return `
-<div class="card${p.urgent ? ' urgent' : ''}" id="card-${p.id}">
+<div class="card${p.urgent ? ' urgent' : ''}${p.closed ? ' closed' : ''}" id="card-${p.id}">
   <div class="card-header" onclick="toggleCard(${p.id})">
     <div class="card-header-left">
       <div class="card-title">${p.name}</div>
@@ -845,6 +893,7 @@ function render() {
     <div class="sep"></div>
     <p class="desc">${p.desc}</p>
     ${urgentEl}
+    ${closedEl}
     ${checkEl}
     <a href="${p.url}" target="_blank" rel="noopener" class="${btnClass}">Открыть программу →</a>
   </div>
