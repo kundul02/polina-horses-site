@@ -390,7 +390,6 @@
     <button class="chip" data-country="Словения" onclick="setCountry(this)">Словения (1)</button>
     <button class="chip" data-country="Швеция" onclick="setCountry(this)">Швеция (0)</button>
     <button class="chip" data-country="Бельгия" onclick="setCountry(this)">Бельгия (0)</button>
-    <button class="chip" data-country="Канада" onclick="setCountry(this)">Канада (0)</button>
   </div>
   <div class="filter-label" style="margin-top:8px">Возраст</div>
   <div class="filter-scroll" id="age-filter">
@@ -1228,7 +1227,7 @@ function normalizeCountry(country) {
     slovenia: "Словения",
     sweden: "Швеция",
     belgium: "Бельгия",
-    canada: "Канада"
+    canada: "Canada"
   };
   const key = normalizeKey(country);
   return map[key] || country;
