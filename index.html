@@ -139,6 +139,53 @@
     font-size: 13px;
     color: var(--text2);
   }
+  /* DOCUMENTS PACKAGE */
+  .docs-panel {
+    margin: 10px 16px 12px;
+    background: var(--card);
+    border: 1px solid var(--sep);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+  }
+  .docs-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    margin-bottom: 4px;
+  }
+  .docs-subtitle {
+    font-size: 13px;
+    color: var(--text2);
+    margin-bottom: 10px;
+    line-height: 1.45;
+  }
+  .docs-selected {
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .docs-list {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .docs-list li {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--text);
+  }
+  .docs-note {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #7A4A00;
+    background: #FFF3CD;
+    border-left: 3px solid var(--orange);
+    border-radius: 8px;
+    padding: 8px 10px;
+    line-height: 1.4;
+  }
   /* PROGRAMS LIST */
   .programs {
     padding: 0 16px;
@@ -153,6 +200,10 @@
     overflow: hidden;
     border: 1.5px solid var(--sep);
     transition: border-color 0.15s;
+  }
+  .card.selected {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 1px rgba(0, 122, 255, 0.1);
   }
   .card.urgent {
     border-color: var(--red);
@@ -172,6 +223,26 @@
     cursor: pointer;
     gap: 10px;
     -webkit-tap-highlight-color: transparent;
+  }
+  .card-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .select-btn {
+    border: 1px solid var(--blue);
+    background: #fff;
+    color: var(--blue);
+    border-radius: 16px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .select-btn.active {
+    background: var(--blue);
+    color: #fff;
   }
   .card-header-left {
     flex: 1;
@@ -403,6 +474,16 @@
 </div>
 
 <div class="count-bar" id="count-bar">Показано: 43 программ</div>
+
+<div class="docs-panel" id="docs-panel">
+  <div class="docs-title">Пакет документов для подачи</div>
+  <div class="docs-subtitle">Выберите программу в карточке — список документов сформируется автоматически.</div>
+  <div class="docs-selected" id="docs-selected">Программа пока не выбрана.</div>
+  <ul class="docs-list" id="docs-list">
+    <li>Нажмите «Выбрать» в нужной карточке, чтобы увидеть точный пакет.</li>
+  </ul>
+  <div class="docs-note" id="docs-note" style="display:none;"></div>
+</div>
 
 <div class="programs" id="programs-list"></div>
 
@@ -1750,7 +1831,7 @@ function normalizeCountry(country) {
     portugal: "Португалия",
     denmark: "Дания",
     australia: "Австралия",
-    south africa: "ЮАР",
+    "south africa": "ЮАР",
     argentina: "Аргентина",
     slovenia: "Словения",
     sweden: "Швеция",
@@ -1878,6 +1959,7 @@ const PROGRAMS = mergePrograms(BASE_PROGRAMS, LATEST_FEED);
 let activeCategory = "all";
 let activeCountry = "all";
 let activeAge = "16";
+let selectedProgramId = null;
 
 function setCategory(btn) {
   document.querySelectorAll('#cat-filter .chip').forEach(b => b.classList.remove('active'));
@@ -1903,6 +1985,87 @@ function setAge(btn) {
 function toggleCard(id) {
   const card = document.getElementById('card-' + id);
   card.classList.toggle('open');
+}
+
+function handleCardHeaderClick(event, id) {
+  selectProgram(id);
+  toggleCard(id);
+}
+
+function selectProgram(id) {
+  selectedProgramId = id;
+  render();
+}
+
+function hasMeaningfulPay(payValue) {
+  const text = String(payValue || "").toLowerCase().trim();
+  if (!text) return false;
+  return !(/^нет$|^no$|нет прямой оплаты/.test(text));
+}
+
+function inferDocumentChecklist(program) {
+  if (!program) return { list: [], notes: [] };
+
+  const docs = [];
+  docs.push("Копия загранпаспорта + проверка срока действия");
+  if (program.minAge < 18) docs.push("Свидетельство о рождении (для несовершеннолетнего)");
+  if (program.minAge < 18) docs.push("Нотариальное согласие родителей/опекуна (до 18 лет)");
+  docs.push("Конное CV + ссылки на короткие riding-видео");
+  docs.push("Рекомендательное письмо(а) от тренера/клуба");
+  docs.push("Медицинская страховка и/или медицинский допуск");
+
+  if (!program.support.includes("Дорога")) {
+    docs.push("Подтверждение финансов на дорогу (Proof of funds for travel)");
+  }
+  if (program.support.includes("Жильё")) {
+    docs.push("Подтверждение проживания: host confirmation / accommodation agreement");
+  }
+  if (program.support.includes("Оплата") || hasMeaningfulPay(program.pay)) {
+    docs.push("Банковские реквизиты + проверка налоговой формы (tax form requirement)");
+  }
+  if (program.baseCountry !== "USA") {
+    docs.push("Визовый пакет + переводы/нотариальное заверение документов по требованиям страны");
+  }
+  if (program.check) {
+    docs.push("Ручная верификация условий с организатором обязательна");
+  }
+
+  const notes = [];
+  if (program.baseCountry !== "USA") {
+    notes.push(`Для страны ${program.baseCountry} заранее проверьте требования к визе, переводу и апостилю/нотариальному заверению.`);
+  }
+  if (program.check) {
+    notes.push(`Есть пометка программы: ${program.check}`);
+  }
+
+  return { list: docs, notes };
+}
+
+function renderDocumentsPanel() {
+  const selectedEl = document.getElementById('docs-selected');
+  const listEl = document.getElementById('docs-list');
+  const noteEl = document.getElementById('docs-note');
+  const selectedProgram = PROGRAMS.find(p => p.id === selectedProgramId);
+
+  if (!selectedProgram) {
+    selectedEl.textContent = "Программа пока не выбрана.";
+    listEl.innerHTML = "<li>Нажмите «Выбрать» в нужной карточке, чтобы увидеть точный пакет.</li>";
+    noteEl.style.display = "none";
+    noteEl.textContent = "";
+    return;
+  }
+
+  const pkg = inferDocumentChecklist(selectedProgram);
+  selectedEl.textContent = `Выбрано: ${selectedProgram.name} · ${selectedProgram.baseCountry}`;
+  listEl.innerHTML = pkg.list.map(item => `<li>☑ ${item}</li>`).join("");
+
+  if (pkg.notes.length > 0) {
+    noteEl.style.display = "block";
+    noteEl.textContent = pkg.notes.join(" ");
+  } else {
+    noteEl.style.display = "none";
+    noteEl.textContent = "";
+  }
 }
 
 function render() {
@@ -1971,6 +2134,11 @@ function render() {
   const bar = document.getElementById('count-bar');
   bar.textContent = 'Показано: ' + filtered.length + ' программ';
 
+  if (!PROGRAMS.some(p => p.id === selectedProgramId)) {
+    selectedProgramId = null;
+  }
+  renderDocumentsPanel();
+
   if (filtered.length === 0) {
     list.innerHTML = '<div class="empty">Нет программ по выбранным фильтрам.<br>Попробуй другую комбинацию.</div>';
     return;
@@ -2001,8 +2169,8 @@ function render() {
       : '';
 
     return `
-<div class="card${p.urgent ? ' urgent' : ''}${p.closed ? ' closed' : ''}" id="card-${p.id}">
-  <div class="card-header" onclick="toggleCard(${p.id})">
+<div class="card${p.urgent ? ' urgent' : ''}${p.closed ? ' closed' : ''}${selectedProgramId === p.id ? ' selected' : ''}" id="card-${p.id}">
+  <div class="card-header" onclick="handleCardHeaderClick(event, ${p.id})">
     <div class="card-header-left">
       <div class="card-title">${p.name}</div>
       <div class="card-meta">
@@ -2011,10 +2179,15 @@ function render() {
         ${deadlineEl}
       </div>
     </div>
-    <div class="chevron">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-        <path d="M2 4L6 8L10 4" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+    <div class="card-header-actions">
+      <button class="select-btn${selectedProgramId === p.id ? ' active' : ''}" onclick="event.stopPropagation(); selectProgram(${p.id})">
+        ${selectedProgramId === p.id ? 'Выбрано' : 'Выбрать'}
+      </button>
+      <div class="chevron">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M2 4L6 8L10 4" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
     </div>
   </div>
   <div class="card-body">
