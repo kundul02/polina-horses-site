@@ -6,6 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>Программы для Полины</title>
+<!-- build: inline-docs-v2 -->
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -263,33 +264,22 @@
     font-size: 13px;
     color: var(--text2);
   }
-  /* DOCUMENTS PACKAGE */
-  .card-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .card-group .card {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom: none;
-  }
+  /* DOCUMENTS PACKAGE — inline under card header */
   .docs-panel {
-    background: var(--card);
-    border: 1px solid var(--sep);
-    border-radius: var(--radius);
     padding: 14px 16px;
   }
   .docs-panel--inline {
     margin: 0;
-    border-top: none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-  .docs-panel--active {
-    border-color: var(--blue);
+    border: none;
+    border-top: 1px solid var(--sep);
     border-left: 4px solid var(--blue);
-    box-shadow: 0 0 0 1px rgba(0, 122, 255, 0.08);
+    background: #f5f9ff;
+  }
+  .card.open .docs-panel--inline {
+    border-bottom: 1px solid var(--sep);
+  }
+  .card.selected .card-header {
+    border-bottom: none;
   }
   .docs-title {
     font-size: 16px;
@@ -2782,7 +2772,7 @@ function buildDocumentsPanelHtml(program) {
     ? `<div class="docs-note">${escapeHtml(pkg.notes.join(" "))}</div>`
     : "";
   return `
-<div class="docs-panel docs-panel--inline docs-panel--active" id="docs-panel-${program.id}">
+<div class="docs-panel docs-panel--inline" id="docs-panel-${program.id}">
   <div class="docs-title">Пакет документов для подачи</div>
   <div class="docs-subtitle">Чек-лист для этой программы:</div>
   <div class="docs-selected">Выбрано: ${escapeHtml(program.name)} · ${escapeHtml(program.baseCountry)}</div>
@@ -2816,6 +2806,7 @@ function renderProgramCard(p) {
     : '';
 
   const newBadge = p.isNew ? `<span class="badge new-badge">Новое</span>` : '';
+  const docsInline = selectedProgramId === p.id ? buildDocumentsPanelHtml(p) : '';
 
   return `
 <div class="card${p.urgent ? ' urgent' : ''}${p.isNew ? ' new' : ''}${p.closed ? ' closed' : ''}${selectedProgramId === p.id ? ' selected' : ''}${expandedProgramId === p.id ? ' open' : ''}" id="card-${p.id}">
@@ -2841,6 +2832,7 @@ function renderProgramCard(p) {
       </div>
     </div>
   </div>
+  ${docsInline}
   <div class="card-body">
     <div class="field">
       <div class="field-label">Организация</div>
@@ -2960,11 +2952,7 @@ function render() {
     expandedProgramId = null;
   }
 
-  list.innerHTML = filtered.map(p => {
-    const cardHtml = renderProgramCard(p);
-    if (selectedProgramId !== p.id) return cardHtml;
-    return `<div class="card-group">${cardHtml}${buildDocumentsPanelHtml(p)}</div>`;
-  }).join('');
+  list.innerHTML = filtered.map(p => renderProgramCard(p)).join('');
 }
 
 initDomainFromUrl();
