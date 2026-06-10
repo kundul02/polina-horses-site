@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>Программы для Полины</title>
-<!-- build: inline-docs-v2 -->
+<!-- build: view-collapse-v3 -->
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -204,7 +204,7 @@
     border-color: var(--green);
     box-shadow: 0 0 0 1px rgba(52, 199, 89, 0.12);
   }
-  .card.new.selected {
+  .card.new.open {
     border-color: var(--blue);
     box-shadow: 0 0 0 1px rgba(0, 122, 255, 0.1);
   }
@@ -278,9 +278,6 @@
   .card.open .docs-panel--inline {
     border-bottom: 1px solid var(--sep);
   }
-  .card.selected .card-header {
-    border-bottom: none;
-  }
   .docs-title {
     font-size: 16px;
     font-weight: 700;
@@ -335,7 +332,8 @@
     border: 1.5px solid var(--sep);
     transition: border-color 0.15s;
   }
-  .card.selected {
+  .card.open {
+    overflow: visible;
     border-color: var(--blue);
     box-shadow: 0 0 0 1px rgba(0, 122, 255, 0.1);
   }
@@ -354,9 +352,19 @@
     align-items: center;
     justify-content: space-between;
     padding: 14px 16px;
-    cursor: pointer;
     gap: 10px;
     -webkit-tap-highlight-color: transparent;
+  }
+  .card.open .card-header {
+    position: sticky;
+    top: var(--app-header-h, 108px);
+    z-index: 50;
+    background: var(--card);
+    border-bottom: 1px solid var(--sep);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+  .card.urgent.open .card-header {
+    background: #fffafa;
   }
   .card-header-actions {
     display: flex;
@@ -364,19 +372,23 @@
     gap: 8px;
     flex-shrink: 0;
   }
-  .select-btn {
+  .view-btn {
     border: 1px solid var(--blue);
     background: #fff;
     color: var(--blue);
     border-radius: 16px;
-    padding: 5px 10px;
+    padding: 6px 12px;
     font-size: 12px;
     font-weight: 600;
     cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
-  .select-btn.active {
-    background: var(--blue);
-    color: #fff;
+  .view-btn.collapse {
+    background: var(--fill);
+    color: var(--text);
+    border-color: var(--sep);
   }
   .card-header-left {
     flex: 1;
@@ -408,19 +420,6 @@
   .badge.red { background: #FFECEC; color: #CC1500; }
   .badge.blue { background: #E5F0FF; color: #0055D0; }
   .badge.dates { background: #F0EBFF; color: #5B3FD0; }
-  .chevron {
-    width: 22px;
-    height: 22px;
-    background: var(--fill);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: transform 0.2s;
-  }
-  .chevron svg { display: block; }
-  .card.open .chevron { transform: rotate(180deg); }
   /* CARD BODY */
   .card-body {
     display: none;
@@ -2691,7 +2690,14 @@ function setAge(btn) {
   render();
 }
 
-function handleCardHeaderClick(event, id) {
+function updateStickyOffset() {
+  const header = document.querySelector('.header');
+  if (header) {
+    document.documentElement.style.setProperty('--app-header-h', header.offsetHeight + 'px');
+  }
+}
+
+function toggleViewProgram(id) {
   if (expandedProgramId === id) {
     expandedProgramId = null;
   } else {
@@ -2699,12 +2705,11 @@ function handleCardHeaderClick(event, id) {
     selectedProgramId = id;
   }
   render();
-}
-
-function selectProgram(id) {
-  selectedProgramId = id;
-  expandedProgramId = id;
-  render();
+  if (expandedProgramId === id) {
+    requestAnimationFrame(() => {
+      document.getElementById('card-' + id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
 }
 
 function hasMeaningfulPay(payValue) {
@@ -2775,7 +2780,7 @@ function buildDocumentsPanelHtml(program) {
 <div class="docs-panel docs-panel--inline" id="docs-panel-${program.id}">
   <div class="docs-title">Пакет документов для подачи</div>
   <div class="docs-subtitle">Чек-лист для этой программы:</div>
-  <div class="docs-selected">Выбрано: ${escapeHtml(program.name)} · ${escapeHtml(program.baseCountry)}</div>
+  <div class="docs-selected">${escapeHtml(program.name)} · ${escapeHtml(program.baseCountry)}</div>
   <ul class="docs-list">${listHtml}</ul>
   ${noteHtml}
 </div>`;
@@ -2806,11 +2811,14 @@ function renderProgramCard(p) {
     : '';
 
   const newBadge = p.isNew ? `<span class="badge new-badge">Новое</span>` : '';
-  const docsInline = selectedProgramId === p.id ? buildDocumentsPanelHtml(p) : '';
+  const isOpen = expandedProgramId === p.id;
+  const docsInline = isOpen ? buildDocumentsPanelHtml(p) : '';
+  const viewBtnClass = isOpen ? 'view-btn collapse' : 'view-btn';
+  const viewBtnLabel = isOpen ? 'Свернуть' : 'Смотреть';
 
   return `
-<div class="card${p.urgent ? ' urgent' : ''}${p.isNew ? ' new' : ''}${p.closed ? ' closed' : ''}${selectedProgramId === p.id ? ' selected' : ''}${expandedProgramId === p.id ? ' open' : ''}" id="card-${p.id}">
-  <div class="card-header" onclick="handleCardHeaderClick(event, ${p.id})">
+<div class="card${p.urgent ? ' urgent' : ''}${p.isNew ? ' new' : ''}${p.closed ? ' closed' : ''}${isOpen ? ' open' : ''}" id="card-${p.id}">
+  <div class="card-header">
     <div class="card-header-left">
       <div class="card-title">${p.name}</div>
       <div class="card-meta">
@@ -2822,17 +2830,9 @@ function renderProgramCard(p) {
       </div>
     </div>
     <div class="card-header-actions">
-      <button class="select-btn${selectedProgramId === p.id ? ' active' : ''}" onclick="event.stopPropagation(); selectProgram(${p.id})">
-        ${selectedProgramId === p.id ? 'Выбрано' : 'Выбрать'}
-      </button>
-      <div class="chevron">
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-          <path d="M2 4L6 8L10 4" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
+      <button type="button" class="${viewBtnClass}" onclick="toggleViewProgram(${p.id})">${viewBtnLabel}</button>
     </div>
   </div>
-  ${docsInline}
   <div class="card-body">
     <div class="field">
       <div class="field-label">Организация</div>
@@ -2864,6 +2864,7 @@ function renderProgramCard(p) {
     ${checkEl}
     <a href="${p.url}" target="_blank" rel="noopener" class="${btnClass}">Открыть программу →</a>
   </div>
+  ${docsInline}
 </div>`;
 }
 
@@ -2895,6 +2896,7 @@ function renderNewPanel(scopedOpen) {
 
 function render() {
   renderDomainChrome();
+  updateStickyOffset();
   document.querySelectorAll('.domain-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.domain === activeDomain);
   });
@@ -2955,6 +2957,7 @@ function render() {
   list.innerHTML = filtered.map(p => renderProgramCard(p)).join('');
 }
 
+window.addEventListener('resize', updateStickyOffset);
 initDomainFromUrl();
 render();
 </script>
