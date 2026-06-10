@@ -2697,18 +2697,25 @@ function setAge(btn) {
   render();
 }
 
-function toggleCard(id) {
-  const card = document.getElementById('card-' + id);
-  card.classList.toggle('open');
-}
-
 function handleCardHeaderClick(event, id) {
-  selectProgram(id);
-  toggleCard(id);
+  const wasNewSelection = selectedProgramId !== id;
+  if (expandedProgramId === id) {
+    expandedProgramId = null;
+  } else {
+    expandedProgramId = id;
+    selectedProgramId = id;
+  }
+  render();
+  if (wasNewSelection && selectedProgramId === id) {
+    requestAnimationFrame(() => {
+      document.getElementById("docs-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 }
 
 function selectProgram(id) {
   selectedProgramId = id;
+  expandedProgramId = id;
   render();
   requestAnimationFrame(() => {
     document.getElementById("docs-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -2889,6 +2896,10 @@ function render() {
     return;
   }
 
+  if (!filtered.some(p => p.id === expandedProgramId)) {
+    expandedProgramId = null;
+  }
+
   list.innerHTML = filtered.map(p => {
     const toneMap = { green: 'green', orange: 'orange', red: 'red', neutral: '', blue: 'blue' };
     const toneClass = toneMap[p.tone] || '';
@@ -2972,8 +2983,6 @@ function render() {
   </div>
 </div>`;
   }).join('');
-
-  expandedProgramId = null;
 }
 
 initDomainFromUrl();
