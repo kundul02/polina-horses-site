@@ -397,6 +397,7 @@
   .badge.orange { background: #FFF3E0; color: #B25900; }
   .badge.red { background: #FFECEC; color: #CC1500; }
   .badge.blue { background: #E5F0FF; color: #0055D0; }
+  .badge.dates { background: #F0EBFF; color: #5B3FD0; }
   .chevron {
     width: 22px;
     height: 22px;
@@ -457,7 +458,14 @@
     font-size: 14px;
     color: var(--text2);
     line-height: 1.55;
-    margin-bottom: 12px;
+    margin-bottom: 0;
+  }
+  .visa-note {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.5;
+    margin-bottom: 0;
+    opacity: 0.85;
   }
   /* URGENT CALLOUT IN CARD */
   .inner-callout {
@@ -619,7 +627,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "grades 3–12", minAge: 14, deadline: "15 янв. priority / rolling", tone: "orange",
     support: ["Жильё", "Обучение"],
     pay: "Need- и merit-based aid для программ 2+ недель",
-    desc: "Доступно: виза США ✓ (F-1/I-20, не B1/B2). Один из сильнейших театральных лагерей. 85% подавших на aid получили помощь (2025). Международные студенты eligible.",
+    dates: "Июнь–август 2026 (сессии 2–6 нед.)",
+    summary: "Летний театральный лагерь на кампусе у озера в северном Мичигане — один из сильнейших в мире. Проживание в резиденции, ежедневные занятия актёрской техникой, репетиции и постановки. Для школьников 8–18 лет (16 подходит). Сессии от 2 недель. Аудиция или портфолио по выбранной программе.",
+    desc: "Доступно: виза США ✓ (F-1/I-20 для программ 2+ нед., не B1/B2). 85% подавших на aid получили помощь (2025). Международные студенты eligible.",
     url: "https://www.interlochen.org/summer-camp/theater-arts",
     urgent: false, check: null
   },
@@ -630,7 +640,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "14–19 лет", minAge: 14, deadline: "Rolling", tone: "green",
     support: ["Обучение"],
     pay: "Частичные стипендии по результатам аудиции",
-    desc: "Доступно: виза США ✓. Musical theater, acting, dance, voice — 2-недельный интенсив. Уточнить размер стипендий на 2026.",
+    dates: "Июль–август 2026 (2 нед.)",
+    summary: "Двухнедельный летний консерваторий в Нью-Йорке или Лос-Анджелесе для подростков 14–19 лет. Интенсив по musical theater, актёрству, танцу и вокалу на базе AMDA — одной из ведущих школ performing arts в США. Частичные стипендии назначаются по результатам аудиции.",
+    desc: "Доступно: виза США ✓. Уточнить размер стипендий и international eligibility на 2026.",
     url: "https://www.amda.edu/",
     urgent: false, check: "Уточнить размер стипендий и international eligibility"
   },
@@ -641,7 +653,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "10–18 лет", minAge: 10, deadline: "Rolling до заполнения", tone: "green",
     support: ["Жильё", "Обучение"],
     pay: "~$6,995/сессия; стипендий нет",
-    desc: "Доступно: виза США ✓. Легендарный лагерь (Natalie Portman, Lea Michele). 14 постановок за сессию. Трансфер Newark Airport. Международные welcome.",
+    dates: "Июнь–август 2026 (сессии 3 нед.)",
+    summary: "Легендарный театральный лагерь в Катскиллах (Нью-Йорк) — здесь учились Natalie Portman, Lea Michele и сотни Broadway-актёров. За 3-недельную сессию ставят 14 полномасштабных мюзиклов и пьес. Проживание на территории, аудиция на месте для распределения по шоу. Трансфер из Newark Airport.",
+    desc: "Доступно: виза США ✓. Международные студенты welcome.",
     url: "https://stagedoormanor.com/apply-today/",
     urgent: false, check: null
   },
@@ -652,7 +666,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "16–18 лет", minAge: 16, deadline: "По заполнению", tone: "green",
     support: ["Обучение"],
     pay: "Платный курс (~£2,000+)",
-    desc: "Доступно: UK виза нужна. 2 недели: acting technique, Shakespeare, voice, movement. Без аудиции. Fluent English. Parental consent для 16–17.",
+    dates: "Июль–август 2026 (2 нед.)",
+    summary: "Двухнедельная летняя школа в центре Лондона при Royal Academy of Dramatic Art — одной из лучших драматических школ мира. Acting technique, Shakespeare, voice, movement, devising. Для 16–18 лет, без аудиции. Жильё организуется самостоятельно.",
+    desc: "Доступно: UK виза нужна. Свободный английский обязателен; для 16–17 — parental consent.",
     url: "https://www.rada.ac.uk/short-courses/young-actors-summer-school/",
     urgent: false, check: null
   },
@@ -663,7 +679,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "16–18 лет", minAge: 16, deadline: "Rolling", tone: "neutral",
     support: ["Обучение"],
     pay: "Платно (1 день)",
-    desc: "Доступно: UK виза нужна. Однодневные workshops: voice, movement, improvisation, scene study.",
+    dates: "По расписанию (1 день, круглый год)",
+    summary: "Однодневные вводные мастер-классы для молодых актёров 16–18 лет в центре RADA в Лондоне. Voice, movement, improvisation, scene study — знакомство с методикой академии перед длинными курсами. Без аудиции.",
+    desc: "Доступно: UK виза нужна. Rolling enrollment.",
     url: "https://www.rada.ac.uk/short-courses/young-actors-intro-to-rada/",
     urgent: false, check: null
   },
@@ -674,7 +692,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "16–18 лет", minAge: 16, deadline: "Январь–март", tone: "orange",
     support: ["Жильё", "Обучение"],
     pay: "Платный; financial aid ограничен",
-    desc: "Доступно: виза США ✓. 4 недели: acting, movement, voice, scene study. Резиденция опциональна.",
+    dates: "Июль 2026 (4 нед.)",
+    summary: "Четырёхнедельный летний интенсив по драме на базе NYU Tisch School of the Arts в Нью-Йорке. Acting, movement, voice, scene study под руководством преподавателей одного из топовых арт-вузов США. Для учеников 10–11 класса (16–18 лет). Резиденция опциональна.",
+    desc: "Доступно: виза США ✓. Уточнить international eligibility.",
     url: "https://tisch.nyu.edu/special-programs/high-school-programs",
     urgent: false, check: "Проверить international eligibility"
   },
@@ -685,7 +705,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "16–18 лет", minAge: 16, deadline: "Февраль–март", tone: "orange",
     support: ["Жильё", "Обучение"],
     pay: "Платный (~$10,000+ с жильём)",
-    desc: "Доступно: виза США ✓. 6 недель conservatory-style training на кампусе.",
+    dates: "Июнь–июль 2026 (6 нед.)",
+    summary: "Шестинедельная pre-college программа в Carnegie Mellon School of Drama (Питтсбург) — conservatory-style обучение на уровне ведущего драматического вуза США. Acting, movement, voice, сценические проекты. Проживание на кампусе. Для 16–18 лет.",
+    desc: "Доступно: виза США ✓.",
     url: "https://www.cmu.edu/pre-college/academic-programs/drama.html",
     urgent: false, check: null
   },
@@ -696,7 +718,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "14–18 лет", minAge: 14, deadline: "Rolling", tone: "green",
     support: ["Жильё", "Обучение"],
     pay: "Платный; limited financial aid",
-    desc: "Доступно: виза США ✓. Acting, performance, theater history. Residential option.",
+    dates: "Июнь–август 2026",
+    summary: "Летняя программа Theater Arts при Northwestern Center for Talent Development (Иллинойс, Evanston). Acting, performance, theater history для одарённых подростков 14–18 лет. Дневной или резидентный формат.",
+    desc: "Доступно: виза США ✓. Rolling enrollment.",
     url: "https://www.ctd.northwestern.edu/",
     urgent: false, check: null
   },
@@ -707,7 +731,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "14–25 лет", minAge: 14, deadline: "2026 закрыты; 2027 — конец 2026", tone: "neutral",
     support: ["Обучение"],
     pay: "Курс £635 при успешной аудиции",
-    desc: "Доступно: UK виза нужна. Video audition — self-tape monologue. 2-недельный intensive при зачислении. London, Manchester, Birmingham.",
+    dates: "Июль–август (при зачислении)",
+    summary: "Национальный молодёжный театр Великобритании — отбор через video audition (self-tape monologue). При зачислении — 2-недельный intensive summer course в London, Manchester, Birmingham и др. Для 14–25 лет. Аудиция бесплатна на Open Days.",
+    desc: "Доступно: UK виза нужна. Аудиции 2026 закрыты; регистрация на 2027 — конец 2026.",
     url: "https://www.nyt.org.uk/auditions",
     urgent: false, check: "Аудиции 2026 закрыты — мониторить 2027"
   },
@@ -718,7 +744,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "14–25 лет", minAge: 14, deadline: "Rolling", tone: "green",
     support: ["Обучение"],
     pay: "£295–£635",
-    desc: "Доступно: UK виза для очных; online — из любой точки. Курсы без членства NYT.",
+    dates: "По расписанию (summer / weekend / online)",
+    summary: "Короткие курсы National Youth Theatre без членства NYT — online и очные weekend/summer программы. Acting workshops для 14–25 лет. Не требуют прохождения аудиции NYT.",
+    desc: "Доступно: UK виза для очных; online — из любой точки мира.",
     url: "https://www.nyt.org.uk/our-courses",
     urgent: false, check: null
   },
@@ -729,7 +757,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "16–18 лет", minAge: 16, deadline: "Rolling", tone: "green",
     support: ["Обучение"],
     pay: "Платно",
-    desc: "Доступно: UK виза нужна. Weekend и summer courses для молодых актёров.",
+    dates: "Июль–август 2026",
+    summary: "Weekend и summer short courses для молодых актёров 16–18 лет в LAMDA (London Academy of Music and Dramatic Art). Классическая британская актёрская школа — курсы от 1 дня до нескольких недель: acting, voice, Shakespeare.",
+    desc: "Доступно: UK виза нужна.",
     url: "https://www.lamda.ac.uk/short-courses",
     urgent: false, check: null
   },
@@ -740,7 +770,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "16+", minAge: 16, deadline: "Rolling", tone: "green",
     support: ["Обучение"],
     pay: "Платно",
-    desc: "Доступно: UK виза нужна. Acting и music theatre summer intensives.",
+    dates: "Июль–август 2026",
+    summary: "Летние intensives при Guildhall School of Music & Drama в Лондоне — одной из топовых драматических школ UK. Acting и music theatre, разные курсы и длительность. Для 16+.",
+    desc: "Доступно: UK виза нужна.",
     url: "https://www.gsmd.ac.uk/shortcourses",
     urgent: false, check: null
   },
@@ -751,7 +783,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "16+", minAge: 16, deadline: "Rolling", tone: "green",
     support: ["Обучение"],
     pay: "Платный workshop",
-    desc: "Доступно: Шенген безвиз ✓ (UA паспорт). Acting, improvisation, French theater techniques.",
+    dates: "Июль–август 2026",
+    summary: "Летний workshop в Cours Florent — известной парижской актёрской школе. Acting, improvisation, техники французского театра. Для 16+. Уточнить English/French tracks на сайте.",
+    desc: "Доступно: Шенген безвиз ✓ (UA паспорт).",
     url: "https://www.coursflorent.fr/",
     urgent: false, check: "Подтвердить English/French tracks"
   },
@@ -762,7 +796,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "18–30 лет", minAge: 18, deadline: "Rolling", tone: "green",
     support: ["Жильё", "Дорога", "Обучение", "Оплата"],
     pay: "ESC покрытие + карманные",
-    desc: "Доступно: Шенген безвиз ✓ · Ukraine eligible. Театр, art classes, intercultural workshops. Видна с фильтром 18+.",
+    dates: "Гибкий старт (до 12 мес.)",
+    summary: "European Solidarity Corps: волонтёрство до 12 месяцев в культурном центре Помехувек (северная Польша). Театр, art classes, межкультурные workshops. Покрытие ESC: жильё, дорога, карманные. Для 18–30 лет.",
+    desc: "Доступно: Шенген безвиз ✓ · Ukraine eligible. Видна с фильтром 18+.",
     url: "https://youth.europa.eu/solidarity/opportunity/49502_en",
     urgent: false, check: null
   },
@@ -773,7 +809,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "18–30 лет", minAge: 18, deadline: "28 мая 2026 — СРОЧНО", tone: "red",
     support: ["Жильё", "Дорога", "Обучение", "Оплата"],
     pay: "ESC полное покрытие",
-    desc: "Доступно: Шенген безвиз ✓ · Ukraine eligible. Outdoor theatre festival, workshops, performances в Białowieża Forest.",
+    dates: "Лето 2026 (outdoor festival)",
+    summary: "ESC-проект на outdoor theatre festival в Национальном парке Беловежская пуща (Польша). Workshops, rehearsals, performances на открытом воздухе в уникальной природной среде. Полное покрытие ESC. Для 18–30 лет.",
+    desc: "Доступно: Шенген безвиз ✓ · Ukraine eligible. Дедлайн 28 мая 2026.",
     url: "https://youth.europa.eu/solidarity/opportunity/51686_en",
     urgent: true, check: null
   },
@@ -784,7 +822,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "18–30 лет", minAge: 18, deadline: "Срочно — rolling", tone: "red",
     support: ["Жильё", "Дорога", "Обучение", "Оплата"],
     pay: "ESC покрытие",
-    desc: "Доступно: Шенген безвиз ✓ · EU или UA citizens. Art events, workshops, youth work в Кракове.",
+    dates: "Гибкий старт 2026",
+    summary: "ESC-волонтёрство в культурном клубе Łokietek в Кракове. Art events, workshops, youth work в одном из культурных центров Польши. Жильё, дорога и карманные от ESC. Для 18–30 лет.",
+    desc: "Доступно: Шенген безвиз ✓ · EU или UA citizens.",
     url: "https://youth.europa.eu/solidarity/opportunity/50671_en",
     urgent: true, check: "URGENT — подавать немедленно"
   },
@@ -795,7 +835,9 @@ const ACTING_BASE_PROGRAMS = [
     age: "14–18 лет", minAge: 14, deadline: "Rolling до заполнения", tone: "orange",
     support: ["Жильё", "Обучение"],
     pay: "Tuition + aid available",
-    desc: "Доступно: виза США ✓. Theater division summer programs. Аудиция/портфолио по выбранной программе.",
+    dates: "Июнь–август 2026",
+    summary: "Летние theater programs в Interlochen Center for the Arts (Мичиган) — резиденция на кампусе у озера. Несколько сессий разной длины: актёрская техника, репетиции, постановки, master classes. Для 14–18 лет. Priority deadline 15 января, затем rolling до заполнения.",
+    desc: "Доступно: виза США ✓. Аудиция или портфолио по выбранной программе.",
     url: "https://www.interlochen.org/summer-camp/admission/how-to-apply-to-arts-camp",
     urgent: true, check: null
   }
@@ -811,6 +853,7 @@ const BASE_PROGRAMS = [
     age: "16+", minAge: 16, deadline: "Открыт (приём в мае 2026)", tone: "green",
     support: ["Жильё","Дорога","Обучение"],
     pay: "Полностью бесплатно. Дорога + трансфер лошади возмещаются",
+    dates: "Лето 2026 (Virginia / Kansas)",
     desc: "Полностью финансируемый лагерь для Equestrians of Color. Лето 2026: Overlook Farm (Virginia) с 5* тренером Sara Kozumplik и Wolfert Eventing (Kansas). Mounted и unmounted уроки, жильё и конюшня бесплатно. Лошадь своя или лагерная.",
     url: "https://www.stridesforequality.org/eversosweethome",
     urgent: false, check: null
@@ -822,6 +865,7 @@ const BASE_PROGRAMS = [
     age: "14–16 лет", minAge: 14, deadline: "20–24 июля 2026", tone: "orange",
     support: ["Жильё","Питание","Обучение"],
     pay: "Полностью бесплатно (финансируется The Racing Foundation)",
+    dates: "20–24 июля 2026",
     desc: "Бесплатная неделя при British Racing School — сердце британских скачек. Для 14–16-летних из малообеспеченных и разнообразных сообществ. Верховая езда, уход за лошадьми, знакомство с индустрией. Опыт езды не обязателен. Вес не более 64 кг.",
     url: "https://www.ridingadreamacademy.com/residential-application-form-2026",
     urgent: false, check: null
@@ -833,6 +877,7 @@ const BASE_PROGRAMS = [
     age: "14–16 лет", minAge: 14, deadline: "Приём открыт, старт октябрь 2026", tone: "green",
     support: ["Жильё","Обучение"],
     pay: "Полностью бесплатно — год обучения при BRS",
+    dates: "Октябрь 2026 – август 2027",
     desc: "Годичная стипендия — резиденция в BRS октябрь 2026, ежемесячные занятия до августа 2027. Для молодёжи из разнообразных и малообеспеченных семей. Вдохновлена историей первой британской мусульманки, выигравшей скачки.",
     url: "https://www.ridingadreamacademy.com/scholarshipapplication2026",
     urgent: false, check: null
@@ -844,6 +889,7 @@ const BASE_PROGRAMS = [
     age: "14–15 лет", minAge: 14, deadline: "15 января ежегодно", tone: "neutral",
     support: ["Жильё","Дорога","Обучение"],
     pay: "Свыше $200,000 за 4 года + 1 авиабилет ежегодно",
+    dates: "Сентябрь 2026 (учебный год)",
     desc: "Одна из самых щедрых конных стипендий в мире. Culver Academies — элитная школа-пансион с мировым конным отделением. Полный пансион, академическое образование, профессиональные тренировки. Конкурсный отбор. Приоритет — Оклахома, открыто глобально.",
     url: "https://www.culver.org/admissions/scholarships/little",
     urgent: false, check: null
@@ -855,6 +901,7 @@ const BASE_PROGRAMS = [
     age: "11–18 лет", minAge: 11, deadline: "Конец ноября ежегодно", tone: "neutral",
     support: ["Жильё","Обучение"],
     pay: "Стипендия до 10% + грант до 100% при подтверждении нуждаемости",
+    dates: "Сентябрь 2026 (учебный год)",
     desc: "Элитная конная школа-пансион. Механика: конная стипендия (10%) открывает доступ к социальному гранту (bursary). При финансовой проверке семьи грант покрывает до 100% стоимости. Практический тест в седле + академический конкурс.",
     url: "https://www.stonarschool.com/admissions/scholarships-and-bursaries",
     urgent: false, check: null
@@ -866,6 +913,7 @@ const BASE_PROGRAMS = [
     age: "13–18 лет", minAge: 13, deadline: "1 дек. (Year 9) / 7 окт. (Sixth Form)", tone: "neutral",
     support: ["Жильё","Обучение"],
     pay: "Стипендия 10–15% + грант до 100% стоимости",
+    dates: "Сентябрь 2026 (учебный год)",
     desc: "Лучшая спортивная школа UK с олимпийской инфраструктурой. Стипендия + means-tested bursary = потенциально 100% покрытие. Тренировки олимпийского уровня. Высокие требования: конный уровень + академические результаты.",
     url: "https://www.millfieldschool.com/admissions/scholarship-bursaries",
     urgent: false, check: null
@@ -877,6 +925,7 @@ const BASE_PROGRAMS = [
     age: "Старшеклассники", minAge: 14, deadline: "Разные (напр. 31 июля)", tone: "orange",
     support: ["Обучение"],
     pay: "Гранты $1,000–$2,500+ на лагеря, тренировки, соревнования",
+    dates: "По гранту (в течение года)",
     desc: "Несколько стипендиальных программ USEF для молодых американских всадников. Гранты на участие в лагерях и соревнованиях. Можно комбинировать с другими программами. Актуальные дедлайны — на официальном сайте.",
     url: "https://www.usef.org/learning-center/youth-programs",
     urgent: false, check: null
@@ -888,6 +937,7 @@ const BASE_PROGRAMS = [
     age: "16–17 лет", minAge: 16, deadline: "Рекомендуется до февраля", tone: "neutral",
     support: ["Жильё","Питание","Обучение","Оплата"],
     pay: "$300/нед + бесплатное жильё в конной деревне + питание",
+    dates: "Лето 2026",
     desc: "Оплачиваемая позиция помощника вожатого в конном лагере Вирджинии. Работа с детьми, обучение верховой езде, уход за лошадьми. Визовая поддержка J-1 для международных участников.",
     url: "https://campfriendship.com/staff/",
     urgent: false, check: null
@@ -899,6 +949,7 @@ const BASE_PROGRAMS = [
     age: "17 лет", minAge: 17, deadline: "Набор открывается в ноябре", tone: "neutral",
     support: ["Жильё","Питание","Обучение","Оплата"],
     pay: "$350/нед (+$10/нед за сертификат) + полное проживание и питание",
+    dates: "Лето 2027",
     desc: "Специальная квота для 17-летних всадников. Помощник вожатого с фокусом на верховую езду. Участие в конных клиниках и семинарах. Первый профессиональный опыт.",
     url: "https://campolson.org/positions/",
     urgent: false, check: null
@@ -910,6 +961,7 @@ const BASE_PROGRAMS = [
     age: "7–17 лет", minAge: 7, deadline: "Набор на лето 2026 открыт", tone: "green",
     support: ["Жильё","Обучение"],
     pay: "Платный; стипендии возможны — уточнять",
+    dates: "Лето 2026",
     desc: "Интенсивный конный лагерь до 6 часов езды в день: охота, прыжки, поло. Жильё с кондиционером. Принимают международных участников. Стипендии возможны — рекомендуется уточнять напрямую.",
     url: "https://horseridingcamp.com",
     urgent: false, check: "Уточнить наличие стипендий и поддержки дороги"
@@ -921,6 +973,7 @@ const BASE_PROGRAMS = [
     age: "10–15 (ночной), до 18 (дневной)", minAge: 10, deadline: "Лето 2026", tone: "orange",
     support: ["Жильё","Питание","Обучение"],
     pay: "Платный; стипендии по нуждаемости — уточнять",
+    dates: "Лето 2026",
     desc: "Университетский конный лагерь: западная и английская езда, horsemanship, уход за лошадьми. Ночной формат: жильё в общежитии + питание. Профессиональные тренеры.",
     url: "https://agsci.colostate.edu/animsci/youth-programs/",
     urgent: false, check: "Уточнить наличие стипендий и актуальные даты сессий"
@@ -932,6 +985,7 @@ const BASE_PROGRAMS = [
     age: "От 16 лет", minAge: 16, deadline: "27 ИЮНЯ 2026 — СРОЧНО", tone: "red",
     support: ["Жильё","Обучение","Оплата"],
     pay: "£16,640/год (~£320/нед) + жильё на ферме",
+    dates: "Старт по договорённости",
     desc: "Официальная оплачиваемая стажировка BHS Equine Groom Level 2 в Wiltshire. Полноценное обучение: стрижка, заплетание, BHS Stage 1–4. Цель — управление конюшней или карьера тренера. Можно привезти свою лошадь. Гос. финансирование обучения 100% для 16–18 лет.",
     url: "https://www.findapprenticeship.service.gov.uk/apprenticeship/VAC1000250777",
     urgent: true, check: null
@@ -943,6 +997,7 @@ const BASE_PROGRAMS = [
     age: "От 16 лет", minAge: 16, deadline: "7 ИЮЛЯ 2026 — СРОЧНО", tone: "red",
     support: ["Жильё","Обучение","Оплата"],
     pay: "£16,640/год + жильё £55/нед + личные тренировки от Anna Hilton",
+    dates: "Старт по договорённости",
     desc: "BHS Level 2 стажировка с регулярными личными уроками от Anna Hilton. Работа с лошадьми конкурсного уровня в Sussex/Kent. Возможность привезти свою лошадь (livery £70/нед).",
     url: "https://www.findapprenticeship.service.gov.uk/apprenticeship/VAC2000007321",
     urgent: true, check: null
@@ -954,6 +1009,7 @@ const BASE_PROGRAMS = [
     age: "17–25 лет", minAge: 17, deadline: "Круглый год", tone: "green",
     support: ["Жильё","Обучение"],
     pay: "Нет прямой оплаты — работа в обмен на жильё и интенсивное обучение",
+    dates: "Круглый год",
     desc: "Working Pupil при профессиональном конном центре NSW. Работа 6 дней/нед + 4 недели отпуска. Интенсивное обучение с целью международных соревнований. 4-недельный пробный период. Принимают международных участников.",
     url: "https://www.ryanshorses.com.au/page/working_pupil_positions.html",
     urgent: false, check: "Уточнить визовые требования для иностранных участников"
@@ -965,6 +1021,7 @@ const BASE_PROGRAMS = [
     age: "От 16 лет", minAge: 16, deadline: "Постоянный набор", tone: "green",
     support: ["Жильё","Питание","Обучение"],
     pay: "Нет прямой оплаты: жильё + питание + ежедневные уроки",
+    dates: "Круглый год",
     desc: "Традиционный Working Pupil в Herefordshire. Уход за лошадьми, работа с молодыми лошадьми, участие в соревнованиях. Ежедневные уроки от тренеров. Можно привезти свою лошадь. Принимают международных студентов, всё на английском.",
     url: "http://www.sheepcote.co.uk/workingpupils.html",
     urgent: false, check: null
@@ -976,6 +1033,7 @@ const BASE_PROGRAMS = [
     age: "14–17 лет", minAge: 14, deadline: "13–19 июля 2026", tone: "orange",
     support: ["Жильё","Питание","Обучение"],
     pay: "€1,015 — всё включено кроме дороги: жильё, питание, тренировки, соревнования",
+    dates: "13–19 июля 2026",
     desc: "15-й международный молодёжный кубок по исландским лошадям. Участвуют сборные из всех стран FEIF. Жильё + питание + тренировки от профессионалов. Лошадей можно арендовать на месте. Дисциплины: T3, T6, V2, F3, trail, dressage и др.",
     url: "https://www.ipzv.de/jugend/feif-youth-cup-2026-english.html",
     urgent: false, check: "Нужна исландская лошадь или аренда — уточнять через нац. федерацию"
@@ -987,6 +1045,7 @@ const BASE_PROGRAMS = [
     age: "17–25 лет", minAge: 17, deadline: "2027 год (сейчас — время подготовки)", tone: "neutral",
     support: ["Жильё","Дорога","Обучение"],
     pay: "Принимающая сторона: жильё, питание, лошади, тренировки",
+    dates: "2027",
     desc: "Двухлетний международный обмен стран Тихоокеанского региона. Следующий — 2027, принимает Канада. Соревнования по eventing и show jumping на лошадях принимающей страны. Требования: сертификат B Pony Club, eventing Training level, прыжки 3'6\".",
     url: "https://www.ponyclub.org/activities/international-exchanges",
     urgent: false, check: null
@@ -998,6 +1057,7 @@ const BASE_PROGRAMS = [
     age: "18–30 лет", minAge: 18, deadline: "Сентябрь 2026 – август 2027", tone: "green",
     support: ["Жильё","Питание","Дорога","Оплата"],
     pay: "Полное покрытие: жильё + питание + карманные деньги + дорога (EU funded)",
+    dates: "Сентябрь 2026 – август 2027",
     desc: "Долгосрочное волонтёрство при конном и молодёжном центре в сельской Словении. Работа с детьми, уход за лошадьми, организация лагерей. Своя комната, питание, карманные деньги. Финансируется ЕС.",
     url: "https://youthworkshub.org/11224/",
     urgent: false, check: "Проверить список стран-участников ESC для вашего гражданства"
@@ -1009,6 +1069,7 @@ const BASE_PROGRAMS = [
     age: "12–18 лет", minAge: 12, deadline: "Мониторить постоянно", tone: "neutral",
     support: ["Оплата","Дорога"],
     pay: "Конкурентная ставка + возможное покрытие дороги и проживания",
+    dates: "По датам съёмки",
     desc: "Кастинг для рекламы крупного спортивного бренда. Молодые всадники 12–18 лет с реальным опытом верховой езды. Выполнение манёвров, профессиональная съёмка. Хорошее пополнение портфолио.",
     url: "https://projectcasting.com/job/sportswear-london-commercial-casting-call-for-horse-back-riders",
     urgent: false, check: "Проверить актуальность статуса кастинга напрямую"
@@ -1020,6 +1081,7 @@ const BASE_PROGRAMS = [
     age: "5–9 лет (Mixed Race)", minAge: 5, deadline: "Мониторить постоянно", tone: "neutral",
     support: ["Оплата"],
     pay: "Paid role — конкурентные ставки за съёмочный день",
+    dates: "По датам съёмки",
     desc: "Профессиональный проект ищет ребёнка смешанного происхождения 5–9 лет, уверенно сидящего в седле. Реальный опыт работы с лошадьми обязателен. Оплачиваемая роль.",
     url: "https://projectcasting.com/job/casting-call-confident-horse-riders-needed",
     urgent: false, check: "Проверить текущий статус проекта напрямую"
@@ -1031,6 +1093,7 @@ const BASE_PROGRAMS = [
     age: "11–18 лет", minAge: 11, deadline: "13 июня – 15 августа 2026", tone: "orange",
     support: ["Жильё","Питание","Обучение"],
     pay: "Платный лагерь; жильё + питание включены. Трансфер с аэропорта Дублина организован",
+    dates: "13 июня – 15 августа 2026",
     desc: "Самый известный конный лагерь Ирландии — «дом вдали от дома» для подростков 11–18 лет. Каждый гость получает своего коня на всё время проживания. Сопровождение в аэропорту Дублина. Все уровни езды, дружеская атмосфера, множество возвращающихся каждый год.",
     url: "http://www.crossogue-equestrian.ie/teen-camps/",
     urgent: false, check: "Уточнить наличие финансовой поддержки или стипендий"
@@ -1042,6 +1105,7 @@ const BASE_PROGRAMS = [
     age: "12–19 лет", minAge: 12, deadline: "Август 2026 — осталось 1–2 места", tone: "red",
     support: ["Жильё","Питание","Обучение"],
     pay: "Платная резидентная программа; полный пансион в лесном коттедже",
+    dates: "Август 2026",
     desc: "Резидентные конные каникулы 1–3 недели в лесном коттедже у конюшни в Adare. Программа дня: выездка, прыжки, кросс-кантри, уход за лошадьми, вечерние активности. «Хозяйка дома» Katrina живёт там круглый год. Большинство смен лета 2026 заполнено — нужно срочно написать.",
     url: "https://www.clonshire.com/summer-in-horse-haven.html",
     urgent: true, check: "Остались буквально 1–2 места — связаться немедленно по email"
@@ -1053,6 +1117,7 @@ const BASE_PROGRAMS = [
     age: "11–17 лет", minAge: 11, deadline: "Июль–Август 2026", tone: "green",
     support: ["Жильё","Обучение"],
     pay: "Платная; жильё + уроки английского + верховая езда включены в стоимость",
+    dates: "Июль–август 2026",
     desc: "Уникальная программа на атлантическом побережье Ирландии: 15 ч/нед английского (ACELS-аккредитация) + 1.5–2 ч верховой езды ежедневно. Пляжные прогулки на конях. Проживание в резиденции с видом на океан. Макс. 8 всадников в группе. Нужен средний уровень езды.",
     url: "https://airlinguee.com/teenage-equestrian-camps-in-ireland/english-and-equestrian-horse-riding-camp-ireland/",
     urgent: false, check: null
@@ -1064,6 +1129,7 @@ const BASE_PROGRAMS = [
     age: "13+ лет", minAge: 13, deadline: "Круглый год (мин. 1 месяц)", tone: "green",
     support: ["Жильё","Питание","Обучение"],
     pay: "Бесплатно: жильё (кемпинг/вагон) + питание + скидки на уроки — в обмен на помощь в конюшне",
+    dates: "Круглый год (мин. 1 мес.)",
     desc: "Волонтёрство в Андалусии: помощь в конюшне (кормление, уборка, грумминг) в обмен на жильё + питание. Опытные всадники работают непосредственно с лошадьми. Wi-Fi, кухня, горячий душ. Мин. 1 месяц. Принимают волонтёров-подростков от 13 лет.",
     url: "https://horse-riding-in-spain.com/volunteer/",
     urgent: false, check: "Уточнить условия для участников младше 18 лет"
@@ -1075,6 +1141,7 @@ const BASE_PROGRAMS = [
     age: "от 6 лет", minAge: 6, deadline: "Школьные каникулы круглый год", tone: "green",
     support: ["Обучение"],
     pay: "Дневная платная программа; обучение + диплом участника включены",
+    dates: "Школьные каникулы",
     desc: "Каникулярные стажировки на португальской ферме: уход за лошадьми, верховая езда, уроки с профессиональными инструкторами. Программа Пн–Пт 9:00–17:00 для детей от 6 лет. Сертификат участника. Подходит для семейных поездок в Португалию — удобное дополнение к отдыху.",
     url: "https://www.rbhorses.pt/en/holiday-internships",
     urgent: false, check: null
@@ -1086,6 +1153,7 @@ const BASE_PROGRAMS = [
     age: "от 14 лет", minAge: 14, deadline: "Круглый год — Пасха, Лето, Осень, Рождество", tone: "green",
     support: ["Жильё","Питание","Обучение"],
     pay: "Жильё + питание на ферме включены. Возможно небольшое карманное деньги при длительных стажировках",
+    dates: "Пасха / лето / осень / Рождество",
     desc: "Педагогическая конно-приключенческая ферма в Баварии ищет практикантов от 14 лет. Форматы: Schülerpraktikum (1–3 нед), каникулярный (Пасха/лето/осень) или долгосрочный (мес.). Работа с детьми, уход за лошадьми (шетти, боденарбайт), рейтунтеррихт. Нужен немецкий или желание учиться.",
     url: "https://pferdeglueck-pappenheimer.de/praktikanten-gesucht-fuer-2026",
     urgent: false, check: "Уточнить возможность для иностранных участников и требования к немецкому"
@@ -1097,6 +1165,7 @@ const BASE_PROGRAMS = [
     age: "14–25 лет", minAge: 14, deadline: "16–23 августа 2026", tone: "orange",
     support: ["Жильё","Питание","Обучение"],
     pay: "Платный full-board лагерь: жильё + питание включены. Уточнить стоимость на сайте",
+    dates: "16–23 августа 2026",
     desc: "Недельный конный лагерь полного пансиона при Riesenbeck International — одном из ведущих конных центров мира. Шоу-джамперы 14–25 лет со всего мира под руководством топ-тренеров LWEA. Требуемый уровень: уверенные прыжки 1.00–1.10 м. До 16 лет — с сопровождающим взрослым.",
     url: "https://riesenbeck-international.com/en/lwea/summer-camp/",
     urgent: false, check: "Уточнить, открыта ли ещё регистрация на август 2026"
@@ -1108,6 +1177,7 @@ const BASE_PROGRAMS = [
     age: "от 18 лет", minAge: 18, deadline: "Свободные места: май–декабрь 2026", tone: "green",
     support: ["Жильё","Обучение"],
     pay: "Бесплатное жильё (своя комната) + 5 уроков в неделю бесплатно. Питание за свой счёт",
+    dates: "Май–декабрь 2026",
     desc: "Стажировка в датской школе академической верховой езды (метод Bent Branderup). 3 месяца минимум. Своя лошадь или школьные. Бесплатное жильё + 5 уроков/неделю. Нужен базовый конный опыт и английский или скандинавский. Несколько слотов свободно в 2026.",
     url: "https://www.akademiskridekunst.dk/internship/",
     urgent: false, check: null
@@ -1119,6 +1189,7 @@ const BASE_PROGRAMS = [
     age: "от 16 лет", minAge: 16, deadline: "Заявки 2026 открыты; стажировки 3+ мес — сейчас", tone: "orange",
     support: ["Жильё","Обучение"],
     pay: "Жильё на месте (self-catering, общий формат). Обучение с чистокровными рысаками бесплатно",
+    dates: "3+ месяца (гибкий старт)",
     desc: "Уникальный опыт: ретрейнинг скаковых чистокровных лошадей при BTRC. Принимают участников из UK и других стран от 16 лет. Жильё на территории. Короткие стажировки забиты; для 2026 подавать сейчас. Стажировки 3 мес+ — связываться с Harriet напрямую.",
     url: "https://thebtrc.co.uk/home/education/",
     urgent: false, check: null
@@ -1130,6 +1201,7 @@ const BASE_PROGRAMS = [
     age: "дети (все уровни, даже нулевой)", minAge: 7, deadline: "30 июня / 29 сентября / 9 декабря 2026", tone: "green",
     support: ["Жильё","Питание","Обучение"],
     pay: "Платный 3-дневный лагерь; всё включено — жильё + питание + езда + инструкторы",
+    dates: "30 июня / 29 сентября / 9 декабря 2026",
     desc: "Трёхдневный конный лагерь с проживанием для детей на ранчо Cape Horse в Западном Кейпе. Надзор 24/7 квалифицированными инструкторами (в т.ч. детским психологом). Все уровни от нуля. Рядом альпаки, кенгуру, козы. Уникальный детский опыт в ЮАР.",
     url: "https://kleinkaroohorseadventures.com/?page_id=20",
     urgent: false, check: null
@@ -1141,6 +1213,7 @@ const BASE_PROGRAMS = [
     age: "18+ (опытные всадники)", minAge: 18, deadline: "Круглый год (мин. 1 мес, лучше 3+)", tone: "green",
     support: ["Жильё","Питание"],
     pay: "Полностью бесплатно: жильё + питание в обмен на работу 30–40 ч/нед",
+    dates: "Круглый год (мин. 1 мес.)",
     desc: "Волонтёрство на аргентинской эстансии: гид по конным маршрутам для гостей, уход за лошадьми, работа с молодыми лошадьми. Жильё + питание бесплатно. Нужен хороший уровень езды + базовый испанский. 280 км от Буэнос-Айреса. Настоящая жизнь гаучо.",
     url: "https://freevolunteering.net/horse-riding-estancia-argentina/",
     urgent: false, check: "Требуется 18+, испанский язык и опыт конного туризма"
@@ -1152,6 +1225,7 @@ const BASE_PROGRAMS = [
     age: "18+", minAge: 18, deadline: "Rolling / contact program", tone: "green",
     support: ["Жильё", "Оплата", "Обучение"],
     pay: "$100/week allowance + gratuities",
+    dates: "Лето 2026",
     desc: "Оплачиваемая стажировка с проживанием на ранчо и предоставлением транспорта. Включена оплата курса Horsemanship-101 (с книгой) и практическая езда.",
     url: "https://www.kbhorses.com/internships",
     urgent: false, check: null
@@ -1163,6 +1237,7 @@ const BASE_PROGRAMS = [
     age: "16+ (уточнить при подаче)", minAge: 16, deadline: "Rolling", tone: "green",
     support: ["Жильё", "Оплата", "Обучение"],
     pay: "$100/week stipend (для residential interns)",
+    dates: "Круглый год",
     desc: "Стажировка по уходу и реабилитации лошадей: натуральное хорсманшип, работа под седлом и с земли. Для проживающих на ферме есть бесплатное жильё и стипендия.",
     url: "https://defhr.org/hr-positions/equine-care-rehabilitation-internship/",
     urgent: false, check: null
@@ -1174,6 +1249,7 @@ const BASE_PROGRAMS = [
     age: "студенты / 16+", minAge: 16, deadline: "May 15 - August 15, 2026", tone: "green",
     support: ["Оплата", "Обучение"],
     pay: "До $125/неделю OR учебные кредиты",
+    dates: "Май–август 2026",
     desc: "Стажировка в конной индустрии: государственные инициативы, youth resources, data management. Формат удалённый или in-person в Washington D.C.",
     url: "https://horsecouncil.org/project/american-horse-council-announces-summer-2026-internship-opportunities/",
     urgent: false, check: null
@@ -1185,6 +1261,7 @@ const BASE_PROGRAMS = [
     age: "16+ (уточнить)", minAge: 16, deadline: "Rolling (Jan-Aug tracks)", tone: "green",
     support: ["Жильё", "Обучение"],
     pay: "Оплата не указана (работа в обмен на опыт)",
+    dates: "Январь–август 2026",
     desc: "On-site housing для иногородних. Разведение, уход за кобылами и жеребятами, шоу-грум, вет/кузнечные визиты, тренинг и верховая езда.",
     url: "https://saddlelakeequestrian.com/internships/",
     urgent: false, check: null
@@ -1196,6 +1273,7 @@ const BASE_PROGRAMS = [
     age: "16+ (уточнить)", minAge: 16, deadline: "Rolling", tone: "neutral",
     support: ["Обучение"],
     pay: "Нет денежной оплаты (уроки в обмен на работу)",
+    dates: "Круглый год",
     desc: "Working student в eventing: регулярные уроки, работа с школьными лошадьми, управление конюшней, подготовка к соревнованиям.",
     url: "https://scatteredacres.net/working-students/",
     urgent: false, check: "Уточнить условия жилья и финальные финансовые условия напрямую"
@@ -1207,6 +1285,7 @@ const BASE_PROGRAMS = [
     age: "16+ (уточнить)", minAge: 16, deadline: "Rolling", tone: "neutral",
     support: ["Оплата", "Обучение"],
     pay: "Оплачиваемая позиция (paid), детали уточнять",
+    dates: "Круглый год",
     desc: "Paid working student / young horse rider: тренировки под Advanced event rider, работа с молодыми лошадьми, участие в соревновательных милях.",
     url: "http://www.veronaequestrian.com/working-student-program.html",
     urgent: false, check: "Требует ручной проверки: подтвердить актуальность набора и условия проживания"
@@ -1218,6 +1297,7 @@ const BASE_PROGRAMS = [
     age: "16–25 лет", minAge: 16, deadline: "23 ИЮНЯ 2026 — Rebecca Farm (СРОЧНО)", tone: "red",
     support: ["Обучение"],
     pay: "Бесплатно; дорога, жильё и питание за свой счёт",
+    dates: "23 июня 2026 (Rebecca Farm)",
     desc: "Закулисный опыт на крупных eventing-чемпионатах USEA. Ближайший дедлайн: The Event at Rebecca Farm (MT), 15–19 июля — заявки до 23 июня. Возраст 16–25, член Intercollegiate или Young Rider Area Program. Нельзя соревноваться или волонтёрить на том же ивенте.",
     url: "https://www.useventing.com/news-media/news/youth-mentorship-program-now-open-for-applications-kick-off-at-usea-intercollegiate-iel-championships",
     urgent: true, check: null
@@ -1229,6 +1309,7 @@ const BASE_PROGRAMS = [
     age: "14-18", minAge: 14, deadline: "Rolling (summer 2026)", tone: "green",
     support: ["Жильё", "Питание", "Обучение"],
     pay: "Нет",
+    dates: "Лето 2026",
     desc: "Residential summer camp на университетской конной базе: ежедневная езда, хорсманшип, уход за лошадьми. Проживание в дормиториях включено.",
     url: "https://www.emoryhenry.edu/summer-programs/camps/equestrian-camp/",
     urgent: false, check: null
@@ -1240,6 +1321,7 @@ const BASE_PROGRAMS = [
     age: "16+", minAge: 16, deadline: "Ежегодный набор (уточнить на сайте)", tone: "neutral",
     support: ["Дорога", "Обучение"],
     pay: "$4,000 на клиники, working student позиции, уроки",
+    dates: "По гранту (в течение года)",
     desc: "Финансовая поддержка для любительских всадников 16+ на тренировочный сезон, включая расходы на поездки и обучение.",
     url: "https://useventing.com/",
     urgent: false, check: "Требует ручной проверки: актуальный дедлайн и eligibility в текущем сезоне"
@@ -1251,6 +1333,7 @@ const BASE_PROGRAMS = [
     age: "Junior (до 18 лет)", minAge: 16, deadline: "April 1 - August 1 (annual)", tone: "orange",
     support: ["Дорога", "Оплата"],
     pay: "$1,000 на участие в национальном чемпионате",
+    dates: "По гранту (в течение года)",
     desc: "Грант для junior rider с ограниченным бюджетом, квалифицированного на национальный чемпионат (equitation).",
     url: "https://www.ushja.org/donors-grants/grants-scholarships",
     urgent: false, check: null
@@ -1262,6 +1345,7 @@ const BASE_PROGRAMS = [
     age: "16+ (college/university)", minAge: 16, deadline: "30 June 2026", tone: "red",
     support: ["Жильё", "Обучение", "Оплата"],
     pay: "Scholarships для Elite squad",
+    dates: "Сентябрь 2026 (учебный год)",
     desc: "Equine Academy с уровнями Elite/Development, профессиональный коучинг и тренировочные сессии. Доступно студенческое жильё на кампусе.",
     url: "https://www.hartpury.ac.uk/university/playing-sport/academies/equine-academy",
     urgent: true, check: null
@@ -1273,6 +1357,7 @@ const BASE_PROGRAMS = [
     age: "16+ (уточнить)", minAge: 16, deadline: "Rolling", tone: "neutral",
     support: ["Жильё", "Обучение"],
     pay: "Нет прямой оплаты (training-based compensation)",
+    dates: "Круглый год",
     desc: "Working student формат на базе high-level dressage команды: уход, stable management, регулярный тренинг олимпийного уровня.",
     url: "https://horsesport.com/magazine/business/what-its-like-being-working-student/",
     urgent: false, check: "Требует ручной проверки: конкретные условия программы и актуальный набор"
@@ -1284,6 +1369,7 @@ const BASE_PROGRAMS = [
     age: "От 16 лет", minAge: 16, deadline: "30 ИЮНЯ 2026 — СРОЧНО", tone: "red",
     support: ["Жильё", "Обучение", "Оплата"],
     pay: "£16,640/год + жильё на территории",
+    dates: "Старт по договорённости",
     desc: "Senior Equine Groom Level 3 (BHS) на showing/stud/BS yard в Preston. Жильё на месте. Нужен подтверждённый опыт работы с лошадьми. Haddon Training.",
     url: "https://www.findapprenticeship.service.gov.uk/apprenticeship/VAC2000029043",
     urgent: true, check: null, isNew: true
@@ -1295,6 +1381,7 @@ const BASE_PROGRAMS = [
     age: "18+", minAge: 18, deadline: "1 ИЮЛЯ 2026 — СРОЧНО", tone: "red",
     support: ["Обучение"],
     pay: "Без оплаты (образовательная стажировка)",
+    dates: "Осень 2026 (Fall session)",
     desc: "Стажировка в центре реабилитации чистокровных рысаков в Lexington KY. Уход, реабилитация, работа с отставными racehorses. Fall session — заявки до 1 июля.",
     url: "https://www.secretariatcenter.org/internships",
     urgent: true, check: "Уточнить условия проживания и длительность Fall session", isNew: true
@@ -2272,6 +2359,7 @@ function mapIncoming(item, domain) {
     age: item.age_range || "16+",
     minAge: normalizeMinAge(item.min_age, item.age_range),
     deadline: item.deadline || "Уточнить",
+    dates: item.dates || item.program_dates || "Уточнить на сайте",
     tone: inferTone(item.deadline, closed),
     support: inferSupport(item),
     pay: item.pay || "Уточнить",
@@ -2703,6 +2791,7 @@ function render() {
       <div class="card-meta">
         ${newBadge}
         <span class="badge blue">${p.country}</span>
+        <span class="badge dates">${p.dates || 'Даты уточняются'}</span>
         <span class="badge">возраст: ${p.age}</span>
         ${deadlineEl}
       </div>
@@ -2724,6 +2813,14 @@ function render() {
       <div class="field-value">${p.org}</div>
     </div>
     <div class="field">
+      <div class="field-label">Даты программы</div>
+      <div class="field-value highlight">${p.dates || 'Уточнить на сайте'}</div>
+    </div>
+    <div class="field">
+      <div class="field-label">Дедлайн подачи</div>
+      <div class="field-value">${p.deadline}</div>
+    </div>
+    <div class="field">
       <div class="field-label">Что покрывается</div>
       <div class="tags">${supportTags}</div>
     </div>
@@ -2731,8 +2828,11 @@ function render() {
       <div class="field-label">Финансирование / Оплата</div>
       <div class="field-value highlight">${p.pay}</div>
     </div>
-    <div class="sep"></div>
-    <p class="desc">${p.desc}</p>
+    <div class="field">
+      <div class="field-label">О программе</div>
+      <p class="desc">${p.summary || p.desc}</p>
+    </div>
+    ${p.summary ? `<div class="field"><div class="field-label">Доступность</div><p class="visa-note">${p.desc}</p></div>` : ''}
     ${urgentEl}
     ${closedEl}
     ${checkEl}
