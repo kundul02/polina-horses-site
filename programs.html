@@ -252,6 +252,11 @@
     background: var(--red);
     border-color: var(--red);
   }
+  .chip.chip-closed.active {
+    background: #8e8e93;
+    border-color: #8e8e93;
+    color: #fff;
+  }
   /* PROGRAM COUNT */
   .count-bar {
     padding: 10px 16px 4px;
@@ -542,7 +547,10 @@
 </div>
 
 <div class="filters">
-  <div class="filter-label">Тип программы</div>
+  <div class="filter-label">Статус</div>
+  <div class="filter-scroll" id="status-filter"></div>
+
+  <div class="filter-label" style="margin-top:8px">Тип программы</div>
   <div class="filter-scroll" id="cat-filter"></div>
 
   <div class="filter-label" style="margin-top:8px">Страна</div>
@@ -2463,6 +2471,7 @@ const PROGRAMS = [
 ];
 
 let activeDomain = "equestrian";
+let activeStatus = "open";
 let activeCategory = "all";
 let activeCountry = "all";
 let activeAge = "16";
@@ -2493,6 +2502,7 @@ function setDomain(btn) {
   activeDomain = next;
   localStorage.setItem("polina-active-domain", activeDomain);
   window.location.hash = activeDomain;
+  activeStatus = "open";
   activeCategory = "all";
   activeCountry = "all";
   activeAge = "16";
@@ -2519,18 +2529,23 @@ function applyCountryFilter(programs) {
   return programs.filter(p => p.baseCountry === activeCountry);
 }
 
+function applyStatusFilter(programs) {
+  return programs.filter(p => (activeStatus === "closed") === Boolean(p.closed));
+}
+
+function getStatusPool() {
+  return applyStatusFilter(getDomainPrograms(activeDomain));
+}
+
 function applyCategoryFilter(programs, category) {
-  if (category === "archive") return programs.filter(p => p.closed);
-  const open = programs.filter(p => !p.closed);
-  if (category === "all") return open;
-  if (category === "urgent") return open.filter(p => p.urgent);
-  if (category === "new") return open.filter(p => p.isNew);
-  return open.filter(p => p.category === category);
+  if (category === "all") return programs;
+  if (category === "urgent") return programs.filter(p => p.urgent);
+  if (category === "new") return programs.filter(p => p.isNew);
+  return programs.filter(p => p.category === category);
 }
 
 function programsForCategoryAndCountry(category) {
-  const domainPrograms = getDomainPrograms(activeDomain);
-  let pool = applyCategoryFilter(domainPrograms, category);
+  let pool = applyCategoryFilter(getStatusPool(), category);
   return applyCountryFilter(pool);
 }
 
@@ -2561,42 +2576,51 @@ function getFilterScopeLabel() {
   return `${activeAge}+ · ${countryLabel}`;
 }
 
-function buildCategoryFilters(openPrograms) {
-  const cfg = DOMAINS[activeDomain];
-  const countryScopedOpen = applyCountryFilter(openPrograms);
-  const categoryCounts = countryScopedOpen.reduce((acc, p) => {
-    acc[p.category] = (acc[p.category] || 0) + 1;
-    return acc;
-  }, {});
-  const archiveCount = applyCountryFilter(getDomainPrograms(activeDomain).filter(p => p.closed)).length;
-  const urgentCount = countryScopedOpen.filter(p => p.urgent).length;
-  const newCount = countryScopedOpen.filter(p => p.isNew).length;
-  const chips = [
-    { cat: "all", label: `Все (${countryScopedOpen.length})`, cls: activeCategory === "all" ? "chip active" : "chip" },
-    { cat: "new", label: `Новые (${newCount})`, cls: activeCategory === "new" ? "chip new active" : "chip new" },
-    { cat: "urgent", label: `Срочно (${urgentCount})`, cls: activeCategory === "urgent" ? "chip urgent active" : "chip urgent" }
-  ];
-  cfg.categories.forEach(cat => {
-    const count = categoryCounts[cat] || 0;
-    const active = activeCategory === cat ? " active" : "";
-    chips.push({ cat, label: `${cat} (${count})`, cls: "chip" + active });
-  });
-  chips.push({ cat: "archive", label: `Архив (${archiveCount})`, cls: activeCategory === "archive" ? "chip active" : "chip" });
-  document.getElementById('cat-filter').innerHTML = chips.map(c =>
-    `<button class="${c.cls}" data-cat="${c.cat}" onclick="setCategory(this)">${c.label}</button>`
-  ).join('');
+function getCategoryChipCount(cat) {
+  const pool = programsForCategoryAndCountry(cat);
+  if (activeCategory !== cat) return pool.length;
+  const targetAge = Number(activeAge);
+  return pool.filter(p => p.minAge <= targetAge).length;
 }
 
-function buildCountryFilters(openPrograms) {
-  const countryCounts = openPrograms.reduce((acc, p) => {
+function buildStatusFilters() {
+  const domainPrograms = getDomainPrograms(activeDomain);
+  const openCount = domainPrograms.filter(p => !p.closed).length;
+  const closedCount = domainPrograms.filter(p => p.closed).length;
+  document.getElementById('status-filter').innerHTML = `
+    <button type="button" class="chip${activeStatus === "open" ? " active" : ""}" data-status="open" onclick="setStatus(this)">Открытые (${openCount})</button>
+    <button type="button" class="chip chip-closed${activeStatus === "closed" ? " active" : ""}" data-status="closed" onclick="setStatus(this)">Закрытые · архив (${closedCount})</button>
+  `;
+}
+
+function buildCategoryFilters() {
+  const cfg = DOMAINS[activeDomain];
+  const chips = [
+    { cat: "all", label: `Все (${getCategoryChipCount("all")})`, cls: activeCategory === "all" ? "chip active" : "chip" },
+    { cat: "new", label: `Новые (${getCategoryChipCount("new")})`, cls: activeCategory === "new" ? "chip new active" : "chip new" },
+    { cat: "urgent", label: `Срочно (${getCategoryChipCount("urgent")})`, cls: activeCategory === "urgent" ? "chip urgent active" : "chip urgent" }
+  ];
+  let html = chips.map(c =>
+    `<button type="button" class="${c.cls}" data-cat="${c.cat}" onclick="setCategory(this)">${c.label}</button>`
+  ).join('');
+  cfg.categories.forEach(cat => {
+    const count = getCategoryChipCount(cat);
+    const cls = "chip" + (activeCategory === cat ? " active" : "");
+    html += `<button type="button" class="${cls}" data-cat="${cat}" onclick="setCategory(this)">${cat} (${count})</button>`;
+  });
+  document.getElementById('cat-filter').innerHTML = html;
+}
+
+function buildCountryFilters(statusPool) {
+  const countryCounts = statusPool.reduce((acc, p) => {
     acc[p.baseCountry] = (acc[p.baseCountry] || 0) + 1;
     return acc;
   }, {});
   const countries = Object.keys(countryCounts).sort((a, b) => countryCounts[b] - countryCounts[a]);
-  let html = `<button class="chip${activeCountry === 'all' ? ' active' : ''}" data-country="all" onclick="setCountry(this)">Все страны (${openPrograms.length})</button>`;
+  let html = `<button type="button" class="chip${activeCountry === 'all' ? ' active' : ''}" data-country="all" onclick="setCountry(this)">Все страны (${statusPool.length})</button>`;
   countries.forEach(country => {
     const active = activeCountry === country ? " active" : "";
-    html += `<button class="chip${active}" data-country="${country}" onclick="setCountry(this)">${country} (${countryCounts[country]})</button>`;
+    html += `<button type="button" class="chip${active}" data-country="${country}" onclick="setCountry(this)">${country} (${countryCounts[country]})</button>`;
   });
   document.getElementById('country-filter').innerHTML = html;
 }
@@ -2610,6 +2634,9 @@ function escapeHtml(value) {
 }
 
 function syncFilterChips() {
+  document.querySelectorAll('#status-filter .chip').forEach(b => {
+    b.classList.toggle('active', b.dataset.status === activeStatus);
+  });
   document.querySelectorAll('#cat-filter .chip').forEach(b => {
     b.classList.toggle('active', b.dataset.cat === activeCategory);
   });
@@ -2629,6 +2656,7 @@ function jumpToProgram(id) {
     localStorage.setItem("polina-active-domain", activeDomain);
     window.location.hash = activeDomain;
   }
+  activeStatus = program.closed ? "closed" : "open";
   activeCategory = "all";
   activeCountry = "all";
   activeAge = ["16", "17", "18"].find(age => program.minAge <= Number(age)) || "16";
@@ -2641,6 +2669,13 @@ function jumpToProgram(id) {
     if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
     document.getElementById("docs-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
+}
+
+function setStatus(btn) {
+  activeStatus = btn.dataset.status;
+  activeCategory = "all";
+  autoAdjustAgeForSelection();
+  render();
 }
 
 function setCategory(btn) {
@@ -2816,18 +2851,32 @@ function render() {
   document.getElementById('urgent-count').textContent = String(urgentCount);
   document.getElementById('country-count').textContent = String(countrySet.size);
 
-  buildCategoryFilters(openPrograms);
-  buildCountryFilters(openPrograms);
-  renderNewPanel(scopedOpen);
+  const statusPool = getStatusPool();
+  buildStatusFilters();
+  buildCategoryFilters();
+  buildCountryFilters(statusPool);
+  if (activeStatus === "open") renderNewPanel(scopedOpen);
+  else {
+    const panel = document.getElementById("new-panel");
+    if (panel) panel.hidden = true;
+  }
   syncFilterChips();
 
-  let filtered = programsForCategoryAndCountry(activeCategory);
+  const categoryPool = programsForCategoryAndCountry(activeCategory);
   const targetAge = Number(activeAge);
-  filtered = filtered.filter(p => p.minAge <= targetAge);
+  let filtered = categoryPool.filter(p => p.minAge <= targetAge);
 
   const list = document.getElementById('programs-list');
   const bar = document.getElementById('count-bar');
-  bar.textContent = 'Показано: ' + filtered.length + ' программ';
+  let barText = 'Показано: ' + filtered.length + ' программ';
+  if (activeCategory !== 'all' && filtered.length < categoryPool.length) {
+    const hidden = categoryPool.length - filtered.length;
+    const nextTier = AGE_TIERS.find(tier =>
+      categoryPool.filter(p => p.minAge <= Number(tier)).length > filtered.length
+    );
+    if (nextTier) barText += ` · ещё ${hidden} при ${nextTier}+`;
+  }
+  bar.textContent = barText;
 
   if (!domainPrograms.some(p => p.id === selectedProgramId)) {
     selectedProgramId = null;
