@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "version": 1,
+    "lastFullCheck": "2026-06-10",
+    "lastSiteSync": "2026-06-10",
+    "nextCheckRecommended": "еженедельно (кастинги с лошадьми живут 2–5 дней)",
+    "targetAge": "16-20",
+    "targetRiding": "любительский или профессиональный уровень",
+    "regions": ["UK", "USA", "Canada", "Ireland", "Germany", "France", "Spain", "Portugal", "Denmark", "South Africa", "Argentina", "Australia", "online"],
+    "ridingLevels": {
+      "required": "обязательна — без езды не подавать",
+      "preferred": "желательна / плюс — езда сильно повышает шансы",
+      "not_required": "не требуется — ранчо/вестерн-контекст без сцен в седле"
+    },
+    "descFormat": "Тип: … · Страна (город) · Верховая езда: обязательна|желательна|не требуется · Оплата: да/нет. Контакт: …",
+    "siteProgramIds": {
+      "19": "Sportswear Commercial (closed)",
+      "20": "Real London Casting (closed)",
+      "46": "Fallow",
+      "47": "Love in the Wind — Luke",
+      "48": "Love in the Wind — Savannah",
+      "49": "Blood & Soil — Riders 17–18 (closed)",
+      "50": "Netflix ES — Lupus Films (watch)"
+    }
+  },
+  "platforms": [
+    {
+      "id": "backstage",
+      "name": "Backstage",
+      "url": "https://www.backstage.com/casting/",
+      "searchUrl": "https://www.backstage.com/casting/?keyword=horse",
+      "regions": ["USA", "UK", "online"],
+      "keywords": ["horse", "horseback", "equestrian", "western", "ranch", "cowboy"],
+      "filters": "Teens 13–20, Film/TV/Commercial",
+      "frequency": "daily",
+      "notes": "Часто expired в выдаче — открывать карточку и проверять EXPIRES"
+    },
+    {
+      "id": "mandy",
+      "name": "Mandy / The Mandy Network",
+      "url": "https://www.mandy.com/",
+      "searchUrl": "https://www.mandy.com/uk/casting/",
+      "regions": ["UK", "EU", "USA"],
+      "keywords": ["horse", "riding", "western", "ranch"],
+      "frequency": "daily",
+      "notes": "Сильная база UK/EU film & TV"
+    },
+    {
+      "id": "starnow",
+      "name": "StarNow",
+      "url": "https://www.starnow.com/uk/casting/",
+      "regions": ["UK", "Australia"],
+      "keywords": ["horse riding", "equestrian"],
+      "frequency": "daily",
+      "notes": "UK teenage acting + extras skills"
+    },
+    {
+      "id": "projectcasting",
+      "name": "Project Casting",
+      "url": "https://projectcasting.com/jobs",
+      "searchUrl": "https://projectcasting.com/jobs?skills=Horseback+Riding",
+      "regions": ["USA", "UK", "Canada", "global"],
+      "keywords": ["Horseback Riding"],
+      "frequency": "daily",
+      "notes": "Тег Horseback Riding в фильтре skills"
+    },
+    {
+      "id": "castingnetworks",
+      "name": "Casting Networks",
+      "url": "https://www.castingnetworks.com/",
+      "regions": ["USA", "UK"],
+      "keywords": ["horse riding", "special skills"],
+      "frequency": "daily",
+      "notes": "Special skills riders; нужен аккаунт для деталей"
+    },
+    {
+      "id": "kidscasting",
+      "name": "KidsCasting",
+      "url": "https://kidscasting.com/castingcalls/for-teens",
+      "regions": ["USA", "Canada"],
+      "keywords": ["horseback", "western", "pony"],
+      "frequency": "daily",
+      "notes": "Teens 12–18; иногда horseback required"
+    },
+    {
+      "id": "allcasting",
+      "name": "Allcasting",
+      "url": "https://allcasting.com/castingcalls",
+      "regions": ["USA", "Canada"],
+      "keywords": ["western", "horse", "ranch"],
+      "frequency": "weekly",
+      "notes": "Фильтр по western / horse tags"
+    },
+    {
+      "id": "playbill",
+      "name": "Playbill",
+      "url": "https://www.playbill.com/jobs",
+      "regions": ["USA"],
+      "keywords": ["Equus", "horse"],
+      "frequency": "weekly",
+      "notes": "Театр; иногда верховая езда (Equus)"
+    },
+    {
+      "id": "mma-spain",
+      "name": "MMA Content Feed (Испания)",
+      "url": "https://wall.mymotheragency.com/",
+      "regions": ["Spain"],
+      "keywords": ["caballo", "equitación", "Netflix"],
+      "frequency": "weekly",
+      "notes": "Испаноязычные кастинги; проверять lupuscast и аналоги"
+    },
+    {
+      "id": "onlinecasting-za",
+      "name": "Onlinecasting.co.za",
+      "url": "https://www.onlinecasting.co.za/",
+      "regions": ["South Africa"],
+      "keywords": ["horse", "riding"],
+      "frequency": "monthly",
+      "notes": "ЮАР; редко с ездой для teens"
+    }
+  ],
+  "agencies": [
+    {
+      "id": "take3",
+      "name": "Take 3 Agency",
+      "url": "https://www.take3agency.com/",
+      "phone": "+44 20 8088 2833",
+      "region": "UK",
+      "type": "SPACT",
+      "skills": ["horse riders", "stunts", "combat"],
+      "ageNotes": "Историческое кино/фэнтези: наездницы 16–25 через SPACT",
+      "action": "Зарегистрировать профиль + riding reel"
+    },
+    {
+      "id": "casting-collective",
+      "name": "Casting Collective",
+      "url": "https://www.castingcollective.co.uk/production/spact",
+      "region": "UK",
+      "type": "SPACT extras",
+      "skills": ["horse riders"],
+      "action": "Подать как SPACT performer с horse riding"
+    },
+    {
+      "id": "spact-uk",
+      "name": "Spact UK Ltd",
+      "url": "https://app.spotlight.com/contacts/listing/c6a0ec8f-c205-4dc1-a216-b6d78992a2be",
+      "region": "UK",
+      "type": "SPACT",
+      "skills": ["horse", "stunts"],
+      "action": "Open to new performers — регистрация"
+    },
+    {
+      "id": "extra-people",
+      "name": "Extra People / Uni-versal Extras",
+      "url": "https://www.extrapeople.co.uk/",
+      "region": "UK",
+      "type": "extras",
+      "skills": ["horse riding"],
+      "action": "Отметить special skill: horse riding в профиле"
+    },
+    {
+      "id": "cs-equine",
+      "name": "CS Equine Models",
+      "url": "https://www.cs-equine-models.co.uk/",
+      "region": "UK",
+      "type": "equine casting",
+      "skills": ["horse models", "riding"],
+      "action": "Конные модели и кастинги для рекламы/кино"
+    },
+    {
+      "id": "film-horses-ireland",
+      "name": "Film Horses Ireland",
+      "url": "https://filmhorsesireland.com/",
+      "phone": "+353 83 434 4993",
+      "region": "Ireland",
+      "type": "production horses",
+      "skills": ["film horses", "stunt riders"],
+      "action": "Сеть для крупных продакшенов в Ирландии — написать с riding reel"
+    },
+    {
+      "id": "true-edge",
+      "name": "True Edge",
+      "region": "UK",
+      "type": "stunts / riding",
+      "skills": ["riding for film"],
+      "notes": "Уточнить сайт при регистрации"
+    }
+  ],
+  "searchQueries": [
+    "horseback riding casting call open 2026 teenager",
+    "site:projectcasting.com horseback riding",
+    "site:backstage.com horse riding casting",
+    "site:mandy.com horse rider casting",
+    "site:kidscasting.com horseback teen",
+    "site:castingnetworks.com horse riders",
+    "SPACT horse rider casting UK",
+    "western film casting horse riding 16 18 20",
+    "Netflix caballo equitación casting España"
+  ],
+  "castings": {
+    "active": [
+      {
+        "id": "fallow-romi",
+        "siteProgramId": 46,
+        "name": "Fallow — Lead Actress (Romi)",
+        "type": "short_film",
+        "country": "UK",
+        "city": null,
+        "age": "18-25 playing age",
+        "riding": "required",
+        "paid": true,
+        "deadline": "2026-07-02",
+        "deadlineNote": "rolling до истечения на Project Casting",
+        "url": "https://projectcasting.com/job/fallow-short-film-casting-call-for-lead-actress",
+        "contact": "Marott Productions",
+        "platform": "projectcasting",
+        "verified": "2026-06-10"
+      },
+      {
+        "id": "love-wind-luke",
+        "siteProgramId": 47,
+        "name": "Love in the Wind — Luke",
+        "type": "feature_film",
+        "country": "USA",
+        "city": "CA / TX",
+        "age": "18-30",
+        "riding": "preferred",
+        "paid": true,
+        "payNote": "до $1,000 lead",
+        "deadline": "2026-06-26",
+        "url": "https://www.mandy.com/aa/project/3168995/love-in-the-wind/",
+        "contact": "Tri Nguyen, Moviehead Pictures",
+        "platform": "mandy",
+        "verified": "2026-06-10",
+        "urgent": true
+      },
+      {
+        "id": "love-wind-savannah",
+        "siteProgramId": 48,
+        "name": "Love in the Wind — Savannah",
+        "type": "feature_film",
+        "country": "USA",
+        "city": "CA / TX",
+        "age": "18-30",
+        "riding": "preferred",
+        "paid": true,
+        "payNote": "до $1,000 lead",
+        "deadline": "2026-06-26",
+        "url": "https://www.mandy.com/aa/project/3168995/love-in-the-wind/",
+        "contact": "Tri Nguyen, Moviehead Pictures",
+        "platform": "mandy",
+        "verified": "2026-06-10",
+        "urgent": true
+      }
+    ],
+    "watch": [
+      {
+        "id": "lupus-netflix-spain",
+        "siteProgramId": 50,
+        "name": "Netflix series — women riders (Lupus Films)",
+        "type": "tv_series",
+        "country": "Spain",
+        "city": "national",
+        "age": "20-50 women",
+        "riding": "required",
+        "paid": true,
+        "deadline": null,
+        "deadlineNote": "без публичного дедлайна; съёмки с апреля/мая 2026",
+        "url": "https://wall.mymotheragency.com/spainmujeres-que-monten-a-caballo-para-serie-de-netflix-a-nivel-nacional-cinema/",
+        "contact": "lupuscast@gmail.com",
+        "platform": "mma-spain",
+        "verified": "2026-06-10",
+        "notes": "На сайте id 50; только 20+; мониторить MMA feed"
+      }
+    ],
+    "archive": [
+      {
+        "id": "real-london-rider",
+        "siteProgramId": 20,
+        "name": "Real London Casting — Male Horse Rider",
+        "riding": "required",
+        "age": "20-28",
+        "closedReason": "истёк 2025-11-17 на Project Casting",
+        "url": "https://projectcasting.com/job/casting-call-confident-horse-riders-needed",
+        "verified": "2026-06-10"
+      },
+      {
+        "id": "blood-soil-riders",
+        "siteProgramId": 49,
+        "name": "Blood & Soil — Horseback Riders",
+        "riding": "required",
+        "age": "17-18",
+        "closedReason": "истёк 2026-02-28",
+        "url": "https://kidscasting.com/castingcall/599449",
+        "notes": "Идеальный матч 16-20 — на сайте в архиве id 49"
+      },
+      {
+        "id": "sportswear-road",
+        "siteProgramId": 19,
+        "name": "Sportswear Commercial — Road Casting",
+        "riding": "required",
+        "age": "12-18",
+        "closedReason": "истёк 2023",
+        "url": "https://projectcasting.com/job/sportswear-london-commercial-casting-call-for-horse-back-riders"
+      },
+      {
+        "id": "gold-mountain-riders",
+        "name": "Gold Mountain — Horse Riders (advanced)",
+        "riding": "required",
+        "age": "25-55",
+        "closedReason": "истёк 2026-04-30",
+        "url": "https://www.castingnetworks.com/talent/project/16026097/role/67415199/"
+      },
+      {
+        "id": "texas-western-lead",
+        "name": "Lonesome Are The Wicked — Lead Actress",
+        "riding": "required",
+        "age": "35-39",
+        "closedReason": "истёк 2026-05-27",
+        "url": "https://projectcasting.com/job/texas-casting-call-for-lead-actress-with-horse-riding-skills"
+      },
+      {
+        "id": "burton-robinson-rider",
+        "name": "Burton & Robinson — Male 20s Rider",
+        "riding": "required",
+        "age": "20s",
+        "closedReason": "истёк 2026-04-03",
+        "url": "https://projectcasting.com/job/casting-call-for-horse-back-riders-2"
+      },
+      {
+        "id": "palomino-alissa",
+        "name": "Palomino — Table Read Alissa",
+        "riding": "not_required",
+        "age": "16",
+        "closedReason": "истёк 2026-03-13",
+        "url": "https://kidscasting.com/castingcall/600610",
+        "notes": "Ранчо-фильм, езда не в требованиях"
+      },
+      {
+        "id": "opening-day",
+        "name": "Opening Day — horse racing comedy",
+        "riding": "not_required",
+        "age": "varies",
+        "closedReason": "истёк 2026-05-03",
+        "url": "https://www.backstage.com/casting/opening-day-3150686/"
+      },
+      {
+        "id": "karl-may-2026",
+        "name": "Karl-May-Spiele Bad Segeberg — Reiterkomparsen",
+        "type": "open_air_theater",
+        "country": "Germany",
+        "riding": "required",
+        "age": "18+",
+        "closedReason": "набор закрыт 2026-02-22",
+        "url": "https://www.karl-may-spiele.de/reiterkomparsen-suche-2026/"
+      },
+      {
+        "id": "burgrieden-2026",
+        "name": "Festspiele Burgrieden — Reiter-Casting",
+        "type": "open_air_theater",
+        "country": "Germany",
+        "riding": "required",
+        "age": "18+",
+        "closedReason": "кастинг был 2026-03-07",
+        "url": "https://festspiele-burgrieden.de/casting-call/"
+      },
+      {
+        "id": "legends-pony-express",
+        "name": "Legends of the Pony Express (INSP)",
+        "riding": "required",
+        "age": "15-18",
+        "closedReason": "истёк 2023",
+        "url": "https://kidscasting.com/castingcall/555638"
+      },
+      {
+        "id": "dfw-cowboys",
+        "name": "DFW Commercial — Real Cowboy Types",
+        "riding": "required",
+        "age": "50-68",
+        "closedReason": "открыт до 2026-07-05 но не подходит по возрасту",
+        "url": "https://projectcasting.com/job/commercial-casting-call-for-dfw-area-commercial-shoot"
+      }
+    ]
+  },
+  "checkLog": [
+    {
+      "date": "2026-06-10",
+      "checker": "cursor-agent",
+      "activeCount": 3,
+      "watchCount": 1,
+      "notes": "Глобальный поиск: UK, USA, EU, CA, IE, DE, ES, ZA, AR. Real London закрыт — исправить на сайте."
+    },
+    {
+      "date": "2026-06-10",
+      "checker": "cursor-agent",
+      "activeCount": 3,
+      "watchCount": 1,
+      "siteCards": 7,
+      "notes": "README обновлён. На сайт: Blood & Soil (49, archive), Netflix Lupus (50, watch). Love in the Wind → urgent."
+    }
+  ]
+}

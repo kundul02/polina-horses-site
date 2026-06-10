@@ -13,8 +13,56 @@
 ```
 research/
   equestrian/     # конные программы (7 файлов + сводный)
+    castings/     # база мониторинга кастингов (JSON + чеклист)
   acting/         # актёрские программы (сводный + обновления)
 ```
+
+### Кастинги с верховой ездой (16–20 лет)
+
+Отдельная база мониторинга — не путать с конными лагерями и стажировками.
+
+| Файл | Назначение |
+|------|------------|
+| [`research/equestrian/castings/castings-registry.json`](research/equestrian/castings/castings-registry.json) | Реестр: платформы, агентства, active / watch / archive |
+| [`research/equestrian/castings/MONITORING_DATABASE.md`](research/equestrian/castings/MONITORING_DATABASE.md) | Сводка для человека |
+| [`research/equestrian/castings/CHECKLIST_проверка.md`](research/equestrian/castings/CHECKLIST_проверка.md) | Полный промпт для агента |
+
+**На сайте:** категория **«Кастинги»** во вкладке «Конные программы» (не отдельная вкладка).
+
+#### Как проверять потом
+
+**Частота:** раз в **3–7 дней**; в активный сезон (лето, вестерны) — **ежедневно**. Кастинги с лошадьми часто живут 2–5 дней.
+
+**Промпт для Cursor** (скопировать как есть):
+
+```
+Проверь актуальность кастингов по research/equestrian/castings/castings-registry.json и обнови сайт
+```
+
+Агент должен:
+1. Пройти `platforms[]` и `searchQueries[]` из JSON.
+2. Сверить `active[]` — URL открыт, дедлайн не истёк (смотреть **Expiration date** на Project Casting).
+3. Новые открытые → `castings-registry.json` + карточка в `programs.html` (категория `Кастинги`).
+4. Истёкшие → `closed: true`, перенос в `archive`, обновить дедлайн «Закрыт (дата)».
+5. **Тройная синхронизация:** `programs.html` → `cp programs.html index.html` → Canvas.
+6. Запись в `checkLog` в JSON + строка в `MONITORING_DATABASE.md`.
+
+Подробный чеклист: [`CHECKLIST_проверка.md`](research/equestrian/castings/CHECKLIST_проверка.md).
+
+#### Формат карточки кастинга
+
+| Поле | Правило |
+|------|---------|
+| `summary` | Суть роли + езда одной фразой |
+| `desc` | `Тип: … · Страна (город) · Верховая езда: обязательна \| желательна \| не требуется · Оплата: да/нет. Контакт: …` |
+| `riding` в JSON | `required` / `preferred` / `not_required` — дублируется в `desc` |
+| `urgent` | `true` если дедлайн &lt; 14 дней |
+| `closed` | `true` для архива — видно в фильтре «Архив» |
+
+**Уровни езды:**
+- **обязательна** — без навыка не подавать (must / proficient / must be able to ride).
+- **желательна** — вестерн, ранчо, ковбой: езда сильно помогает, но не must.
+- **не требуется** — сельская/ранчо-тема без сцен в седле.
 
 ## Тройная синхронизация (обязательно)
 
@@ -76,8 +124,20 @@ research/
 ### Обмен
 - [European Solidarity Corps](https://youth.europa.eu/solidarity_en)
 
-### Кастинги (конные съёмки)
-- [Backstage](https://www.backstage.com), [Project Casting](https://projectcasting.com)
+### Кастинги (кино / TV / реклама с ездой)
+
+Полный список платформ и агентств — в [`castings-registry.json`](research/equestrian/castings/castings-registry.json).
+
+**Платформы (проверять по расписанию из README выше):**
+- [Backstage](https://www.backstage.com/casting/?keyword=horse) · [Mandy](https://www.mandy.com/) · [StarNow](https://www.starnow.com/uk/casting/)
+- [Project Casting](https://projectcasting.com/jobs?skills=Horseback+Riding) · [Casting Networks](https://www.castingnetworks.com/)
+- [KidsCasting teens](https://kidscasting.com/castingcalls/for-teens) · [Allcasting](https://allcasting.com/castingcalls)
+- [MMA Feed España](https://wall.mymotheragency.com/) (испаноязычные)
+
+**SPACT / агентства (регистрация без публичного дедлайна):**
+- [Take 3 Agency](https://www.take3agency.com/) · [Casting Collective SPACT](https://www.castingcollective.co.uk/production/spact)
+- [Extra People](https://www.extrapeople.co.uk/) · [CS Equine Models](https://www.cs-equine-models.co.uk/)
+- [Film Horses Ireland](https://filmhorsesireland.com/)
 
 ## Мониторинг — актёрские программы
 

@@ -516,13 +516,6 @@
     color: var(--text2);
     font-size: 15px;
   }
-  /* FOOTER */
-  .footer {
-    padding: 20px 16px;
-    font-size: 11px;
-    color: var(--text3);
-    text-align: center;
-  }
 </style>
 </head>
 <body>
@@ -585,10 +578,6 @@
   <div class="docs-note" id="docs-note" style="display:none;"></div>
 </div>
 
-<div class="footer" id="footer-text">
-  Источники: Джимини · Грок · Перплексити · ЧатГПТ · Клод · Ирландия · Испания · Португалия · Германия · Дания · ЮАР · Аргентина · Обновлено: 10 июня 2026
-</div>
-
 <script>
 const DOMAINS = {
   equestrian: {
@@ -596,12 +585,12 @@ const DOMAINS = {
     title: "Конные программы",
     subtitle: "Глобальная подборка · жильё, дорога, обучение, оплата",
     categories: ["Стипендии", "Лагери", "Стажировки", "Обмен", "Кастинги"],
-    urgentCallout: "USEA Youth Mentorship Rebecca Farm (23 июня), Camp Wicosuta (14 июня), BHS Caron Roberts (27 июня), Country Farm Stud (30 июня), Hartpury (30 июня), Anna Hilton (7 июля). Нажми «Срочно» ниже.",
-    footerSources: "Источники: Джимини · Грок · Перплексити · ЧатГПТ · Клод · Ирландия · Испания · Португалия · Германия · Дания · ЮАР · Аргентина · Обновлено: 10 июня 2026",
+    urgentCallout: "Кастинги: Love in the Wind — 26 июня (СРОЧНО). Fallow — до 2 июля. Netflix ES (Lupus) — мониторинг. USEA Rebecca Farm (23 июня). Нажми «Кастинги».",
     tips: [
-      { title: "Портфолио всадника", text: "Конное резюме с дисциплинами и высотами. Видео до 5 мин — три аллюра, прыжки, работа на земле. Рекомендации от сертифицированного тренера." },
+      { title: "Портфолио всадника", text: "Конное CV + riding reel 1–2 мин (три аллюра, прыжки, работа с лошадью). Headshot + full-body. Указывай special skill: horseback riding." },
       { title: "Страхование", text: "Стандартные полисы не покрывают травмы с лошадьми. Нужен специальный полис с покрытием конного спорта и работы на конюшне (stable duties)." },
-      { title: "Мониторинг кастингов", text: "Backstage.com · ProjectCasting.com · KidsCasting.com · CastingNetworks.com — кастинги появляются внезапно, следить постоянно." }
+      { title: "Платформы кастингов", text: "Backstage.com · Mandy.com · StarNow · ProjectCasting.com · Casting Networks · KidsCasting.com · Allcasting.com — фильтры: horse riding, equestrian, western, SPACT." },
+      { title: "Агентства (верховая езда)", text: "UK SPACT: Take 3 Agency (take3agency.com, +44 20 8088 2833). Конные кастинги: CS Equine Models. Вестерны и историческое кино — через SPACT-агентства и массовку с отметкой riding." }
     ]
   },
   acting: {
@@ -610,7 +599,6 @@ const DOMAINS = {
     subtitle: "Театр и актёрство за рубежом · интенсивы, стипендии, аудиции",
     categories: ["Стипендии", "Интенсивы", "Стажировки", "Обмен", "Аудиции"],
     urgentCallout: "ESC ART Summer Białowieża (28 мая), ESC IntegrART Krakow (срочно), Interlochen Theater (rolling). NYT Auditions 2027 — регистрация конец 2026. Нажми «Срочно» ниже.",
-    footerSources: "Источники: Interlochen · Stagedoor · RADA · NYT · ESC · AMDA · Carnegie Mellon · Обновлено: 10 июня 2026",
     tips: [
       { title: "Портфолио актёра", text: "Headshot + full-body фото. Два контрастных монолога (dramatic + comedic), self-tape 1–2 мин. Театральное резюме с опытом и тренингом." },
       { title: "Аудиции", text: "Musical theater: 16-bar song + monologue. NYT video audition — один монолог на camera. Backstage.com · Playbill · StageMilk — мониторить постоянно." },
@@ -1066,25 +1054,27 @@ const BASE_PROGRAMS = [
     id: 19, name: "Sportswear Commercial — Road Casting",
     org: "Road Casting (UK)",
     category: "Кастинги", baseCountry: "UK", country: "UK (London)",
-    age: "12–18 лет", minAge: 12, deadline: "Мониторить постоянно", tone: "neutral",
+    age: "12–18 лет", minAge: 12, deadline: "Закрыт (истёк 2023)", tone: "neutral",
     support: ["Оплата","Дорога"],
     pay: "Конкурентная ставка + возможное покрытие дороги и проживания",
     dates: "По датам съёмки",
-    desc: "Кастинг для рекламы крупного спортивного бренда. Молодые всадники 12–18 лет с реальным опытом верховой езды. Выполнение манёвров, профессиональная съёмка. Хорошее пополнение портфолио.",
+    summary: "Реклама спортивного бренда: всадники 12–18 лет с реальным опытом езды, манёвры в кадре. Подходит для 16–18 из диапазона.",
+    desc: "Тип: реклама · UK (London) · Верховая езда: обязательна · Оплата: да. Статус: набор закрыт — оставлен для мониторинга похожих кастингов Road Casting.",
     url: "https://projectcasting.com/job/sportswear-london-commercial-casting-call-for-horse-back-riders",
-    urgent: false, check: "Проверить актуальность статуса кастинга напрямую"
+    urgent: false, check: null, closed: true
   },
   {
-    id: 20, name: "Child Horse Rider — Real London Casting",
+    id: 20, name: "Real London Casting — Male Horse Rider (20–28)",
     org: "Real London Casting",
     category: "Кастинги", baseCountry: "UK", country: "UK (London)",
-    age: "5–9 лет (Mixed Race)", minAge: 5, deadline: "Мониторить постоянно", tone: "neutral",
+    age: "20–28 лет", minAge: 20, deadline: "Закрыт (истёк 17 нояб. 2025)", tone: "neutral",
     support: ["Оплата"],
-    pay: "Paid role — конкурентные ставки за съёмочный день",
-    dates: "По датам съёмки",
-    desc: "Профессиональный проект ищет ребёнка смешанного происхождения 5–9 лет, уверенно сидящего в седле. Реальный опыт работы с лошадьми обязателен. Оплачиваемая роль.",
+    pay: "Paid — конкурентные ставки за съёмочный день",
+    dates: "—",
+    summary: "Промо в Лондоне: мужчина 20–28, уверенная верховая езда. Набор закрыт — оставлен в базе мониторинга Road Casting / Real London.",
+    desc: "Тип: реклама/промо · UK (London) · Верховая езда: обязательна · Оплата: да. Статус: закрыт. См. research/equestrian/castings/castings-registry.json",
     url: "https://projectcasting.com/job/casting-call-confident-horse-riders-needed",
-    urgent: false, check: "Проверить текущий статус проекта напрямую"
+    urgent: false, check: null, closed: true
   },
   {
     id: 21, name: "Crossogue Equestrian Teen Camp",
@@ -1385,6 +1375,71 @@ const BASE_PROGRAMS = [
     desc: "Стажировка в центре реабилитации чистокровных рысаков в Lexington KY. Уход, реабилитация, работа с отставными racehorses. Fall session — заявки до 1 июля.",
     url: "https://www.secretariatcenter.org/internships",
     urgent: true, check: "Уточнить условия проживания и длительность Fall session", isNew: true
+  },
+  {
+    id: 46, name: "Fallow — Lead Actress (Romi)",
+    org: "Marott Productions",
+    category: "Кастинги", baseCountry: "UK", country: "UK",
+    age: "18–25 (playing age)", minAge: 18, deadline: "2 июля 2026 (rolling)", tone: "green",
+    support: ["Оплата"],
+    pay: "Paid (indie short film)",
+    dates: "Съёмки — по согласованию с продакшеном",
+    summary: "Короткометражная драма Fallow: Romi возвращается в родной дом после смерти отца и сталкивается с прошлым. Country girl, переехавшая в город — нужны сильные эмоции и screen presence. Сцены с верховой ездой обязательны.",
+    desc: "Тип: короткометражный фильм · UK · Верховая езда: обязательна · Оплата: да. Контакт: Marott Productions via Project Casting.",
+    url: "https://projectcasting.com/job/fallow-short-film-casting-call-for-lead-actress",
+    urgent: false, check: null, isNew: true
+  },
+  {
+    id: 47, name: "Love in the Wind — Luke (Lead Cowboy)",
+    org: "Moviehead Pictures · Tri Nguyen, casting dir.",
+    category: "Кастинги", baseCountry: "USA", country: "USA (CA / TX)",
+    age: "18–30 лет", minAge: 18, deadline: "26 июня 2026 — СРОЧНО", tone: "red",
+    support: ["Оплата"],
+    pay: "До $1,000 (lead)",
+    dates: "Съёмки — июль 2026 (California, Texas)",
+    summary: "Полнометражная драма: неудавшийся ковбой-музыкант из Техаса влюбляется в работницу ранчо. Lead Luke — мужчина 18–30, ковбойская эстетика; опыт верховой езды и ранчо — сильный плюс. Non-union.",
+    desc: "Тип: полнометражный фильм · USA (Los Angeles / Austin) · Верховая езда: желательна (ковбой/ранчо) · Оплата: да. Контакт: Tri Nguyen via Mandy / Backstage.",
+    url: "https://www.mandy.com/aa/project/3168995/love-in-the-wind/",
+    urgent: true, check: null, isNew: true
+  },
+  {
+    id: 48, name: "Love in the Wind — Savannah (Ranch Hand Lead)",
+    org: "Moviehead Pictures · Tri Nguyen, casting dir.",
+    category: "Кастинги", baseCountry: "USA", country: "USA (CA / TX)",
+    age: "18–30 лет", minAge: 18, deadline: "26 июня 2026 — СРОЧНО", tone: "red",
+    support: ["Оплата"],
+    pay: "До $1,000 (lead)",
+    dates: "Съёмки — июль 2026 (California, Texas)",
+    summary: "Та же полнометражная драма Love in the Wind. Lead Savannah — работница ранчо из Калифорнии, 18–30. Нужна актриса, уверенная с лошадьми и ранчо-контекстом, с химией с Luke.",
+    desc: "Тип: полнометражный фильм · USA (Los Angeles / Austin) · Верховая езда: желательна · Оплата: да. Контакт: Tri Nguyen via Mandy / Backstage.",
+    url: "https://www.mandy.com/aa/project/3168995/love-in-the-wind/",
+    urgent: true, check: null, isNew: true
+  },
+  {
+    id: 49, name: "Blood & Soil — Horseback Riders (17–18)",
+    org: "Blood & Soil production",
+    category: "Кастинги", baseCountry: "USA", country: "USA (North Carolina)",
+    age: "17–18 лет", minAge: 17, deadline: "Закрыт (истёк 28 февр. 2026)", tone: "neutral",
+    support: ["Оплата"],
+    pay: "SAG / non-union local hire",
+    dates: "Съёмки были март 2026 (NC)",
+    summary: "Историческая драма: всадники и ковбои 17–18, Western-контекст. Эталонный матч для 16–20 + езда — оставлен в архиве для мониторинга похожих.",
+    desc: "Тип: полнометражный фильм · USA (Charlotte, NC) · Верховая езда: обязательна · Оплата: да. Статус: закрыт. Шаблон для поиска на KidsCasting.",
+    url: "https://kidscasting.com/castingcall/599449",
+    urgent: false, check: null, closed: true
+  },
+  {
+    id: 50, name: "Netflix Series — Women Riders (Lupus Films)",
+    org: "Lupus Films",
+    category: "Кастинги", baseCountry: "Испания", country: "Испания (национальный кастинг)",
+    age: "20–50 лет (женщины)", minAge: 20, deadline: "Мониторить — без публичного дедлайна", tone: "green",
+    support: ["Оплата"],
+    pay: "Remunerado (оплачиваемо)",
+    dates: "Съёмки с апреля/мая 2026",
+    summary: "Сериал Netflix (Испания): женщины 20–50 с доминированием в верховой езде и актёрскими навыками. Второстепенные и массовые роли. Для 16–19 не подходит по возрасту — мониторить на будущее.",
+    desc: "Тип: сериал (Netflix) · Испания · Верховая езда: обязательна · Оплата: да. Подача: lupuscast@gmail.com (фото + видео-презентация). Источник: MMA Content Feed.",
+    url: "https://wall.mymotheragency.com/spainmujeres-que-monten-a-caballo-para-serie-de-netflix-a-nivel-nacional-cinema/",
+    urgent: false, check: "Только 20+; для 16 лет — держать в базе castings-registry.json watch", isNew: true
   }
 ].map(program => ({ closed: false, isNew: false, ...program }));
 
@@ -2454,15 +2509,51 @@ function renderDomainChrome() {
   document.getElementById('header-title').textContent = cfg.title;
   document.getElementById('header-subtitle').textContent = cfg.subtitle;
   document.getElementById('urgent-callout-text').textContent = cfg.urgentCallout;
-  document.getElementById('footer-text').textContent = cfg.footerSources;
   document.title = cfg.title + " — Полина";
+}
+
+const AGE_TIERS = ["16", "17", "18"];
+
+function applyCountryFilter(programs) {
+  if (activeCountry === "all") return programs;
+  return programs.filter(p => p.baseCountry === activeCountry);
+}
+
+function applyCategoryFilter(programs, category) {
+  if (category === "archive") return programs.filter(p => p.closed);
+  const open = programs.filter(p => !p.closed);
+  if (category === "all") return open;
+  if (category === "urgent") return open.filter(p => p.urgent);
+  if (category === "new") return open.filter(p => p.isNew);
+  return open.filter(p => p.category === category);
+}
+
+function programsForCategoryAndCountry(category) {
+  const domainPrograms = getDomainPrograms(activeDomain);
+  let pool = applyCategoryFilter(domainPrograms, category);
+  return applyCountryFilter(pool);
+}
+
+function lowestAgeTierWithResults(pool) {
+  if (!pool.length) return null;
+  for (const tier of AGE_TIERS) {
+    if (pool.some(p => p.minAge <= Number(tier))) return tier;
+  }
+  return "18";
+}
+
+function autoAdjustAgeForSelection() {
+  if (activeCategory === "all") return;
+  const pool = programsForCategoryAndCountry(activeCategory);
+  const suggested = lowestAgeTierWithResults(pool);
+  if (!suggested) return;
+  const currentCount = pool.filter(p => p.minAge <= Number(activeAge)).length;
+  if (currentCount === 0) activeAge = suggested;
 }
 
 function getScopedPrograms(openPrograms) {
   const targetAge = Number(activeAge);
-  return openPrograms.filter(p =>
-    (activeCountry === "all" || p.baseCountry === activeCountry) && p.minAge <= targetAge
-  );
+  return applyCountryFilter(openPrograms).filter(p => p.minAge <= targetAge);
 }
 
 function getFilterScopeLabel() {
@@ -2470,17 +2561,18 @@ function getFilterScopeLabel() {
   return `${activeAge}+ · ${countryLabel}`;
 }
 
-function buildCategoryFilters(openPrograms, scopedOpen) {
+function buildCategoryFilters(openPrograms) {
   const cfg = DOMAINS[activeDomain];
-  const categoryCounts = scopedOpen.reduce((acc, p) => {
+  const countryScopedOpen = applyCountryFilter(openPrograms);
+  const categoryCounts = countryScopedOpen.reduce((acc, p) => {
     acc[p.category] = (acc[p.category] || 0) + 1;
     return acc;
   }, {});
-  const archiveCount = getDomainPrograms(activeDomain).filter(p => p.closed).length;
-  const urgentCount = scopedOpen.filter(p => p.urgent).length;
-  const newCount = scopedOpen.filter(p => p.isNew).length;
+  const archiveCount = applyCountryFilter(getDomainPrograms(activeDomain).filter(p => p.closed)).length;
+  const urgentCount = countryScopedOpen.filter(p => p.urgent).length;
+  const newCount = countryScopedOpen.filter(p => p.isNew).length;
   const chips = [
-    { cat: "all", label: `Все (${scopedOpen.length})`, cls: activeCategory === "all" ? "chip active" : "chip" },
+    { cat: "all", label: `Все (${countryScopedOpen.length})`, cls: activeCategory === "all" ? "chip active" : "chip" },
     { cat: "new", label: `Новые (${newCount})`, cls: activeCategory === "new" ? "chip new active" : "chip new" },
     { cat: "urgent", label: `Срочно (${urgentCount})`, cls: activeCategory === "urgent" ? "chip urgent active" : "chip urgent" }
   ];
@@ -2552,16 +2644,14 @@ function jumpToProgram(id) {
 }
 
 function setCategory(btn) {
-  document.querySelectorAll('#cat-filter .chip').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
   activeCategory = btn.dataset.cat;
+  autoAdjustAgeForSelection();
   render();
 }
 
 function setCountry(btn) {
-  document.querySelectorAll('#country-filter .chip').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
   activeCountry = btn.dataset.country;
+  if (activeCategory !== "all") autoAdjustAgeForSelection();
   render();
 }
 
@@ -2604,7 +2694,12 @@ function inferDocumentChecklist(program) {
   if (program.minAge < 18) docs.push("Свидетельство о рождении (для несовершеннолетнего)");
   if (program.minAge < 18) docs.push("Нотариальное согласие родителей/опекуна (до 18 лет)");
 
-  if (program.domain === "acting") {
+  if (program.category === "Кастинги") {
+    docs.push("Headshot + full-body фото (актуальные)");
+    docs.push("Riding reel 1–2 мин: три аллюра, уверенная посадка, работа с лошадью");
+    docs.push("Актёрское резюме + special skills: horseback riding");
+    docs.push("Self-tape по инструкции кастинга (если запрошен)");
+  } else if (program.domain === "acting") {
     docs.push("Headshot + full-body фото (актуальные)");
     docs.push("Self-tape / showreel: 2 контрастных монолога (dramatic + comedic)");
     docs.push("Театральное резюме (опыт, тренинг, языки)");
@@ -2721,24 +2816,12 @@ function render() {
   document.getElementById('urgent-count').textContent = String(urgentCount);
   document.getElementById('country-count').textContent = String(countrySet.size);
 
-  buildCategoryFilters(openPrograms, scopedOpen);
+  buildCategoryFilters(openPrograms);
   buildCountryFilters(openPrograms);
   renderNewPanel(scopedOpen);
+  syncFilterChips();
 
-  let filtered = activeCategory === 'archive'
-    ? domainPrograms.filter(p => p.closed)
-    : openPrograms;
-
-  if (activeCategory === 'urgent') {
-    filtered = filtered.filter(p => p.urgent && !p.closed);
-  } else if (activeCategory === 'new') {
-    filtered = filtered.filter(p => p.isNew && !p.closed);
-  } else if (activeCategory !== 'all' && activeCategory !== 'archive') {
-    filtered = filtered.filter(p => p.category === activeCategory);
-  }
-  if (activeCountry !== 'all') {
-    filtered = filtered.filter(p => p.baseCountry === activeCountry);
-  }
+  let filtered = programsForCategoryAndCountry(activeCategory);
   const targetAge = Number(activeAge);
   filtered = filtered.filter(p => p.minAge <= targetAge);
 
