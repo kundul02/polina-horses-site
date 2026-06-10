@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<title>Конные программы — Полина</title>
+<title>Программы для Полины</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -50,6 +50,32 @@
     color: var(--text2);
     margin-top: 3px;
   }
+  .domain-switcher {
+    display: flex;
+    background: var(--fill);
+    border-radius: 10px;
+    padding: 3px;
+    margin-top: 12px;
+    gap: 3px;
+  }
+  .domain-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: var(--text2);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s, color 0.15s;
+  }
+  .domain-btn.active {
+    background: var(--card);
+    color: var(--blue);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
   /* STATS */
   .stats {
     display: grid;
@@ -88,6 +114,99 @@
     line-height: 1.5;
   }
   .callout strong { display: block; margin-bottom: 2px; }
+  /* NEW ARRIVALS */
+  .new-panel {
+    margin: 0 16px 12px;
+    background: #E8F5E9;
+    border-left: 3px solid var(--green);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+  }
+  .new-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .new-panel-header strong { color: #1B7D3A; }
+  .new-count {
+    background: var(--green);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 2px 10px;
+    min-width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .new-panel-hint {
+    font-size: 12px;
+    color: #3D8B4F;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .new-panel-scope {
+    font-size: 11px;
+    color: var(--text2);
+    font-weight: 500;
+  }
+  .new-panel-scroll {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  .new-panel-scroll::-webkit-scrollbar { display: none; }
+  .new-pill {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    background: #fff;
+    border: 1.5px solid var(--green);
+    border-radius: 12px;
+    padding: 9px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: left;
+    max-width: 240px;
+    transition: background 0.15s, transform 0.1s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .new-pill:active { transform: scale(0.98); background: #F4FBF5; }
+  .new-pill-name {
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--text);
+  }
+  .new-pill-meta {
+    font-size: 11px;
+    color: var(--text2);
+  }
+  .badge.new-badge {
+    background: #E8F5E9;
+    color: #1B7D3A;
+    font-weight: 600;
+  }
+  .chip.new.active {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+  }
+  .card.new {
+    border-color: var(--green);
+    box-shadow: 0 0 0 1px rgba(52, 199, 89, 0.12);
+  }
+  .card.new.selected {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 1px rgba(0, 122, 255, 0.1);
+  }
   /* FILTERS */
   .filters {
     padding: 0 0 8px;
@@ -141,11 +260,16 @@
   }
   /* DOCUMENTS PACKAGE */
   .docs-panel {
-    margin: 10px 16px 12px;
+    margin: 16px 16px 24px;
     background: var(--card);
     border: 1px solid var(--sep);
     border-radius: var(--radius);
     padding: 14px 16px;
+  }
+  .docs-panel--active {
+    border-color: var(--blue);
+    border-left: 4px solid var(--blue);
+    box-shadow: 0 0 0 1px rgba(0, 122, 255, 0.08);
   }
   .docs-title {
     font-size: 16px;
@@ -377,25 +501,6 @@
     background: var(--sep);
     margin: 12px 0;
   }
-  /* TIPS SECTION */
-  .tips {
-    padding: 16px 16px 0;
-  }
-  .tips h2 {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: -0.3px;
-  }
-  .tip-card {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 14px 16px;
-    margin-bottom: 10px;
-    border: 1px solid var(--sep);
-  }
-  .tip-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
-  .tip-card p { font-size: 13px; color: var(--text2); line-height: 1.5; }
   /* EMPTY STATE */
   .empty {
     text-align: center;
@@ -415,56 +520,32 @@
 <body>
 
 <div class="header">
-  <h1>Конные программы</h1>
-  <p>Глобальная подборка · жильё, дорога, обучение, оплата</p>
+  <h1 id="header-title">Конные программы</h1>
+  <p id="header-subtitle">Глобальная подборка · жильё, дорога, обучение, оплата</p>
+  <div class="domain-switcher" id="domain-switcher">
+    <button type="button" class="domain-btn active" data-domain="equestrian" onclick="setDomain(this)">Конные программы</button>
+    <button type="button" class="domain-btn" data-domain="acting" onclick="setDomain(this)">Актёрское мастерство</button>
+  </div>
 </div>
 
 <div class="stats">
   <div class="stat"><span class="stat-value" id="total-count">43</span><span class="stat-label">программ</span></div>
-  <div class="stat"><span class="stat-value">10</span><span class="stat-label">стипендий</span></div>
+  <div class="stat"><span class="stat-value" id="scholarship-count">10</span><span class="stat-label">стипендий</span></div>
   <div class="stat"><span class="stat-value danger" id="urgent-count">4</span><span class="stat-label">срочных</span></div>
-  <div class="stat"><span class="stat-value">12</span><span class="stat-label">стран</span></div>
+  <div class="stat"><span class="stat-value" id="country-count">12</span><span class="stat-label">стран</span></div>
 </div>
 
-<div class="callout">
+<div class="callout" id="urgent-callout">
   <strong>Срочно — подавать немедленно</strong>
-  BHS Caron Roberts (27 июня), Hartpury Equine Academy (30 июня), Anna Hilton (7 июля) и Clonshire (1-2 места). Нажми «Срочно» ниже.
+  <span id="urgent-callout-text">USEA Youth Mentorship Rebecca Farm (23 июня), Camp Wicosuta (14 июня), BHS Caron Roberts (27 июня), Country Farm Stud (30 июня), Hartpury (30 июня), Anna Hilton (7 июля). Нажми «Срочно» ниже.</span>
 </div>
 
 <div class="filters">
   <div class="filter-label">Тип программы</div>
-  <div class="filter-scroll" id="cat-filter">
-    <button class="chip active" data-cat="all" onclick="setCategory(this)">Все (43)</button>
-    <button class="chip urgent" data-cat="urgent" onclick="setCategory(this)">Срочно (4)</button>
-    <button class="chip" data-cat="Стипендии" onclick="setCategory(this)">Стипендии (10)</button>
-    <button class="chip" data-cat="Лагери" onclick="setCategory(this)">Лагери (10)</button>
-    <button class="chip" data-cat="Стажировки" onclick="setCategory(this)">Стажировки (17)</button>
-    <button class="chip" data-cat="Обмен" onclick="setCategory(this)">Обмен (4)</button>
-    <button class="chip" data-cat="Кастинги" onclick="setCategory(this)">Кастинги (2)</button>
-    <button class="chip" data-cat="archive" onclick="setCategory(this)">Архив (0)</button>
-  </div>
+  <div class="filter-scroll" id="cat-filter"></div>
 
   <div class="filter-label" style="margin-top:8px">Страна</div>
-  <div class="filter-scroll" id="country-filter">
-    <button class="chip active" data-country="all" onclick="setCountry(this)">Все страны</button>
-    <button class="chip" data-country="USA" onclick="setCountry(this)">USA (19)</button>
-    <button class="chip" data-country="UK" onclick="setCountry(this)">UK (11)</button>
-    <button class="chip" data-country="Canada" onclick="setCountry(this)">Canada (1)</button>
-    <button class="chip" data-country="Ирландия" onclick="setCountry(this)">Ирландия (3)</button>
-    <button class="chip" data-country="Германия" onclick="setCountry(this)">Германия (3)</button>
-    <button class="chip" data-country="Испания" onclick="setCountry(this)">Испания (1)</button>
-    <button class="chip" data-country="Португалия" onclick="setCountry(this)">Португалия (1)</button>
-    <button class="chip" data-country="Дания" onclick="setCountry(this)">Дания (1)</button>
-    <button class="chip" data-country="Австралия" onclick="setCountry(this)">Австралия (1)</button>
-    <button class="chip" data-country="ЮАР" onclick="setCountry(this)">ЮАР (1)</button>
-    <button class="chip" data-country="Аргентина" onclick="setCountry(this)">Аргентина (1)</button>
-    <button class="chip" data-country="Словения" onclick="setCountry(this)">Словения (1)</button>
-    <button class="chip" data-country="Швеция" onclick="setCountry(this)">Швеция (0)</button>
-    <button class="chip" data-country="Бельгия" onclick="setCountry(this)">Бельгия (0)</button>
-    <button class="chip" data-country="New Zealand" onclick="setCountry(this)">New Zealand (0)</button>
-    <button class="chip" data-country="Georgia" onclick="setCountry(this)">Georgia (0)</button>
-    <button class="chip" data-country="Европа (Schengen)" onclick="setCountry(this)">Европа (Schengen) (0)</button>
-  </div>
+  <div class="filter-scroll" id="country-filter"></div>
   <div class="filter-label" style="margin-top:8px">Возраст</div>
   <div class="filter-scroll" id="age-filter">
     <button class="chip active" data-age="16" onclick="setAge(this)">16+</button>
@@ -473,41 +554,255 @@
   </div>
 </div>
 
+<div class="new-panel" id="new-panel" hidden>
+  <div class="new-panel-header">
+    <strong>Новые поступления</strong>
+    <span class="new-count" id="new-count">0</span>
+  </div>
+  <div class="new-panel-hint">Счётчик совпадает с фильтром «Новые» · <span class="new-panel-scope" id="new-panel-scope">16+ · все страны</span></div>
+  <div class="new-panel-scroll" id="new-panel-list"></div>
+</div>
+
 <div class="count-bar" id="count-bar">Показано: 43 программ</div>
+
+<div class="programs" id="programs-list"></div>
 
 <div class="docs-panel" id="docs-panel">
   <div class="docs-title">Пакет документов для подачи</div>
-  <div class="docs-subtitle">Выберите программу в карточке — список документов сформируется автоматически.</div>
+  <div class="docs-subtitle" id="docs-subtitle">Шаг 2: выбери программу в списке выше — здесь появится чек-лист под эту заявку.</div>
   <div class="docs-selected" id="docs-selected">Программа пока не выбрана.</div>
   <ul class="docs-list" id="docs-list">
-    <li>Нажмите «Выбрать» в нужной карточке, чтобы увидеть точный пакет.</li>
+    <li>Нажми «Выбрать» на карточке нужной программы.</li>
   </ul>
   <div class="docs-note" id="docs-note" style="display:none;"></div>
 </div>
 
-<div class="programs" id="programs-list"></div>
-
-<div class="tips">
-  <h2>Быстрые советы</h2>
-  <div class="tip-card">
-    <h3>Портфолио всадника</h3>
-    <p>Конное резюме с дисциплинами и высотами. Видео до 5 мин — три аллюра, прыжки, работа на земле. Рекомендации от сертифицированного тренера.</p>
-  </div>
-  <div class="tip-card">
-    <h3>Страхование</h3>
-    <p>Стандартные полисы не покрывают травмы с лошадьми. Нужен специальный полис с покрытием конного спорта и работы на конюшне (stable duties).</p>
-  </div>
-  <div class="tip-card">
-    <h3>Мониторинг кастингов</h3>
-    <p>Backstage.com · ProjectCasting.com · KidsCasting.com · CastingNetworks.com — кастинги появляются внезапно, следить постоянно.</p>
-  </div>
-</div>
-
-<div class="footer">
-  Источники: Джимини · Грок · Перплексити · ЧатГПТ · Клод · Ирландия · Испания · Португалия · Германия · Дания · ЮАР · Аргентина · Обновлено: 6 июня 2026
+<div class="footer" id="footer-text">
+  Источники: Джимини · Грок · Перплексити · ЧатГПТ · Клод · Ирландия · Испания · Португалия · Германия · Дания · ЮАР · Аргентина · Обновлено: 10 июня 2026
 </div>
 
 <script>
+const DOMAINS = {
+  equestrian: {
+    id: "equestrian",
+    title: "Конные программы",
+    subtitle: "Глобальная подборка · жильё, дорога, обучение, оплата",
+    categories: ["Стипендии", "Лагери", "Стажировки", "Обмен", "Кастинги"],
+    urgentCallout: "USEA Youth Mentorship Rebecca Farm (23 июня), Camp Wicosuta (14 июня), BHS Caron Roberts (27 июня), Country Farm Stud (30 июня), Hartpury (30 июня), Anna Hilton (7 июля). Нажми «Срочно» ниже.",
+    footerSources: "Источники: Джимини · Грок · Перплексити · ЧатГПТ · Клод · Ирландия · Испания · Португалия · Германия · Дания · ЮАР · Аргентина · Обновлено: 10 июня 2026",
+    tips: [
+      { title: "Портфолио всадника", text: "Конное резюме с дисциплинами и высотами. Видео до 5 мин — три аллюра, прыжки, работа на земле. Рекомендации от сертифицированного тренера." },
+      { title: "Страхование", text: "Стандартные полисы не покрывают травмы с лошадьми. Нужен специальный полис с покрытием конного спорта и работы на конюшне (stable duties)." },
+      { title: "Мониторинг кастингов", text: "Backstage.com · ProjectCasting.com · KidsCasting.com · CastingNetworks.com — кастинги появляются внезапно, следить постоянно." }
+    ]
+  },
+  acting: {
+    id: "acting",
+    title: "Актёрское мастерство",
+    subtitle: "Театр и актёрство за рубежом · интенсивы, стипендии, аудиции",
+    categories: ["Стипендии", "Интенсивы", "Стажировки", "Обмен", "Аудиции"],
+    urgentCallout: "ESC ART Summer Białowieża (28 мая), ESC IntegrART Krakow (срочно), Interlochen Theater (rolling). NYT Auditions 2027 — регистрация конец 2026. Нажми «Срочно» ниже.",
+    footerSources: "Источники: Interlochen · Stagedoor · RADA · NYT · ESC · AMDA · Carnegie Mellon · Обновлено: 10 июня 2026",
+    tips: [
+      { title: "Портфолио актёра", text: "Headshot + full-body фото. Два контрастных монолога (dramatic + comedic), self-tape 1–2 мин. Театральное резюме с опытом и тренингом." },
+      { title: "Аудиции", text: "Musical theater: 16-bar song + monologue. NYT video audition — один монолог на camera. Backstage.com · Playbill · StageMilk — мониторить постоянно." },
+      { title: "Виза США", text: "Короткий интенсив (2–4 нед) — обычно B1/B2 с действующей визой. Interlochen и длинные программы могут требовать F-1. Подтверждение enrollment + финансов." }
+    ]
+  }
+};
+
+const ACTING_BASE_PROGRAMS = [
+  {
+    id: 101, domain: "acting", name: "Interlochen Arts Camp — Theater",
+    org: "Interlochen Center for the Arts",
+    category: "Стипендии", baseCountry: "USA", country: "USA (Michigan)",
+    age: "grades 3–12", minAge: 14, deadline: "15 янв. priority / rolling", tone: "orange",
+    support: ["Жильё", "Обучение"],
+    pay: "Need- и merit-based aid для программ 2+ недель",
+    desc: "Доступно: виза США ✓ (F-1/I-20, не B1/B2). Один из сильнейших театральных лагерей. 85% подавших на aid получили помощь (2025). Международные студенты eligible.",
+    url: "https://www.interlochen.org/summer-camp/theater-arts",
+    urgent: false, check: null
+  },
+  {
+    id: 102, domain: "acting", name: "AMDA High School Summer Conservatory",
+    org: "American Musical and Dramatic Academy",
+    category: "Стипендии", baseCountry: "USA", country: "USA (NY/LA)",
+    age: "14–19 лет", minAge: 14, deadline: "Rolling", tone: "green",
+    support: ["Обучение"],
+    pay: "Частичные стипендии по результатам аудиции",
+    desc: "Доступно: виза США ✓. Musical theater, acting, dance, voice — 2-недельный интенсив. Уточнить размер стипендий на 2026.",
+    url: "https://www.amda.edu/",
+    urgent: false, check: "Уточнить размер стипендий и international eligibility"
+  },
+  {
+    id: 103, domain: "acting", name: "Stagedoor Manor — Summer Sessions",
+    org: "Stagedoor Manor",
+    category: "Интенсивы", baseCountry: "USA", country: "USA (New York)",
+    age: "10–18 лет", minAge: 10, deadline: "Rolling до заполнения", tone: "green",
+    support: ["Жильё", "Обучение"],
+    pay: "~$6,995/сессия; стипендий нет",
+    desc: "Доступно: виза США ✓. Легендарный лагерь (Natalie Portman, Lea Michele). 14 постановок за сессию. Трансфер Newark Airport. Международные welcome.",
+    url: "https://stagedoormanor.com/apply-today/",
+    urgent: false, check: null
+  },
+  {
+    id: 104, domain: "acting", name: "RADA Young Actors: Summer School",
+    org: "Royal Academy of Dramatic Art",
+    category: "Интенсивы", baseCountry: "UK", country: "UK (London)",
+    age: "16–18 лет", minAge: 16, deadline: "По заполнению", tone: "green",
+    support: ["Обучение"],
+    pay: "Платный курс (~£2,000+)",
+    desc: "Доступно: UK виза нужна. 2 недели: acting technique, Shakespeare, voice, movement. Без аудиции. Fluent English. Parental consent для 16–17.",
+    url: "https://www.rada.ac.uk/short-courses/young-actors-summer-school/",
+    urgent: false, check: null
+  },
+  {
+    id: 105, domain: "acting", name: "RADA Young Actors: Introductions",
+    org: "RADA",
+    category: "Интенсивы", baseCountry: "UK", country: "UK (London)",
+    age: "16–18 лет", minAge: 16, deadline: "Rolling", tone: "neutral",
+    support: ["Обучение"],
+    pay: "Платно (1 день)",
+    desc: "Доступно: UK виза нужна. Однодневные workshops: voice, movement, improvisation, scene study.",
+    url: "https://www.rada.ac.uk/short-courses/young-actors-intro-to-rada/",
+    urgent: false, check: null
+  },
+  {
+    id: 106, domain: "acting", name: "NYU Tisch Summer High School — Drama",
+    org: "NYU Tisch School of the Arts",
+    category: "Интенсивы", baseCountry: "USA", country: "USA (New York)",
+    age: "16–18 лет", minAge: 16, deadline: "Январь–март", tone: "orange",
+    support: ["Жильё", "Обучение"],
+    pay: "Платный; financial aid ограничен",
+    desc: "Доступно: виза США ✓. 4 недели: acting, movement, voice, scene study. Резиденция опциональна.",
+    url: "https://tisch.nyu.edu/special-programs/high-school-programs",
+    urgent: false, check: "Проверить international eligibility"
+  },
+  {
+    id: 107, domain: "acting", name: "Carnegie Mellon Pre-College — Drama",
+    org: "Carnegie Mellon School of Drama",
+    category: "Интенсивы", baseCountry: "USA", country: "USA (Pennsylvania)",
+    age: "16–18 лет", minAge: 16, deadline: "Февраль–март", tone: "orange",
+    support: ["Жильё", "Обучение"],
+    pay: "Платный (~$10,000+ с жильём)",
+    desc: "Доступно: виза США ✓. 6 недель conservatory-style training на кампусе.",
+    url: "https://www.cmu.edu/pre-college/academic-programs/drama.html",
+    urgent: false, check: null
+  },
+  {
+    id: 108, domain: "acting", name: "Northwestern CTD — Theater Arts",
+    org: "Northwestern Center for Talent Development",
+    category: "Интенсивы", baseCountry: "USA", country: "USA (Illinois)",
+    age: "14–18 лет", minAge: 14, deadline: "Rolling", tone: "green",
+    support: ["Жильё", "Обучение"],
+    pay: "Платный; limited financial aid",
+    desc: "Доступно: виза США ✓. Acting, performance, theater history. Residential option.",
+    url: "https://www.ctd.northwestern.edu/",
+    urgent: false, check: null
+  },
+  {
+    id: 109, domain: "acting", name: "National Youth Theatre — Auditions",
+    org: "National Youth Theatre",
+    category: "Аудиции", baseCountry: "UK", country: "UK",
+    age: "14–25 лет", minAge: 14, deadline: "2026 закрыты; 2027 — конец 2026", tone: "neutral",
+    support: ["Обучение"],
+    pay: "Курс £635 при успешной аудиции",
+    desc: "Доступно: UK виза нужна. Video audition — self-tape monologue. 2-недельный intensive при зачислении. London, Manchester, Birmingham.",
+    url: "https://www.nyt.org.uk/auditions",
+    urgent: false, check: "Аудиции 2026 закрыты — мониторить 2027"
+  },
+  {
+    id: 110, domain: "acting", name: "NYT Non-Member Courses",
+    org: "National Youth Theatre",
+    category: "Интенсивы", baseCountry: "UK", country: "UK / Online",
+    age: "14–25 лет", minAge: 14, deadline: "Rolling", tone: "green",
+    support: ["Обучение"],
+    pay: "£295–£635",
+    desc: "Доступно: UK виза для очных; online — из любой точки. Курсы без членства NYT.",
+    url: "https://www.nyt.org.uk/our-courses",
+    urgent: false, check: null
+  },
+  {
+    id: 111, domain: "acting", name: "LAMDA Short Courses — Young Actors",
+    org: "LAMDA",
+    category: "Интенсивы", baseCountry: "UK", country: "UK (London)",
+    age: "16–18 лет", minAge: 16, deadline: "Rolling", tone: "green",
+    support: ["Обучение"],
+    pay: "Платно",
+    desc: "Доступно: UK виза нужна. Weekend и summer courses для молодых актёров.",
+    url: "https://www.lamda.ac.uk/short-courses",
+    urgent: false, check: null
+  },
+  {
+    id: 112, domain: "acting", name: "Guildhall School — Summer Schools",
+    org: "Guildhall School of Music & Drama",
+    category: "Интенсивы", baseCountry: "UK", country: "UK (London)",
+    age: "16+", minAge: 16, deadline: "Rolling", tone: "green",
+    support: ["Обучение"],
+    pay: "Платно",
+    desc: "Доступно: UK виза нужна. Acting и music theatre summer intensives.",
+    url: "https://www.gsmd.ac.uk/shortcourses",
+    urgent: false, check: null
+  },
+  {
+    id: 113, domain: "acting", name: "Cours Florent — Summer Workshop",
+    org: "Cours Florent",
+    category: "Интенсивы", baseCountry: "Франция", country: "France (Paris)",
+    age: "16+", minAge: 16, deadline: "Rolling", tone: "green",
+    support: ["Обучение"],
+    pay: "Платный workshop",
+    desc: "Доступно: Шенген безвиз ✓ (UA паспорт). Acting, improvisation, French theater techniques.",
+    url: "https://www.coursflorent.fr/",
+    urgent: false, check: "Подтвердить English/French tracks"
+  },
+  {
+    id: 114, domain: "acting", name: "ESC — Culture Centre Pomiechówek",
+    org: "GOK Pomiechówek",
+    category: "Обмен", baseCountry: "Польша", country: "Poland",
+    age: "18–30 лет", minAge: 18, deadline: "Rolling", tone: "green",
+    support: ["Жильё", "Дорога", "Обучение", "Оплата"],
+    pay: "ESC покрытие + карманные",
+    desc: "Доступно: Шенген безвиз ✓ · Ukraine eligible. Театр, art classes, intercultural workshops. Видна с фильтром 18+.",
+    url: "https://youth.europa.eu/solidarity/opportunity/49502_en",
+    urgent: false, check: null
+  },
+  {
+    id: 115, domain: "acting", name: "ESC — ART Summer Białowieża",
+    org: "A3Teatr / EKS",
+    category: "Обмен", baseCountry: "Польша", country: "Poland",
+    age: "18–30 лет", minAge: 18, deadline: "28 мая 2026 — СРОЧНО", tone: "red",
+    support: ["Жильё", "Дорога", "Обучение", "Оплата"],
+    pay: "ESC полное покрытие",
+    desc: "Доступно: Шенген безвиз ✓ · Ukraine eligible. Outdoor theatre festival, workshops, performances в Białowieża Forest.",
+    url: "https://youth.europa.eu/solidarity/opportunity/51686_en",
+    urgent: true, check: null
+  },
+  {
+    id: 116, domain: "acting", name: "ESC — IntegrART Krakow",
+    org: "Łokietek Cultural Club",
+    category: "Обмен", baseCountry: "Польша", country: "Poland",
+    age: "18–30 лет", minAge: 18, deadline: "Срочно — rolling", tone: "red",
+    support: ["Жильё", "Дорога", "Обучение", "Оплата"],
+    pay: "ESC покрытие",
+    desc: "Доступно: Шенген безвиз ✓ · EU или UA citizens. Art events, workshops, youth work в Кракове.",
+    url: "https://youth.europa.eu/solidarity/opportunity/50671_en",
+    urgent: true, check: "URGENT — подавать немедленно"
+  },
+  {
+    id: 117, domain: "acting", name: "Interlochen Theater — Priority Deadline",
+    org: "Interlochen Center for the Arts",
+    category: "Интенсивы", baseCountry: "USA", country: "USA (Michigan)",
+    age: "14–18 лет", minAge: 14, deadline: "Rolling до заполнения", tone: "orange",
+    support: ["Жильё", "Обучение"],
+    pay: "Tuition + aid available",
+    desc: "Доступно: виза США ✓. Theater division summer programs. Аудиция/портфолио по выбранной программе.",
+    url: "https://www.interlochen.org/summer-camp/admission/how-to-apply-to-arts-camp",
+    urgent: true, check: null
+  }
+];
+
+const ACTING_LATEST_FEED = [];
+
 const BASE_PROGRAMS = [
   {
     id: 1, name: "Ever So Sweet Camp",
@@ -920,12 +1215,12 @@ const BASE_PROGRAMS = [
     id: 38, name: "USEA Youth Mentorship Program",
     org: "USEA Young Riders",
     category: "Обмен", baseCountry: "USA", country: "USA",
-    age: "до 25 лет (Young Riders)", minAge: 16, deadline: "Rolling / annual intake", tone: "green",
-    support: ["Жильё", "Дорога", "Обучение"],
-    pay: "Нет прямой оплаты, частичная travel support по Area",
-    desc: "Менторство от профи, закулисный опыт AEC, командные старты CCI1*-3*. На выездных мероприятиях доступно размещение.",
-    url: "https://useventing.com/membership/young-riders",
-    urgent: false, check: null
+    age: "16–25 лет", minAge: 16, deadline: "23 ИЮНЯ 2026 — Rebecca Farm (СРОЧНО)", tone: "red",
+    support: ["Обучение"],
+    pay: "Бесплатно; дорога, жильё и питание за свой счёт",
+    desc: "Закулисный опыт на крупных eventing-чемпионатах USEA. Ближайший дедлайн: The Event at Rebecca Farm (MT), 15–19 июля — заявки до 23 июня. Возраст 16–25, член Intercollegiate или Young Rider Area Program. Нельзя соревноваться или волонтёрить на том же ивенте.",
+    url: "https://www.useventing.com/news-media/news/youth-mentorship-program-now-open-for-applications-kick-off-at-usea-intercollegiate-iel-championships",
+    urgent: true, check: null
   },
   {
     id: 39, name: "Collegiate Bound Summer Riding Camp",
@@ -981,8 +1276,30 @@ const BASE_PROGRAMS = [
     desc: "Working student формат на базе high-level dressage команды: уход, stable management, регулярный тренинг олимпийного уровня.",
     url: "https://horsesport.com/magazine/business/what-its-like-being-working-student/",
     urgent: false, check: "Требует ручной проверки: конкретные условия программы и актуальный набор"
+  },
+  {
+    id: 44, name: "BHS Senior Equine Groom — Country Farm Stud",
+    org: "Country Farm Stud, Preston",
+    category: "Стажировки", baseCountry: "UK", country: "UK (Preston)",
+    age: "От 16 лет", minAge: 16, deadline: "30 ИЮНЯ 2026 — СРОЧНО", tone: "red",
+    support: ["Жильё", "Обучение", "Оплата"],
+    pay: "£16,640/год + жильё на территории",
+    desc: "Senior Equine Groom Level 3 (BHS) на showing/stud/BS yard в Preston. Жильё на месте. Нужен подтверждённый опыт работы с лошадьми. Haddon Training.",
+    url: "https://www.findapprenticeship.service.gov.uk/apprenticeship/VAC2000029043",
+    urgent: true, check: null, isNew: true
+  },
+  {
+    id: 45, name: "Secretariat Center — Fall 2026 Internship",
+    org: "The Secretariat Center, Lexington KY",
+    category: "Стажировки", baseCountry: "USA", country: "USA (Kentucky)",
+    age: "18+", minAge: 18, deadline: "1 ИЮЛЯ 2026 — СРОЧНО", tone: "red",
+    support: ["Обучение"],
+    pay: "Без оплаты (образовательная стажировка)",
+    desc: "Стажировка в центре реабилитации чистокровных рысаков в Lexington KY. Уход, реабилитация, работа с отставными racehorses. Fall session — заявки до 1 июля.",
+    url: "https://www.secretariatcenter.org/internships",
+    urgent: true, check: "Уточнить условия проживания и длительность Fall session", isNew: true
   }
-].map(program => ({ closed: false, ...program }));
+].map(program => ({ closed: false, isNew: false, ...program }));
 
 const LATEST_FEED = [
   {
@@ -998,7 +1315,7 @@ const LATEST_FEED = [
     deadline: "2026-03-23",
     link: "https://youth.europa.eu/solidarity/opportunity/39919_en",
     reason_fit: "Long-term volunteering (38 weeks) on a horse farm working with people with disabilities; includes accommodation, food budget, travel support, and horse-related training.",
-    status: "new"
+    status: "closed"
   },
   {
     title: "European Solidarity Corps: Join our herd of horses at Škatlica",
@@ -1028,7 +1345,7 @@ const LATEST_FEED = [
     deadline: "2026-04-19",
     link: "https://youth.europa.eu/solidarity/opportunity/49730_en",
     reason_fit: "52-week volunteering in nature reserve with occasional care of semi-wild horses/ponies; includes accommodation, food allowance, pocket money, bike, and travel coverage.",
-    status: "new"
+    status: "closed"
   },
   {
     title: "Camp Wicosuta Summer Equestrian Internship",
@@ -1809,6 +2126,36 @@ const LATEST_FEED = [
     link: "https://www.nhrrs.ie/junior-internship",
     reason_fit: "includes accommodation and pay for teens 16+",
     status: "needs_manual_check"
+  },
+  {
+    title: "Working Student — Hotel Reiterhof Altmühlsee",
+    country: "Germany",
+    age_range: "18+",
+    min_age: 18,
+    type: "Working Student",
+    pay: "From €550/month",
+    travel_support: "€250 travel reimbursement after 3+ months",
+    accommodation: "Room and board",
+    training: "Riding, training, teaching, stable and farm work",
+    deadline: "May–October 2026 (min. 3 months)",
+    link: "https://www.yardandgroom.com/Job/Germany/Bayern/Working-Student/428983",
+    reason_fit: "Paid working student at Bavarian equestrian hotel/resort: room, board, riding training, €250 travel bonus after 3 months.",
+    status: "new"
+  },
+  {
+    title: "Horse Au Pair / Working Student — Gestüt Tasdorf",
+    country: "Germany",
+    age_range: "16+",
+    min_age: 16,
+    type: "Working Student",
+    pay: "Unpaid (accommodation + meals provided)",
+    travel_support: "Not specified",
+    accommodation: "Own room, shared bathroom; meals included",
+    training: "Showjumping stable work, riding depending on level, lessons available",
+    deadline: "Rolling (listing expires mid-June 2026)",
+    link: "https://www.yardandgroom.com/Job/Germany/Schleswig-Holstein/Horse-Au-Pair---Working-Student---Northern-Germany-------/410099",
+    reason_fit: "International showjumping stable in Schleswig-Holstein: housing, meals, riding opportunities; combined with light childcare.",
+    status: "needs_manual_check"
   }
 ];
 
@@ -1827,6 +2174,8 @@ function normalizeCountry(country) {
     uk: "UK",
     ireland: "Ирландия",
     germany: "Германия",
+    france: "Франция",
+    poland: "Польша",
     spain: "Испания",
     portugal: "Португалия",
     denmark: "Дания",
@@ -1856,11 +2205,20 @@ function normalizeMinAge(minAge, ageRange) {
   return fromRange ? Number(fromRange[0]) : 16;
 }
 
-function inferCategory(type, title) {
+function inferCategory(type, title, domain) {
   const source = `${type || ""} ${title || ""}`.toLowerCase();
+  if (domain === "acting") {
+    if (source.includes("audition") || source.includes("casting") || source.includes("open call")) return "Аудиции";
+    if (source.includes("scholarship") || source.includes("grant") || source.includes("financial aid")) return "Стипендии";
+    if (source.includes("internship") || source.includes("apprentice") || source.includes("backstage")) return "Стажировки";
+    if (source.includes("volunteering") || source.includes("exchange") || source.includes("solidarity corps") || source.includes("esc")) return "Обмен";
+    if (source.includes("intensive") || source.includes("camp") || source.includes("conservatory") || source.includes("summer") || source.includes("workshop")) return "Интенсивы";
+    return "Интенсивы";
+  }
   if (source.includes("scholarship") || source.includes("grant")) return "Стипендии";
   if (source.includes("camp") || source.includes("counselor")) return "Лагери";
   if (source.includes("volunteering") || source.includes("exchange") || source.includes("solidarity corps")) return "Обмен";
+  if (source.includes("casting")) return "Кастинги";
   return "Стажировки";
 }
 
@@ -1897,7 +2255,7 @@ function inferUrgent(deadline, closed) {
   return /2026-06|2026-07|срочно|urgent|june|july/.test(value);
 }
 
-function mapIncoming(item) {
+function mapIncoming(item, domain) {
   const status = String(item.status || "new").toLowerCase();
   const closed = status === "closed";
   const baseCountry = normalizeCountry(item.country);
@@ -1905,9 +2263,10 @@ function mapIncoming(item) {
   const org = item.title.includes(":") ? item.title.split(":")[0].trim() : item.title;
   const check = status === "needs_manual_check" ? item.reason_fit : null;
   return {
+    domain,
     name,
     org,
-    category: inferCategory(item.type, item.title),
+    category: inferCategory(item.type, item.title, domain),
     baseCountry,
     country: baseCountry,
     age: item.age_range || "16+",
@@ -1920,7 +2279,8 @@ function mapIncoming(item) {
     url: item.link,
     urgent: inferUrgent(item.deadline, closed),
     check,
-    closed
+    closed,
+    isNew: status === "new" && !closed
   };
 }
 
@@ -1937,12 +2297,12 @@ function isSameProgram(existing, incoming) {
   return false;
 }
 
-function mergePrograms(base, feed) {
-  const merged = base.map(program => ({ ...program }));
+function mergePrograms(base, feed, domain) {
+  const merged = base.map(program => ({ ...program, domain: program.domain || domain }));
   let nextId = merged.reduce((maxId, p) => Math.max(maxId, p.id), 0) + 1;
 
   for (const item of feed) {
-    const mapped = mapIncoming(item);
+    const mapped = mapIncoming(item, domain);
     const idx = merged.findIndex(existing => isSameProgram(existing, mapped));
     if (idx >= 0) {
       merged[idx] = { ...merged[idx], ...mapped, id: merged[idx].id };
@@ -1954,12 +2314,154 @@ function mergePrograms(base, feed) {
   return merged;
 }
 
-const PROGRAMS = mergePrograms(BASE_PROGRAMS, LATEST_FEED);
+const PROGRAMS = [
+  ...mergePrograms(BASE_PROGRAMS, LATEST_FEED, "equestrian"),
+  ...mergePrograms(ACTING_BASE_PROGRAMS, ACTING_LATEST_FEED, "acting")
+];
 
+let activeDomain = "equestrian";
 let activeCategory = "all";
 let activeCountry = "all";
 let activeAge = "16";
 let selectedProgramId = null;
+let expandedProgramId = null;
+
+function getDomainPrograms(domain) {
+  return PROGRAMS.filter(p => p.domain === domain);
+}
+
+function getOpenDomainPrograms(domain) {
+  return getDomainPrograms(domain).filter(p => !p.closed);
+}
+
+function initDomainFromUrl() {
+  const hash = (window.location.hash || "").replace("#", "");
+  if (hash === "acting" || hash === "equestrian") {
+    activeDomain = hash;
+  } else {
+    const stored = localStorage.getItem("polina-active-domain");
+    if (stored === "acting" || stored === "equestrian") activeDomain = stored;
+  }
+}
+
+function setDomain(btn) {
+  const next = btn.dataset.domain;
+  if (next === activeDomain) return;
+  activeDomain = next;
+  localStorage.setItem("polina-active-domain", activeDomain);
+  window.location.hash = activeDomain;
+  activeCategory = "all";
+  activeCountry = "all";
+  activeAge = "16";
+  selectedProgramId = null;
+  expandedProgramId = null;
+  document.querySelectorAll('.domain-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.domain === activeDomain);
+  });
+  render();
+}
+
+function renderDomainChrome() {
+  const cfg = DOMAINS[activeDomain];
+  document.getElementById('header-title').textContent = cfg.title;
+  document.getElementById('header-subtitle').textContent = cfg.subtitle;
+  document.getElementById('urgent-callout-text').textContent = cfg.urgentCallout;
+  document.getElementById('footer-text').textContent = cfg.footerSources;
+  document.title = cfg.title + " — Полина";
+}
+
+function getScopedPrograms(openPrograms) {
+  const targetAge = Number(activeAge);
+  return openPrograms.filter(p =>
+    (activeCountry === "all" || p.baseCountry === activeCountry) && p.minAge <= targetAge
+  );
+}
+
+function getFilterScopeLabel() {
+  const countryLabel = activeCountry === "all" ? "все страны" : activeCountry;
+  return `${activeAge}+ · ${countryLabel}`;
+}
+
+function buildCategoryFilters(openPrograms, scopedOpen) {
+  const cfg = DOMAINS[activeDomain];
+  const categoryCounts = scopedOpen.reduce((acc, p) => {
+    acc[p.category] = (acc[p.category] || 0) + 1;
+    return acc;
+  }, {});
+  const archiveCount = getDomainPrograms(activeDomain).filter(p => p.closed).length;
+  const urgentCount = scopedOpen.filter(p => p.urgent).length;
+  const newCount = scopedOpen.filter(p => p.isNew).length;
+  const chips = [
+    { cat: "all", label: `Все (${scopedOpen.length})`, cls: activeCategory === "all" ? "chip active" : "chip" },
+    { cat: "new", label: `Новые (${newCount})`, cls: activeCategory === "new" ? "chip new active" : "chip new" },
+    { cat: "urgent", label: `Срочно (${urgentCount})`, cls: activeCategory === "urgent" ? "chip urgent active" : "chip urgent" }
+  ];
+  cfg.categories.forEach(cat => {
+    const count = categoryCounts[cat] || 0;
+    const active = activeCategory === cat ? " active" : "";
+    chips.push({ cat, label: `${cat} (${count})`, cls: "chip" + active });
+  });
+  chips.push({ cat: "archive", label: `Архив (${archiveCount})`, cls: activeCategory === "archive" ? "chip active" : "chip" });
+  document.getElementById('cat-filter').innerHTML = chips.map(c =>
+    `<button class="${c.cls}" data-cat="${c.cat}" onclick="setCategory(this)">${c.label}</button>`
+  ).join('');
+}
+
+function buildCountryFilters(openPrograms) {
+  const countryCounts = openPrograms.reduce((acc, p) => {
+    acc[p.baseCountry] = (acc[p.baseCountry] || 0) + 1;
+    return acc;
+  }, {});
+  const countries = Object.keys(countryCounts).sort((a, b) => countryCounts[b] - countryCounts[a]);
+  let html = `<button class="chip${activeCountry === 'all' ? ' active' : ''}" data-country="all" onclick="setCountry(this)">Все страны (${openPrograms.length})</button>`;
+  countries.forEach(country => {
+    const active = activeCountry === country ? " active" : "";
+    html += `<button class="chip${active}" data-country="${country}" onclick="setCountry(this)">${country} (${countryCounts[country]})</button>`;
+  });
+  document.getElementById('country-filter').innerHTML = html;
+}
+
+function escapeHtml(value) {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function syncFilterChips() {
+  document.querySelectorAll('#cat-filter .chip').forEach(b => {
+    b.classList.toggle('active', b.dataset.cat === activeCategory);
+  });
+  document.querySelectorAll('#country-filter .chip').forEach(b => {
+    b.classList.toggle('active', b.dataset.country === activeCountry);
+  });
+  document.querySelectorAll('#age-filter .chip').forEach(b => {
+    b.classList.toggle('active', b.dataset.age === activeAge);
+  });
+}
+
+function jumpToProgram(id) {
+  const program = PROGRAMS.find(p => p.id === id);
+  if (!program) return;
+  if (program.domain && program.domain !== activeDomain) {
+    activeDomain = program.domain;
+    localStorage.setItem("polina-active-domain", activeDomain);
+    window.location.hash = activeDomain;
+  }
+  activeCategory = "all";
+  activeCountry = "all";
+  activeAge = ["16", "17", "18"].find(age => program.minAge <= Number(age)) || "16";
+  selectedProgramId = id;
+  expandedProgramId = id;
+  syncFilterChips();
+  render();
+  requestAnimationFrame(() => {
+    const card = document.getElementById("card-" + id);
+    if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
+    document.getElementById("docs-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
 
 function setCategory(btn) {
   document.querySelectorAll('#cat-filter .chip').forEach(b => b.classList.remove('active'));
@@ -1995,6 +2497,9 @@ function handleCardHeaderClick(event, id) {
 function selectProgram(id) {
   selectedProgramId = id;
   render();
+  requestAnimationFrame(() => {
+    document.getElementById("docs-panel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
 
 function hasMeaningfulPay(payValue) {
@@ -2010,8 +2515,16 @@ function inferDocumentChecklist(program) {
   docs.push("Копия загранпаспорта + проверка срока действия");
   if (program.minAge < 18) docs.push("Свидетельство о рождении (для несовершеннолетнего)");
   if (program.minAge < 18) docs.push("Нотариальное согласие родителей/опекуна (до 18 лет)");
-  docs.push("Конное CV + ссылки на короткие riding-видео");
-  docs.push("Рекомендательное письмо(а) от тренера/клуба");
+
+  if (program.domain === "acting") {
+    docs.push("Headshot + full-body фото (актуальные)");
+    docs.push("Self-tape / showreel: 2 контрастных монолога (dramatic + comedic)");
+    docs.push("Театральное резюме (опыт, тренинг, языки)");
+    docs.push("Рекомендательное письмо от режиссёра/педагога по актёрскому мастерству");
+  } else {
+    docs.push("Конное CV + ссылки на короткие riding-видео");
+    docs.push("Рекомендательное письмо(а) от тренера/клуба");
+  }
   docs.push("Медицинская страховка и/или медицинский допуск");
 
   if (!program.support.includes("Дорога")) {
@@ -2042,20 +2555,28 @@ function inferDocumentChecklist(program) {
 }
 
 function renderDocumentsPanel() {
+  const panel = document.getElementById('docs-panel');
+  const subtitleEl = document.getElementById('docs-subtitle');
   const selectedEl = document.getElementById('docs-selected');
   const listEl = document.getElementById('docs-list');
   const noteEl = document.getElementById('docs-note');
   const selectedProgram = PROGRAMS.find(p => p.id === selectedProgramId);
 
+  if (panel) {
+    panel.classList.toggle('docs-panel--active', Boolean(selectedProgram));
+  }
+
   if (!selectedProgram) {
+    if (subtitleEl) subtitleEl.textContent = "Шаг 2: выбери программу в списке выше — здесь появится чек-лист под эту заявку.";
     selectedEl.textContent = "Программа пока не выбрана.";
-    listEl.innerHTML = "<li>Нажмите «Выбрать» в нужной карточке, чтобы увидеть точный пакет.</li>";
+    listEl.innerHTML = "<li>Нажми «Выбрать» на карточке нужной программы.</li>";
     noteEl.style.display = "none";
     noteEl.textContent = "";
     return;
   }
 
   const pkg = inferDocumentChecklist(selectedProgram);
+  if (subtitleEl) subtitleEl.textContent = "Чек-лист сформирован под выбранную программу:";
   selectedEl.textContent = `Выбрано: ${selectedProgram.name} · ${selectedProgram.baseCountry}`;
   listEl.innerHTML = pkg.list.map(item => `<li>☑ ${item}</li>`).join("");
 
@@ -2068,61 +2589,64 @@ function renderDocumentsPanel() {
   }
 }
 
+function renderNewPanel(scopedOpen) {
+  const panel = document.getElementById("new-panel");
+  const list = document.getElementById("new-panel-list");
+  const countEl = document.getElementById("new-count");
+  const scopeEl = document.getElementById("new-panel-scope");
+  if (!panel || !list || !countEl) return;
+
+  const newPrograms = scopedOpen.filter(p => p.isNew);
+  if (scopeEl) scopeEl.textContent = getFilterScopeLabel();
+
+  if (newPrograms.length === 0) {
+    panel.hidden = true;
+    list.innerHTML = "";
+    return;
+  }
+
+  panel.hidden = false;
+  countEl.textContent = String(newPrograms.length);
+  list.innerHTML = newPrograms.map(p => `
+    <button type="button" class="new-pill" onclick="jumpToProgram(${p.id})">
+      <span class="new-pill-name">${escapeHtml(p.name)}</span>
+      <span class="new-pill-meta">${escapeHtml(p.country)} · ${escapeHtml(p.deadline)}</span>
+    </button>
+  `).join("");
+}
+
 function render() {
-  const archiveCount = PROGRAMS.filter(p => p.closed).length;
-  const openPrograms = PROGRAMS.filter(p => !p.closed);
-  const totalCountEl = document.getElementById('total-count');
-  if (totalCountEl) {
-    totalCountEl.textContent = String(openPrograms.length);
-  }
+  renderDomainChrome();
+  document.querySelectorAll('.domain-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.domain === activeDomain);
+  });
 
-  const categoryCounts = openPrograms.reduce((acc, p) => {
-    acc[p.category] = (acc[p.category] || 0) + 1;
-    return acc;
-  }, {});
-
+  const domainPrograms = getDomainPrograms(activeDomain);
+  const openPrograms = domainPrograms.filter(p => !p.closed);
+  const scopedOpen = getScopedPrograms(openPrograms);
+  const scholarshipCount = openPrograms.filter(p => p.category === "Стипендии").length;
   const urgentCount = openPrograms.filter(p => p.urgent).length;
-  const urgentCountEl = document.getElementById('urgent-count');
-  if (urgentCountEl) {
-    urgentCountEl.textContent = String(urgentCount);
-  }
+  const countrySet = new Set(openPrograms.map(p => p.baseCountry));
 
-  document.querySelectorAll('#cat-filter .chip').forEach(btn => {
-    const cat = btn.dataset.cat;
-    if (cat === 'all') {
-      btn.textContent = `Все (${openPrograms.length})`;
-    } else if (cat === 'urgent') {
-      btn.textContent = `Срочно (${urgentCount})`;
-    } else if (cat === 'archive') {
-      btn.textContent = `Архив (${archiveCount})`;
-    } else {
-      btn.textContent = `${cat} (${categoryCounts[cat] || 0})`;
-    }
-  });
+  document.getElementById('total-count').textContent = String(openPrograms.length);
+  document.getElementById('scholarship-count').textContent = String(scholarshipCount);
+  document.getElementById('urgent-count').textContent = String(urgentCount);
+  document.getElementById('country-count').textContent = String(countrySet.size);
 
-  const countryCounts = openPrograms.reduce((acc, p) => {
-    acc[p.baseCountry] = (acc[p.baseCountry] || 0) + 1;
-    return acc;
-  }, {});
-  document.querySelectorAll('#country-filter .chip').forEach(btn => {
-    const country = btn.dataset.country;
-    if (country === 'all') {
-      btn.textContent = `Все страны (${openPrograms.length})`;
-    } else {
-      btn.textContent = `${country} (${countryCounts[country] || 0})`;
-    }
-  });
+  buildCategoryFilters(openPrograms, scopedOpen);
+  buildCountryFilters(openPrograms);
+  renderNewPanel(scopedOpen);
 
   let filtered = activeCategory === 'archive'
-    ? PROGRAMS.filter(p => p.closed)
+    ? domainPrograms.filter(p => p.closed)
     : openPrograms;
 
   if (activeCategory === 'urgent') {
     filtered = filtered.filter(p => p.urgent && !p.closed);
-  } else if (activeCategory !== 'all') {
-    if (activeCategory !== 'archive') {
-      filtered = filtered.filter(p => p.category === activeCategory);
-    }
+  } else if (activeCategory === 'new') {
+    filtered = filtered.filter(p => p.isNew && !p.closed);
+  } else if (activeCategory !== 'all' && activeCategory !== 'archive') {
+    filtered = filtered.filter(p => p.category === activeCategory);
   }
   if (activeCountry !== 'all') {
     filtered = filtered.filter(p => p.baseCountry === activeCountry);
@@ -2134,13 +2658,14 @@ function render() {
   const bar = document.getElementById('count-bar');
   bar.textContent = 'Показано: ' + filtered.length + ' программ';
 
-  if (!PROGRAMS.some(p => p.id === selectedProgramId)) {
+  if (!domainPrograms.some(p => p.id === selectedProgramId)) {
     selectedProgramId = null;
   }
   renderDocumentsPanel();
 
   if (filtered.length === 0) {
     list.innerHTML = '<div class="empty">Нет программ по выбранным фильтрам.<br>Попробуй другую комбинацию.</div>';
+    expandedProgramId = null;
     return;
   }
 
@@ -2168,12 +2693,15 @@ function render() {
       ? `<div class="inner-callout"><strong>Программа закрыта</strong> — дедлайн прошёл или набор завершён.</div>`
       : '';
 
+    const newBadge = p.isNew ? `<span class="badge new-badge">Новое</span>` : '';
+
     return `
-<div class="card${p.urgent ? ' urgent' : ''}${p.closed ? ' closed' : ''}${selectedProgramId === p.id ? ' selected' : ''}" id="card-${p.id}">
+<div class="card${p.urgent ? ' urgent' : ''}${p.isNew ? ' new' : ''}${p.closed ? ' closed' : ''}${selectedProgramId === p.id ? ' selected' : ''}${expandedProgramId === p.id ? ' open' : ''}" id="card-${p.id}">
   <div class="card-header" onclick="handleCardHeaderClick(event, ${p.id})">
     <div class="card-header-left">
       <div class="card-title">${p.name}</div>
       <div class="card-meta">
+        ${newBadge}
         <span class="badge blue">${p.country}</span>
         <span class="badge">возраст: ${p.age}</span>
         ${deadlineEl}
@@ -2212,8 +2740,11 @@ function render() {
   </div>
 </div>`;
   }).join('');
+
+  expandedProgramId = null;
 }
 
+initDomainFromUrl();
 render();
 </script>
 </body>
