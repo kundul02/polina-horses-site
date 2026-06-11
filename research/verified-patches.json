@@ -1,0 +1,398 @@
+{
+  "programs": {
+    "10": {
+      "summary": "Летний конный лагерь для девочек 7–17 в Catskills (NY): до 6 ч езды/день, hunt seat, cross-country, polo.",
+      "desc": "Доступно: виза США B1/B2 · Подача: Enrollment Application на horseridingcamp.com (Dates and Fees 2026)",
+      "dates": "Лето 2026 (сессии на сайте)",
+      "deadline": "Набор на лето 2026 открыт",
+      "pay": "Платный лагерь (3 или 6 ч езды/день); стипендии на сайте не указаны — уточнять по email",
+      "documents": [
+        "International Riding Camp Enrollment Application (Dates and Fees 2026)",
+        "Medical History & Health Form",
+        "Riding skills assessment for cross-country/trails",
+        "Parent/guardian consent for minors",
+        "Загранпаспорт (≥6 мес. после окончания)"
+      ],
+      "sources": ["https://horseridingcamp.com"],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "11": {
+      "summary": "CSU Youth Horsemanship Camp — ночной лагерь western/english riding (данные через CSU Summer Programs).",
+      "desc": "Доступно: виза США B1/B2 · Подача: CSU youth programs portal",
+      "check": "Основной URL agsci.colostate.edu выдаёт 404; данные сверены через CSU K-12 Summer Programs.",
+      "documents": [
+        "CSU Youth Horsemanship Camp registration",
+        "Medical & liability waiver",
+        "Emergency contact form",
+        "Riding experience questionnaire"
+      ],
+      "sources": [
+        "https://agsci.colostate.edu/animsci/youth-programs/",
+        "https://summer.colostate.edu/"
+      ],
+      "closed": true,
+      "deadline": "Закрыт на лето 2026"
+    },
+    "14": {
+      "check": "Сайт Ryan's Horses недоступен; программа working pupil подтверждена по архивам и каталогам.",
+      "documents": [
+        "Email application to Ryan's Horses / Newcastle Equestrian Centre",
+        "Working pupil CV with riding experience",
+        "Riding video",
+        "Working Holiday visa (subclass 417/462) if applicable"
+      ],
+      "sources": ["https://www.ryanshorses.com.au/page/working_pupil_positions.html"]
+    },
+    "16": {
+      "summary": "15-й FEIF Youth Cup 2026 (13–19 июля, Rieden, Germany): riders 14–17, Icelandic horses, €1015 fee.",
+      "desc": "Доступно: Шенгенская виза · Подача: через национальную федерацию (IPZV для Германии) + qualifying tournaments",
+      "dates": "13–19 июля 2026",
+      "deadline": "Qualifying tournaments апр–май 2026; регистрация через Country Leader",
+      "pay": "€950 participant fee + €65 trainers/judges fee (€1015 total)",
+      "documents": [
+        "Declaration via Mein IPZV + participation in qualifying OSI tournaments",
+        "FEIF horse passport (WorldFengur) or rental arrangement",
+        "FEI vaccination records",
+        "Signed liability form + parental consent",
+        "Personal insurance (health, accident, third-party)",
+        "Proof of age (passport copy to office@feif.org)"
+      ],
+      "sources": ["https://www.ipzv.de/jugend/feif-youth-cup-2026-english.html"],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "17": {
+      "check": "ponyclub.org выдаёт 403; данные сверены через US/Canadian Pony Club international exchanges.",
+      "documents": [
+        "Pony Club International Exchange application",
+        "Pony Club certification (B or higher)",
+        "Riding video per exchange requirements",
+        "Reference letters from DC/RS",
+        "Valid passport (3+ months beyond return)"
+      ],
+      "sources": ["https://www.ponyclub.org/activities/international-exchanges"]
+    },
+    "21": {
+      "summary": "Teen residential camps Crossogue (Ireland): 11–18, 2+ weeks, English tuition optional, airport transfer Dublin.",
+      "desc": "Доступно: виза Ирландии Visitor · Подача: printable booking form на crossogue-equestrian.ie",
+      "dates": "13 июня – 15 августа 2026 (2+ weeks); Easter & Halloween camps",
+      "deadline": "Rolling (Saturday arrival/departure)",
+      "pay": "Платный camp (rates on website); financial aid не указана",
+      "documents": [
+        "Crossogue Teen Camp booking form (download from website)",
+        "Parental consent for unaccompanied minors under 16",
+        "Riding level assessment",
+        "Flight details for Dublin airport transfer",
+        "Medical & dietary information form"
+      ],
+      "sources": ["https://www.crossogue-equestrian.ie/teen-camps/"],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "22": {
+      "summary": "Summer in Horse Haven — residential riding holidays Clonshire (12–19): fully booked 2026, waitlist available.",
+      "desc": "Доступно: виза Ирландии Visitor · Подача: email info@clonshire.com (waitlist)",
+      "dates": "June–August 2026 sessions (all FULL)",
+      "deadline": "Закрыт на 2026 (waitlist via info@clonshire.com)",
+      "pay": "Residential camp fees (contact office)",
+      "documents": [
+        "Email booking/waitlist request to info@clonshire.com",
+        "Rider age & experience details",
+        "Medical & emergency contact form",
+        "Parent/guardian consent"
+      ],
+      "sources": ["https://www.clonshire.com/summer-in-horse-haven.html"],
+      "closed": true,
+      "clearCheck": true,
+      "htmlCheck": null,
+      "htmlUrl": "https://www.clonshire.com/summer-in-horse-haven.html"
+    },
+    "24": {
+      "check": "horse-riding-in-spain.com/volunteer выдаёт 403; программа Pegasus подтверждена через Hopperjobs/Voluntouring.",
+      "documents": [
+        "Pegasus Volunteer Application Form",
+        "Equestrian experience summary",
+        "Riding video (if exercising horses)",
+        "Travel & medical insurance",
+        "Parental consent (13–17)"
+      ],
+      "sources": ["https://horse-riding-in-spain.com/volunteer/"]
+    },
+    "26": {
+      "summary": "Schul-/Ferienpraktikum Pferdeglück Pappenheimer (Germany): 14–17, практика на конюшне.",
+      "desc": "Доступно: Шенгенская виза · Подача: email через pferdeglueck-pappenheimer.de (Praktikanten 2026)",
+      "deadline": "Rolling (Easter, Summer, Autumn, Christmas periods)",
+      "pay": "Unpaid school/holiday internship (training-focused)",
+      "documents": [
+        "Email application to Pferdeglück Pappenheimer",
+        "CV with photo",
+        "Parental consent (14–17)",
+        "School internship agreement (Schülerpraktikumsvertrag) if required",
+        "German language basics recommended"
+      ],
+      "sources": ["https://pferdeglueck-pappenheimer.de/praktikanten-gesucht-fuer-2026"],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "27": {
+      "summary": "LWEA Summer Camp Riesenbeck (16–23 Aug 2026): showjumping 1.00–1.10m, visit Aachen WC, full board.",
+      "desc": "Доступно: Шенгенская виза · Подача: email office@riesenbeck-international.com до 31 марта 2026",
+      "dates": "16–23 августа 2026",
+      "deadline": "2026-03-31",
+      "pay": "Paid camp — pricing by email (lease horses limited)",
+      "documents": [
+        "Email application to office@riesenbeck-international.com",
+        "Riding CV + competition record (1.00–1.10m level)",
+        "Legal guardian accompaniment if under 16",
+        "Medical insurance",
+        "Загранпаспорт"
+      ],
+      "sources": ["https://riesenbeck-international.com/en/lwea/summer-camp/"],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "31": {
+      "summary": "Volunteer rider Estancia Argentina — 18+, Spanish required, min 3 months (HelpStay/FreeVolunteering listing).",
+      "desc": "Доступно: виза Аргентины Visitor · Подача: через HelpStay/FreeVolunteering platform",
+      "pay": "Volunteer (accommodation provided per listing)",
+      "documents": [
+        "HelpStay / FreeVolunteering profile & application",
+        "Spanish language proficiency",
+        "Equestrian tourism experience",
+        "Travel insurance",
+        "Minimum 3-month availability"
+      ],
+      "sources": ["https://freevolunteering.net/horse-riding-estancia-argentina/"],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "36": {
+      "summary": "Scattered Acres Working Student (Maryland): eventing, year-long contract, on-site quarters, stipend.",
+      "desc": "Доступно: виза США (work authorization) · Подача: Apprenticeship Contract PDF on scatteredacres.net",
+      "pay": "Stipend + on-site quarters + opportunity to compete USEA",
+      "documents": [
+        "Scattered Acres Apprenticeship Contract (download PDF)",
+        "Apprenticeship Summary form",
+        "Equestrian CV + eventing experience",
+        "One-year commitment confirmation",
+        "US work authorization"
+      ],
+      "sources": ["https://scatteredacres.net/working-students/"],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "37": {
+      "summary": "Verona Equestrian PAID working student (KY/Ocala): advanced event rider Megan Moore, housing + stipend + lessons.",
+      "desc": "Доступно: виза США / legal US work status · Подача: info@veronaequestrian.com",
+      "pay": "Weekly stipend + housing + board for one horse or sponsored ride",
+      "documents": [
+        "Email application to info@veronaequestrian.com",
+        "Equestrian resume (eventing background preferred)",
+        "6-month to 1-year commitment",
+        "Legal to work in USA",
+        "References"
+      ],
+      "sources": ["http://www.veronaequestrian.com/working-student-program.html"],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "40": {
+      "summary": "Worth the Trust Educational Scholarship — RETIRED by USEA Foundation (final awards 2022).",
+      "desc": "Доступно: программа закрыта · Подача: недоступна — см. другие гранты USEA Foundation",
+      "deadline": "Закрыт (retired 2022)",
+      "pay": "—",
+      "documents": ["Program retired — see useafoundation.org/grant-applications for active grants"],
+      "sources": [
+        "https://useafoundation.org/retired-grants",
+        "https://useventing.com/news-media/news/worth-the-trust-scholarship-to-retire-in-2022"
+      ],
+      "closed": true,
+      "clearCheck": true,
+      "htmlCheck": null,
+      "htmlUrl": "https://useafoundation.org/retired-grants"
+    },
+    "43": {
+      "summary": "Franklands Farm working student (Brockville, Ontario): dressage with Olympian Gina Smith, live-in, 1-year.",
+      "desc": "Доступно: Canadian passport/work permit · Подача: franklandsfarm@myhighspeed.ca",
+      "documents": [
+        "Email franklandsfarm@myhighspeed.ca",
+        "Equestrian resume with dressage experience",
+        "Riding video",
+        "1-year commitment (typically September start)",
+        "Canadian work authorization"
+      ],
+      "sources": [
+        "https://www.franklandsfarm.com/services.html",
+        "https://www.franklandsfarm.com/facility.html"
+      ],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null,
+      "htmlUrl": "https://www.franklandsfarm.com/services.html"
+    },
+    "45": {
+      "summary": "Secretariat Center internship (Lexington KY): Thoroughbred aftercare, unpaid educational, Kentucky college students.",
+      "desc": "Доступно: студенты Kentucky college/university · Подача: secretariatcenter.org Apply Here",
+      "dates": "Fall / Spring / Summer sessions",
+      "deadline": "Fall 2026: 2026-06-15 · Summer 2026: 2026-04-15",
+      "pay": "Unpaid educational internship",
+      "documents": [
+        "Secretariat Center Internship Application (online)",
+        "Résumé + two reference letters (equine professional + professor for training track)",
+        "Proof of current health insurance",
+        "Writing sample (Business & Marketing track)"
+      ],
+      "sources": ["https://www.secretariatcenter.org/internships"],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "50": {
+      "profileFit": "Только 20+; для 16 лет — мониторить castings-registry.json",
+      "clearCheck": true,
+      "htmlCheck": null,
+      "htmlProfileFit": "Только 20+; для 16 лет — мониторить castings-registry.json"
+    },
+    "53": {
+      "profileFit": "Вторичный приоритет — sport track в Jockey Club/Rothschild",
+      "clearCheck": true,
+      "htmlCheck": null,
+      "htmlProfileFit": "Вторичный приоритет — sport track в Jockey Club/Rothschild"
+    },
+    "54": {
+      "profileFit": "Не приоритет: уже резидент на студ. визе A/2 до 18",
+      "clearCheck": true,
+      "htmlCheck": null,
+      "htmlProfileFit": "Не приоритет: уже резидент на студ. визе A/2 до 18"
+    },
+    "59": {
+      "check": "Tempel Lipizzans прекратили public programming в августе 2023. Working student больше не набирают."
+    },
+    "63": {
+      "check": "TIC suspend operations (сентябрь 2025). Explorer Cadetship on hold."
+    },
+    "79": {
+      "check": "Yard and Groom listing #410099 removed — вакансия Gestüt Tasdorf не активна."
+    },
+    "1002": {
+      "summary": "AMDA High School Summer Conservatory: 14–19, NY/LA, acting/musical theatre/dance, international welcome.",
+      "desc": "Доступно: виза США F-1/B1/B2 · International students welcome · Подача: connect.amda.edu/apply + phone interview",
+      "dates": "28 июня – 11 июля 2026 (основная сессия)",
+      "deadline": "Rolling",
+      "pay": "$4,300 with housing / $3,263 without + $250 deposit",
+      "documents": [
+        "AMDA High School Conservatory online application",
+        "10–15 min phone interview scheduling",
+        "Placement/demonstration video within 2 weeks of acceptance (for merit scholarships)",
+        "Student portal forms due 4 weeks before start",
+        "Passport copy (international students)"
+      ],
+      "sources": [
+        "https://www.amda.edu/admissions-aid/high-school/tuition-fees",
+        "https://amda-production.frb.io/highschool/enrollment-process"
+      ],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "1006": {
+      "summary": "NYU Tisch Summer High School: Drama track (4-week residential), commuter/online options, college credits.",
+      "desc": "Доступно: international students eligible · Подача: tisch.nyu.edu/special-programs/high-school-programs",
+      "documents": [
+        "Tisch Summer High School application (Drama track)",
+        "Creative portfolio / audition materials per track",
+        "English proficiency if applicable",
+        "Passport + visa documents for residential program"
+      ],
+      "sources": ["https://tisch.nyu.edu/special-programs/high-school-programs"],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "1009": {
+      "summary": "National Youth Theatre auditions 2026 — CLOSED; results April 2026; Hub subscription for 2027.",
+      "desc": "Доступно: UK Standard Visitor · Подача: nyt.org.uk (2027 auditions mailing list)",
+      "deadline": "Закрыт (аудиции 2026 closed; мониторить 2027)",
+      "documents": [
+        "NYT Hub subscription (£2/month or £24/year)",
+        "Audition monologue ~2 min (when applications open)",
+        "Extended membership form if barriers to arts (up to age 30)"
+      ],
+      "sources": ["https://www.nyt.org.uk/auditions"],
+      "closed": true,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "1013": {
+      "summary": "Cours Florent — stages théâtre/cinéma/comédie musicale; Ado 13–17 и Acting in English на campus Paris.",
+      "desc": "Доступно: Шенген безвиз (UA) / EU · Подача: coursflorent.fr — chercher un stage (Paris, Lyon, etc.)",
+      "documents": [
+        "Stage registration via coursflorent.fr search",
+        "Acting in English track — e-rencontre / stage selection",
+        "Parental consent for minors",
+        "CV artistique (if required for specific stage)"
+      ],
+      "sources": ["https://www.coursflorent.fr/"],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "1016": {
+      "summary": "ESC IntegrART Kraków — 1 urgent volunteer slot, art/creativity/events, pocket money + apartment.",
+      "desc": "Доступно: ESC (EU/UA citizens listed) · Подача: Google Drive infopack from ESC listing 50671",
+      "dates": "From 15/04/2026 to 30/09/2026",
+      "deadline": "No application deadline (apply ASAP)",
+      "pay": "Pocket money + food money + travel covered",
+      "documents": [
+        "ESC application via infopack: drive.google.com (link in opportunity 50671)",
+        "CV Europass + motivation letter",
+        "EU or UA citizenship eligibility",
+        "youth.europa.eu profile"
+      ],
+      "sources": ["https://youth.europa.eu/solidarity/opportunity/50671_en"],
+      "closed": false,
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "1018": {
+      "profileFit": "18+; не приоритет — уже в стране на студ. визе A/2",
+      "clearCheck": true,
+      "htmlCheck": null,
+      "htmlProfileFit": "18+; не приоритет — уже в стране на студ. визе A/2"
+    },
+    "1019": {
+      "documents": [
+        "Teudat zehut / passport + A/2 student visa",
+        "Beit Zvi registration form (CategoryID=164)",
+        "Audition: monologues + song in Hebrew",
+        "Registration fee ~50 NIS for audition",
+        "Hebrew proficiency (program in Hebrew)"
+      ],
+      "sources": ["https://www.beit-zvi.com/?CategoryID=164"],
+      "clearCheck": true,
+      "htmlCheck": null
+    },
+    "1020": {
+      "documents": [
+        "AICF grants portal registration (aicf.org)",
+        "Teudat zehut / A/2 visa + proof of study in Israel",
+        "Audition materials for Sharett theater track",
+        "Two contrasting monologues (prepare in advance)",
+        "Registration opens autumn for winter/spring auditions"
+      ],
+      "sources": ["https://aicf.org/"],
+      "clearCheck": true,
+      "htmlCheck": null
+    }
+  },
+  "html": {}
+}

@@ -12,9 +12,20 @@
 
 ```
 research/
-  equestrian/     # конные программы (7 файлов + сводный)
-    castings/     # база мониторинга кастингов (JSON + чеклист)
-  acting/         # актёрские программы (сводный + обновления)
+  programs-verified.json      # источник правды: summary, desc, documents, deadlines
+  feed-verified-overrides.json # официальные данные для LATEST_FEED (ключ = URL)
+  all-programs-full.json      # экспорт всех программ с runtime-id
+  PROGRAM_RESEARCH_WORKFLOW.md
+  equestrian/                 # конные программы + сводные обновления
+    castings/                 # база мониторинга кастингов (JSON + чеклист)
+  acting/                       # актёрские программы + обновления
+scripts/
+  export-merged-programs.mjs
+  fetch_program_urls.mjs
+  generate-feed-verified.mjs
+  sync-verified-from-html.mjs
+  inject-verified-registry.mjs
+  audit-documents.mjs
 ```
 
 ### Кастинги с верховой ездой (16–20 лет)
@@ -69,8 +80,64 @@ research/
 | Что смотришь | Источник правды | В git / на сайте? |
 |--------------|-----------------|-------------------|
 | **Публичный сайт** (GitHub Pages) | [`programs.html`](programs.html) → `index.html` | ✅ пушится |
+| **Верифицированные поля** | [`research/programs-verified.json`](research/programs-verified.json) | ✅ пушится |
+| **Overrides для feed** | [`research/feed-verified-overrides.json`](research/feed-verified-overrides.json) | ✅ пушится |
+| **Workflow верификации** | [`research/PROGRAM_RESEARCH_WORKFLOW.md`](research/PROGRAM_RESEARCH_WORKFLOW.md) | ✅ пушится |
+| **Экспорт runtime-id** | [`research/all-programs-full.json`](research/all-programs-full.json) | ✅ пушится |
 | **Canvas в Cursor** | `~/.cursor/projects/.../canvases/equestrian-programs.canvas.tsx` | ❌ **не в репозитории, не деплоится** |
 | **База кастингов для проверок** | [`research/equestrian/castings/castings-registry.json`](research/equestrian/castings/castings-registry.json) | ✅ пушится |
+
+### ⚠️ Правило для всех будущих запусков: только реальные данные
+
+**Нельзя** публиковать программу на сайте, пока поля не взяты с **конкретной официальной страницы** (форма подачи, PDF, press release организатора).
+
+| ❌ Запрещено | ✅ Нужно |
+|-------------|---------|
+| URL на `immigration.gov`, homepage организации без страницы программы | Прямая ссылка на application / job listing / course page |
+| Выдуманные стипендии и «EuroHorse Youth Exchange» без источника | WebFetch URL → минимум 3 пункта `documents[]` с названиями форм |
+| Inferred шаблон чек-листа без проверки | Запись в `programs-verified.json` + при feed — в `feed-verified-overrides.json` |
+| `status: "new"` в `LATEST_FEED` до verified | Сначала research → verified → потом `new` |
+| Generic `reason_fit` из поиска | `summary` / `desc` / `deadline` / `pay` с даты проверки |
+
+**Поле `check`** — только если программа закрыта, сайт недоступен (404/503), или listing снят. Не заменяет verified-данные для открытых программ.
+
+Placeholder-записи (пример: feed 79–104, удалены 2026-06-11) **не восстанавливать** без официального URL.
+
+### Верификация программ (Composer / Cursor)
+
+**Полный pipeline после любых правок в BASE, feed или acting:**
+
+```bash
+cd "/Users/artemsirchenko/Полина_Лошади"
+node scripts/export-merged-programs.mjs
+node scripts/fetch_program_urls.mjs 1 9999          # или диапазон id
+# дописать/обновить research/feed-verified-overrides.json, programs-verified.json, verified-patches.json
+node scripts/apply-verified-patches.mjs              # patches → verified + HTML check/url
+node scripts/sync-verified-from-html.mjs            # если правили documents в HTML
+node scripts/generate-feed-verified.mjs           # feed ids 55+
+node scripts/inject-verified-registry.mjs         # HTML + index.html
+node scripts/audit-documents.mjs
+```
+
+**Промпт для Cursor** (скопировать при добавлении программ):
+
+```
+Добавь программы по research/PROGRAM_RESEARCH_WORKFLOW.md:
+WebFetch официальный URL → feed-verified-overrides.json / programs-verified.json →
+export → generate-feed-verified → inject-verified-registry → audit-documents.
+Только реальные данные с сайта. Без placeholder URL.
+```
+
+**Текущее состояние (2026-06-11):**
+
+| Метрика | Значение |
+|---------|----------|
+| Программ на сайте | **99** (54 base equestrian + 25 feed + 20 acting) |
+| С explicit `documents[]` | **99** (100%) |
+| Уникальных чек-листов | **99** |
+| С флагом `check` | **7** (404/403/закрытые feed — намеренные предупреждения, не pending research) |
+
+Подробности: [`PROGRAM_RESEARCH_WORKFLOW.md`](research/PROGRAM_RESEARCH_WORKFLOW.md).
 
 **Кастинги — как считать (сейчас):**
 
@@ -104,30 +171,40 @@ research/
 
 **Equestrian:** horse-riding обязателен; возраст, дедлайн, поддержка.
 
-**Acting:** theater/acting/drama; возраст 16+; в первой строке `desc` — «Доступно: виза США ✓ / Шенген безвиз ✓ / UK виза нужна».
+**Acting:** theater/acting/drama; возраст 16+; в первой строке `desc` — «Доступно: виза … · Подача: …».
 
-Если данные не подтверждаются за 2–3 минуты → `needs_manual_check`.
+**Обязательно для каждой новой карточки:**
+1. WebFetch (или `fetch_program_urls.mjs`) — текст с официальной страницы.
+2. Запись в `programs-verified.json` по `id` **или** в `feed-verified-overrides.json` по URL (feed).
+3. `documents[]` — минимум 3 пункта с **названиями форм / email / portal**, не общий шаблон.
+4. `sources[]` — URL, откуда взяты данные.
+5. Pipeline: `inject-verified-registry` → `audit-documents`.
+
+Если за 2–3 минуты **нет** страницы конкретной программы → **не добавлять в feed**. Можно оставить заметку в `research/equestrian/Обновление_*.md`, но не на сайт.
+
+`needs_manual_check` в feed — **не публиковать как проверенную**; после WebFetch → overrides → `status: "new"`.
 
 ### 3) Статусы и правила маркировки
-- `new` — новая программа → блок «Новые поступления»
-- `updated` — изменились условия
-- `closed` — набор закрыт
-- `needs_manual_check` — ручная проверка
+- `new` — новая программа → блок «Новые поступления» (**только после verified**)
+- `updated` — изменились условия (перепроверить URL)
+- `closed` — набор закрыт (`closed: true` в verified)
+- `needs_manual_check` — **не для публикации**; временный маркер до WebFetch и записи в verified/overrides
 
 ### 4) Правила дедупликации
 Дубликат если совпадает URL, нормализованное название или явный синоним.
 
 ### 5) Как обновлять HTML и Canvas
-1. `EQUESTRIAN`: `BASE_PROGRAMS` + `LATEST_FEED` (domain: `equestrian`)
-2. `ACTING`: `ACTING_BASE_PROGRAMS` + `ACTING_LATEST_FEED` (domain: `acting`)
-3. Синхронный Canvas с domain switcher
-4. Фильтры, urgent, merge/dedupe, чеклист документов по домену
+1. `EQUESTRIAN`: `BASE_PROGRAMS` + `LATEST_FEED` → merge → `VERIFIED_REGISTRY` → `.map(applyVerifiedProgram)`
+2. `ACTING`: `ACTING_BASE_PROGRAMS` + `ACTING_LATEST_FEED` (ids **1001–1020**)
+3. Verified-данные: `research/programs-verified.json` + `feed-verified-overrides.json`
+4. Скрипт `inject-verified-registry.mjs` синхронизирует JSON → HTML и копирует в `index.html`
+5. Canvas — вручную подтянуть те же `id`, `closed`, дедлайны
 
 ### 6) Проверка перед коммитом
-1. Переключатель «Конные» / «Актёрское» работает в HTML и Canvas
-2. Переключатель «Открытые» / «Закрытые · архив» и фильтры тип / страна / возраст в обоих доменах
-3. Чеклист документов разный для коней и театра
-4. 5–10 случайных ссылок открываются
+1. `node scripts/audit-documents.mjs` — `explicitDocuments` = `total`, нет placeholder feed
+2. Переключатель «Конные» / «Актёрское» и «Открытые» / «Закрытые · архив»
+3. Чеклист документов — конкретные формы, не одинаковый шаблон у всех
+4. 5–10 случайных `sources[]` открываются и совпадают с карточкой
 
 ### 7) Деплой и git push
 1. `git status`, `git diff`
