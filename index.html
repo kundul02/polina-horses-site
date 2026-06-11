@@ -492,6 +492,11 @@
     border-left-color: var(--blue);
     color: #0038A0;
   }
+  .inner-callout.success {
+    background: #E8F8ED;
+    border-left-color: var(--green);
+    color: #1B5E20;
+  }
   /* OPEN BUTTON */
   .open-btn {
     display: block;
@@ -830,6 +835,45 @@ const ACTING_BASE_PROGRAMS = [
     desc: "Доступно: виза США ✓. Аудиция или портфолио по выбранной программе.",
     url: "https://www.interlochen.org/summer-camp/admission/how-to-apply-to-arts-camp",
     urgent: true, check: null
+  },
+  {
+    id: 118, domain: "acting", name: "Jaffa Theatre — Masa Internship",
+    org: "Jaffa Arab Hebrew Theatre / Masa Israel",
+    category: "Стажировки", baseCountry: "Израиль", country: "Израиль (Jaffa, Tel Aviv)",
+    age: "18–30 лет", minAge: 18, deadline: "Rolling (4–6 мес. циклы)", tone: "green",
+    support: ["Жильё", "Обучение"],
+    pay: "Masa grants покрывают часть program fee",
+    dates: "4–6 месяцев",
+    summary: "Стажировка в Arab Hebrew Theatre Jaffa через Masa: communications, resource development, работа с bilingual theatre company. Housing и финансовая поддержка через Masa framework.",
+    desc: "Communications/resource development в bilingual theatre. Только 18+ — для 17 лет не подходит. Если уже учится в Израиле на студ. визе, Masa-framework не нужен даже после 18.",
+    url: "https://www.masaisrael.org/company/jaffa-theatre-en-c/",
+    urgent: false, check: "18+; не приоритет — уже в стране на студ. визе", isNew: true
+  },
+  {
+    id: 119, domain: "acting", name: "Beit Zvi — Preparatory Program",
+    org: "Beit Zvi School of Performing Arts, Ramat Gan",
+    category: "Интенсивы", baseCountry: "Израиль", country: "Израиль (Ramat Gan)",
+    age: "16–18 лет", minAge: 16, deadline: "Летняя мк — старт 5 июля 2026", tone: "orange",
+    support: ["Обучение"],
+    pay: "Платная мк (350 ₪ регистрация + tuition); AICF aid возможен",
+    dates: "~8 нед. × 3 дня/нед.; лето старт 5.07.2026",
+    summary: "Ведущая актёрская школа Израиля (с 1960). Preparatory/intensive: acting, voice, movement — 3 раза в неделю. Летняя мк с 5 июля — как раз каникулы: к августу исполнится 17. Аудиция: 2 monologues + song in Hebrew.",
+    desc: "Уже в Израиле на студ. визе — виза не нужна, только аудиция и оплата. Graduates мк exempt от 2 этапов full admission. school@beit-zvi.com.",
+    url: "https://www.beit-zvi.com/?CategoryID=164",
+    urgent: true, check: "Подготовить monologues + песню на иврите к аудиции", isNew: true, profileFit: true
+  },
+  {
+    id: 120, domain: "acting", name: "AICF Sharett Grants — Theater",
+    org: "America-Israel Cultural Foundation",
+    category: "Стипендии", baseCountry: "Израиль", country: "Израиль",
+    age: "14–21+ (по дисциплине)", minAge: 14, deadline: "Ежегодные auditions (регистрация — осень)", tone: "green",
+    support: ["Обучение"],
+    pay: "Stipends для обучения и enrichment по результатам audition",
+    dates: "Multi-year support при ежегодном пересмотре",
+    summary: "Sharett grants для theater/acting — ежегодные audition в Израиле. Учится в стране + корни в Израиле = типичный eligible профиль для youth theater track.",
+    desc: "Для 17 лет — сильный долгосрочный track: стипендия на Beit Zvi и другие курсы после успешного audition. Регистрация осенью на aicf.org.",
+    url: "https://aicf.org/",
+    urgent: false, check: "Конкурсный audition; готовить monologues заранее", isNew: true, profileFit: true
   }
 ];
 
@@ -1442,6 +1486,58 @@ const BASE_PROGRAMS = [
     desc: "Тип: сериал (Netflix) · Испания · Верховая езда: обязательна · Оплата: да. Подача: lupuscast@gmail.com (фото + видео-презентация). Источник: MMA Content Feed.",
     url: "https://wall.mymotheragency.com/spainmujeres-que-monten-a-caballo-para-serie-de-netflix-a-nivel-nacional-cinema/",
     urgent: false, check: "Только 20+; для 16 лет — держать в базе castings-registry.json watch", isNew: true
+  },
+  {
+    id: 51, name: "Rothschild Stables — Sport Riding & Summer Course",
+    org: "Rothschild Stables, Kfar Monash",
+    category: "Интенсивы", baseCountry: "Израиль", country: "Израиль (Emek Hefer)",
+    age: "16–18 sport track", minAge: 16, deadline: "Rolling (лето — июль–август)", tone: "green",
+    support: ["Обучение"],
+    pay: "Платные занятия; программа שר\"י (IEF youth sport)",
+    dates: "Круглый год; летний интенсив на каникулах",
+    summary: "Sport riding, dressage и show jumping (IEF). Для 16–17 — youth sport track «שר\"י» и индивидуальные тренировки. Эмек Hefer — север; удобно если учёба в центре/севере.",
+    desc: "Уже в Израиле на студ. визе — просто записаться на sport track, без визовых барьеров. Летом (до/после 17 лет в августе) — интенсив на каникулах.",
+    url: "https://www.rothschildstables.co.il/",
+    urgent: false, check: null, isNew: true, profileFit: true
+  },
+  {
+    id: 52, name: "Jockey Club Rishpon — Riding Academy",
+    org: "The Jockey Club, Rishpon",
+    category: "Интенсивы", baseCountry: "Израиль", country: "Израиль (Rishpon)",
+    age: "Подростки и взрослые", minAge: 16, deadline: "Rolling", tone: "green",
+    support: ["Обучение"],
+    pay: "Платные уроки; крупнейший boarding в Израиле",
+    dates: "Круглый год; летний интенсив",
+    summary: "Крупнейшая школа dressage/jumping в центре страны (Herzliya area). Соревновательные группы IEF — сильный вариант для 17 лет на каникулах.",
+    desc: "Уже в Израиле — прямой набор в группы или индивидуальные занятия. Спросить про летний shadowing/volunteer в конюшне между тренировками.",
+    url: "https://www.jockeyclub.co.il/en/main-page/",
+    urgent: false, check: null, isNew: true, profileFit: true
+  },
+  {
+    id: 53, name: "Carmel Farm — Therapeutic Riding",
+    org: "Carmel Farm / Meir Shfeya Youth Village",
+    category: "Интенсивы", baseCountry: "Израиль", country: "Израиль (Meir Shfeya, Carmel)",
+    age: "Подростки (уточнить)", minAge: 14, deadline: "Rolling", tone: "neutral",
+    support: ["Обучение"],
+    pay: "Уточнить (терапевтическая программа)",
+    dates: "По расписанию youth village",
+    summary: "Терапевтическая и образовательная верховая езда на базе youth village Meir Shfeya на Кармеле. Опыт работы с лошадьми в социально-педагогическом контексте.",
+    desc: "Опционально: волонтёрство на каникулах — прямой контакт. Не sport track, но опыт horse care.",
+    url: "https://www.carmelfarm.org/",
+    urgent: false, check: "Вторичный приоритет — sport track в Jockey Club/Rothschild", isNew: true
+  },
+  {
+    id: 54, name: "Masa Israel — Equestrian Gap Experience",
+    org: "Masa Israel Journey + local stables",
+    category: "Обмен", baseCountry: "Израиль", country: "Израиль",
+    age: "18–35 лет", minAge: 18, deadline: "Rolling (циклы 2–12 мес.)", tone: "neutral",
+    support: ["Жильё", "Обучение"],
+    pay: "Grants/scholarships частично покрывают program fee + housing",
+    dates: "2–12 месяцев",
+    summary: "Masa — каркас для приезжающих из диаспоры: жильё, grants. Конный placement — вручную через stables.",
+    desc: "Не актуально, пока уже учится в Израиле на студ. визе. Имеет смысл только после 18 при gap year — и то скорее напрямую через конюшню, без Masa.",
+    url: "https://www.masaisrael.org/",
+    urgent: false, check: "Не приоритет: уже резидент на студ. визе до 18", isNew: true
   }
 ].map(program => ({ closed: false, isNew: false, ...program }));
 
@@ -2334,7 +2430,9 @@ function normalizeCountry(country) {
     "united states": "USA",
     "new zealand": "New Zealand",
     georgia: "Georgia",
-    "schengen area": "Европа (Schengen)"
+    "schengen area": "Европа (Schengen)",
+    israel: "Израиль",
+    израиль: "Израиль"
   };
   const key = normalizeKey(country);
   return map[key] || country;
@@ -2751,15 +2849,21 @@ function inferDocumentChecklist(program) {
   if (program.support.includes("Оплата") || hasMeaningfulPay(program.pay)) {
     docs.push("Банковские реквизиты + проверка налоговой формы (tax form requirement)");
   }
-  if (program.baseCountry !== "USA") {
+  if (program.baseCountry !== "USA" && program.baseCountry !== "Израиль") {
     docs.push("Визовый пакет + переводы/нотариальное заверение документов по требованиям страны");
+  }
+  if (program.baseCountry === "Израиль") {
+    docs.push("Копия студенческой визы (A/2) + действующий загранпаспорт");
+    docs.push("Подтверждение учёбы в Израиле (справка из учебного заведения)");
   }
   if (program.check) {
     docs.push("Ручная верификация условий с организатором обязательна");
   }
 
   const notes = [];
-  if (program.baseCountry !== "USA") {
+  if (program.baseCountry === "Израиль") {
+    notes.push("Уже в Израиле на студ. визе — отдельная туристическая виза не нужна; для локальных программ достаточно регистрации и оплаты.");
+  } else if (program.baseCountry !== "USA") {
     notes.push(`Для страны ${program.baseCountry} заранее проверьте требования к визе, переводу и апостилю/нотариальному заверению.`);
   }
   if (program.check) {
@@ -2799,6 +2903,10 @@ function renderProgramCard(p) {
 
   const checkEl = p.check
     ? `<div class="inner-callout info"><strong>Требует проверки:</strong> ${p.check}</div>`
+    : '';
+
+  const profileFitEl = p.profileFit
+    ? `<div class="inner-callout success"><strong>Лучший match для вашего профиля:</strong> уже учится в Израиле на студ. визе, 17 лет летом 2026 — виза и жильё не нужны.</div>`
     : '';
 
   const urgentEl = p.urgent
@@ -2861,6 +2969,7 @@ function renderProgramCard(p) {
     ${p.summary ? `<div class="field"><div class="field-label">Доступность</div><p class="visa-note">${p.desc}</p></div>` : ''}
     ${urgentEl}
     ${closedEl}
+    ${profileFitEl}
     ${checkEl}
     <a href="${p.url}" target="_blank" rel="noopener" class="${btnClass}">Открыть программу →</a>
   </div>
@@ -2957,6 +3066,7 @@ function render() {
   list.innerHTML = filtered.map(p => renderProgramCard(p)).join('');
 }
 
+window.addEventListener('resize', updateStickyOffset);
 initDomainFromUrl();
 render();
 </script>
