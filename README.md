@@ -4,7 +4,7 @@
 
 Проект собирает возможности для 16-летней с опытом верховой езды и/или интересом к театру:
 - с жильём, обучением, оплатой, покрытием дороги или полностью бесплатным участием;
-- по приоритетным регионам: Schengen, Ирландия, UK, USA, Канада, Австралия, New Zealand, Грузия, ЮАР, Аргентина, Польша, Франция.
+- по приоритетным регионам: Schengen, Ирландия, UK, USA, Канада, Австралия, New Zealand, **Израиль**, Грузия, ЮАР, Аргентина, Польша, Франция, **Turkey**.
 
 **Документы:** виза США ✓, украинский биометрический паспорт (Шенген безвиз). Доступность указывается в описании карточки.
 
@@ -27,6 +27,8 @@ scripts/
   sync-verified-from-html.mjs
   inject-verified-registry.mjs
   audit-documents.mjs
+  archive-expired-castings.mjs   # после проверки кастингов: closed + archive (--dry-run)
+  lib/casting-deadline.mjs
 ```
 
 ### Кастинги с верховой ездой (16–20 лет)
@@ -83,11 +85,12 @@ scripts/
 
 | Файл | Назначение |
 |------|------------|
-| [`research/acting/castings/castings-registry.json`](research/acting/castings/castings-registry.json) | Реестр: платформы, агентства TR, active / watch / archive |
+| [`research/acting/castings/castings-registry.json`](research/acting/castings/castings-registry.json) | Реестр: платформы, агентства (TR, IL), active / watch / archive |
 | [`research/acting/castings/MONITORING_DATABASE.md`](research/acting/castings/MONITORING_DATABASE.md) | Сводка |
 | [`research/acting/castings/CHECKLIST_проверка.md`](research/acting/castings/CHECKLIST_проверка.md) | Промпт для агента |
+| [`research/acting/castings/Israel_анализ_2026-06-12.md`](research/acting/castings/Israel_анализ_2026-06-12.md) | Глубокий разбор рынка IL (agency pool) |
 
-**На сайте:** категория **«Кастинги в актёрском мастерстве»** во вкладке «Актёрское мастерство» (ids **1021–1035**).
+**На сайте:** категория **«Кастинги в актёрском мастерстве»** во вкладке «Актёрское мастерство» (ids **1021–1045**).
 
 **Промпт:**
 
@@ -95,9 +98,11 @@ scripts/
 Проверь актуальность актёрских кастингов по research/acting/castings/castings-registry.json и обнови сайт
 ```
 
+После проверки: `node scripts/archive-expired-castings.mjs` (или `--dry-run`).
+
 **Формат `desc`:** `Тип: … · Страна · Актёрство: lead|featured|ensemble|talent_search · Оплата: да/нет. Контакт: …`
 
-**Регионы в реестре:** UK, USA, Canada, Ireland, France, Poland, **Turkey**, Argentina + платформы AU/NZ/ZA/GE.
+**Регионы в реестре:** UK, USA, Canada, Ireland, France, Poland, Turkey, Argentina, **Israel**, Denmark + платформы AU/NZ/ZA/CA.
 
 ## Где источник правды и что значат цифры
 
@@ -153,29 +158,26 @@ export → generate-feed-verified → inject-verified-registry → audit-documen
 Только реальные данные с сайта. Без placeholder URL.
 ```
 
-**Текущее состояние (2026-06-11):**
+**Текущее состояние (2026-06-12):**
 
 | Метрика | Значение |
 |---------|----------|
 | Программ на сайте | **124** (54 base equestrian + 25 feed + 20 acting + 25 acting castings) |
-| С explicit `documents[]` | **99** (100%) |
-| Уникальных чек-листов | **99** |
-| С флагом `check` | **7** (404/403/закрытые feed — намеренные предупреждения, не pending research) |
+| С explicit `documents[]` | **124** (100%) |
+| Уникальных чек-листов | **124** |
+| С флагом `check` | **8** (404/403, CastingOnline IL без login, закрытые feed) |
 
 Подробности: [`PROGRAM_RESEARCH_WORKFLOW.md`](research/PROGRAM_RESEARCH_WORKFLOW.md).
 
-**Кастинги — как считать (сейчас):**
+**Кастинги — как считать (конные, вкладка «Конные»):**
 
 | Цифра | Значение |
 |-------|----------|
-| **Открытые (N)** / **Закрытые · архив (N)** | Переключатель статуса над «Тип программы»; все фильтры ниже применяются к выбранному статусу |
-| **Кастинги (4)** при «Открытые» | 4 открытых кастинга в категории |
-| **Кастинги (3)** при 18+ | 3 открытых при 18+ (без Netflix 20+) |
-| **3 карточки** в списке при 18+ | Только открытые; Netflix появится при **20+** |
-| **7 записей** в коде | Все кастинги; 3 закрытых — во вкладке «Закрытые · архив» + фильтр «Кастинги» |
-| **2 проекта** | Если считать *фильмы*, а не роли: Fallow + Love in the Wind (у фильма 2 роли → 2 карточки) |
+| **Открытые (N)** / **Закрытые · архив (N)** | Переключатель статуса над «Тип программы» |
+| **Кастинги (4)** при «Открытые» | 4 открытых конных кастинга (Fallow, Luke, Savannah, Netflix ES watch) |
+| **7 записей** в коде | ids 19, 20, 46–50; 3 в архиве |
 
-Если на GitHub в **истории** коммита `bc18abb` — там было **2** кастинга (старая версия). На `main` сейчас **7 / 4 открытых** — как в Canvas.
+**Актёрские кастинги:** категория «Кастинги в актёрском мастерстве» — **25** карточек (1021–1045), **2** в архиве (1034–1035). Israel: **1041–1045** (watch / agency pool).
 
 ## Синхронизация (обязательно при правках)
 
@@ -284,6 +286,7 @@ export → generate-feed-verified → inject-verified-registry → audit-documen
 - [Backstage teens](https://www.backstage.com/casting/open-casting-calls/teens-acting-jobs/) · [Mandy teen/young adult](https://www.mandy.com/aa/jobs/teen-young-adult/) · [Project Casting](https://projectcasting.com/jobs?category=Acting)
 - [KidsCasting teens](https://kidscasting.com/castingcalls/for-teens) · [Playbill jobs](https://playbill.com/jobs) · [StarNow teens](https://www.starnow.com/casting/open-casting-calls/teen-acting-jobs/)
 - **Turkey:** [Cast Istanbul](https://www.castistanbul.com/tags/dizi-basvurusu) · [V Ajans](https://www.vajans.com.tr/sayfa/bilinmesi-gerekenler.html) · [Vivano](https://www.vivano.tr/v-menajer-oyuncu-basvuru-formu/)
+- **Israel (A/2):** [CastingOnline](https://www.castingonline.co.il/) · [GoSee](https://gosee.co.il/) · [Easy2Cast](https://easy2cast.com/) · [Di-Cast-Ro](https://www.di-cast-ro.com/submit) · [Take2](https://take2.co.il/) — см. [`Israel_анализ_2026-06-12.md`](research/acting/castings/Israel_анализ_2026-06-12.md)
 - Полный реестр: [`acting/castings/castings-registry.json`](research/acting/castings/castings-registry.json)
 
 ## Публикация
