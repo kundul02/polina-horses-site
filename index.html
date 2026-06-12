@@ -604,12 +604,12 @@ const DOMAINS = {
     id: "acting",
     title: "Актёрское мастерство",
     subtitle: "Театр и актёрство за рубежом · интенсивы, стипендии, аудиции",
-    categories: ["Стипендии", "Интенсивы", "Стажировки", "Обмен", "Аудиции"],
-    urgentCallout: "ESC ART Summer Białowieża (28 мая), ESC IntegrART Krakow (срочно), Interlochen Theater (rolling). NYT Auditions 2027 — регистрация конец 2026. Нажми «Срочно» ниже.",
+    categories: ["Стипендии", "Интенсивы", "Стажировки", "Обмен", "Аудиции", "Кастинги в актёрском мастерстве"],
+    urgentCallout: "Кастинги: Josephine Baker (13 июня), A Bit of Heaven NJ (21 июня), SisterGirls Atlanta (28 июня), Hawaii Teen Drama (30 июня). Нажми «Кастинги в актёрском мастерстве».",
     tips: [
       { title: "Портфолио актёра", text: "Headshot + full-body фото. Два контрастных монолога (dramatic + comedic), self-tape 1–2 мин. Театральное резюме с опытом и тренингом." },
-      { title: "Аудиции", text: "Musical theater: 16-bar song + monologue. NYT video audition — один монолог на camera. Backstage.com · Playbill · StageMilk — мониторить постоянно." },
-      { title: "Виза США", text: "Короткий интенсив (2–4 нед) — обычно B1/B2 с действующей визой. Interlochen и длинные программы могут требовать F-1. Подтверждение enrollment + финансов." }
+      { title: "Кастинги", text: "Backstage.com (teens) · Mandy teen/young adult · Project Casting · KidsCasting teens · Playbill (theater) · Cast Istanbul / V Ajans (Турция). Фильтр 16+ на сайте." },
+      { title: "Виза США", text: "Короткий интенсив (2–4 нед) — обычно B1/B2 с действующей визой. Interlochen и длинные программы могут требовать F-1. Paid castings — local hire часто обязателен." }
     ]
   }
 };
@@ -914,6 +914,306 @@ const ACTING_BASE_PROGRAMS = [
     url: "https://aicf.org/",
     urgent: false, check: null, isNew: true, profileFit: true,
     documents: ["Действующий паспорт и израильская студенческая виза A/2", "Подтверждение обучения в признанном израильском творческом учебном заведении (например, Beit Zvi)", "Заполненный профиль на грантовом портале AICF", "Прохождение многоэтапного прослушивания (оценка независимым жюри из 3 экспертов)", "Рекомендательные письма от преподавателей учебного заведения"]
+  },
+  {
+    id: 1021, domain: "acting", name: "SisterGirls — Featured Teen Roles",
+    org: "Yarbrough Media Productions",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "USA", country: "USA (Atlanta, GA)",
+    age: "13–17 (featured teen); Trey male 15–17", minAge: 13, deadline: "28 июня 2026", tone: "red",
+    support: ["Оплата", "Питание"],
+    pay: "Paid project; IMDb + on-screen credit; meals & craft services on set",
+    dates: "Filming in Atlanta area (2026)",
+    summary: "Кастинг featured teen-ролей (Shanay, Jasmine, Paris, Carson, Miyah, Haley, Trey) в драматическом сериале SisterGirls. Atlanta, оплачиваемо.",
+    desc: "Тип: TV series · USA (Atlanta) · Актёрство: featured teen · Оплата: да · Контакт: Project Casting / Yarbrough Media",
+    documents: ["Application via Project Casting portal", "Acting CV / resume", "Headshots + full-body photos", "Self-tape / video reel (singing ability required for some roles)", "Parental consent for performers under 18"],
+    closed: false,
+    url: "https://projectcasting.com/job/teen-casting-call-for-coming-of-age-drama-series",
+    urgent: true, check: null, isNew: true, profileFit: "Featured teens 13–17; singing required for части ролей"
+  },
+  {
+    id: 1022, domain: "acting", name: "Untitled UK Feature — Autistic Teen Lead",
+    org: "Gilbert and Covell Casting",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "UK", country: "UK (London)",
+    age: "14–22 (playing 14–16); 16+ если convincingly younger teen", minAge: 14, deadline: "5 июля 2026 (rolling)", tone: "green",
+    support: ["Оплата"],
+    pay: "£4,104 lead (PACT-Equity Very Low Budget Film Agreement)",
+    dates: "4 weeks from ~3 August 2026, London",
+    summary: "Главная роль аутистичного подростка в независимом британском feature о Special Educational Needs. Оплачиваемый lead.",
+    desc: "Тип: feature film · UK (London) · Актёрство: lead · Оплата: да · Контакт: Gilbert and Covell via Project Casting",
+    documents: ["Application via Project Casting / Mandy listing", "Acting CV highlighting authentic representation", "Recent headshots", "Self-tape with UK accent dialogue", "Proof of swimming ability + comfort with physical scenes (walking, climbing railings)", "Parental consent if under 18"],
+    closed: false,
+    url: "https://projectcasting.com/job/feature-film-open-casting-call-for-lead-roles",
+    urgent: false, check: null, isNew: true, profileFit: "Autistic male teen; lived experience strongly preferred"
+  },
+  {
+    id: 1023, domain: "acting", name: "Josephine Baker Biopic — Young Josephine (12)",
+    org: "Joanna Levinger Casting",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "Франция", country: "France / UK / Europe",
+    age: "12–16 лет", minAge: 12, deadline: "13 июня 2026", tone: "red",
+    support: ["Оплата"],
+    pay: "Paid principal role (rate on selection)",
+    dates: "Shoot UK/Europe (FKA Twigs biopic, dir. Maïmouna Doucouré)",
+    summary: "Кастинг молодой актрисы на роль 12-летней Josephine Baker в биopic с FKA Twigs. Танец + American accent обязательны.",
+    desc: "Тип: feature film · France/Europe · Актёрство: lead · Оплата: да · Контакт: Joanna Levinger Casting / Project Casting",
+    documents: ["Application via Project Casting portal", "Headshots + full-body photos (height ≤155 cm)", "Dance reel / movement footage", "Self-tape with American accent", "Acting CV / resume", "Parental consent + work permit docs if under 18"],
+    closed: false,
+    url: "https://projectcasting.com/job/josephine-baker-biopic-starring-fka-twigs-principal-role-open-casting-call",
+    urgent: true, check: null, isNew: true, profileFit: "Black/mixed preferred; UK/Europe based; dance + comedic timing"
+  },
+  {
+    id: 1024, domain: "acting", name: "A Bit of Heaven — ANTWON (Lead)",
+    org: "Independent proof-of-concept production",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "USA", country: "USA (NYC / NJ)",
+    age: "14–16 лет (male, African-American)", minAge: 14, deadline: "21 июня 2026", tone: "red",
+    support: ["Оплата"],
+    pay: "Meals + screen credit + reel footage (proof-of-concept)",
+    dates: "Shoot July 18–20, 2026 (NYC/NJ)",
+    summary: "Lead teenage boy ANTWON в feature A Bit of Heaven. LOCAL NY/NJ only. Reel + credit, без cash rate.",
+    desc: "Тип: feature film · USA (NYC/NJ) · Актёрство: lead · Оплата: reel/credit (не cash) · Контакт: KidsCasting portal",
+    documents: ["Application via KidsCasting portal (ID 605628)", "Headshot + acting reel/clip", "Age + location in submission", "Parent/guardian consent form (required under 18)"],
+    closed: false,
+    url: "https://kidscasting.com/castingcall/605628",
+    urgent: true, check: null, isNew: true, profileFit: "LOCAL NY/NJ only; African-American male 14–16"
+  },
+  {
+    id: 1025, domain: "acting", name: "Hawaii Teen Drama Series",
+    org: "Alessi Hartigan Casting",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "USA", country: "USA (Hawaii)",
+    age: "16–25 (playing high school 15–18)", minAge: 16, deadline: "30 июня 2026", tone: "orange",
+    support: ["Оплата"],
+    pay: "Paid opportunity (Hawaii local production)",
+    dates: "Filming July 20 – mid-September 2026, Hawaii",
+    summary: "Teen drama series в Гавайях — ищут authentic local teens 16–25, опыт не обязателен. Paid, writers include Bryson Chun.",
+    desc: "Тип: TV series · USA (Hawaii) · Актёрство: ensemble/principal · Оплата: да · Контакт: tinyurl.com/HawaiiTeenDrama",
+    documents: ["Online application via tinyurl.com/HawaiiTeenDrama", "Short video introduction (personality-focused)", "Basic info: name, age, location in Hawaii", "Parental consent if under 18", "Optional: prior acting clips (not required)"],
+    closed: false,
+    url: "https://4filming.com/hawaii-teen-drama-casting-call-2026-alessi-hartigan/",
+    urgent: false, check: null, isNew: true, profileFit: "LOCAL Hawaii residents strongly preferred"
+  },
+  {
+    id: 1026, domain: "acting", name: "Disney Television Talent Search 2026",
+    org: "Rise Talent Management / Disney-branded TV",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "USA", country: "USA",
+    age: "9–17 лет", minAge: 9, deadline: "Rolling (без публичного дедлайна)", tone: "green",
+    support: ["Оплата"],
+    pay: "Future Disney Channel / Disney+ consideration (не гарантированная роль)",
+    dates: "Ongoing talent search 2026",
+    summary: "Открытый talent search Disney-branded TV для детей и подростков 9–17: acting, singing, dance, musicians.",
+    desc: "Тип: talent search · USA · Актёрство: talent_search · Оплата: при cast · Контакт: Project Casting",
+    documents: ["Application via Project Casting portal", "Headshot + full-body photo", "Performance clip (acting / song / dance optional)", "Parent/guardian must manage submission and scheduling", "Resume listing special skills (music, DJ, etc.)"],
+    closed: false,
+    url: "https://projectcasting.com/job/disney-television-talent-search-2026-open-casting-call",
+    urgent: false, check: null, isNew: true
+  },
+  {
+    id: 1027, domain: "acting", name: "Ar Ais Arís — TG4 Youth Drama",
+    org: "Tailored Films · Beactive · Éiru Films · TG4",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "Ирландия", country: "Ireland (Galway / Mayo)",
+    age: "Teen (native Irish speaker)", minAge: 14, deadline: "Rolling (съёмки конец июня – август 2026)", tone: "green",
+    support: ["Оплата"],
+    pay: "Paid TV production (rate on selection)",
+    dates: "Filming late June – early August 2026, Galway",
+    summary: "TG4 youth drama Ar Ais Arís — кастинг irish-speaking teens из Galway/Mayo/Connacht. Одна роль: Portuguese + Irish.",
+    desc: "Тип: TV series · Ireland (Galway) · Актёрство: featured · Оплата: да · Контакт: laura@maureenhughescasting.com",
+    documents: ["Self-tape video introduction as Gaeilge (name, age, location, experience)", "Email submission to laura@maureenhughescasting.com", "Submission must be sent by parent/guardian", "Recent headshot attached to email", "Parental consent for filming schedule"],
+    closed: false,
+    url: "https://thisisgalway.ie/galway-teens-sought-for-ambitious-new-tg4-youth-drama/",
+    urgent: false, check: null, isNew: true, profileFit: "Native Irish (Gaeltacht) required; one role Portuguese+Irish"
+  },
+  {
+    id: 1028, domain: "acting", name: "Cast Istanbul — Lise Öğrencisi Oyuncu Kaydı",
+    org: "Cast Ajans Istanbul",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "Турция", country: "Turkey (Istanbul / nationwide online)",
+    age: "14–18 лет (lise)", minAge: 14, deadline: "Rolling (agency pool)", tone: "green",
+    support: ["Оплата"],
+    pay: "Paid projects when cast (kaşe по проекту; kayıt ücretsiz)",
+    dates: "Ongoing agency matching",
+    summary: "Регистрация lise öğrencisi (14–18) в Cast Istanbul для dizi, film, reklam. Ücretsiz başvuru, veli onayı обязателен.",
+    desc: "Тип: agency pool · Turkey · Актёрство: agency_pool · Оплата: при cast · Контакт: castistanbul.com online form",
+    documents: ["Online başvuru formu on castistanbul.com/tags/dizi-basvurusu", "Güncel doğal ışık fotoğrafları (makyajsız tercih)", "Kısa biyografi + varsa deneyim", "Veli onay belgesi (18 yaş altı zorunlu)", "Optional: kısa audition / tanıtım videosu"],
+    closed: false,
+    url: "https://www.castistanbul.com/blog/lise-ogrencisi-oyuncu-kaydi",
+    urgent: false, check: null, isNew: true
+  },
+  {
+    id: 1029, domain: "acting", name: "V Ajans — Genç Oyuncu Başvurusu",
+    org: "V Ajans (Istanbul)",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "Турция", country: "Turkey (nationwide)",
+    age: "14–18+ (18 altı veli onayı)", minAge: 14, deadline: "Rolling (agency pool)", tone: "green",
+    support: ["Оплата"],
+    pay: "Paid dizi/film/reklam when cast; başvuru tamamen ücretsiz",
+    dates: "Ongoing",
+    summary: "Ücretsiz online oyuncu kaydı V Ajans — Türkiye geneli genç talent havuzu. 18 yaş altı aile onayı zorunlu.",
+    desc: "Тип: agency pool · Turkey · Актёрство: agency_pool · Оплата: при cast · Контакт: info@vajans.com.tr",
+    documents: ["V Ajans online başvuru formu + fotoğraf (max 2 Mb JPEG)", "Veli onay belgesi (18 yaş altı)", "Telefon / email iletişim bilgileri", "Optional: kısa video / önceki deneyim özeti"],
+    closed: false,
+    url: "https://www.vajans.com.tr/sayfa/bilinmesi-gerekenler.html",
+    urgent: false, check: null, isNew: true
+  },
+  {
+    id: 1030, domain: "acting", name: "Suncoast Broadway — Youth Season Auditions",
+    org: "Suncoast Broadway Dinner Theatre",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "USA", country: "USA (Hudson, FL)",
+    age: "6–13 (youth roles); audition 18 July 2026", minAge: 6, deadline: "18 июля 2026 (live audition)", tone: "green",
+    support: ["Оплата"],
+    pay: "$150/week (NON-UNION youth season)",
+    dates: "Audition July 18, 2026; season Nov 2026 – May 2027",
+    summary: "Musical theater youth auditions: Christmas Carol, Les Mis youth tracks, Young Elvis. Hudson FL, in-person July 18.",
+    desc: "Тип: theater · USA (Hudson, FL) · Актёрство: featured · Оплата: да · Контакт: youthinpersonauditions2026-27season.cheddarup.com",
+    documents: ["Sign up via cheddarup.com audition link", "Headshot + résumé", "16–32 bars musical theatre song + sheet music in key", "List of scheduling conflicts for season", "Comfortable dance clothes for dance call", "Parental consent; school absence expected for matinees"],
+    closed: false,
+    url: "https://playbill.com/job/suncoast-broadway-local-auditions-for-youth-actors/0e5a42b1-1587-445b-8ab8-8831a1b44a32",
+    urgent: false, check: null, isNew: true, profileFit: "Most roles under 14; LOCAL Hudson FL area"
+  },
+  {
+    id: 1031, domain: "acting", name: "ITV Drama — Jake (Partially Deaf Teen)",
+    org: "Andy Pryor Casting",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "UK", country: "UK (London / South East)",
+    age: "15–16 playing; 16–18 if convincingly younger", minAge: 16, deadline: "5 июля 2026", tone: "green",
+    support: ["Оплата"],
+    pay: "Paid featured role (ITV drama)",
+    dates: "TBC production schedule",
+    summary: "Featured teen Jake — partially deaf/hard of hearing, learning BSL. Genuine lived experience required. Paid ITV role.",
+    desc: "Тип: TV drama · UK · Актёрство: featured · Оплата: да · Контакт: Andy Pryor Casting / Project Casting",
+    documents: ["Application via Project Casting portal", "Self-tape with London/South East accent", "Statement of hearing status (partially deaf/HoH)", "Optional: BSL experience documentation", "Parental consent if under 18", "Headshot + acting CV"],
+    closed: false,
+    url: "https://projectcasting.com/job/itv-drama-casting-call-for-partially-deaf-hard-of-hearing-actors",
+    urgent: false, check: null, isNew: true, profileFit: "Must be genuinely partially deaf or hard of hearing"
+  },
+  {
+    id: 1032, domain: "acting", name: "Backstage — Teen Acting (Platform Monitor)",
+    org: "Backstage",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "USA", country: "USA / UK / Canada / France / Australia",
+    age: "13–20 (filter teens)", minAge: 13, deadline: "Ежедневный мониторинг", tone: "green",
+    support: ["Оплата"],
+    pay: "Varies by listing (paid/non-paid)",
+    dates: "Rolling listings",
+    summary: "Платформа Backstage — фильтр Teens 13–20 для film/TV/commercial в USA, UK, Canada, France, Australia.",
+    desc: "Тип: platform · Multi-region · Актёрство: talent_search · Оплата: по listing · Контакт: backstage.com",
+    documents: ["Backstage talent profile (subscription may apply)", "Headshot + acting resume on profile", "Self-tape setup per casting notice", "Filter: Teens 13–20 + target country", "Parental consent for performers under 18"],
+    closed: false,
+    url: "https://www.backstage.com/casting/open-casting-calls/teens-acting-jobs/",
+    urgent: false, check: null, isNew: true
+  },
+  {
+    id: 1033, domain: "acting", name: "Playbill — Theater Castings (Platform Monitor)",
+    org: "Playbill",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "USA", country: "USA (regional theater)",
+    age: "Teen/youth theater roles", minAge: 13, deadline: "Еженедельный мониторинг", tone: "green",
+    support: ["Оплата"],
+    pay: "Varies (stipend to weekly pay)",
+    dates: "Rolling theater postings",
+    summary: "Playbill Jobs — regional & youth theater auditions USA: musical theater, teen ensemble, summer stock.",
+    desc: "Тип: platform · USA · Актёрство: talent_search · Оплата: по posting · Контакт: playbill.com/jobs",
+    documents: ["Playbill job listing application (email/online/Airtable per posting)", "Headshot + résumé", "16–32 bar song + sheet music for musicals", "1-minute monologue where requested", "Conflict list for rehearsal/performance dates"],
+    closed: false,
+    url: "https://playbill.com/jobs",
+    urgent: false, check: null, isNew: true
+  },
+  {
+    id: 1034, domain: "acting", name: "Teatr Ochoty — Młodzi Open Call",
+    org: "Teatr Ochoty, Warsaw",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "Польша", country: "Poland (Warsaw)",
+    age: "13–19 лет", minAge: 13, deadline: "Закрыт (истёк 10 июня 2026)", tone: "neutral",
+    support: ["Обучение"],
+    pay: "Bezpłatny udział (outdoor performance project)",
+    dates: "Premiere 30 August 2026, Park Szczęśliwicki",
+    summary: "Open call «Młodzi» — plenerowy spektakl Teatr Ochoty, 13–19 lat. Набор закрыт 10 июня.",
+    desc: "Тип: outdoor theater · Poland (Warsaw) · Актёрство: ensemble · Оплата: нет · Статус: закрыт",
+    documents: ["Google Forms zgłoszeniowy (closed)", "Openness to movement workshops Aug 17–29", "Parental consent for minors"],
+    closed: true,
+    url: "https://teatrochoty.pl/wydarzenie/open-call-mlodzi/",
+    urgent: false, check: null, isNew: true
+  },
+  {
+    id: 1035, domain: "acting", name: "BeCasting AR — Short Film Teens 15–19",
+    org: "BeCasting Argentina",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "Аргентина", country: "Argentina (Buenos Aires)",
+    age: "15–19 лет", minAge: 15, deadline: "Закрыт (истёк 12 мая 2026)", tone: "neutral",
+    support: ["Оплата"],
+    pay: "Remuneración prevista",
+    dates: "2 shoot days, Buenos Aires",
+    summary: "Cortometraje para redes — teens 15–19, Buenos Aires. Закрыт.",
+    desc: "Тип: short film · Argentina (Buenos Aires) · Актёрство: featured · Оплата: да · Статус: закрыт",
+    documents: ["Email to casting recruiter with photos + videobook link", "Personal data: name, age, phone", "Availability for 2 shoot days"],
+    closed: true,
+    url: "https://www.becasting.com.ar/castings/cine-ficcion/214966-casting-chicos-entre-15-y-19-anos-para-cortometraje-destinado-a-redes",
+    urgent: false, check: null, isNew: true
+  },
+  {
+    id: 1036, domain: "acting", name: "The Laramie Project — Youth Ensemble",
+    org: "YoubeYou · Ngamotu Theatre for Youth",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "New Zealand", country: "New Zealand (New Plymouth)",
+    age: "15–21 лет", minAge: 15, deadline: "13 июня 2026 (live audition)", tone: "red",
+    support: ["Обучение"],
+    pay: "Community theater production (non-paid ensemble; professional rehearsal process)",
+    dates: "Auditions 13 June 2026; performances 10–19 September 2026 at Little Theatre",
+    summary: "Ensemble-кastинг The Laramie Project для youth 15–21 в New Plymouth, NZ. Аудиции 13 июня через Cast98.",
+    desc: "Тип: theater · New Zealand (New Plymouth) · Актёрство: ensemble · Оплата: нет · Контакт: youbeyoungamotu@gmail.com / Cast98",
+    documents: ["Free Cast98 account + audition signup on app.cast98.com", "Conflict calendar for rehearsal period", "Profile information + show-specific questions in Cast98 form", "Contact Gordy Lockhart (youbeyoungamotu@gmail.com) for questions", "Parent/guardian consent for performers under 18"],
+    closed: false,
+    url: "https://app.cast98.com/shows/the-laramie-project-2026-youbeyoungamotu",
+    urgent: true, check: null, isNew: true, profileFit: "LOCAL New Plymouth/Taranaki preferred"
+  },
+  {
+    id: 1037, domain: "acting", name: "StarNow — Teen Acting (Australia)",
+    org: "StarNow",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "Австралия", country: "Australia (Sydney / Melbourne / national)",
+    age: "Teens / young adult filter", minAge: 13, deadline: "Ежедневный мониторинг", tone: "green",
+    support: ["Оплата"],
+    pay: "Varies by listing (AU$ typical for film/TV/commercial)",
+    dates: "Rolling listings",
+    summary: "StarNow Australia — фильтр teen/young adult для film, TV, commercial в Sydney, Melbourne и nationally.",
+    desc: "Тип: platform · Australia · Актёрство: talent_search · Оплата: по listing · Контакт: starnow.com",
+    documents: ["StarNow talent profile (free signup)", "Headshot + showreel on profile", "Self-tape per casting notice", "Filter: Teens / Young Adult + Australia", "Parental consent for performers under 18"],
+    closed: false,
+    url: "https://www.starnow.com/casting/open-casting-calls/australia-acting-jobs/",
+    urgent: false, check: null, isNew: true
+  },
+  {
+    id: 1038, domain: "acting", name: "Backstage — Teens (Canada)",
+    org: "Backstage",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "Canada", country: "Canada (Toronto / Vancouver)",
+    age: "13–20 (teens filter)", minAge: 13, deadline: "Ежедневный мониторинг", tone: "green",
+    support: ["Оплата"],
+    pay: "Varies (CA$ per day typical for indie/feature)",
+    dates: "Rolling — Toronto & Vancouver teen listings",
+    summary: "Backstage Canada teens — Toronto и Vancouver film/TV/student projects для 13–20.",
+    desc: "Тип: platform · Canada · Актёрство: talent_search · Оплата: по listing · Контакт: backstage.com",
+    documents: ["Backstage talent profile", "Headshot + acting resume", "Self-tape per project brief", "Monitor Toronto + Vancouver teens pages separately", "Work permit / visa status note for non-residents"],
+    closed: false,
+    url: "https://www.backstage.com/casting/open-casting-calls/toronto-canada-teens/",
+    urgent: false, check: null, isNew: true
+  },
+  {
+    id: 1039, domain: "acting", name: "Onlinecasting.co.za — Platform Monitor",
+    org: "Onlinecasting South Africa",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "ЮАР", country: "South Africa (national)",
+    age: "16–19+ (filter on site after login)", minAge: 16, deadline: "Еженедельный мониторинг", tone: "green",
+    support: ["Оплата"],
+    pay: "PAID listings common (rates on audition page)",
+    dates: "Rolling auditions — Cape Town, Gauteng, national",
+    summary: "Главная платформа кастингов ЮАР — film/TV/extras; фильтр по возрасту после регистрации.",
+    desc: "Тип: platform · South Africa · Актёрство: talent_search · Оплата: часто да · Контакт: onlinecasting.co.za",
+    documents: ["Free Onlinecasting.co.za talent profile", "Headshots + physical stats on profile", "Apply to matching auditions from dashboard", "Parent/guardian consent for minors", "Verify PAID vs scam listings (site has scam alert page)"],
+    closed: false,
+    url: "https://www.onlinecasting.co.za/auditions.asp",
+    urgent: false, check: null, isNew: true
+  },
+  {
+    id: 1040, domain: "acting", name: "Danish Feature — Boys 15–18 (Jylland)",
+    org: "Tommy Duus · Dansk Skuespillerkatalog",
+    category: "Кастинги в актёрском мастерстве", baseCountry: "Германия", country: "Denmark (Jylland shoot)",
+    age: "15–18 лет (male)", minAge: 15, deadline: "Rolling (съёмки maj/juni 2026)", tone: "orange",
+    support: ["Оплата"],
+    pay: "Paid feature film roles (rate via dask-online profile application)",
+    dates: "Shoot May/June 2026 in Jylland, Denmark",
+    summary: "Stor dansk spillefilm — два больших teen male roles, 15–18, съёмки в Jylland. Опыт не обязателен.",
+    desc: "Тип: feature film · Denmark (Jylland) · Актёрство: lead · Оплата: да · Контакт: dask-online.dk profile",
+    documents: ["Create/login at dask-online.dk (Dansk Skuespillerkatalog)", "Apply to casting post id 1039658 from profile", "Headshot + CV on Danish actor profile", "Video presentation if requested by caster", "Parental consent + work rules for minors in Denmark"],
+    closed: false,
+    url: "https://www.dask-online.dk/nyhed.asp?id=1039658",
+    urgent: false, check: null, isNew: true, profileFit: "Male 15–18; Denmark/nationwide applicants"
   }
 ];
 
@@ -2170,9 +2470,13 @@ function normalizeCountry(country) {
     "united states": "USA",
     "new zealand": "New Zealand",
     georgia: "Georgia",
+    turkey: "Турция",
+    turkiye: "Турция",
+    türkiye: "Турция",
     "schengen area": "Европа (Schengen)",
     israel: "Израиль",
-    израиль: "Израиль"
+    израиль: "Израиль",
+    турция: "Турция"
   };
   const key = normalizeKey(country);
   return map[key] || country;
@@ -2190,7 +2494,8 @@ function normalizeMinAge(minAge, ageRange) {
 function inferCategory(type, title, domain) {
   const source = `${type || ""} ${title || ""}`.toLowerCase();
   if (domain === "acting") {
-    if (source.includes("audition") || source.includes("casting") || source.includes("open call")) return "Аудиции";
+    if (source.includes("casting") || source.includes("cast ") || source.includes("talent search")) return "Кастинги в актёрском мастерстве";
+    if (source.includes("audition") || source.includes("open call")) return "Аудиции";
     if (source.includes("scholarship") || source.includes("grant") || source.includes("financial aid")) return "Стипендии";
     if (source.includes("internship") || source.includes("apprentice") || source.includes("backstage")) return "Стажировки";
     if (source.includes("volunteering") || source.includes("exchange") || source.includes("solidarity corps") || source.includes("esc")) return "Обмен";
@@ -4990,10 +5295,16 @@ function inferDocumentChecklist(program) {
 
   // --- By category ---
   switch (category) {
-    case "Кастинги": {
+    case "Кастинги":
+    case "Кастинги в актёрском мастерстве": {
       docs.push("Headshot + full-body фото (актуальные)");
-      docs.push("Riding reel 1–2 мин: walk, trot, canter, уверенная посадка");
-      docs.push("Актёрское резюме + riding в special skills");
+      if (category === "Кастинги") {
+        docs.push("Riding reel 1–2 мин: walk, trot, canter, уверенная посадка");
+        docs.push("Актёрское резюме + riding в special skills");
+      } else {
+        docs.push("Acting CV / resume + special skills");
+        docs.push("2 contrasting monologues or self-tape 1–2 min");
+      }
       if (/self-tape|video presentation|видео-презентац|reel/i.test(text)) {
         docs.push("Video presentation / self-tape по brief кастинга");
       }
@@ -5142,6 +5453,8 @@ function inferDocumentChecklist(program) {
     if (!/casting only|no riding required/i.test(text)) {
       docs.push("Medical clearance / insurance для riding или residential program");
     }
+  } else if (category === "Кастинги в актёрском мастерстве") {
+    docs.push("Minor work permit / child entertainment license если требует штат или страна");
   }
 
   // --- Travel funds (only abroad self-funded travel) ---
@@ -5170,7 +5483,7 @@ function inferDocumentChecklist(program) {
   }
 
   // --- Paid roles only ---
-  if (category === "Кастинги" || (program.support.includes("Оплата") && hasMeaningfulPay(program.pay) && category === "Стажировки")) {
+  if (category === "Кастинги" || category === "Кастинги в актёрском мастерстве" || (program.support.includes("Оплата") && hasMeaningfulPay(program.pay) && category === "Стажировки")) {
     if (!docs.some(d => /bank|tax/i.test(d))) {
       docs.push("Bank details + tax form для paid placement");
     }

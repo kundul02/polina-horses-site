@@ -19,6 +19,7 @@ research/
   equestrian/                 # конные программы + сводные обновления
     castings/                 # база мониторинга кастингов (JSON + чеклист)
   acting/                       # актёрские программы + обновления
+    castings/                 # база мониторинга актёрских кастингов (JSON + чеклист)
 scripts/
   export-merged-programs.mjs
   fetch_program_urls.mjs
@@ -75,6 +76,28 @@ scripts/
 - **желательна** — вестерн, ранчо, ковбой: езда сильно помогает, но не must.
 - **не требуется** — сельская/ранчо-тема без сцен в седле.
 
+### Кастинги в актёрском мастерстве (16–18+)
+
+Отдельная база — не путать с интенсивами RADA/NYT и ESC.
+
+| Файл | Назначение |
+|------|------------|
+| [`research/acting/castings/castings-registry.json`](research/acting/castings/castings-registry.json) | Реестр: платформы, агентства TR, active / watch / archive |
+| [`research/acting/castings/MONITORING_DATABASE.md`](research/acting/castings/MONITORING_DATABASE.md) | Сводка |
+| [`research/acting/castings/CHECKLIST_проверка.md`](research/acting/castings/CHECKLIST_проверка.md) | Промпт для агента |
+
+**На сайте:** категория **«Кастинги в актёрском мастерстве»** во вкладке «Актёрское мастерство» (ids **1021–1035**).
+
+**Промпт:**
+
+```
+Проверь актуальность актёрских кастингов по research/acting/castings/castings-registry.json и обнови сайт
+```
+
+**Формат `desc`:** `Тип: … · Страна · Актёрство: lead|featured|ensemble|talent_search · Оплата: да/нет. Контакт: …`
+
+**Регионы в реестре:** UK, USA, Canada, Ireland, France, Poland, **Turkey**, Argentina + платформы AU/NZ/ZA/GE.
+
 ## Где источник правды и что значат цифры
 
 | Что смотришь | Источник правды | В git / на сайте? |
@@ -85,7 +108,8 @@ scripts/
 | **Workflow верификации** | [`research/PROGRAM_RESEARCH_WORKFLOW.md`](research/PROGRAM_RESEARCH_WORKFLOW.md) | ✅ пушится |
 | **Экспорт runtime-id** | [`research/all-programs-full.json`](research/all-programs-full.json) | ✅ пушится |
 | **Canvas в Cursor** | `~/.cursor/projects/.../canvases/equestrian-programs.canvas.tsx` | ❌ **не в репозитории, не деплоится** |
-| **База кастингов для проверок** | [`research/equestrian/castings/castings-registry.json`](research/equestrian/castings/castings-registry.json) | ✅ пушится |
+| **База кастингов (конные)** | [`research/equestrian/castings/castings-registry.json`](research/equestrian/castings/castings-registry.json) | ✅ пушится |
+| **База кастингов (актёрство)** | [`research/acting/castings/castings-registry.json`](research/acting/castings/castings-registry.json) | ✅ пушится |
 
 ### ⚠️ Правило для всех будущих запусков: только реальные данные
 
@@ -132,7 +156,7 @@ export → generate-feed-verified → inject-verified-registry → audit-documen
 
 | Метрика | Значение |
 |---------|----------|
-| Программ на сайте | **99** (54 base equestrian + 25 feed + 20 acting) |
+| Программ на сайте | **119** (54 base equestrian + 25 feed + 20 acting + 20 acting castings) |
 | С explicit `documents[]` | **99** (100%) |
 | Уникальных чек-листов | **99** |
 | С флагом `check` | **7** (404/403/закрытые feed — намеренные предупреждения, не pending research) |
@@ -254,9 +278,12 @@ export → generate-feed-verified → inject-verified-registry → audit-documen
 - [Cours Florent](https://www.coursflorent.fr/)
 - [ESC Youth Portal](https://youth.europa.eu/solidarity_en) — Creativity and culture
 
-### Аудиции и кастинги (театр)
-- [Backstage](https://www.backstage.com), [Playbill](https://playbill.com), [StageMilk](https://www.stagemilk.com)
-- [ASSITEJ](https://www.assitej.org/) — international youth theater
+### Аудиции и кастинги (театр / film / TV)
+
+- [Backstage teens](https://www.backstage.com/casting/open-casting-calls/teens-acting-jobs/) · [Mandy teen/young adult](https://www.mandy.com/aa/jobs/teen-young-adult/) · [Project Casting](https://projectcasting.com/jobs?category=Acting)
+- [KidsCasting teens](https://kidscasting.com/castingcalls/for-teens) · [Playbill jobs](https://playbill.com/jobs) · [StarNow teens](https://www.starnow.com/casting/open-casting-calls/teen-acting-jobs/)
+- **Turkey:** [Cast Istanbul](https://www.castistanbul.com/tags/dizi-basvurusu) · [V Ajans](https://www.vajans.com.tr/sayfa/bilinmesi-gerekenler.html) · [Vivano](https://www.vivano.tr/v-menajer-oyuncu-basvuru-formu/)
+- Полный реестр: [`acting/castings/castings-registry.json`](research/acting/castings/castings-registry.json)
 
 ## Публикация
 
