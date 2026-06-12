@@ -31,6 +31,11 @@
 | 1037 | StarNow Teens | **Australia** | Sydney/Melbourne/national |
 | 1038 | Backstage Teens | **Canada** | Toronto + Vancouver |
 | 1039 | Onlinecasting.co.za | **South Africa** | PAID listings; scam alert on site |
+| 1041 | CastingOnline.co.il | **Israel** | platform — login для listings |
+| 1042 | GoSee Youth Talent | **Israel** | agency pool 1–18; teens acting 15–18 |
+| 1043 | Easy2Cast | **Israel** | free talent database |
+| 1044 | Di-Cast-Ro (HaMalehak) | **Israel** | bits/extras 16+ без 3 лет школы |
+| 1045 | Take2 | **Israel** | licensed youth agency |
 
 ## Архив
 
@@ -44,6 +49,7 @@
 | Регион | Где искать |
 |--------|------------|
 | Spain / Portugal / Slovenia | Backstage EU · Mandy · castprod (FR) |
+| **Israel** | [CastingOnline](https://www.castingonline.co.il/) · [GoSee](https://gosee.co.il/) · [Easy2Cast](https://easy2cast.com/) · [Di-Cast-Ro](https://www.di-cast-ro.com/) · FB groups — см. [`Israel_анализ_2026-06-12.md`](Israel_анализ_2026-06-12.md) |
 | Georgia (country) | Локальные casting agencies Tbilisi — открытых teen listings не найдено |
 | Germany (кроме DK co-prod) | [schauspielervideos.de ecasting](https://en.schauspielervideos.de/ecasting/) |
 | Poland | [teatrochoty.pl](https://teatrochoty.pl/) · ESC culture projects |

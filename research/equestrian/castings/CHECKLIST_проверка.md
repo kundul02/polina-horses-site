@@ -16,12 +16,13 @@
 2. Для каждого кастинга в active[] — открой URL, проверь что набор открыт и дедлайн не истёк.
 3. Ищи НОВЫЕ открытые кастинги: возраст 16–20 (или playing 18–25), езда required или preferred.
 4. Обнови castings-registry.json: active / watch / archive / checkLog.
-5. Синхронизируй programs.html (категория Кастинги):
+5. **Автоархив:** `node scripts/archive-expired-castings.mjs` — закрывает карточки с истёкшим дедлайном (или `--dry-run` для просмотра).
+6. Синхронизируй programs.html (категория Кастинги):
    - новые → добавить карточку с summary + desc
-   - истёкшие → closed: true, deadline «Закрыт (дата)»
-6. В desc каждой карточки ОБЯЗАТЕЛЬНО: «Верховая езда: обязательна | желательна | не требуется»
-7. cp programs.html index.html + canvas equestrian-programs.canvas.tsx
-8. Краткий отчёт: что открыто, что закрылось, что добавлено.
+   - истёкшие → closed: true, deadline «Закрыт (дата)» (скрипт делает это автоматически по дате)
+7. В desc каждой карточки ОБЯЗАТЕЛЬНО: «Верховая езда: обязательна | желательна | не требуется»
+8. cp programs.html index.html + canvas equestrian-programs.canvas.tsx
+9. Краткий отчёт: что открыто, что закрылось, что добавлено.
 ```
 
 ---

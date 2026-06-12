@@ -12,5 +12,6 @@
 
 **На сайте:** карточки «Кастинги» в `programs.html` (id 19, 20, 46–50).
 
-**Счётчик «Кастинги (4)»** = открытые: 46 Fallow, 47 Luke, 48 Savannah, 50 Netflix ES.  
-Закрытые (Архив): 19, 20, 49. Canvas в Cursor должен совпадать, но **не пушится** — источник правды для сайта только `programs.html`.
+**Автоархив после проверки:** `node scripts/archive-expired-castings.mjs` (`--dry-run` — предпросмотр).
+
+**Счётчик «Кастинги (4)»** = открытые: 46 Fallow, 47 Luke, 48 Savannah, 50 Netflix ES.

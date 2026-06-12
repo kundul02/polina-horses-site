@@ -56,6 +56,7 @@ scripts/
 2. Сверить `active[]` — URL открыт, дедлайн не истёк (смотреть **Expiration date** на Project Casting).
 3. Новые открытые → `castings-registry.json` + карточка в `programs.html` (категория `Кастинги`).
 4. Истёкшие → `closed: true`, перенос в `archive`, обновить дедлайн «Закрыт (дата)».
+   Автоматически: `node scripts/archive-expired-castings.mjs` (после каждого поиска/проверки; `--dry-run` — только отчёт).
 5. **Тройная синхронизация:** `programs.html` → `cp programs.html index.html` → Canvas.
 6. Запись в `checkLog` в JSON + строка в `MONITORING_DATABASE.md`.
 
@@ -156,7 +157,7 @@ export → generate-feed-verified → inject-verified-registry → audit-documen
 
 | Метрика | Значение |
 |---------|----------|
-| Программ на сайте | **119** (54 base equestrian + 25 feed + 20 acting + 20 acting castings) |
+| Программ на сайте | **124** (54 base equestrian + 25 feed + 20 acting + 25 acting castings) |
 | С explicit `documents[]` | **99** (100%) |
 | Уникальных чек-листов | **99** |
 | С флагом `check` | **7** (404/403/закрытые feed — намеренные предупреждения, не pending research) |

@@ -39,7 +39,12 @@
       "1037": "StarNow — Teen Acting (Australia)",
       "1038": "Backstage — Teens (Canada)",
       "1039": "Onlinecasting.co.za — Platform Monitor",
-      "1040": "Danish Feature — Boys 15–18 (Jylland)"
+      "1040": "Danish Feature — Boys 15–18 (Jylland)",
+      "1041": "CastingOnline.co.il — Platform Monitor",
+      "1042": "GoSee — Youth Talent Agency",
+      "1043": "Easy2Cast — Platform Monitor (Israel)",
+      "1044": "Di-Cast-Ro (HaMalehak) — Casting Database",
+      "1045": "Take2 — Children & Teens Casting"
     }
   },
   "platforms": [
@@ -142,6 +147,33 @@
       "keywords": ["genç", "lise", "16", "17", "18", "oyuncu"],
       "frequency": "weekly",
       "notes": "Испанский/Türkçe кастинг-портал для TR/EU"
+    },
+    {
+      "id": "castingonline-il",
+      "name": "CastingOnline.co.il",
+      "url": "https://www.castingonline.co.il/",
+      "searchUrl": "https://www.castingonline.co.il/castings/5-%D7%A7%D7%95%D7%9C%D7%A0%D7%95%D7%A2-%D7%A1%D7%A8%D7%98%D7%99%D7%9D-%D7%A7%D7%A6%D7%A8%D7%99%D7%9D",
+      "regions": ["Israel"],
+      "keywords": ["נוער", "teen", "16", "17", "18", "שחקנים"],
+      "frequency": "daily",
+      "notes": "Публичный каталог без login часто пуст — нужен профиль"
+    },
+    {
+      "id": "easy2cast-il",
+      "name": "Easy2Cast",
+      "url": "https://easy2cast.com/",
+      "regions": ["Israel"],
+      "keywords": ["teen", "young", "16", "17", "18"],
+      "frequency": "daily"
+    },
+    {
+      "id": "mytalent-il",
+      "name": "MyTalent.co.il",
+      "url": "http://mytalent.co.il/",
+      "regions": ["Israel"],
+      "keywords": ["נוער", "15", "16", "17", "18"],
+      "frequency": "weekly",
+      "notes": "Сайт сломан (Fatal error, июнь 2026) — не primary"
     }
   ],
   "agencies": [
@@ -189,6 +221,42 @@
       "type": "talent_search",
       "ageNotes": "AACTA Young Stars 13–18 (ежегодно, проверять цикл)",
       "action": "Мониторить AACTA Young Stars + StarNow AU teens"
+    },
+    {
+      "id": "gosee-il",
+      "name": "GoSee Young Talent",
+      "url": "https://gosee.co.il/",
+      "region": "Israel",
+      "type": "agency_pool",
+      "ageNotes": "1–18; teens 15–18 for acting; free compatibility check",
+      "action": "שאלון בדיקת התאמה + 3 headshots; ответ ~7 дней"
+    },
+    {
+      "id": "take2-il",
+      "name": "Take2 Casting",
+      "url": "https://take2.co.il/",
+      "region": "Israel",
+      "type": "agency_pool",
+      "ageNotes": "Children & teens; licensed brokerage (משרד התעשייה)",
+      "action": "Contact for youth representation intake"
+    },
+    {
+      "id": "dicastro-il",
+      "name": "Di-Cast-Ro (HaMalehak)",
+      "url": "https://www.di-cast-ro.com/submit",
+      "region": "Israel",
+      "type": "agency_pool",
+      "ageNotes": "16+ for bits/extras; full actor track needs 3yr training",
+      "action": "Online form + photos + social links"
+    },
+    {
+      "id": "studio-bama-il",
+      "name": "Studio Bama Agency",
+      "url": "https://studiobama.com/%D7%A1%D7%95%D7%9B%D7%A0%D7%95%D7%AA-%D7%A9%D7%97%D7%A7%D7%A0%D7%99%D7%9D/",
+      "region": "Israel",
+      "type": "agency_pool",
+      "ageNotes": "ילדים ונוער from acting school roster",
+      "action": "Strict selection; contact via school agency page"
     }
   ],
   "searchQueries": [
@@ -203,7 +271,13 @@
     "site:castprod.com adolescent 16 17 casting",
     "genç oyuncu casting İstanbul 2026",
     "TG4 youth drama casting Ireland teen",
-    "onlinecasting.co.za teen actor"
+    "onlinecasting.co.za teen actor",
+    "site:castingonline.co.il נוער OR teenager",
+    "site:facebook.com ליהוק נוער ישראל 2026",
+    "site:easy2cast.com Israel teen",
+    "gosee.co.il youth acting audition",
+    "Regal Productions auditions Bet Shemesh",
+    "Theater in the Rough Jerusalem casting teen"
   ],
   "castings": {
     "active": [
@@ -497,9 +571,106 @@
         "deadline": null,
         "url": "https://www.onlinecasting.co.za/auditions.asp",
         "verified": "2026-06-12"
+      },
+      {
+        "id": "castingonline-il-monitor",
+        "siteProgramId": 1041,
+        "name": "CastingOnline.co.il — Platform Monitor",
+        "type": "platform",
+        "country": "Israel",
+        "city": "national",
+        "age": "17-25 filter on site",
+        "acting": "talent_search",
+        "paid": true,
+        "deadline": null,
+        "url": "https://www.castingonline.co.il/",
+        "verified": "2026-06-12",
+        "notes": "Login required for live listings"
+      },
+      {
+        "id": "gosee-youth-il",
+        "siteProgramId": 1042,
+        "name": "GoSee — Youth Talent Agency",
+        "type": "agency_pool",
+        "country": "Israel",
+        "city": "Tel Aviv / nationwide",
+        "age": "1-18 (teens 15-18 acting)",
+        "acting": "agency_pool",
+        "paid": true,
+        "deadline": null,
+        "url": "https://gosee.co.il/",
+        "verified": "2026-06-12",
+        "notes": "Free registration; no book fee"
+      },
+      {
+        "id": "easy2cast-il-monitor",
+        "siteProgramId": 1043,
+        "name": "Easy2Cast — Platform Monitor (Israel)",
+        "type": "platform",
+        "country": "Israel",
+        "age": "profile filter",
+        "acting": "talent_search",
+        "paid": true,
+        "deadline": null,
+        "url": "https://easy2cast.com/",
+        "verified": "2026-06-12"
+      },
+      {
+        "id": "dicastro-il-pool",
+        "siteProgramId": 1044,
+        "name": "Di-Cast-Ro (HaMalehak) — Casting Database",
+        "type": "agency_pool",
+        "country": "Israel",
+        "city": "national",
+        "age": "16+ bits/extras",
+        "acting": "ensemble",
+        "paid": true,
+        "deadline": null,
+        "url": "https://www.di-cast-ro.com/submit",
+        "verified": "2026-06-12"
+      },
+      {
+        "id": "take2-youth-il",
+        "siteProgramId": 1045,
+        "name": "Take2 — Children & Teens Casting",
+        "type": "agency_pool",
+        "country": "Israel",
+        "city": "national",
+        "age": "children & teens",
+        "acting": "featured",
+        "paid": true,
+        "deadline": null,
+        "url": "https://take2.co.il/index.php?cs=7&dir=site&langpage=heb&page=content",
+        "verified": "2026-06-12"
       }
     ],
     "archive": [
+      {
+        "id": "regal-swiss-family-2026",
+        "name": "Regal Productions — Swiss Family Robinson",
+        "type": "theater",
+        "country": "Israel",
+        "city": "Bet Shemesh",
+        "age": "girls 8-24",
+        "acting": "featured",
+        "closedReason": "video deadline 16 May 2026",
+        "url": "https://www.regalproductions.org/auditions",
+        "verified": "2026-06-12",
+        "notes": "English musical theater; monitor next season"
+      },
+      {
+        "id": "tempest-in-the-rough-2026",
+        "name": "Theater in the Rough — The Tempest (actors)",
+        "type": "theater",
+        "country": "Israel",
+        "city": "Jerusalem",
+        "age": "open age; excellent English",
+        "acting": "ensemble",
+        "closedReason": "auditions 23-24 April 2026",
+        "url": "https://theaterintherough.co.il/auditions-for-the-tempest-in-motion-2026/",
+        "verified": "2026-06-12",
+        "notes": "Production team still via beth@theaterintherough.co.il"
+      },
       {
         "id": "teatr-ochoty-mlodzi",
         "siteProgramId": 1034,
@@ -547,9 +718,17 @@
       "date": "2026-06-12",
       "checker": "cursor-agent",
       "activeCount": 9,
+      "watchCount": 14,
+      "siteCards": 25,
+      "notes": "Israel deep dive: 5 watch cards (1041–1045). See Israel_анализ_2026-06-12.md"
+    },
+    {
+      "date": "2026-06-12",
+      "checker": "cursor-agent",
+      "activeCount": 9,
       "watchCount": 9,
       "siteCards": 20,
-      "notes": "Добавлены NZ (Laramie Project), AU/CA/ZA platform monitors, Danish feature 15–18. Вкладка «Кастинги в актёрском мастерстве» — 20 карточек."
+      "notes": "Добавлены NZ (Laramie Project), AU/CA/ZA platform monitors, Danish feature 15–18."
     }
   ]
 }
