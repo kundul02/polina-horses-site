@@ -1,15 +1,31 @@
 {
   "meta": {
     "version": 1,
-    "lastFullCheck": "2026-06-12",
+    "lastFullCheck": "2026-06-30",
     "lastSiteSync": "2026-06-12",
     "nextCheckRecommended": "еженедельно (актёрские кастинги для teens живут 3–14 дней)",
     "targetAge": "16-18+",
     "targetFocus": "16+ программы; playing age 15–18 приемлемо с пометкой",
     "regions": [
-      "UK", "USA", "Canada", "Ireland", "Germany", "France", "Spain", "Portugal",
-      "Denmark", "Poland", "Australia", "New Zealand", "Georgia", "South Africa",
-      "Argentina", "Turkey", "Israel", "Schengen", "online"
+      "UK",
+      "USA",
+      "Canada",
+      "Ireland",
+      "Germany",
+      "France",
+      "Spain",
+      "Portugal",
+      "Denmark",
+      "Poland",
+      "Australia",
+      "New Zealand",
+      "Georgia",
+      "South Africa",
+      "Argentina",
+      "Turkey",
+      "Israel",
+      "Schengen",
+      "online"
     ],
     "actingLevels": {
       "lead": "главная / series regular — полный self-tape + опыт",
@@ -44,34 +60,66 @@
       "1042": "GoSee — Youth Talent Agency",
       "1043": "Easy2Cast — Platform Monitor (Israel)",
       "1044": "Di-Cast-Ro (HaMalehak) — Casting Database",
-      "1045": "Take2 — Children & Teens Casting"
+      "1045": "Take2 — Children & Teens Casting",
+      "1046": "Miss American Vampire — Saylor/Emily (Canada)",
+      "1047": "Shades of Identity — Lena/Camilla/Aaron (Boston)",
+      "1048": "BeCasting AR — Comedia Juvenil (aparenta 18)"
     }
   },
   "platforms": [
     {
       "id": "backstage-teens",
       "name": "Backstage — Teens",
-      "url": "https://www.backstage.com/casting/open-casting-calls/teens-acting-jobs/",
+      "url": "https://www.backstage.com/casting/open-casting-calls/kids/",
       "searchUrl": "https://www.backstage.com/casting/?age=13-20",
-      "regions": ["USA", "UK", "Canada", "France", "Australia"],
-      "keywords": ["teen", "16", "17", "18", "high school", "young adult"],
+      "regions": [
+        "USA",
+        "UK",
+        "Canada",
+        "France",
+        "Australia"
+      ],
+      "keywords": [
+        "teen",
+        "16",
+        "17",
+        "18",
+        "high school",
+        "young adult"
+      ],
       "filters": "Age 13–20, Film/TV/Theater",
       "frequency": "daily",
-      "notes": "Проверять Expiration date на карточке"
+      "notes": "Старый URL /teens-acting-jobs/ отдаёт 404 (проверено 2026-06-30); рабочая альтернатива — общая Kids-страница (age 0-18, фильтр Teens внутри) или региональные страницы вида /toronto-canada-teens/. Проверять Expiration date на карточке"
     },
     {
       "id": "mandy-teens",
       "name": "Mandy — Teen/Young Adult",
       "url": "https://www.mandy.com/aa/jobs/teen-young-adult/",
-      "regions": ["UK", "Ireland", "EU", "USA"],
-      "keywords": ["teen", "young adult", "16", "17", "18"],
-      "frequency": "daily"
+      "regions": [
+        "UK",
+        "Ireland",
+        "EU",
+        "USA"
+      ],
+      "keywords": [
+        "teen",
+        "young adult",
+        "16",
+        "17",
+        "18"
+      ],
+      "frequency": "daily",
+      "notes": "Очень результативная площадка (2026-06-30): несколько проектов с явным возрастом ролей 15-23 (Exposure, Shades of Identity, Miss American Vampire, She'll be Apples)"
     },
     {
       "id": "starnow-teens",
       "name": "StarNow — Teen Acting",
       "url": "https://www.starnow.com/casting/open-casting-calls/teen-acting-jobs/",
-      "regions": ["UK", "Australia", "New Zealand"],
+      "regions": [
+        "UK",
+        "Australia",
+        "New Zealand"
+      ],
       "frequency": "daily"
     },
     {
@@ -79,101 +127,203 @@
       "name": "Project Casting — Acting",
       "url": "https://projectcasting.com/jobs",
       "searchUrl": "https://projectcasting.com/jobs?category=Acting",
-      "regions": ["USA", "UK", "Canada", "global"],
-      "keywords": ["teen", "teenager", "16", "17", "18", "high school"],
+      "regions": [
+        "USA",
+        "UK",
+        "Canada",
+        "global"
+      ],
+      "keywords": [
+        "teen",
+        "teenager",
+        "16",
+        "17",
+        "18",
+        "high school"
+      ],
       "frequency": "daily"
     },
     {
       "id": "kidscasting-teens",
       "name": "KidsCasting — Teens",
       "url": "https://kidscasting.com/castingcalls/for-teens",
-      "regions": ["USA", "Canada"],
-      "keywords": ["teen", "16", "17", "18", "high school"],
-      "frequency": "daily"
+      "regions": [
+        "USA",
+        "Canada"
+      ],
+      "keywords": [
+        "teen",
+        "16",
+        "17",
+        "18",
+        "high school"
+      ],
+      "frequency": "daily",
+      "notes": "Много modeling/pageant записей с регистрационным сбором (Candy Cane Pageant и т.п.) — НЕ публиковать. Актёрские роли (WW2 Docudrama, Pocketful of Pennies) часто без точного указания возраста в превью — нужно открывать карточку"
     },
     {
       "id": "playbill",
       "name": "Playbill — Theater Jobs",
       "url": "https://playbill.com/jobs",
-      "regions": ["USA"],
-      "keywords": ["teen", "youth", "16", "17", "18", "high school"],
+      "regions": [
+        "USA"
+      ],
+      "keywords": [
+        "teen",
+        "youth",
+        "16",
+        "17",
+        "18",
+        "high school"
+      ],
       "frequency": "weekly",
-      "notes": "Regional theater; musical theater auditions"
+      "notes": "Regional theater; musical theater auditions. Внимание: URL конкретных вакансий часто протухают/переиздаются под новым slug в течение пары недель — перепроверять через поиск по названию театра, если страница 404"
     },
     {
       "id": "castingnetworks",
       "name": "Casting Networks",
       "url": "https://www.castingnetworks.com/",
-      "regions": ["USA", "UK", "Canada", "Australia"],
+      "regions": [
+        "USA",
+        "UK",
+        "Canada",
+        "Australia"
+      ],
       "frequency": "daily"
     },
     {
       "id": "allcasting-teens",
       "name": "Allcasting — Teens",
       "url": "https://allcasting.com/castingcalls",
-      "regions": ["USA", "Canada"],
-      "keywords": ["teen", "16", "17"],
+      "regions": [
+        "USA",
+        "Canada"
+      ],
+      "keywords": [
+        "teen",
+        "16",
+        "17"
+      ],
       "frequency": "weekly"
     },
     {
       "id": "onlinecasting-za",
       "name": "Onlinecasting.co.za",
       "url": "https://www.onlinecasting.co.za/",
-      "regions": ["South Africa"],
-      "keywords": ["teen", "youth", "16", "17"],
+      "regions": [
+        "South Africa"
+      ],
+      "keywords": [
+        "teen",
+        "youth",
+        "16",
+        "17"
+      ],
       "frequency": "monthly"
     },
     {
       "id": "becasting-ar",
       "name": "BeCasting Argentina",
       "url": "https://www.becasting.com.ar/castings/cine-ficcion/",
-      "regions": ["Argentina"],
-      "keywords": ["adolescente", "16", "17", "18", "joven"],
-      "frequency": "weekly"
+      "regions": [
+        "Argentina"
+      ],
+      "keywords": [
+        "adolescente",
+        "16",
+        "17",
+        "18",
+        "joven"
+      ],
+      "frequency": "weekly",
+      "notes": "2026-06-30: активный листинг, регулярно обновляется (десятки кастингов/неделю); фильтр возраста «0-16 / 17-25» на сайте; искать формулировки «aparente/aparenten 18 años» (playing younger) и «de 17 a NN años»"
     },
     {
       "id": "castprod-fr",
       "name": "Castprod (France)",
       "url": "https://castprod.com/",
-      "regions": ["France"],
-      "keywords": ["adolescent", "16", "17", "18", "jeune"],
-      "frequency": "weekly"
+      "regions": [
+        "France"
+      ],
+      "keywords": [
+        "adolescent",
+        "16",
+        "17",
+        "18",
+        "jeune"
+      ],
+      "frequency": "weekly",
+      "notes": "Главная страница — блог/гид, конкретные объявления castings не индексируются напрямую с homepage; нужен поиск по разделу «Casting ados» с фильтром по региону после регистрации"
     },
     {
       "id": "encast-tr",
       "name": "enCAST (Turkey)",
       "url": "https://www.encast.net/",
-      "regions": ["Turkey"],
-      "keywords": ["genç", "lise", "16", "17", "18", "oyuncu"],
+      "regions": [
+        "Turkey"
+      ],
+      "keywords": [
+        "genç",
+        "lise",
+        "16",
+        "17",
+        "18",
+        "oyuncu"
+      ],
       "frequency": "weekly",
-      "notes": "Испанский/Türkçe кастинг-портал для TR/EU"
+      "notes": "Испанский/Türkçe кастинг-портал для TR/EU; не удалось загрузить 2026-06-30 (таймаут), перепроверить в следующий цикл"
     },
     {
       "id": "castingonline-il",
       "name": "CastingOnline.co.il",
       "url": "https://www.castingonline.co.il/",
       "searchUrl": "https://www.castingonline.co.il/castings/5-%D7%A7%D7%95%D7%9C%D7%A0%D7%95%D7%A2-%D7%A1%D7%A8%D7%98%D7%99%D7%9D-%D7%A7%D7%A6%D7%A8%D7%99%D7%9D",
-      "regions": ["Israel"],
-      "keywords": ["נוער", "teen", "16", "17", "18", "שחקנים"],
+      "regions": [
+        "Israel"
+      ],
+      "keywords": [
+        "נוער",
+        "teen",
+        "16",
+        "17",
+        "18",
+        "שחקנים"
+      ],
       "frequency": "daily",
-      "notes": "Публичный каталог без login часто пуст — нужен профиль"
+      "notes": "Публичный каталог без login часто пуст — нужен профиль. Жив на 2026-06-30, без явных открытых datированных кастингов в публичной части"
     },
     {
       "id": "easy2cast-il",
       "name": "Easy2Cast",
       "url": "https://easy2cast.com/",
-      "regions": ["Israel"],
-      "keywords": ["teen", "young", "16", "17", "18"],
+      "regions": [
+        "Israel"
+      ],
+      "keywords": [
+        "teen",
+        "young",
+        "16",
+        "17",
+        "18"
+      ],
       "frequency": "daily"
     },
     {
       "id": "mytalent-il",
       "name": "MyTalent.co.il",
       "url": "http://mytalent.co.il/",
-      "regions": ["Israel"],
-      "keywords": ["נוער", "15", "16", "17", "18"],
+      "regions": [
+        "Israel"
+      ],
+      "keywords": [
+        "נוער",
+        "15",
+        "16",
+        "17",
+        "18"
+      ],
       "frequency": "weekly",
-      "notes": "Сайт сломан (Fatal error, июнь 2026) — не primary"
+      "notes": "Сайт сломан (Fatal error, июнь 2026) — не primary; не перепроверялся повторно 2026-06-30 (низкий приоритет)"
     }
   ],
   "agencies": [
@@ -201,7 +351,11 @@
       "url": "https://www.vivano.tr/v-menajer-oyuncu-basvuru-formu/",
       "region": "Turkey",
       "type": "agency_pool",
-      "skills": ["dizi", "film", "reklam"],
+      "skills": [
+        "dizi",
+        "film",
+        "reklam"
+      ],
       "action": "Oyuncu başvuru formu + veli onayı (18-)"
     },
     {
@@ -220,7 +374,8 @@
       "region": "Australia",
       "type": "talent_search",
       "ageNotes": "AACTA Young Stars 13–18 (ежегодно, проверять цикл)",
-      "action": "Мониторить AACTA Young Stars + StarNow AU teens"
+      "action": "Мониторить AACTA Young Stars + StarNow AU teens",
+      "notes": "2026-06-30: цикл AACTA Young Stars 2026 уже закрыт (приём заявок завершился 13/20 окт. 2025, победитель объявлен — Sebastian Sero); следующий цикл ожидать осенью 2026"
     },
     {
       "id": "gosee-il",
@@ -282,23 +437,6 @@
   "castings": {
     "active": [
       {
-        "id": "sistergirls-teens",
-        "siteProgramId": 1021,
-        "name": "SisterGirls — Featured Teen Roles",
-        "type": "tv_series",
-        "country": "USA",
-        "city": "Atlanta, GA",
-        "age": "13-17 featured; Trey male 15-17",
-        "acting": "featured",
-        "paid": true,
-        "deadline": "2026-06-28",
-        "url": "https://projectcasting.com/job/teen-casting-call-for-coming-of-age-drama-series",
-        "contact": "Yarbrough Media Productions via Project Casting",
-        "platform": "projectcasting",
-        "verified": "2026-06-12",
-        "notes": "Singing required for some roles; IMDb credit"
-      },
-      {
         "id": "uk-autistic-lead",
         "siteProgramId": 1022,
         "name": "Untitled UK Feature — Autistic Teen Lead",
@@ -313,59 +451,7 @@
         "url": "https://projectcasting.com/job/feature-film-open-casting-call-for-lead-roles",
         "contact": "Gilbert and Covell Casting",
         "platform": "projectcasting",
-        "verified": "2026-06-12"
-      },
-      {
-        "id": "josephine-baker-young",
-        "siteProgramId": 1023,
-        "name": "Josephine Baker Biopic — Young Josephine",
-        "type": "feature_film",
-        "country": "France",
-        "city": "UK/Europe shoot",
-        "age": "12-16",
-        "acting": "lead",
-        "paid": true,
-        "deadline": "2026-06-13",
-        "url": "https://projectcasting.com/job/josephine-baker-biopic-starring-fka-twigs-principal-role-open-casting-call",
-        "contact": "Joanna Levinger Casting",
-        "platform": "projectcasting",
-        "verified": "2026-06-12",
-        "urgent": true,
-        "notes": "Dance + American accent; height ≤155 cm; Black/mixed preferred"
-      },
-      {
-        "id": "bit-of-heaven-antwon",
-        "siteProgramId": 1024,
-        "name": "A Bit of Heaven — ANTWON (Lead)",
-        "type": "feature_film",
-        "country": "USA",
-        "city": "NYC / NJ",
-        "age": "14-16 male African-American",
-        "acting": "lead",
-        "paid": false,
-        "payNote": "Meals + screen credit + reel",
-        "deadline": "2026-06-21",
-        "url": "https://kidscasting.com/castingcall/605628",
-        "platform": "kidscasting",
-        "verified": "2026-06-12",
-        "urgent": true,
-        "notes": "LOCAL NY/NJ only"
-      },
-      {
-        "id": "hawaii-teen-drama",
-        "siteProgramId": 1025,
-        "name": "Hawaii Teen Drama Series",
-        "type": "tv_series",
-        "country": "USA",
-        "city": "Hawaii",
-        "age": "16-25 playing 15-18",
-        "acting": "ensemble",
-        "paid": true,
-        "deadline": "2026-06-30",
-        "url": "https://4filming.com/hawaii-teen-drama-casting-call-2026-alessi-hartigan/",
-        "contact": "Alessi Hartigan Casting; apply: tinyurl.com/HawaiiTeenDrama",
-        "verified": "2026-06-12",
-        "notes": "LOCAL Hawaii; no experience required"
+        "verified": "2026-06-30"
       },
       {
         "id": "itv-jake-deaf",
@@ -381,8 +467,260 @@
         "url": "https://projectcasting.com/job/itv-drama-casting-call-for-partially-deaf-hard-of-hearing-actors",
         "contact": "Andy Pryor Casting",
         "platform": "projectcasting",
-        "verified": "2026-06-12",
+        "verified": "2026-06-30",
         "notes": "Must be genuinely partially deaf/hard of hearing; BSL a plus"
+      },
+      {
+        "id": "miss-american-vampire",
+        "siteProgramId": 1046,
+        "name": "Miss American Vampire — Saylor (Feature Film)",
+        "type": "feature_film",
+        "country": "Canada",
+        "city": "Woodstock, ON",
+        "age": "15-22 (Saylor/Emily); 11-14 (River/Omri — не релевантно)",
+        "acting": "lead",
+        "paid": true,
+        "payNote": "Saylor (lead): CA$4,500 flat rate; Emily (supporting): ACTRA low-budget rate",
+        "deadline": "2026-07-03",
+        "url": "https://www.mandy.com/aa/project/3182094/miss-american-vampire/",
+        "contact": "Olivia Bronwyn, Project Manager (через Mandy)",
+        "platform": "mandy",
+        "verified": "2026-06-30",
+        "notes": "Два подростка из неблагополучных семей находят убежище на старой плавучей хижине. Съёмки 15-20 дней в августе 2026. Подача через Mandy (бесплатная регистрация)",
+        "urgent": true
+      },
+      {
+        "id": "shades-of-identity-boston",
+        "siteProgramId": 1047,
+        "name": "Shades of Identity — Lena/Camilla (Short Film)",
+        "type": "feature_film",
+        "country": "USA",
+        "city": "Boston, MA",
+        "age": "17-23 (Lena, Camilla, Aaron — lead; Maya, Tyla, James — supporting)",
+        "acting": "lead",
+        "paid": false,
+        "payNote": null,
+        "deadline": "2026-07-13",
+        "url": "https://www.mandy.com/aa/project/3178734/shades-of-identity/",
+        "contact": "Brianna Gray, Writer-Director (через Mandy)",
+        "platform": "mandy",
+        "verified": "2026-06-30",
+        "notes": "LOCAL Boston only; неоплачиваемый инди-проект про девушку, которую травят из-за тёмного цвета кожи; съёмки 17 авг.–18 сент. 2026",
+        "urgent": true
+      },
+      {
+        "id": "becasting-ar-comedia-juvenil",
+        "siteProgramId": 1048,
+        "name": "BeCasting AR — Comedia Juvenil (Largometraje)",
+        "type": "feature_film",
+        "country": "Argentina",
+        "city": "Palermo, Buenos Aires",
+        "age": "actrices/actores que aparenten 18 años (playing ~18, можно моложавую внешность)",
+        "acting": "lead",
+        "paid": true,
+        "payNote": "Remuneración en pesos por jornada, según rol (sin importe especificado)",
+        "deadline": "2026-07-05",
+        "url": "https://www.becasting.com.ar/castings/cine-ficcion/216358-casting-actrices-y-actores-que-aparenten-18-anos-para-largometraje-de-comedia-juvenil-en-buenos-aires",
+        "contact": "BeCasting.com.ar (форма + email с фото/CV/reel)",
+        "platform": "becasting",
+        "verified": "2026-06-30",
+        "notes": "LOCAL Buenos Aires; молодёжная комедия, роли протагонические и второстепенные; съёмки начало декабря 2026 / начало января 2027",
+        "urgent": true
+      }
+    ],
+    "watch": [
+      {
+        "id": "cast-istanbul-lise",
+        "siteProgramId": 1028,
+        "name": "Cast Istanbul — Lise Öğrencisi Kaydı",
+        "type": "agency_pool",
+        "country": "Turkey",
+        "city": "Istanbul",
+        "age": "14-18",
+        "acting": "agency_pool",
+        "paid": true,
+        "deadline": null,
+        "url": "https://www.castistanbul.com/blog/lise-ogrencisi-oyuncu-kaydi",
+        "contact": "castistanbul.com online form",
+        "verified": "2026-06-30"
+      },
+      {
+        "id": "v-ajans-genclik",
+        "siteProgramId": 1029,
+        "name": "V Ajans — Genç Oyuncu Başvurusu",
+        "type": "agency_pool",
+        "country": "Turkey",
+        "city": "Istanbul (nationwide)",
+        "age": "14-18",
+        "acting": "agency_pool",
+        "paid": true,
+        "deadline": null,
+        "url": "https://www.vajans.com.tr/sayfa/bilinmesi-gerekenler.html",
+        "contact": "info@vajans.com.tr",
+        "verified": "2026-06-30",
+        "notes": "Ücretsiz başvuru; 18- veli onayı"
+      },
+      {
+        "id": "backstage-teens-monitor",
+        "siteProgramId": 1032,
+        "name": "Backstage — Teen Acting (Platform)",
+        "type": "platform",
+        "country": "USA",
+        "city": "USA / UK / CA / FR / AU",
+        "age": "13-20 filter",
+        "acting": "talent_search",
+        "paid": true,
+        "deadline": null,
+        "url": "https://www.backstage.com/casting/open-casting-calls/kids/",
+        "verified": "2026-06-30",
+        "notes": "Старый URL /teens-acting-jobs/ 404; обновлено на рабочую Kids-страницу (0-18, фильтр Teens доступен внутри)"
+      },
+      {
+        "id": "playbill-monitor",
+        "siteProgramId": 1033,
+        "name": "Playbill — Theater Castings (Platform)",
+        "type": "platform",
+        "country": "USA",
+        "age": "teen/youth theater",
+        "acting": "talent_search",
+        "paid": true,
+        "deadline": null,
+        "url": "https://playbill.com/jobs",
+        "verified": "2026-06-30"
+      },
+      {
+        "id": "starnow-au-teens",
+        "siteProgramId": 1037,
+        "name": "StarNow — Teen Acting (Australia)",
+        "type": "platform",
+        "country": "Australia",
+        "city": "Sydney / Melbourne / national",
+        "age": "teens / young adult filter",
+        "acting": "talent_search",
+        "paid": true,
+        "deadline": null,
+        "url": "https://www.starnow.com/casting/open-casting-calls/australia-acting-jobs/",
+        "verified": "2026-06-30"
+      },
+      {
+        "id": "backstage-ca-teens",
+        "siteProgramId": 1038,
+        "name": "Backstage — Teens (Canada)",
+        "type": "platform",
+        "country": "Canada",
+        "city": "Toronto / Vancouver",
+        "age": "13-20 filter",
+        "acting": "talent_search",
+        "paid": true,
+        "deadline": null,
+        "url": "https://www.backstage.com/casting/open-casting-calls/toronto-canada-teens/",
+        "verified": "2026-06-30",
+        "notes": "Also monitor Vancouver teens page"
+      },
+      {
+        "id": "onlinecasting-za-monitor",
+        "siteProgramId": 1039,
+        "name": "Onlinecasting.co.za — Platform Monitor",
+        "type": "platform",
+        "country": "South Africa",
+        "city": "national",
+        "age": "16-19+ filter after login",
+        "acting": "talent_search",
+        "paid": true,
+        "deadline": null,
+        "url": "https://www.onlinecasting.co.za/auditions.asp",
+        "verified": "2026-06-30"
+      },
+      {
+        "id": "castingonline-il-monitor",
+        "siteProgramId": 1041,
+        "name": "CastingOnline.co.il — Platform Monitor",
+        "type": "platform",
+        "country": "Israel",
+        "city": "national",
+        "age": "17-25 filter on site",
+        "acting": "talent_search",
+        "paid": true,
+        "deadline": null,
+        "url": "https://www.castingonline.co.il/",
+        "verified": "2026-06-30",
+        "notes": "Login required for live listings"
+      },
+      {
+        "id": "gosee-youth-il",
+        "siteProgramId": 1042,
+        "name": "GoSee — Youth Talent Agency",
+        "type": "agency_pool",
+        "country": "Israel",
+        "city": "Tel Aviv / nationwide",
+        "age": "1-18 (teens 15-18 acting)",
+        "acting": "agency_pool",
+        "paid": true,
+        "deadline": null,
+        "url": "https://gosee.co.il/",
+        "verified": "2026-06-30",
+        "notes": "Free registration; no book fee"
+      },
+      {
+        "id": "easy2cast-il-monitor",
+        "siteProgramId": 1043,
+        "name": "Easy2Cast — Platform Monitor (Israel)",
+        "type": "platform",
+        "country": "Israel",
+        "age": "profile filter",
+        "acting": "talent_search",
+        "paid": true,
+        "deadline": null,
+        "url": "https://easy2cast.com/",
+        "verified": "2026-06-30"
+      },
+      {
+        "id": "dicastro-il-pool",
+        "siteProgramId": 1044,
+        "name": "Di-Cast-Ro (HaMalehak) — Casting Database",
+        "type": "agency_pool",
+        "country": "Israel",
+        "city": "national",
+        "age": "16+ bits/extras",
+        "acting": "ensemble",
+        "paid": true,
+        "deadline": null,
+        "url": "https://www.di-cast-ro.com/submit",
+        "verified": "2026-06-30"
+      },
+      {
+        "id": "take2-youth-il",
+        "siteProgramId": 1045,
+        "name": "Take2 — Children & Teens Casting",
+        "type": "agency_pool",
+        "country": "Israel",
+        "city": "national",
+        "age": "children & teens",
+        "acting": "featured",
+        "paid": true,
+        "deadline": null,
+        "url": "https://take2.co.il/index.php?cs=7&dir=site&langpage=heb&page=content",
+        "verified": "2026-06-30"
+      }
+    ],
+    "archive": [
+      {
+        "id": "hawaii-teen-drama",
+        "siteProgramId": 1025,
+        "name": "Hawaii Teen Drama Series",
+        "type": "tv_series",
+        "country": "USA",
+        "city": "Hawaii",
+        "age": "16-25 playing 15-18",
+        "acting": "ensemble",
+        "paid": true,
+        "deadline": "2026-06-30",
+        "url": "https://4filming.com/hawaii-teen-drama-casting-call-2026-alessi-hartigan/",
+        "contact": "Alessi Hartigan Casting; apply: tinyurl.com/HawaiiTeenDrama",
+        "verified": "2026-06-30",
+        "notes": "LOCAL Hawaii; no experience required",
+        "closedReason": "дедлайн 2026-06-30 (последний день подачи, подтверждено на странице)",
+        "archivedAt": "2026-06-30"
       },
       {
         "id": "suncoast-broadway-youth",
@@ -399,8 +737,65 @@
         "url": "https://playbill.com/job/suncoast-broadway-local-auditions-for-youth-actors/0e5a42b1-1587-445b-8ab8-8831a1b44a32",
         "contact": "youthinpersonauditions2026-27season.cheddarup.com",
         "platform": "playbill",
-        "verified": "2026-06-12",
-        "notes": "Musical theater; mostly under-16 roles"
+        "verified": "2026-06-30",
+        "notes": "Musical theater; mostly under-16 roles",
+        "closedReason": "Старая страница 404 (удалена); кастинг переиздан как общий сбор на сезон 2026–27 без явной youth-направленности — см. https://playbill.com/job/accepting-submissions-for-local-in-person-2026-2027-season-audition/4546be9c-5c1d-47d5-b408-6588757b49af (та же дата прослушивания 18 июля 2026, $500/нед, без указания возраста — не публикуем как youth-специфичный)",
+        "archivedAt": "2026-06-30"
+      },
+      {
+        "id": "danish-feature-boys-jylland",
+        "siteProgramId": 1040,
+        "name": "Danish Feature — Boys 15–18 (Jylland)",
+        "type": "feature_film",
+        "country": "Denmark",
+        "city": "Jylland",
+        "age": "15-18 male",
+        "acting": "lead",
+        "paid": true,
+        "deadline": null,
+        "deadlineNote": "Shoot May/June 2026; apply via dask-online.dk",
+        "url": "https://www.dask-online.dk/nyhed.asp?id=1039658",
+        "contact": "Tommy Duus via Dansk Skuespillerkatalog profile",
+        "verified": "2026-06-30",
+        "notes": "Two large teen male roles; no prior experience required",
+        "closedReason": "Период съёмок (май/июнь 2026) истёк к дате проверки 2026-06-30; объявление на dask-online.dk не обновлялось с 12 июня",
+        "archivedAt": "2026-06-30"
+      },
+      {
+        "id": "disney-talent-search-2026",
+        "siteProgramId": 1026,
+        "name": "Disney Television Talent Search 2026",
+        "type": "talent_search",
+        "country": "USA",
+        "age": "9-17",
+        "acting": "talent_search",
+        "paid": false,
+        "deadline": null,
+        "deadlineNote": "Rolling — future Disney Channel/Disney+ consideration",
+        "url": "https://projectcasting.com/job/disney-television-talent-search-2026-open-casting-call",
+        "platform": "projectcasting",
+        "verified": "2026-06-30",
+        "closedReason": "Дедлайн листинга (Rise Talent Management) истёк 2026-03-19. Действующие открытые Disney-поиски на 2026-06-30: SALTWATER (возраст 14-15, дедлайн 1 мая — истёк) и Disney Television Discovers Talent Showcase (только 18+, дедлайн 18 марта — истёк) — ни один не подходит по возрасту/дедлайну",
+        "archivedAt": "2026-06-30"
+      },
+      {
+        "id": "tg4-ar-ais-aris",
+        "siteProgramId": 1027,
+        "name": "Ar Ais Arís — TG4 Youth Drama",
+        "type": "tv_series",
+        "country": "Ireland",
+        "city": "Galway/Mayo",
+        "age": "teen; native Irish required",
+        "acting": "featured",
+        "paid": true,
+        "deadline": null,
+        "deadlineNote": "Filming late Jun–Aug 2026; self-tape rolling",
+        "url": "https://thisisgalway.ie/galway-teens-sought-for-ambitious-new-tg4-youth-drama/",
+        "contact": "laura@maureenhughescasting.com",
+        "verified": "2026-06-30",
+        "notes": "Irish language Gaeltacht; one role Portuguese+Irish",
+        "closedReason": "Съёмки запланированы на конец июня — начало августа 2026, т.е. уже начинаются; набор актёров, вероятно, завершён",
+        "archivedAt": "2026-06-30"
       },
       {
         "id": "laramie-project-nz",
@@ -417,234 +812,67 @@
         "contact": "youbeyoungamotu@gmail.com; Gordy Lockhart 027-276-8427",
         "platform": "cast98",
         "verified": "2026-06-12",
-        "urgent": true,
-        "notes": "Performances 10–19 Sep 2026; LOCAL Taranaki preferred"
+        "notes": "Performances 10–19 Sep 2026; LOCAL Taranaki preferred",
+        "closedReason": "дедлайн 2026-06-12",
+        "archivedAt": "2026-06-30"
       },
       {
-        "id": "danish-feature-boys-jylland",
-        "siteProgramId": 1040,
-        "name": "Danish Feature — Boys 15–18 (Jylland)",
+        "id": "bit-of-heaven-antwon",
+        "siteProgramId": 1024,
+        "name": "A Bit of Heaven — ANTWON (Lead)",
         "type": "feature_film",
-        "country": "Denmark",
-        "city": "Jylland",
-        "age": "15-18 male",
+        "country": "USA",
+        "city": "NYC / NJ",
+        "age": "14-16 male African-American",
+        "acting": "lead",
+        "paid": false,
+        "payNote": "Meals + screen credit + reel",
+        "deadline": "2026-06-21",
+        "url": "https://kidscasting.com/castingcall/605628",
+        "platform": "kidscasting",
+        "verified": "2026-06-12",
+        "notes": "LOCAL NY/NJ only",
+        "closedReason": "дедлайн 2026-06-20",
+        "archivedAt": "2026-06-30"
+      },
+      {
+        "id": "josephine-baker-young",
+        "siteProgramId": 1023,
+        "name": "Josephine Baker Biopic — Young Josephine",
+        "type": "feature_film",
+        "country": "France",
+        "city": "UK/Europe shoot",
+        "age": "12-16",
         "acting": "lead",
         "paid": true,
-        "deadline": null,
-        "deadlineNote": "Shoot May/June 2026; apply via dask-online.dk",
-        "url": "https://www.dask-online.dk/nyhed.asp?id=1039658",
-        "contact": "Tommy Duus via Dansk Skuespillerkatalog profile",
-        "verified": "2026-06-12",
-        "notes": "Two large teen male roles; no prior experience required"
-      }
-    ],
-    "watch": [
-      {
-        "id": "disney-talent-search-2026",
-        "siteProgramId": 1026,
-        "name": "Disney Television Talent Search 2026",
-        "type": "talent_search",
-        "country": "USA",
-        "age": "9-17",
-        "acting": "talent_search",
-        "paid": false,
-        "deadline": null,
-        "deadlineNote": "Rolling — future Disney Channel/Disney+ consideration",
-        "url": "https://projectcasting.com/job/disney-television-talent-search-2026-open-casting-call",
+        "deadline": "2026-06-13",
+        "url": "https://projectcasting.com/job/josephine-baker-biopic-starring-fka-twigs-principal-role-open-casting-call",
+        "contact": "Joanna Levinger Casting",
         "platform": "projectcasting",
-        "verified": "2026-06-12"
+        "verified": "2026-06-12",
+        "notes": "Dance + American accent; height ≤155 cm; Black/mixed preferred",
+        "closedReason": "дедлайн 2026-06-12",
+        "archivedAt": "2026-06-30"
       },
       {
-        "id": "tg4-ar-ais-aris",
-        "siteProgramId": 1027,
-        "name": "Ar Ais Arís — TG4 Youth Drama",
+        "id": "sistergirls-teens",
+        "siteProgramId": 1021,
+        "name": "SisterGirls — Featured Teen Roles",
         "type": "tv_series",
-        "country": "Ireland",
-        "city": "Galway/Mayo",
-        "age": "teen; native Irish required",
+        "country": "USA",
+        "city": "Atlanta, GA",
+        "age": "13-17 featured; Trey male 15-17",
         "acting": "featured",
         "paid": true,
-        "deadline": null,
-        "deadlineNote": "Filming late Jun–Aug 2026; self-tape rolling",
-        "url": "https://thisisgalway.ie/galway-teens-sought-for-ambitious-new-tg4-youth-drama/",
-        "contact": "laura@maureenhughescasting.com",
+        "deadline": "2026-06-28",
+        "url": "https://projectcasting.com/job/teen-casting-call-for-coming-of-age-drama-series",
+        "contact": "Yarbrough Media Productions via Project Casting",
+        "platform": "projectcasting",
         "verified": "2026-06-12",
-        "notes": "Irish language Gaeltacht; one role Portuguese+Irish"
+        "notes": "Singing required for some roles; IMDb credit",
+        "closedReason": "дедлайн 2026-06-27",
+        "archivedAt": "2026-06-30"
       },
-      {
-        "id": "cast-istanbul-lise",
-        "siteProgramId": 1028,
-        "name": "Cast Istanbul — Lise Öğrencisi Kaydı",
-        "type": "agency_pool",
-        "country": "Turkey",
-        "city": "Istanbul",
-        "age": "14-18",
-        "acting": "agency_pool",
-        "paid": true,
-        "deadline": null,
-        "url": "https://www.castistanbul.com/blog/lise-ogrencisi-oyuncu-kaydi",
-        "contact": "castistanbul.com online form",
-        "verified": "2026-06-12"
-      },
-      {
-        "id": "v-ajans-genclik",
-        "siteProgramId": 1029,
-        "name": "V Ajans — Genç Oyuncu Başvurusu",
-        "type": "agency_pool",
-        "country": "Turkey",
-        "city": "Istanbul (nationwide)",
-        "age": "14-18",
-        "acting": "agency_pool",
-        "paid": true,
-        "deadline": null,
-        "url": "https://www.vajans.com.tr/sayfa/bilinmesi-gerekenler.html",
-        "contact": "info@vajans.com.tr",
-        "verified": "2026-06-12",
-        "notes": "Ücretsiz başvuru; 18- veli onayı"
-      },
-      {
-        "id": "backstage-teens-monitor",
-        "siteProgramId": 1032,
-        "name": "Backstage — Teen Acting (Platform)",
-        "type": "platform",
-        "country": "USA",
-        "city": "USA / UK / CA / FR / AU",
-        "age": "13-20 filter",
-        "acting": "talent_search",
-        "paid": true,
-        "deadline": null,
-        "url": "https://www.backstage.com/casting/open-casting-calls/teens-acting-jobs/",
-        "verified": "2026-06-12"
-      },
-      {
-        "id": "playbill-monitor",
-        "siteProgramId": 1033,
-        "name": "Playbill — Theater Castings (Platform)",
-        "type": "platform",
-        "country": "USA",
-        "age": "teen/youth theater",
-        "acting": "talent_search",
-        "paid": true,
-        "deadline": null,
-        "url": "https://playbill.com/jobs",
-        "verified": "2026-06-12"
-      },
-      {
-        "id": "starnow-au-teens",
-        "siteProgramId": 1037,
-        "name": "StarNow — Teen Acting (Australia)",
-        "type": "platform",
-        "country": "Australia",
-        "city": "Sydney / Melbourne / national",
-        "age": "teens / young adult filter",
-        "acting": "talent_search",
-        "paid": true,
-        "deadline": null,
-        "url": "https://www.starnow.com/casting/open-casting-calls/australia-acting-jobs/",
-        "verified": "2026-06-12"
-      },
-      {
-        "id": "backstage-ca-teens",
-        "siteProgramId": 1038,
-        "name": "Backstage — Teens (Canada)",
-        "type": "platform",
-        "country": "Canada",
-        "city": "Toronto / Vancouver",
-        "age": "13-20 filter",
-        "acting": "talent_search",
-        "paid": true,
-        "deadline": null,
-        "url": "https://www.backstage.com/casting/open-casting-calls/toronto-canada-teens/",
-        "verified": "2026-06-12",
-        "notes": "Also monitor Vancouver teens page"
-      },
-      {
-        "id": "onlinecasting-za-monitor",
-        "siteProgramId": 1039,
-        "name": "Onlinecasting.co.za — Platform Monitor",
-        "type": "platform",
-        "country": "South Africa",
-        "city": "national",
-        "age": "16-19+ filter after login",
-        "acting": "talent_search",
-        "paid": true,
-        "deadline": null,
-        "url": "https://www.onlinecasting.co.za/auditions.asp",
-        "verified": "2026-06-12"
-      },
-      {
-        "id": "castingonline-il-monitor",
-        "siteProgramId": 1041,
-        "name": "CastingOnline.co.il — Platform Monitor",
-        "type": "platform",
-        "country": "Israel",
-        "city": "national",
-        "age": "17-25 filter on site",
-        "acting": "talent_search",
-        "paid": true,
-        "deadline": null,
-        "url": "https://www.castingonline.co.il/",
-        "verified": "2026-06-12",
-        "notes": "Login required for live listings"
-      },
-      {
-        "id": "gosee-youth-il",
-        "siteProgramId": 1042,
-        "name": "GoSee — Youth Talent Agency",
-        "type": "agency_pool",
-        "country": "Israel",
-        "city": "Tel Aviv / nationwide",
-        "age": "1-18 (teens 15-18 acting)",
-        "acting": "agency_pool",
-        "paid": true,
-        "deadline": null,
-        "url": "https://gosee.co.il/",
-        "verified": "2026-06-12",
-        "notes": "Free registration; no book fee"
-      },
-      {
-        "id": "easy2cast-il-monitor",
-        "siteProgramId": 1043,
-        "name": "Easy2Cast — Platform Monitor (Israel)",
-        "type": "platform",
-        "country": "Israel",
-        "age": "profile filter",
-        "acting": "talent_search",
-        "paid": true,
-        "deadline": null,
-        "url": "https://easy2cast.com/",
-        "verified": "2026-06-12"
-      },
-      {
-        "id": "dicastro-il-pool",
-        "siteProgramId": 1044,
-        "name": "Di-Cast-Ro (HaMalehak) — Casting Database",
-        "type": "agency_pool",
-        "country": "Israel",
-        "city": "national",
-        "age": "16+ bits/extras",
-        "acting": "ensemble",
-        "paid": true,
-        "deadline": null,
-        "url": "https://www.di-cast-ro.com/submit",
-        "verified": "2026-06-12"
-      },
-      {
-        "id": "take2-youth-il",
-        "siteProgramId": 1045,
-        "name": "Take2 — Children & Teens Casting",
-        "type": "agency_pool",
-        "country": "Israel",
-        "city": "national",
-        "age": "children & teens",
-        "acting": "featured",
-        "paid": true,
-        "deadline": null,
-        "url": "https://take2.co.il/index.php?cs=7&dir=site&langpage=heb&page=content",
-        "verified": "2026-06-12"
-      }
-    ],
-    "archive": [
       {
         "id": "regal-swiss-family-2026",
         "name": "Regal Productions — Swiss Family Robinson",
@@ -714,6 +942,27 @@
     ]
   },
   "checkLog": [
+    {
+      "date": "2026-06-30",
+      "checker": "cursor-agent",
+      "activeCount": 5,
+      "watchCount": 12,
+      "siteCards": 17,
+      "notes": "Глубокая периодическая проверка. ЗАКРЫТО (5): hawaii-teen-drama (дедлайн сегодня, подтверждено на странице), suncoast-broadway-youth (страница playbill 404, переиздана как общий сезонный сбор без youth-фокуса), danish-feature-boys-jylland (период съёмок май/июнь 2026 истёк), disney-talent-search-2026 (дедлайн истёк 19 марта; текущие Disney-поиски SALTWATER/Talent Showcase не подходят по возрасту/дедлайну), tg4-ar-ais-aris (съёмки начинаются конец июня — набор фактически завершён). ОСТАЛИСЬ активными: uk-autistic-lead, itv-jake-deaf (оба дедлайн 2026-07-05, подтверждено). ДОБАВЛЕНО (3, все urgent): miss-american-vampire (Канада, CA$4500, дедлайн 3 июля, Mandy), shades-of-identity-boston (Boston, unpaid local, дедлайн 13 июля, Mandy), becasting-ar-comedia-juvenil (Буэнос-Айрес, оплачиваемая, дедлайн 5 июля). Watch-платформы (TR, IL x5, AU, ZA, CA, US) — все живы, верифицированы; новых датированных кастингов на них не появилось. AACTA Young Stars 2026 цикл закрыт (заявки до окт. 2025, победитель объявлен) — следующий цикл ожидать осенью 2026. enCAST.net и castprod.com (homepage) не дали результатов из-за таймаута/отсутствия прямого листинга — перепроверить в следующий цикл."
+    },
+    {
+      "date": "2026-06-30",
+      "checker": "archive-expired-castings.mjs",
+      "archived": [
+        1021,
+        1023,
+        1024,
+        1036
+      ],
+      "activeCount": 5,
+      "watchCount": 14,
+      "notes": "Auto-archive: 4 expired casting(s)"
+    },
     {
       "date": "2026-06-12",
       "checker": "cursor-agent",

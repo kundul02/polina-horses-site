@@ -1072,14 +1072,15 @@
       "sources": [
         "https://projectcasting.com/job/fallow-short-film-casting-call-for-lead-actress"
       ],
-      "verifiedAt": "2026-06-11",
-      "closed": false
+      "verifiedAt": "2026-06-30",
+      "closed": false,
+      "urgent": true
     },
     "47": {
       "summary": "Кастинг на главную мужскую роль (Люк, ковбой) в полнометражной драме Love in the Wind от Moviehead Pictures. Желательны навыки верховой езды.",
       "desc": "Доступность: виза США · Язык: английский · Подача: через портал Mandy.com",
       "dates": "Июль 2026 (съёмки в Калифорнии и Техасе)",
-      "deadline": "26 июня 2026",
+      "deadline": "Закрыт (истёк 26 июня 2026)",
       "pay": "До ),000 за проект",
       "support": [
         "Оплата"
@@ -1095,14 +1096,14 @@
         "https://www.mandy.com/aa/project/3168995/love-in-the-wind/"
       ],
       "verifiedAt": "2026-06-11",
-      "closed": false,
-      "urgent": true
+      "closed": true,
+      "urgent": false
     },
     "48": {
       "summary": "Кастинг на главную женскую роль (Саванна, помощница на ранчо) в полнометражной драме Love in the Wind. Желательны навыки верховой езды.",
       "desc": "Доступность: виза США · Язык: английский · Подача: через портал Mandy.com",
       "dates": "Июль 2026 (съёмки в Калифорнии и Техасе)",
-      "deadline": "26 июня 2026",
+      "deadline": "Закрыт (истёк 26 июня 2026)",
       "pay": "До ),000 за проект",
       "support": [
         "Оплата"
@@ -1118,8 +1119,8 @@
         "https://www.mandy.com/aa/project/3168995/love-in-the-wind/"
       ],
       "verifiedAt": "2026-06-11",
-      "closed": false,
-      "urgent": true
+      "closed": true,
+      "urgent": false
     },
     "49": {
       "summary": "Кастинг молодых всадников 17–18 лет для съёмок в полнометражном фильме Blood & Soil в Северной Каролине. Проект полностью завершен.",

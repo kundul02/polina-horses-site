@@ -1,12 +1,26 @@
 {
   "meta": {
     "version": 1,
-    "lastFullCheck": "2026-06-10",
+    "lastFullCheck": "2026-06-30",
     "lastSiteSync": "2026-06-10",
     "nextCheckRecommended": "еженедельно (кастинги с лошадьми живут 2–5 дней)",
     "targetAge": "16-20",
     "targetRiding": "любительский или профессиональный уровень",
-    "regions": ["UK", "USA", "Canada", "Ireland", "Germany", "France", "Spain", "Portugal", "Denmark", "South Africa", "Argentina", "Australia", "online"],
+    "regions": [
+      "UK",
+      "USA",
+      "Canada",
+      "Ireland",
+      "Germany",
+      "France",
+      "Spain",
+      "Portugal",
+      "Denmark",
+      "South Africa",
+      "Argentina",
+      "Australia",
+      "online"
+    ],
     "ridingLevels": {
       "required": "обязательна — без езды не подавать",
       "preferred": "желательна / плюс — езда сильно повышает шансы",
@@ -29,8 +43,19 @@
       "name": "Backstage",
       "url": "https://www.backstage.com/casting/",
       "searchUrl": "https://www.backstage.com/casting/?keyword=horse",
-      "regions": ["USA", "UK", "online"],
-      "keywords": ["horse", "horseback", "equestrian", "western", "ranch", "cowboy"],
+      "regions": [
+        "USA",
+        "UK",
+        "online"
+      ],
+      "keywords": [
+        "horse",
+        "horseback",
+        "equestrian",
+        "western",
+        "ranch",
+        "cowboy"
+      ],
       "filters": "Teens 13–20, Film/TV/Commercial",
       "frequency": "daily",
       "notes": "Часто expired в выдаче — открывать карточку и проверять EXPIRES"
@@ -40,8 +65,17 @@
       "name": "Mandy / The Mandy Network",
       "url": "https://www.mandy.com/",
       "searchUrl": "https://www.mandy.com/uk/casting/",
-      "regions": ["UK", "EU", "USA"],
-      "keywords": ["horse", "riding", "western", "ranch"],
+      "regions": [
+        "UK",
+        "EU",
+        "USA"
+      ],
+      "keywords": [
+        "horse",
+        "riding",
+        "western",
+        "ranch"
+      ],
       "frequency": "daily",
       "notes": "Сильная база UK/EU film & TV"
     },
@@ -49,8 +83,14 @@
       "id": "starnow",
       "name": "StarNow",
       "url": "https://www.starnow.com/uk/casting/",
-      "regions": ["UK", "Australia"],
-      "keywords": ["horse riding", "equestrian"],
+      "regions": [
+        "UK",
+        "Australia"
+      ],
+      "keywords": [
+        "horse riding",
+        "equestrian"
+      ],
       "frequency": "daily",
       "notes": "UK teenage acting + extras skills"
     },
@@ -59,8 +99,15 @@
       "name": "Project Casting",
       "url": "https://projectcasting.com/jobs",
       "searchUrl": "https://projectcasting.com/jobs?skills=Horseback+Riding",
-      "regions": ["USA", "UK", "Canada", "global"],
-      "keywords": ["Horseback Riding"],
+      "regions": [
+        "USA",
+        "UK",
+        "Canada",
+        "global"
+      ],
+      "keywords": [
+        "Horseback Riding"
+      ],
       "frequency": "daily",
       "notes": "Тег Horseback Riding в фильтре skills"
     },
@@ -68,8 +115,14 @@
       "id": "castingnetworks",
       "name": "Casting Networks",
       "url": "https://www.castingnetworks.com/",
-      "regions": ["USA", "UK"],
-      "keywords": ["horse riding", "special skills"],
+      "regions": [
+        "USA",
+        "UK"
+      ],
+      "keywords": [
+        "horse riding",
+        "special skills"
+      ],
       "frequency": "daily",
       "notes": "Special skills riders; нужен аккаунт для деталей"
     },
@@ -77,8 +130,15 @@
       "id": "kidscasting",
       "name": "KidsCasting",
       "url": "https://kidscasting.com/castingcalls/for-teens",
-      "regions": ["USA", "Canada"],
-      "keywords": ["horseback", "western", "pony"],
+      "regions": [
+        "USA",
+        "Canada"
+      ],
+      "keywords": [
+        "horseback",
+        "western",
+        "pony"
+      ],
       "frequency": "daily",
       "notes": "Teens 12–18; иногда horseback required"
     },
@@ -86,8 +146,15 @@
       "id": "allcasting",
       "name": "Allcasting",
       "url": "https://allcasting.com/castingcalls",
-      "regions": ["USA", "Canada"],
-      "keywords": ["western", "horse", "ranch"],
+      "regions": [
+        "USA",
+        "Canada"
+      ],
+      "keywords": [
+        "western",
+        "horse",
+        "ranch"
+      ],
       "frequency": "weekly",
       "notes": "Фильтр по western / horse tags"
     },
@@ -95,8 +162,13 @@
       "id": "playbill",
       "name": "Playbill",
       "url": "https://www.playbill.com/jobs",
-      "regions": ["USA"],
-      "keywords": ["Equus", "horse"],
+      "regions": [
+        "USA"
+      ],
+      "keywords": [
+        "Equus",
+        "horse"
+      ],
       "frequency": "weekly",
       "notes": "Театр; иногда верховая езда (Equus)"
     },
@@ -104,8 +176,14 @@
       "id": "mma-spain",
       "name": "MMA Content Feed (Испания)",
       "url": "https://wall.mymotheragency.com/",
-      "regions": ["Spain"],
-      "keywords": ["caballo", "equitación", "Netflix"],
+      "regions": [
+        "Spain"
+      ],
+      "keywords": [
+        "caballo",
+        "equitación",
+        "Netflix"
+      ],
       "frequency": "weekly",
       "notes": "Испаноязычные кастинги; проверять lupuscast и аналоги"
     },
@@ -113,8 +191,13 @@
       "id": "onlinecasting-za",
       "name": "Onlinecasting.co.za",
       "url": "https://www.onlinecasting.co.za/",
-      "regions": ["South Africa"],
-      "keywords": ["horse", "riding"],
+      "regions": [
+        "South Africa"
+      ],
+      "keywords": [
+        "horse",
+        "riding"
+      ],
       "frequency": "monthly",
       "notes": "ЮАР; редко с ездой для teens"
     }
@@ -127,7 +210,11 @@
       "phone": "+44 20 8088 2833",
       "region": "UK",
       "type": "SPACT",
-      "skills": ["horse riders", "stunts", "combat"],
+      "skills": [
+        "horse riders",
+        "stunts",
+        "combat"
+      ],
       "ageNotes": "Историческое кино/фэнтези: наездницы 16–25 через SPACT",
       "action": "Зарегистрировать профиль + riding reel"
     },
@@ -137,7 +224,9 @@
       "url": "https://www.castingcollective.co.uk/production/spact",
       "region": "UK",
       "type": "SPACT extras",
-      "skills": ["horse riders"],
+      "skills": [
+        "horse riders"
+      ],
       "action": "Подать как SPACT performer с horse riding"
     },
     {
@@ -146,25 +235,33 @@
       "url": "https://app.spotlight.com/contacts/listing/c6a0ec8f-c205-4dc1-a216-b6d78992a2be",
       "region": "UK",
       "type": "SPACT",
-      "skills": ["horse", "stunts"],
+      "skills": [
+        "horse",
+        "stunts"
+      ],
       "action": "Open to new performers — регистрация"
     },
     {
       "id": "extra-people",
       "name": "Extra People / Uni-versal Extras",
-      "url": "https://www.extrapeople.co.uk/",
+      "url": "https://extra-people.com/",
       "region": "UK",
       "type": "extras",
-      "skills": ["horse riding"],
+      "skills": [
+        "horse riding"
+      ],
       "action": "Отметить special skill: horse riding в профиле"
     },
     {
       "id": "cs-equine",
       "name": "CS Equine Models",
-      "url": "https://www.cs-equine-models.co.uk/",
+      "url": "https://csequinemodels.com/",
       "region": "UK",
       "type": "equine casting",
-      "skills": ["horse models", "riding"],
+      "skills": [
+        "horse models",
+        "riding"
+      ],
       "action": "Конные модели и кастинги для рекламы/кино"
     },
     {
@@ -174,7 +271,10 @@
       "phone": "+353 83 434 4993",
       "region": "Ireland",
       "type": "production horses",
-      "skills": ["film horses", "stunt riders"],
+      "skills": [
+        "film horses",
+        "stunt riders"
+      ],
       "action": "Сеть для крупных продакшенов в Ирландии — написать с riding reel"
     },
     {
@@ -182,7 +282,9 @@
       "name": "True Edge",
       "region": "UK",
       "type": "stunts / riding",
-      "skills": ["riding for film"],
+      "skills": [
+        "riding for film"
+      ],
       "notes": "Уточнить сайт при регистрации"
     }
   ],
@@ -214,43 +316,7 @@
         "url": "https://projectcasting.com/job/fallow-short-film-casting-call-for-lead-actress",
         "contact": "Marott Productions",
         "platform": "projectcasting",
-        "verified": "2026-06-10"
-      },
-      {
-        "id": "love-wind-luke",
-        "siteProgramId": 47,
-        "name": "Love in the Wind — Luke",
-        "type": "feature_film",
-        "country": "USA",
-        "city": "CA / TX",
-        "age": "18-30",
-        "riding": "preferred",
-        "paid": true,
-        "payNote": "до $1,000 lead",
-        "deadline": "2026-06-26",
-        "url": "https://www.mandy.com/aa/project/3168995/love-in-the-wind/",
-        "contact": "Tri Nguyen, Moviehead Pictures",
-        "platform": "mandy",
-        "verified": "2026-06-10",
-        "urgent": true
-      },
-      {
-        "id": "love-wind-savannah",
-        "siteProgramId": 48,
-        "name": "Love in the Wind — Savannah",
-        "type": "feature_film",
-        "country": "USA",
-        "city": "CA / TX",
-        "age": "18-30",
-        "riding": "preferred",
-        "paid": true,
-        "payNote": "до $1,000 lead",
-        "deadline": "2026-06-26",
-        "url": "https://www.mandy.com/aa/project/3168995/love-in-the-wind/",
-        "contact": "Tri Nguyen, Moviehead Pictures",
-        "platform": "mandy",
-        "verified": "2026-06-10",
-        "urgent": true
+        "verified": "2026-06-30"
       }
     ],
     "watch": [
@@ -269,11 +335,49 @@
         "url": "https://wall.mymotheragency.com/spainmujeres-que-monten-a-caballo-para-serie-de-netflix-a-nivel-nacional-cinema/",
         "contact": "lupuscast@gmail.com",
         "platform": "mma-spain",
-        "verified": "2026-06-10",
+        "verified": "2026-06-30",
         "notes": "На сайте id 50; только 20+; мониторить MMA feed"
       }
     ],
     "archive": [
+      {
+        "id": "love-wind-savannah",
+        "siteProgramId": 48,
+        "name": "Love in the Wind — Savannah",
+        "type": "feature_film",
+        "country": "USA",
+        "city": "CA / TX",
+        "age": "18-30",
+        "riding": "preferred",
+        "paid": true,
+        "payNote": "до $1,000 lead",
+        "deadline": "2026-06-26",
+        "url": "https://www.mandy.com/aa/project/3168995/love-in-the-wind/",
+        "contact": "Tri Nguyen, Moviehead Pictures",
+        "platform": "mandy",
+        "verified": "2026-06-10",
+        "closedReason": "дедлайн 2026-06-25",
+        "archivedAt": "2026-06-30"
+      },
+      {
+        "id": "love-wind-luke",
+        "siteProgramId": 47,
+        "name": "Love in the Wind — Luke",
+        "type": "feature_film",
+        "country": "USA",
+        "city": "CA / TX",
+        "age": "18-30",
+        "riding": "preferred",
+        "paid": true,
+        "payNote": "до $1,000 lead",
+        "deadline": "2026-06-26",
+        "url": "https://www.mandy.com/aa/project/3168995/love-in-the-wind/",
+        "contact": "Tri Nguyen, Moviehead Pictures",
+        "platform": "mandy",
+        "verified": "2026-06-10",
+        "closedReason": "дедлайн 2026-06-25",
+        "archivedAt": "2026-06-30"
+      },
       {
         "id": "real-london-rider",
         "siteProgramId": 20,
@@ -383,6 +487,25 @@
     ]
   },
   "checkLog": [
+    {
+      "date": "2026-06-30",
+      "checker": "cursor-agent",
+      "activeCount": 1,
+      "watchCount": 1,
+      "archived": [],
+      "notes": "Глубокая периодическая проверка (через 20 дней). Fallow (46) подтверждён открытым (Expiration 07-02-2026 на Project Casting). Lupus/Netflix ES (50, watch) без изменений, без дедлайна. Пройдены все platforms[] (Backstage, Mandy, StarNow, Project Casting, Casting Networks, KidsCasting, Allcasting, Playbill, MMA-Spain, Onlinecasting.co.za) и searchQueries[] — новых открытых кастингов 16-20 с обязательной/желательной ездой не найдено (либо неподходящий возраст 25+/30+/45+, либо уже expired, либо дедлайн в прошлом). Близкая находка — Talent Talks UK 'Female 12-17 own horse, BFI film' — отклонена: shoot date уже прошёл (29.06.2026), дедлайн сегодня, не добавлена. Агентства живы кроме 2 битых доменов: extra-people.co.uk → extra-people.com, cs-equine-models.co.uk (503) → csequinemodels.com (новый домен агентства, обновлены в registry)."
+    },
+    {
+      "date": "2026-06-30",
+      "checker": "archive-expired-castings.mjs",
+      "archived": [
+        47,
+        48
+      ],
+      "activeCount": 1,
+      "watchCount": 1,
+      "notes": "Auto-archive: 2 expired casting(s)"
+    },
     {
       "date": "2026-06-10",
       "checker": "cursor-agent",
