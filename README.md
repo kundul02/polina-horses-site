@@ -244,8 +244,8 @@ export → generate-feed-verified → inject-verified-registry → audit-documen
 
 ### 7) Деплой и git push
 1. `git status`, `git diff`
-2. Commit + `git push` → [polina-horses-2026](https://github.com/kundul02/polina-horses-2026)
-3. Проверить [kundul02.github.io/polina-horses-2026](https://kundul02.github.io/polina-horses-2026/)
+2. Commit + `git push` → [polina-horses-site](https://github.com/kundul02/polina-horses-site)
+3. Проверить [kundul02.github.io/polina-horses-site](https://kundul02.github.io/polina-horses-site/)
 
 ## Мониторинг — конные программы
 
@@ -300,5 +300,5 @@ export → generate-feed-verified → inject-verified-registry → audit-documen
 
 ## Публикация
 
-- Публичная страница: [kundul02.github.io/polina-horses-2026](https://kundul02.github.io/polina-horses-2026/)
-- Репозиторий: [github.com/kundul02/polina-horses-2026](https://github.com/kundul02/polina-horses-2026)
+- Публичная страница: [kundul02.github.io/polina-horses-site](https://kundul02.github.io/polina-horses-site/)
+- Репозиторий: [github.com/kundul02/polina-horses-site](https://github.com/kundul02/polina-horses-site)
