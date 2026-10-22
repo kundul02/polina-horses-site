@@ -40,7 +40,7 @@
     "country": "UK",
     "age": "14–16 лет",
     "minAge": 14,
-    "deadline": "20–24 июля 2026",
+    "deadline": "Закрыт (истёк 24 июля 2026)",
     "dates": "20–24 июля 2026",
     "pay": "Полностью бесплатно (финансируется The Racing Foundation)",
     "support": [
@@ -50,7 +50,7 @@
     ],
     "desc": "Доступно: виза Великобритании (Standard Visitor) · Подача: онлайн-форма на сайте Riding a Dream Academy",
     "url": "https://www.ridingadreamacademy.com/residential-application-form-2026",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -344,7 +344,7 @@
     "country": "UK (Wiltshire)",
     "age": "От 16 лет",
     "minAge": 16,
-    "deadline": "27 ИЮНЯ 2026 — СРОЧНО",
+    "deadline": "Закрыт (истёк 27 июня 2026)",
     "dates": "Старт по договорённости",
     "pay": "£16,640/год (~£320/нед) + жильё на ферме",
     "support": [
@@ -354,8 +354,8 @@
     ],
     "desc": "Доступно: требуется право на работу в Великобритании (виза не спонсируется) · Подача: портал findapprenticeship.service.gov.uk",
     "url": "https://www.findapprenticeship.service.gov.uk/apprenticeship/VAC1000250777",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "GOV.UK Apprenticeship Service Application Form",
@@ -374,7 +374,7 @@
     "country": "UK (Sussex/Kent)",
     "age": "От 16 лет",
     "minAge": 16,
-    "deadline": "7 ИЮЛЯ 2026 — СРОЧНО",
+    "deadline": "Закрыт (истёк 7 июля 2026)",
     "dates": "Старт по договорённости",
     "pay": "£16,640/год + жильё £55/нед + личные тренировки от Anna Hilton",
     "support": [
@@ -384,8 +384,8 @@
     ],
     "desc": "Доступно: требуется право на работу в Великобритании (виза не спонсируется) · Подача: портал findapprenticeship.service.gov.uk",
     "url": "https://www.findapprenticeship.service.gov.uk/apprenticeship/VAC2000007321",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "GOV.UK Apprenticeship Service Application Form",
@@ -415,7 +415,7 @@
     "url": "https://www.ryanshorses.com.au/page/working_pupil_positions.html",
     "closed": false,
     "urgent": false,
-    "check": "Сайт Ryan's Horses временно недоступен. Информация верифицирована по архивам.",
+    "check": "Сайт Ryan's Horses недоступен (проверено 22.10.2026, 502). Мониторить восстановление.",
     "documents": [
       "Equestrian CV / Resume (competition record, riding level)",
       "Riding Video Link (demonstrating flatwork and jumping)",
@@ -463,7 +463,7 @@
     "country": "Германия (Rieden)",
     "age": "14–17 лет",
     "minAge": 14,
-    "deadline": "13–19 июля 2026",
+    "deadline": "Закрыт (сезон 2026 завершён)",
     "dates": "13–19 июля 2026",
     "pay": "€1,015 — всё включено кроме дороги: жильё, питание, тренировки, соревнования",
     "support": [
@@ -473,7 +473,7 @@
     ],
     "desc": "Доступно: Шенгенская виза · Подача: через национальную ассоциацию исландских лошадей",
     "url": "https://www.ipzv.de/jugend/feif-youth-cup-2026-english.html",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -618,7 +618,7 @@
     "country": "Ирландия",
     "age": "11–18 лет",
     "minAge": 11,
-    "deadline": "13 июня – 15 августа 2026",
+    "deadline": "Закрыт (сезон 2026 завершён)",
     "dates": "13 июня – 15 августа 2026",
     "pay": "Платный лагерь; жильё + питание включены. Трансфер с аэропорта Дублина организован",
     "support": [
@@ -628,7 +628,7 @@
     ],
     "desc": "Доступно: виза Ирландии (Visitor Visa) · Подача: форма бронирования на сайте Crossogue Equestrian",
     "url": "http://www.crossogue-equestrian.ie/teen-camps/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -686,7 +686,7 @@
       "Обучение"
     ],
     "desc": "Доступно: виза Ирландии (Visitor Visa) · Подача: онлайн-форма на сайте AirLinguée",
-    "url": "https://airlinguee.com/teenage-equestrian-camps-in-ireland/english-and-equestrian-horse-riding-camp-ireland/",
+    "url": "https://airlinguee.com/teenage-equestrian-camps-in-ireland/english-and-equestrian-horse-riding-camp-ireland/?lang=en",
     "closed": false,
     "urgent": false,
     "check": null,
@@ -767,7 +767,7 @@
     "country": "Германия (Бавария)",
     "age": "от 14 лет",
     "minAge": 14,
-    "deadline": "Круглый год — Пасха, Лето, Осень, Рождество",
+    "deadline": "Закрыт (листинг Praktikanten 2026 удалён с сайта; наборы 2027 — на pferdeglueck-pappenheimer.de)",
     "dates": "Пасха / лето / осень / Рождество",
     "pay": "Жильё + питание на ферме включены. Возможно небольшое карманное деньги при длительных стажировках",
     "support": [
@@ -777,7 +777,7 @@
     ],
     "desc": "Доступно: Шенгенская виза · Подача: прямой email в Pferdeglück Pappenheimer",
     "url": "https://pferdeglueck-pappenheimer.de/praktikanten-gesucht-fuer-2026",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -797,7 +797,7 @@
     "country": "Германия (Hörstel)",
     "age": "14–25 лет",
     "minAge": 14,
-    "deadline": "16–23 августа 2026",
+    "deadline": "Закрыт (истёк 31 марта 2026)",
     "dates": "16–23 августа 2026",
     "pay": "Платный full-board лагерь: жильё + питание включены. Уточнить стоимость на сайте",
     "support": [
@@ -807,7 +807,7 @@
     ],
     "desc": "Доступно: Шенгенская виза · Подача: регистрационная форма на сайте Riesenbeck International",
     "url": "https://riesenbeck-international.com/en/lwea/summer-camp/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -1123,7 +1123,7 @@
     "country": "USA",
     "age": "16–25 лет",
     "minAge": 16,
-    "deadline": "23 июня 2026 (Rebecca Farm)",
+    "deadline": "Закрыт (истёк 23 июня 2026)",
     "dates": "15–19 июля 2026 (The Event at Rebecca Farm)",
     "pay": "Бесплатно (участие бесплатное, питание/жилье/транспорт за свой счет)",
     "support": [
@@ -1131,8 +1131,8 @@
     ],
     "desc": "Доступность: членство в USEA · Язык: английский · Подача: через координатора Area Young Rider",
     "url": "https://www.useventing.com/news-media/news/youth-mentorship-program-now-open-for-applications-kick-off-at-usea-intercollegiate-iel-championships",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "Youth Mentorship Program Application Form",
@@ -1150,7 +1150,7 @@
     "country": "USA",
     "age": "14-18",
     "minAge": 14,
-    "deadline": "Rolling (сессии I и II закрыты, сессия III открыта)",
+    "deadline": "Закрыт (сезон 2026 завершён)",
     "dates": "Сессия III: 15–19 июня 2026",
     "pay": "Платный (т,600 за сессию, включает проживание, питание, обучение)",
     "support": [
@@ -1159,7 +1159,7 @@
     ],
     "desc": "Доступность: возраст 14-18 лет · Язык: английский · Подача: почтой на адрес Equestrian Center",
     "url": "https://www.emoryhenry.edu/summer-programs/camps/equestrian-camp/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -1235,7 +1235,7 @@
     "country": "UK",
     "age": "16+ (college/university)",
     "minAge": 16,
-    "deadline": "30 июня 2026",
+    "deadline": "Закрыт (истёк 30 июня 2026)",
     "dates": "Сентябрь 2026 (учебный год)",
     "pay": "Частичные стипендии (Elite squad), доступно студенческое жилье",
     "support": [
@@ -1244,8 +1244,8 @@
     ],
     "desc": "Доступность: виза UK · Язык: английский · Подача: письменное заявление после подачи в академию",
     "url": "https://www.hartpury.ac.uk/university/playing-sport/academies/equine-academy",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "Hartpury Equine Academy Application Form",
@@ -1293,7 +1293,7 @@
     "country": "UK (Preston)",
     "age": "От 16 лет",
     "minAge": 16,
-    "deadline": "30 июня 2026",
+    "deadline": "Закрыт (истёк 30 июня 2026)",
     "dates": "18 месяцев, старт по договорённости",
     "pay": "£16,640 в год + бесплатное проживание на территории",
     "support": [
@@ -1303,8 +1303,8 @@
     ],
     "desc": "Доступность: виза UK (требуется проживание в UK не менее 3 лет) · Язык: английский · Подача: через портал GOV.UK",
     "url": "https://www.findapprenticeship.service.gov.uk/apprenticeship/VAC2000029043",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "Apprenticeship application via GOV.UK portal",
@@ -1323,7 +1323,7 @@
     "country": "USA (Kentucky)",
     "age": "18+",
     "minAge": 18,
-    "deadline": "1 июля 2026 (на осень 2026) / 1 декабря 2026 (на весну 2027)",
+    "deadline": "Закрыт (истёк 15 июня 2026)",
     "dates": "Осенняя сессия 2026",
     "pay": "Без оплаты (неоплачиваемая образовательная стажировка)",
     "support": [
@@ -1331,8 +1331,8 @@
     ],
     "desc": "Доступность: обучение в вузе Кентукки · Язык: английский · Подача: онлайн-форма на сайте",
     "url": "https://www.secretariatcenter.org/internships",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "Secretariat Center Internship Application Form",
@@ -2210,6 +2210,77 @@
     "check": null
   },
   {
+    "id": 80,
+    "domain": "equestrian",
+    "name": "Dressage Stable Pais — Working Student / Intern",
+    "org": "Dressage Stable Pais — Working Student / Intern",
+    "category": "Стажировки",
+    "baseCountry": "Бельгия",
+    "country": "Бельгия",
+    "age": "17+",
+    "minAge": 17,
+    "deadline": "Rolling (открыт с сентября)",
+    "dates": "Уточнить на сайте",
+    "pay": "Нет оплаты; обучение и опыт",
+    "support": [
+      "Жильё",
+      "Обучение",
+      "Оплата"
+    ],
+    "summary": "Working student / intern в Weelde (Бельгия): 17+, фултайм 6 дней/нед, минимум 4 недели, комната на конюшне. Верховая езда: желательна (уход и подготовка дрессурных лошадей).",
+    "desc": "Working student / intern в Weelde (Бельгия): 17+, фултайм 6 дней/нед, минимум 4 недели, комната на конюшне. Верховая езда: желательна (уход и подготовка дрессурных лошадей).",
+    "url": "http://www.dressagestablepais.eu/?i=75&p=nieuws",
+    "closed": false,
+    "urgent": false,
+    "check": null
+  },
+  {
+    "id": 81,
+    "domain": "equestrian",
+    "name": "GMHA Young Equestrian Development Scholarships",
+    "org": "GMHA Young Equestrian Development Scholarships",
+    "category": "Стипендии",
+    "baseCountry": "USA",
+    "country": "USA",
+    "age": "under 21",
+    "minAge": 16,
+    "deadline": "2027-04-15 (окно 1 января – 15 апреля 2027)",
+    "dates": "Уточнить на сайте",
+    "pay": "Частичная финансовая поддержка на участие",
+    "support": [
+      "Обучение"
+    ],
+    "summary": "Стипендия Green Mountain Horse Association (Vermont) для райдеров до 21 года на клиники/соревнования GMHA. Нужно членство GMHA (можно оформить вместе с заявкой).",
+    "desc": "Стипендия Green Mountain Horse Association (Vermont) для райдеров до 21 года на клиники/соревнования GMHA. Нужно членство GMHA (можно оформить вместе с заявкой).",
+    "url": "https://gmhainc.org/young-equestrian-development-scholarships/",
+    "closed": false,
+    "urgent": false,
+    "check": null
+  },
+  {
+    "id": 82,
+    "domain": "equestrian",
+    "name": "AQHF Scholarships — American Quarter Horse Foundation",
+    "org": "AQHF Scholarships — American Quarter Horse Foundation",
+    "category": "Стипендии",
+    "baseCountry": "USA",
+    "country": "USA",
+    "age": "high school senior / students",
+    "minAge": 17,
+    "deadline": "2027-01-15 (окно 15 октября 2026 – 15 января 2027)",
+    "dates": "Уточнить на сайте",
+    "pay": "50+ стипендий, обычно $6,000–$11,000/год",
+    "support": [
+      "Оплата"
+    ],
+    "summary": "Стипендии AQHF для членов AQHA/AQHYA (членство международное): академия + вовлечённость в Quarter Horse индустрию. Онлайн-заявка по шаблонам AQHF; при опоздании — дисквалификация.",
+    "desc": "Стипендии AQHF для членов AQHA/AQHYA (членство международное): академия + вовлечённость в Quarter Horse индустрию. Онлайн-заявка по шаблонам AQHF; при опоздании — дисквалификация.",
+    "url": "https://www.aqha.com/how-to-apply-aqhf",
+    "closed": false,
+    "urgent": false,
+    "check": null
+  },
+  {
     "id": 1001,
     "domain": "acting",
     "name": "Interlochen Arts Camp — Theater",
@@ -2219,7 +2290,7 @@
     "country": "USA (Michigan)",
     "age": "grades 3–12",
     "minAge": 14,
-    "deadline": "Приоритетный дедлайн — 15 января 2026, далее — при наличии мест (Rolling)",
+    "deadline": "Закрыт (сезон 2026 завершён)",
     "dates": "20 июня – 9 августа 2026 (сессии по 1, 2, 3, 4 и 6 недель)",
     "pay": "Платный. Стоимость от $2,050 (1 неделя) до $10,350 (6 недель). Доступна финансовая помощь (need-based и merit-based) для программ от 2 недель.",
     "support": [
@@ -2231,7 +2302,7 @@
     "summary": "Интенсивный летний театральный лагерь в Мичигане для школьников (3–12 классы), предлагающий программы по актерскому мастерству, музыкальному театру и дизайну.",
     "desc": "Доступно: виза США F-1 (для программ от 2 недель) · Язык: английский (свободный) · Возраст: 3–12 классы (примерно 8–18 лет) · Подача: онлайн-форма на сайте Interlochen Education Community.",
     "url": "https://www.interlochen.org/summer-camp/theater-arts",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -2253,7 +2324,7 @@
     "country": "USA (NY/LA)",
     "age": "14–19 лет",
     "minAge": 14,
-    "deadline": "Открыт (Rolling)",
+    "deadline": "Закрыт (сезон 2026 завершён)",
     "dates": "28 июня – 11 июля 2026 (основная сессия)",
     "pay": "Платный. $4,300 с проживанием, $3,263 без проживания. Депозит $250. Возможны частичные merit-стипендии.",
     "support": [
@@ -2265,7 +2336,7 @@
     "summary": "Двухнедельный летний актерский лагерь-интенсив от Американской музыкально-драматической академии (AMDA) в Нью-Йорке и Лос-Анджелесе для старшеклассников.",
     "desc": "Доступно: виза США F-1/B1/B2 (уточнять) · Язык: английский (свободный) · Возраст: 14–19 лет (ученики 8–12 классов) · Подача: онлайн-заявка на сайте AMDA.",
     "url": "https://www.amda.edu/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -2286,7 +2357,7 @@
     "country": "USA (New York)",
     "age": "10–18 лет",
     "minAge": 10,
-    "deadline": "Открыт (Rolling до заполнения мест)",
+    "deadline": "Закрыт (сезон 2026 завершён)",
     "dates": "Сессия 1: 15 июня – 5 июля 2026; Сессия 2: 6 июля – 26 июля 2026; Сессия 3: 27 июля – 16 августа 2026",
     "pay": "Платный. $6,995 за одну сессию, $12,995 за две сессии. Финансовой помощи нет.",
     "support": [
@@ -2299,7 +2370,7 @@
     "summary": "Всемирно известный летний лагерь исполнительских искусств в штате Нью-Йорк для детей и подростков, предлагающий интенсивное обучение театру и участие в полноценных постановках.",
     "desc": "Доступно: виза США (требуется самостоятельное оформление) · Язык: английский (свободный) · Возраст: 10–18 лет · Подача: онлайн-заявка на официальном сайте.",
     "url": "https://stagedoormanor.com/apply-today/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -2319,7 +2390,7 @@
     "country": "UK (London)",
     "age": "16–18 лет",
     "minAge": 16,
-    "deadline": "Открыт (Rolling до заполнения мест)",
+    "deadline": "Закрыт (сезон 2026 завершён)",
     "dates": "15 июля – 7 августа 2026 (проводится в несколько 2-недельных потоков)",
     "pay": "Платный. Стоимость курса уточняется на сайте (около £2,000+). Стипендий и рассрочек нет, требуется полная предоплата. Accommodation не включено.",
     "support": [
@@ -2329,7 +2400,7 @@
     "summary": "Двухнедельный интенсив по актерскому мастерству в Лондоне от Королевской академии драматического искусства (RADA) для подростков, планирующих профессиональное обучение.",
     "desc": "Доступно: виза Великобритании (Standard Visitor) · Язык: английский (свободный/IELTS 6.0+) · Возраст: 16–18 лет · Подача: онлайн-заявка на сайте RADA.",
     "url": "https://www.rada.ac.uk/short-courses/young-actors-summer-school/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -2379,7 +2450,7 @@
     "country": "USA (New York)",
     "age": "16–18 лет",
     "minAge": 16,
-    "deadline": "Закрыт (Январь–Март 2026)",
+    "deadline": "Закрыт (сезон 2026 завершён)",
     "dates": "5 июля – 1 августа 2026",
     "pay": "Платный. Обучение: $12,012 (6 кредитов), проживание: $1,820, питание: $824, сборы: $200 (программный) + $474 (билеты в театр). Ограниченные need-based стипендии.",
     "support": [
@@ -2573,7 +2644,7 @@
     "country": "UK (London)",
     "age": "16+",
     "minAge": 16,
-    "deadline": "Открыт (до 3 июля 2026 или до заполнения мест; жилой лагерь — до 30 июня 2026)",
+    "deadline": "Закрыт (сезон 2026 завершён)",
     "dates": "Жилой лагерь: 13–24 июля и 27 июля – 7 августа 2026; Шекспир: 27–31 июля 2026; Актерская школа (18+): 13–24 июля 2026",
     "pay": "Платный. Жилой лагерь (13-17): £3,295 (все включено); Шекспир (16+): £675; Актерская школа (18+): £1,475.",
     "support": [
@@ -2585,7 +2656,7 @@
     "summary": "Летние театральные школы в Лондоне от Гилдхоллской школы музыки и театра, включая двухнедельный жилой лагерь для подростков и курсы по Шекспиру.",
     "desc": "Доступно: виза Великобритании (Standard Visitor) · Язык: английский (свободный) · Возраст: 13–17 лет (жилой лагерь), 16+ (Шекспир), 18+ (актерская школа) · Подача: прямое бронирование на сайте.",
     "url": "https://www.gsmd.ac.uk/shortcourses",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -2671,7 +2742,7 @@
     "country": "Poland",
     "age": "18–30 лет",
     "minAge": 18,
-    "deadline": "Открыт (Rolling)",
+    "deadline": "Закрыт (сезон 2026 завершён)",
     "dates": "Сессия 1: 5 июня – 3 августа 2026; Сессия 2: 10 июля – 7 октября 2026",
     "pay": "Бесплатно. Полное финансирование ЕС (проживание, питание, проезд, страховка и карманные деньги предоставляются).",
     "support": [
@@ -2685,8 +2756,8 @@
     "summary": "Летнее творческое волонтерство в Беловежской пуще (Польша) в составе бродячего уличного театра, участие в организации фестивалей и перформансов.",
     "desc": "Доступно: безвизовый режим Шенген (для граждан Украины) / ESC статус · Язык: английский · Возраст: 18–30 лет · Подача: через Европейский молодежный портал.",
     "url": "https://youth.europa.eu/solidarity/opportunity/51686_en",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "Зарегистрированный профиль в системе European Solidarity Corps",
@@ -2818,7 +2889,7 @@
     "desc": "Доступно: студент уже находится в Израиле по студенческой визе A/2 (дополнительная учебная виза не требуется, обучение проходит в вечернее время, что позволяет совмещать его с основной учебой) · Язык: иврит (свободный, обучение ведется полностью на иврите) · Возраст: от 17–18 лет · Подача: заполнение регистрационной формы на сайте школы.",
     "url": "https://www.beit-zvi.com/?CategoryID=164",
     "closed": false,
-    "urgent": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "Действующий паспорт и студенческая виза A/2 в Израиле",
@@ -3095,11 +3166,11 @@
     "urgent": false,
     "check": null,
     "documents": [
-      "Online başvuru formu on castistanbul.com/tags/dizi-basvurusu",
-      "Güncel doğal ışık fotoğrafları (makyajsız tercih)",
-      "Kısa biyografi + varsa deneyim",
-      "Veli onay belgesi (18 yaş altı zorunlu)",
-      "Optional: kısa audition / tanıtım videosu"
+      "Online başvuru formu (онлайн-форма подачи) on castistanbul.com/tags/dizi-basvurusu",
+      "Güncel doğal ışık fotoğrafları (свежие фото при естественном свете, желательно без макияжа)",
+      "Kısa biyografi + varsa deneyim (короткая биография + опыт, если есть)",
+      "Veli onay belgesi (согласие родителя; обязательно до 18 лет)",
+      "Optional: kısa audition / tanıtım videosu (по желанию: короткая аудиция / визитное видео)"
     ]
   },
   {
@@ -3125,10 +3196,10 @@
     "urgent": false,
     "check": null,
     "documents": [
-      "V Ajans online başvuru formu + fotoğraf (max 2 Mb JPEG)",
-      "Veli onay belgesi (18 yaş altı)",
-      "Telefon / email iletişim bilgileri",
-      "Optional: kısa video / önceki deneyim özeti"
+      "V Ajans online başvuru formu (онлайн-форма подачи) + fotoğraf (фото, max 2 Mb JPEG)",
+      "Veli onay belgesi (согласие родителя, до 18 лет)",
+      "Telefon / email iletişim bilgileri (контактные данные: телефон / email)",
+      "Optional: kısa video / önceki deneyim özeti (по желанию: короткое видео / резюме опыта)"
     ]
   },
   {
@@ -3211,7 +3282,7 @@
     ],
     "summary": "Платформа Backstage — фильтр Teens 13–20 для film/TV/commercial в USA, UK, Canada, France, Australia.",
     "desc": "Тип: platform · Multi-region · Актёрство: talent_search · Оплата: по listing · Контакт: backstage.com",
-    "url": "https://www.backstage.com/casting/open-casting-calls/teens-acting-jobs/",
+    "url": "https://www.backstage.com/casting/open-casting-calls/kids/",
     "closed": false,
     "urgent": false,
     "check": null,
@@ -3574,7 +3645,7 @@
     "check": null,
     "documents": [
       "Online registration form at di-cast-ro.com/submit",
-      "Select roles: ביטים (bits) or ניצבים (extras) — not full actor track without training",
+      "Select roles: ביטים (битим — эпизоды) or ניצבים (ницабим — массовка) — not full actor track without training",
       "Representative body + face photos (2)",
       "Social links (Instagram/Facebook) with follower counts",
       "Self-tape when casting invitation arrives",
@@ -3608,7 +3679,7 @@
       "Professional headshots + child CV/resume",
       "Parent/guardian required at all auditions (Israel minors law)",
       "Audition prep: memorized scene + dance/singing if requested",
-      "Verify agency license (משרד התעשייה והמסחר) before signing"
+      "Verify agency license (משרד התעשייה והמסחר — лицензия министерства промышленности и торговли) before signing"
     ]
   },
   {
@@ -3866,7 +3937,7 @@
     "country": "Italy (Friuli Venezia Giulia)",
     "age": "18–30 лет",
     "minAge": 18,
-    "deadline": "28 марта 2026",
+    "deadline": "Закрыт (истёк 28 марта 2026)",
     "dates": "09 февраля – 15 июня 2026 (23 недели)",
     "pay": "Бесплатно. ESC: проживание, питание, карманные, проезд, страховка",
     "support": [
@@ -3878,7 +3949,7 @@
     "summary": "ESC-волонтёрство в центре конной реабилитации в Италии: терапия с лошадьми, работа с людьми с инвалидностью, мастерские.",
     "desc": "Доступно: безвиз Шенген (UA) / ESC статус · Язык: английский, желателен итальянский · Возраст: 18–30 · Подача: youth.europa.eu",
     "url": "https://youth.europa.eu/solidarity/opportunity/49827_en",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
