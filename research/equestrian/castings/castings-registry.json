@@ -301,7 +301,8 @@
   ],
   "castings": {
     "active": [],
-    "watch": [
+    "watch": [],
+    "archive": [
       {
         "id": "lupus-netflix-spain",
         "siteProgramId": 50,
@@ -318,10 +319,10 @@
         "contact": "lupuscast@gmail.com",
         "platform": "mma-spain",
         "verified": "2026-06-30",
-        "notes": "На сайте id 50; только 20+; мониторить MMA feed"
-      }
-    ],
-    "archive": [
+        "notes": "На сайте id 50; только 20+; мониторить MMA feed",
+        "closedReason": "роль 20-50 лет (вне целевого возраста); съёмки начались весной 2026 — набор завершён",
+        "archivedAt": "2026-10-22"
+      },
       {
         "id": "fallow-romi",
         "siteProgramId": 46,
@@ -488,6 +489,16 @@
     ]
   },
   "checkLog": [
+    {
+      "date": "2026-10-22",
+      "checker": "cursor-agent",
+      "archived": [
+        50
+      ],
+      "activeCount": 0,
+      "watchCount": 0,
+      "notes": "Netflix ES Lupus закрыт: возраст роли 20-50 вне таргета 17-20 + сезон завершён. Открытых конных кастингов нет."
+    },
     {
       "date": "2026-10-22",
       "checker": "cursor-agent",

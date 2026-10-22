@@ -9,7 +9,7 @@
     "country": "USA",
     "age": "16+",
     "minAge": 16,
-    "deadline": "Открыт (приём в мае 2026)",
+    "deadline": "Закрыт (приём был в мае 2026; сезон 2026 завершён)",
     "dates": "Лето 2026 (Virginia / Kansas)",
     "pay": "Полностью бесплатно. Дорога + трансфер лошади возмещаются",
     "support": [
@@ -19,7 +19,7 @@
     ],
     "desc": "Доступно: только для резидентов США (или виза B1/B2 при самостоятельном получении) · Подача: онлайн-форма на сайте Strides for Equality",
     "url": "https://www.stridesforequality.org/eversosweethome",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -220,7 +220,7 @@
     "country": "USA (Virginia)",
     "age": "16–17 лет",
     "minAge": 16,
-    "deadline": "Рекомендуется до февраля",
+    "deadline": "Закрыт (сезон 2026 завершён; подача на лето 2027 — с осени)",
     "dates": "Лето 2026",
     "pay": "$300/нед + бесплатное жильё в конной деревне + питание",
     "support": [
@@ -231,7 +231,7 @@
     ],
     "desc": "Доступно: виза США J-1 (поддерживается лагерем) · Подача: онлайн-портал Camp Friendship Staff",
     "url": "https://campfriendship.com/staff/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -284,7 +284,7 @@
     "country": "USA (New York)",
     "age": "7–17 лет",
     "minAge": 7,
-    "deadline": "Набор на лето 2026 открыт",
+    "deadline": "Закрыт (сезон 2026 завершён; набор на лето 2027 — следить на сайте)",
     "dates": "Лето 2026",
     "pay": "Платный; стипендии возможны — уточнять",
     "support": [
@@ -293,7 +293,7 @@
     ],
     "desc": "Доступно: виза США B1/B2 · Подача: форма бронирования на сайте horseridingcamp.com",
     "url": "https://horseridingcamp.com",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -678,7 +678,7 @@
     "country": "Ирландия (Atlantic coast)",
     "age": "11–17 лет",
     "minAge": 11,
-    "deadline": "Июль–Август 2026",
+    "deadline": "Закрыт (сезон июль–август 2026 завершён)",
     "dates": "Июль–август 2026",
     "pay": "Платная; жильё + уроки английского + верховая езда включены в стоимость",
     "support": [
@@ -687,7 +687,7 @@
     ],
     "desc": "Доступно: виза Ирландии (Visitor Visa) · Подача: онлайн-форма на сайте AirLinguée",
     "url": "https://airlinguee.com/teenage-equestrian-camps-in-ireland/english-and-equestrian-horse-riding-camp-ireland/?lang=en",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -1470,7 +1470,7 @@
     "country": "Испания (национальный кастинг)",
     "age": "20–50 лет (женщины)",
     "minAge": 20,
-    "deadline": "Мониторить (без публичного дедлайна)",
+    "deadline": "Закрыт (роль 20-50 лет вне целевого возраста; съёмки начались весной 2026)",
     "dates": "С апреля/мая 2026",
     "pay": "Remunerado (оплачиваемо)",
     "support": [
@@ -1479,7 +1479,7 @@
     "summary": "Кастинг женщин-всадниц от 20 до 50 лет с отличными навыками верховой езды для съёмок в испанском сериале Netflix от Lupus Films.",
     "desc": "Доступность: виза Шенген · Язык: испанский / английский · Подача: email lupuscast@gmail.com",
     "url": "https://wall.mymotheragency.com/spainmujeres-que-monten-a-caballo-para-serie-de-netflix-a-nivel-nacional-cinema/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -2614,7 +2614,7 @@
     "country": "UK (London)",
     "age": "16–18 лет",
     "minAge": 16,
-    "deadline": "Открыт (до заполнения групп; бронирование закрывается в июле/августе 2026)",
+    "deadline": "Закрыт (летние сессии 2026 завершены)",
     "dates": "Июль – Август 2026 (сессии по 10 дней)",
     "pay": "Платный. Introduction to Actor Training (16+): £1,105; Introduction to Shakespeare (16-20): £1,325; Screen Acting (18+): £1,625. Проживание и питание не включены.",
     "support": [
@@ -2624,7 +2624,7 @@
     "summary": "Краткосрочные летние актерские курсы в Лондоне от Лондонской академии музыкального и драматического искусства (LAMDA) по направлениям классического театра и кино.",
     "desc": "Доступно: виза Великобритании (Standard Visitor) · Язык: английский (IELTS 6.0 или эквивалент) · Возраст: 16–20 лет (в зависимости от курса) · Подача: прямое бронирование на сайте LAMDA.",
     "url": "https://www.lamda.ac.uk/short-courses",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -2677,7 +2677,7 @@
     "country": "France (Paris)",
     "age": "16+",
     "minAge": 16,
-    "deadline": "Открыт (Rolling)",
+    "deadline": "Закрыт (летние сессии 2026 завершены)",
     "dates": "Июль – Август 2026 (сессии от 20 до 36 часов, обычно 1-2 недели)",
     "pay": "Платный. Около €330 (за 20-часовой курс), €590 (за 36-часовой курс). Проживание и питание не включены.",
     "support": [
@@ -2687,7 +2687,7 @@
     "summary": "Интенсивные летние актерские мастер-классы во Франции (Париж, Лион, Монпелье, Бордо) и Бельгии от знаменитой школы Cours Florent для подростков и взрослых.",
     "desc": "Доступно: безвизовый режим Шенген (для граждан Украины / биометрический паспорт) · Язык: французский / английский (зависит от сессии) · Возраст: 13–17 лет (подростки), 17+ (взрослые) · Подача: онлайн-регистрация на сайте.",
     "url": "https://www.coursflorent.fr/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [

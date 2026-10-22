@@ -7,7 +7,7 @@
       "summary": "Полностью финансируемый лагерь для Equestrians of Color. Лето 2026: Overlook Farm (Virginia) с 5* тренером Sara Kozumplik и Wolfert Eventing (Kansas).",
       "desc": "Доступно: только для резидентов США (или виза B1/B2 при самостоятельном получении) · Подача: онлайн-форма на сайте Strides for Equality",
       "dates": "Лето 2026 (Virginia / Kansas)",
-      "deadline": "Открыт (приём в мае 2026)",
+      "deadline": "Закрыт (приём был в мае 2026; сезон 2026 завершён)",
       "pay": "Полностью бесплатно. Дорога + трансфер лошади возмещаются",
       "support": [
         "Жильё",
@@ -25,7 +25,9 @@
         "https://www.stridesforequality.org/eversosweethome"
       ],
       "verifiedAt": "2026-06-10",
-      "closed": false
+      "closed": true,
+      "urgent": false,
+      "tone": "neutral"
     },
     "2": {
       "summary": "Бесплатная неделя при British Racing School — сердце британских скачек. Для 14–16-летних из малообеспеченных и разнообразных сообществ.",
@@ -171,7 +173,7 @@
       "summary": "Оплачиваемая позиция помощника вожатого в конном лагере Вирджинии. Работа с детьми, обучение верховой езде, уход за лошадьми.",
       "desc": "Доступно: виза США J-1 (поддерживается лагерем) · Подача: онлайн-портал Camp Friendship Staff",
       "dates": "Лето 2026",
-      "deadline": "Рекомендуется до февраля",
+      "deadline": "Закрыт (сезон 2026 завершён; подача на лето 2027 — с осени)",
       "pay": "$300/нед + бесплатное жильё в конной деревне + питание",
       "support": [
         "Жильё",
@@ -190,7 +192,9 @@
         "https://campfriendship.com/staff/"
       ],
       "verifiedAt": "2026-06-10",
-      "closed": false
+      "closed": true,
+      "urgent": false,
+      "tone": "neutral"
     },
     "9": {
       "summary": "Специальная квота для 17-летних всадников. Помощник вожатого с фокусом на верховую езду.",
@@ -221,7 +225,7 @@
       "summary": "Летний конный лагерь для девочек 7–17 в Catskills (NY): до 6 ч езды/день, hunt seat, cross-country, polo.",
       "desc": "Доступно: виза США B1/B2 · Подача: Enrollment Application на horseridingcamp.com (Dates and Fees 2026)",
       "dates": "Лето 2026 (сессии на сайте)",
-      "deadline": "Набор на лето 2026 открыт",
+      "deadline": "Закрыт (сезон 2026 завершён; набор на лето 2027 — следить на сайте)",
       "pay": "Платный лагерь (3 или 6 ч езды/день); стипендии на сайте не указаны — уточнять по email",
       "support": [
         "Жильё",
@@ -238,8 +242,10 @@
         "https://horseridingcamp.com"
       ],
       "verifiedAt": "2026-06-11",
-      "closed": false,
-      "check": null
+      "closed": true,
+      "check": null,
+      "urgent": false,
+      "tone": "neutral"
     },
     "11": {
       "summary": "CSU Youth Horsemanship Camp — ночной лагерь western/english riding (данные через CSU Summer Programs).",
@@ -538,7 +544,7 @@
       "summary": "Уникальная программа на атлантическом побережье Ирландии: 15 ч/нед английского (ACELS-аккредитация) + 1.5–2 ч верховой езды ежедневно.",
       "desc": "Доступно: виза Ирландии (Visitor Visa) · Подача: онлайн-форма на сайте AirLinguée",
       "dates": "Июль–август 2026",
-      "deadline": "Июль–Август 2026",
+      "deadline": "Закрыт (сезон июль–август 2026 завершён)",
       "pay": "Платная; жильё + уроки английского + верховая езда включены в стоимость",
       "support": [
         "Жильё",
@@ -555,7 +561,9 @@
         "https://airlinguee.com/teenage-equestrian-camps-in-ireland/english-and-equestrian-horse-riding-camp-ireland/"
       ],
       "verifiedAt": "2026-06-10",
-      "closed": false
+      "closed": true,
+      "urgent": false,
+      "tone": "neutral"
     },
     "24": {
       "summary": "Волонтёрство в Андалусии: помощь в конюшне (кормление, уборка, грумминг) в обмен на жильё + питание. Опытные всадники работают непосредственно с лошадьми.",
@@ -1167,7 +1175,7 @@
       "summary": "Кастинг женщин-всадниц от 20 до 50 лет с отличными навыками верховой езды для съёмок в испанском сериале Netflix от Lupus Films.",
       "desc": "Доступность: виза Шенген · Язык: испанский / английский · Подача: email lupuscast@gmail.com",
       "dates": "С апреля/мая 2026",
-      "deadline": "Мониторить (без публичного дедлайна)",
+      "deadline": "Закрыт (роль 20-50 лет вне целевого возраста; съёмки начались весной 2026)",
       "pay": "Remunerado (оплачиваемо)",
       "support": [
         "Оплата"
@@ -1182,9 +1190,11 @@
         "https://wall.mymotheragency.com/spainmujeres-que-monten-a-caballo-para-serie-de-netflix-a-nivel-nacional-cinema/"
       ],
       "verifiedAt": "2026-06-11",
-      "closed": false,
+      "closed": true,
       "check": null,
-      "profileFit": "Только 20+; для 16 лет — мониторить castings-registry.json"
+      "profileFit": "Только 20+; для 16 лет — мониторить castings-registry.json",
+      "urgent": false,
+      "tone": "neutral"
     },
     "51": {
       "summary": "Профессиональная академия верховой езды в Кфар-Монаш (Израиль). Предлагает спортивные тренировки по конкуру и выездке, а также летние курсы.",
@@ -1348,7 +1358,7 @@
         "https://www.campwicosuta.com"
       ],
       "verifiedAt": "2026-10-22",
-      "closed": false
+      "closed": true
     },
     "58": {
       "summary": "7-недельная летняя работа riding counselor в Maine: English riding, jumping, room & board.",
@@ -2168,7 +2178,7 @@
       "summary": "Краткосрочные летние актерские курсы в Лондоне от Лондонской академии музыкального и драматического искусства (LAMDA) по направлениям классического театра и кино.",
       "desc": "Доступно: виза Великобритании (Standard Visitor) · Язык: английский (IELTS 6.0 или эквивалент) · Возраст: 16–20 лет (в зависимости от курса) · Подача: прямое бронирование на сайте LAMDA.",
       "dates": "Июль – Август 2026 (сессии по 10 дней)",
-      "deadline": "Открыт (до заполнения групп; бронирование закрывается в июле/августе 2026)",
+      "deadline": "Закрыт (летние сессии 2026 завершены)",
       "pay": "Платный. Introduction to Actor Training (16+): £1,105; Introduction to Shakespeare (16-20): £1,325; Screen Acting (18+): £1,625. Проживание и питание не включены.",
       "support": [
         "Обучение",
@@ -2184,7 +2194,9 @@
         "https://www.lamda.ac.uk/short-courses"
       ],
       "verifiedAt": "2026-06-11",
-      "closed": false
+      "closed": true,
+      "urgent": false,
+      "tone": "neutral"
     },
     "1012": {
       "summary": "Летние театральные школы в Лондоне от Гилдхоллской школы музыки и театра, включая двухнедельный жилой лагерь для подростков и курсы по Шекспиру.",
@@ -2217,7 +2229,7 @@
       "summary": "Cours Florent — stages théâtre/cinéma/comédie musicale; Ado 13–17 и Acting in English на campus Paris.",
       "desc": "Доступно: Шенген безвиз (UA) / EU · Подача: coursflorent.fr — chercher un stage (Paris, Lyon, etc.)",
       "dates": "Июль – Август 2026 (сессии от 20 до 36 часов, обычно 1-2 недели)",
-      "deadline": "Открыт (Rolling)",
+      "deadline": "Закрыт (летние сессии 2026 завершены)",
       "pay": "Платный. Около €330 (за 20-часовой курс), €590 (за 36-часовой курс). Проживание и питание не включены.",
       "support": [
         "Обучение",
@@ -2233,8 +2245,10 @@
         "https://www.coursflorent.fr/"
       ],
       "verifiedAt": "2026-06-11",
-      "closed": false,
-      "check": null
+      "closed": true,
+      "check": null,
+      "urgent": false,
+      "tone": "neutral"
     },
     "1014": {
       "summary": "Долгосрочное волонтерство в Польше по программе Европейского корпуса солидарности (ESC) в муниципальном культурном центре, включающее ведение творческих и языковых мастер-классов.",
