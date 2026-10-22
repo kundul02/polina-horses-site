@@ -1068,7 +1068,7 @@ const ACTING_BASE_PROGRAMS = [
     dates: "Ongoing agency matching",
     summary: "Регистрация lise öğrencisi (14–18) в Cast Istanbul для dizi, film, reklam. Ücretsiz başvuru, veli onayı обязателен.",
     desc: "Тип: agency pool · Turkey · Актёрство: agency_pool · Оплата: при cast · Контакт: castistanbul.com online form",
-    documents: ["Online başvuru formu on castistanbul.com/tags/dizi-basvurusu", "Güncel doğal ışık fotoğrafları (makyajsız tercih)", "Kısa biyografi + varsa deneyim", "Veli onay belgesi (18 yaş altı zorunlu)", "Optional: kısa audition / tanıtım videosu"],
+    documents: ["Online başvuru formu (онлайн-форма подачи) on castistanbul.com/tags/dizi-basvurusu", "Güncel doğal ışık fotoğrafları (свежие фото при естественном свете, желательно без макияжа)", "Kısa biyografi + varsa deneyim (короткая биография + опыт, если есть)", "Veli onay belgesi (согласие родителя; обязательно до 18 лет)", "Optional: kısa audition / tanıtım videosu (по желанию: короткая аудиция / визитное видео)"],
     closed: false,
     url: "https://www.castistanbul.com/blog/lise-ogrencisi-oyuncu-kaydi",
     urgent: false, check: null, isNew: true
@@ -1083,7 +1083,7 @@ const ACTING_BASE_PROGRAMS = [
     dates: "Ongoing",
     summary: "Ücretsiz online oyuncu kaydı V Ajans — Türkiye geneli genç talent havuzu. 18 yaş altı aile onayı zorunlu.",
     desc: "Тип: agency pool · Turkey · Актёрство: agency_pool · Оплата: при cast · Контакт: info@vajans.com.tr",
-    documents: ["V Ajans online başvuru formu + fotoğraf (max 2 Mb JPEG)", "Veli onay belgesi (18 yaş altı)", "Telefon / email iletişim bilgileri", "Optional: kısa video / önceki deneyim özeti"],
+    documents: ["V Ajans online başvuru formu (онлайн-форма подачи) + fotoğraf (фото, max 2 Mb JPEG)", "Veli onay belgesi (согласие родителя, до 18 лет)", "Telefon / email iletişim bilgileri (контактные данные: телефон / email)", "Optional: kısa video / önceki deneyim özeti (по желанию: короткое видео / резюме опыта)"],
     closed: false,
     url: "https://www.vajans.com.tr/sayfa/bilinmesi-gerekenler.html",
     urgent: false, check: null, isNew: true
@@ -1130,7 +1130,7 @@ const ACTING_BASE_PROGRAMS = [
     desc: "Тип: platform · Multi-region · Актёрство: talent_search · Оплата: по listing · Контакт: backstage.com",
     documents: ["Backstage talent profile (subscription may apply)", "Headshot + acting resume on profile", "Self-tape setup per casting notice", "Filter: Teens 13–20 + target country", "Parental consent for performers under 18"],
     closed: false,
-    url: "https://www.backstage.com/casting/open-casting-calls/teens-acting-jobs/",
+    url: "https://www.backstage.com/casting/open-casting-calls/kids/",
     urgent: false, check: null, isNew: true
   },
   {
@@ -1310,7 +1310,7 @@ const ACTING_BASE_PROGRAMS = [
     dates: "Rolling — registration at di-cast-ro.com/submit",
     summary: "Крупнейший IL casting database — для teens без 3 лет acting school: категории ביטים (bits) и ניצבים (extras).",
     desc: "Тип: agency_pool · Israel · Актёрство: ensemble · Оплата: да · Контакт: di-cast-ro.com/submit",
-    documents: ["Online registration form at di-cast-ro.com/submit", "Select roles: ביטים (bits) or ניצבים (extras) — not full actor track without training", "Representative body + face photos (2)", "Social links (Instagram/Facebook) with follower counts", "Self-tape when casting invitation arrives", "Parent/guardian consent for minors"],
+    documents: ["Online registration form at di-cast-ro.com/submit", "Select roles: ביטים (битим — эпизоды) or ניצבים (ницабим — массовка) — not full actor track without training", "Representative body + face photos (2)", "Social links (Instagram/Facebook) with follower counts", "Self-tape when casting invitation arrives", "Parent/guardian consent for minors"],
     closed: false,
     url: "https://www.di-cast-ro.com/submit",
     urgent: false, check: null, isNew: true,
@@ -1326,7 +1326,7 @@ const ACTING_BASE_PROGRAMS = [
     dates: "Rolling — hundreds of youth in agency roster",
     summary: "Take2 — лицензированное IL agency для детей/подростков в кино, ТВ и рекламе; audition studio on-site.",
     desc: "Тип: agency_pool · Israel · Актёрство: featured · Оплата: да · Контакт: take2.co.il",
-    documents: ["Contact Take2 for youth representation intake", "Professional headshots + child CV/resume", "Parent/guardian required at all auditions (Israel minors law)", "Audition prep: memorized scene + dance/singing if requested", "Verify agency license (משרד התעשייה והמסחר) before signing"],
+    documents: ["Contact Take2 for youth representation intake", "Professional headshots + child CV/resume", "Parent/guardian required at all auditions (Israel minors law)", "Audition prep: memorized scene + dance/singing if requested", "Verify agency license (משרד התעשייה והמסחר — лицензия министерства промышленности и торговли) before signing"],
     closed: false,
     url: "https://take2.co.il/index.php?cs=7&dir=site&langpage=heb&page=content",
     urgent: false, check: null, isNew: true,
@@ -1686,7 +1686,7 @@ const BASE_PROGRAMS = [
     documents: ["Equestrian CV / Resume (competition record, riding level)", "Riding Video Link (demonstrating flatwork and jumping)", "Two Professional References (from trainers or employers)", "Working Holiday Visa (Subclass 417/462) Application (for international applicants)"],
     closed: false,
     url: "https://www.ryanshorses.com.au/page/working_pupil_positions.html",
-    urgent: false, check: "Сайт Ryan's Horses временно недоступен. Информация верифицирована по архивам."
+    urgent: false, check: "Сайт Ryan's Horses недоступен (проверено 22.10.2026, 502). Мониторить восстановление."
   },
   {
     id: 15, name: "Working Pupil — Sheepcote Equestrian Centre",
@@ -1811,7 +1811,7 @@ const BASE_PROGRAMS = [
     desc: "Доступно: виза Ирландии (Visitor Visa) · Подача: онлайн-форма на сайте AirLinguée",
     documents: ["AirLinguée Enrollment Form", "English Placement Test (online)", "Rider Level Assessment Form", "Medical & Dietary Information Form", "Travel & Transfer Booking Form"],
     closed: false,
-    url: "https://airlinguee.com/teenage-equestrian-camps-in-ireland/english-and-equestrian-horse-riding-camp-ireland/",
+    url: "https://airlinguee.com/teenage-equestrian-camps-in-ireland/english-and-equestrian-horse-riding-camp-ireland/?lang=en",
     urgent: false, check: null
   },
   {
@@ -1846,13 +1846,13 @@ const BASE_PROGRAMS = [
     id: 26, name: "School/Holiday Internship — Pferdeglück",
     org: "Erlebnishof Pferdeglück Pappenheimer, Bayern",
     category: "Стажировки", baseCountry: "Германия", country: "Германия (Бавария)",
-    age: "от 14 лет", minAge: 14, deadline: "Круглый год — Пасха, Лето, Осень, Рождество", tone: "green",
+    age: "от 14 лет", minAge: 14, deadline: "Закрыт (листинг Praktikanten 2026 удалён с сайта; наборы 2027 — на pferdeglueck-pappenheimer.de)", tone: "neutral",
     support: ["Жильё", "Питание", "Обучение"],
     pay: "Жильё + питание на ферме включены. Возможно небольшое карманное деньги при длительных стажировках",
     dates: "Пасха / лето / осень / Рождество",
     desc: "Доступно: Шенгенская виза · Подача: прямой email в Pferdeglück Pappenheimer",
     documents: ["Pferdeglück Internship Application Form / Email", "CV with photo and equestrian background", "Parental Consent Form (for interns aged 14-17)", "School Internship Agreement (Schülerpraktikumsvertrag) (if applicable)"],
-    closed: false,
+    closed: true,
     url: "https://pferdeglueck-pappenheimer.de/praktikanten-gesucht-fuer-2026",
     urgent: false, check: null
   },
@@ -3433,7 +3433,7 @@ const VERIFIED_REGISTRY = {
       "Travel & Transfer Booking Form"
     ],
     "sources": [
-      "https://airlinguee.com/teenage-equestrian-camps-in-ireland/english-and-equestrian-horse-riding-camp-ireland/"
+      "https://airlinguee.com/teenage-equestrian-camps-in-ireland/english-and-equestrian-horse-riding-camp-ireland/?lang=en"
     ],
     "verifiedAt": "2026-06-10",
     "closed": false
