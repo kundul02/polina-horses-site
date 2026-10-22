@@ -1,10 +1,10 @@
 {
   "meta": {
     "version": 1,
-    "lastFullCheck": "2026-06-30",
+    "lastFullCheck": "2026-10-22",
     "lastSiteSync": "2026-06-10",
     "nextCheckRecommended": "еженедельно (кастинги с лошадьми живут 2–5 дней)",
-    "targetAge": "16-20",
+    "targetAge": "17-20 (Полине 17 с августа 2026; playing age 18-25, если убедительно)",
     "targetRiding": "любительский или профессиональный уровень",
     "regions": [
       "UK",
@@ -300,25 +300,7 @@
     "Netflix caballo equitación casting España"
   ],
   "castings": {
-    "active": [
-      {
-        "id": "fallow-romi",
-        "siteProgramId": 46,
-        "name": "Fallow — Lead Actress (Romi)",
-        "type": "short_film",
-        "country": "UK",
-        "city": null,
-        "age": "18-25 playing age",
-        "riding": "required",
-        "paid": true,
-        "deadline": "2026-07-02",
-        "deadlineNote": "rolling до истечения на Project Casting",
-        "url": "https://projectcasting.com/job/fallow-short-film-casting-call-for-lead-actress",
-        "contact": "Marott Productions",
-        "platform": "projectcasting",
-        "verified": "2026-06-30"
-      }
-    ],
+    "active": [],
     "watch": [
       {
         "id": "lupus-netflix-spain",
@@ -340,6 +322,25 @@
       }
     ],
     "archive": [
+      {
+        "id": "fallow-romi",
+        "siteProgramId": 46,
+        "name": "Fallow — Lead Actress (Romi)",
+        "type": "short_film",
+        "country": "UK",
+        "city": null,
+        "age": "18-25 playing age",
+        "riding": "required",
+        "paid": true,
+        "deadline": "2026-07-02",
+        "deadlineNote": "rolling до истечения на Project Casting",
+        "url": "https://projectcasting.com/job/fallow-short-film-casting-call-for-lead-actress",
+        "contact": "Marott Productions",
+        "platform": "projectcasting",
+        "verified": "2026-06-30",
+        "closedReason": "дедлайн 2026-07-01",
+        "archivedAt": "2026-09-20"
+      },
       {
         "id": "love-wind-savannah",
         "siteProgramId": 48,
@@ -487,6 +488,23 @@
     ]
   },
   "checkLog": [
+    {
+      "date": "2026-10-22",
+      "checker": "cursor-agent",
+      "activeCount": 0,
+      "watchCount": 1,
+      "notes": "Первый обход за 4 месяца (после 30.06). Возраст обновлён: Полине 17 (август 2026) — фильтр 17-20. Пройдены Project Casting (skills=Horseback Riding), Backstage (keyword horse + kids/teens), Mandy, KidsCasting, Casting Networks (web), web-поиски. НОВОГО для 17-20 с ездой required/preferred НЕТ: Girl and Her Horse (Casting Networks, Chicago/St.Louis, роль «16-17, играют 18-25», $125-300/д) — дедлайн 02.09.2026 истёк; casting.es Barcelona (прыжки через препятствия) — 12-14 лет, LOCAL, съёмки 30.10-11.11; Talent Talks BFI «12-17 own horse» — истёк 30.06. Netflix ES Lupus (50, watch) — новых публикаций на MMA feed не видно, мониторить. Рекомендация: публичных конных кастингов для 17-летних почти не выходит — основной канал остаются SPACT-агентства UK (Take 3, Casting Collective, CS Equine) и мониторинг раз в 1-2 недели."
+    },
+    {
+      "date": "2026-09-20",
+      "checker": "archive-expired-castings.mjs",
+      "archived": [
+        46
+      ],
+      "activeCount": 0,
+      "watchCount": 1,
+      "notes": "Auto-archive: 1 expired casting(s)"
+    },
     {
       "date": "2026-06-30",
       "checker": "cursor-agent",

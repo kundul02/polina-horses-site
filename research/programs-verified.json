@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastFullReview": "2026-06-11",
+  "lastFullReview": "2026-09-20",
   "workflow": "research/PROGRAM_RESEARCH_WORKFLOW.md",
   "programs": {
     "1": {
@@ -1057,7 +1057,7 @@
       "summary": "Кастинг на главную женскую роль (Роми) в независимом короткометражном фильме в Великобритании. Требуется уверенное владение верховой ездой.",
       "desc": "Доступность: виза UK · Язык: английский (французский будет плюсом) · Подача: через портал Project Casting",
       "dates": "По согласованию с продакшеном (съёмки в Великобритании)",
-      "deadline": "2 июля 2026 (rolling)",
+      "deadline": "Закрыт (истёк 2 июля 2026)",
       "pay": "Оплачиваемая роль (Paid, независимый короткометражный фильм)",
       "support": [
         "Оплата"
@@ -1073,8 +1073,8 @@
         "https://projectcasting.com/job/fallow-short-film-casting-call-for-lead-actress"
       ],
       "verifiedAt": "2026-06-30",
-      "closed": false,
-      "urgent": true
+      "closed": true,
+      "urgent": false
     },
     "47": {
       "summary": "Кастинг на главную мужскую роль (Люк, ковбой) в полнометражной драме Love in the Wind от Moviehead Pictures. Желательны навыки верховой езды.",
@@ -1275,7 +1275,7 @@
       "sources": [
         "https://youth.europa.eu/solidarity/opportunity/39919_en"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": true
     },
     "56": {
@@ -1300,7 +1300,7 @@
       "sources": [
         "https://youth.europa.eu/solidarity/opportunity/49730_en"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": true
     },
     "57": {
@@ -1327,7 +1327,7 @@
         "https://career.ship.edu/jobs/camp-wicosuta-summer-equestrian-internship/",
         "https://www.campwicosuta.com"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "58": {
@@ -1351,7 +1351,7 @@
       "sources": [
         "https://career.ship.edu/companies/tripp-lake-camp/jobs/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": true
     },
     "59": {
@@ -1371,9 +1371,9 @@
         "https://www.tempelfarms.com/working-student-program.html",
         "https://abc7chicago.com/post/tempel-lipizzans-horse-stallions-illinois-lake-county/13704198/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": true,
-      "check": "Tempel Lipizzans прекратили public programming в августе 2023. Working student больше не набирают."
+      "check": "Tempel Lipizzans прекратили public programming (lessons, working student, tours) в августе 2023. Сайт периодически недоступен (503)."
     },
     "60": {
       "summary": "Working Student Program для at-risk youth (10+): бесплатное снаряжение, своя лошадь, horsemanship 4 дня/нед.",
@@ -1394,7 +1394,7 @@
       "sources": [
         "https://gleneayreequestrianprogram.org/program/working-student-program"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "61": {
@@ -1417,7 +1417,7 @@
       "sources": [
         "https://www.usef.org/media/press-releases/apply-now-for-2026-usef-higher-education"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "62": {
@@ -1442,7 +1442,7 @@
       "sources": [
         "https://www.oysterworldwide.com/project/horse-care-course-with-paid-work/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "63": {
@@ -1464,9 +1464,9 @@
         "https://tbindustrycareers.com.au/education/",
         "https://www.ttrausnz.com.au/edition/2025-09-15/its-hard-doing-anything-like-this-in-australia-thoroughbred-industry-careers-to-suspend-operations"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": true,
-      "check": "TIC suspend operations (сентябрь 2025). Explorer Cadetship on hold."
+      "check": "TIC приостановил операции (сентябрь 2025). Explorer Cadetship on hold после закрытия Richmond Equine TAFE."
     },
     "64": {
       "summary": "12-мес paid traineeship на stud farm + Certificate III in Horse Breeding (TAFE NSW, блок в Scone).",
@@ -1489,7 +1489,7 @@
         "https://www.tbaus.com/fast-track-program/about/",
         "https://www.tbaus.com/2025/02/04/2025-fast-track-applications-now-open/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "65": {
@@ -1510,7 +1510,7 @@
       "sources": [
         "https://ascc.wsu.edu/jobs/langs-horse-and-pony-farm-summer-horse-camp-counselor/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "66": {
@@ -1531,7 +1531,7 @@
       "sources": [
         "https://worktoride.net/home/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "67": {
@@ -1553,7 +1553,7 @@
       "sources": [
         "https://brs.org.uk/new-course-for-16-18-year-olds/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "68": {
@@ -1574,7 +1574,7 @@
       "sources": [
         "https://www.usef.org/media/press-releases/us-equestrian-announces-2025-usef-horsemastership"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": true
     },
     "69": {
@@ -1595,7 +1595,7 @@
       "sources": [
         "https://www.usef.org/media/press-releases/us-equestrian-announces-dates-locations-for-7"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": true
     },
     "70": {
@@ -1619,7 +1619,7 @@
       "sources": [
         "https://www.godolphinflyingstart.com/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "71": {
@@ -1640,7 +1640,7 @@
       "sources": [
         "https://careersinracing.com/course/british-horseracing-development-programme/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": true
     },
     "72": {
@@ -1663,7 +1663,7 @@
       "sources": [
         "https://www.jockeyclub.com/Default.asp?area=10&section=Resources&story=1557"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": true
     },
     "73": {
@@ -1684,7 +1684,7 @@
       "sources": [
         "https://takingthereins.org/summer-2026-programs/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "74": {
@@ -1705,7 +1705,7 @@
       "sources": [
         "https://thehgbfoundation.org/bridgeup-giddyup/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "75": {
@@ -1729,7 +1729,7 @@
       "sources": [
         "https://irishnationalstud.ie/thoroughbred-breeding-management/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "76": {
@@ -1753,7 +1753,7 @@
       "sources": [
         "https://www.gerrydilgerequine.com/applications/kemi-irish-national-stud-scholarship"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "77": {
@@ -1777,7 +1777,7 @@
       "sources": [
         "https://www.theconnemarapony.ie/internships-for-2026/"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "78": {
@@ -1802,7 +1802,7 @@
       "sources": [
         "https://www.yardandgroom.com/Job/Germany/Bayern/Working-Student/428983"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": false
     },
     "79": {
@@ -1822,9 +1822,9 @@
       "sources": [
         "https://www.yardandgroom.com/Job/Germany/Schleswig-Holstein/Horse-Au-Pair---Working-Student---Northern-Germany-------/410099"
       ],
-      "verifiedAt": "2026-06-11",
+      "verifiedAt": "2026-09-20",
       "closed": true,
-      "check": "Yard and Groom listing #410099 removed — вакансия Gestüt Tasdorf не активна."
+      "check": "Yard and Groom: Job not found / removed from database."
     },
     "1001": {
       "summary": "Интенсивный летний театральный лагерь в Мичигане для школьников (3–12 классы), предлагающий программы по актерскому мастерству, музыкальному театру и дизайну.",

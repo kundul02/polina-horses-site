@@ -1351,7 +1351,7 @@
     "country": "UK",
     "age": "18–25 (playing age)",
     "minAge": 18,
-    "deadline": "2 июля 2026 (rolling)",
+    "deadline": "Закрыт (истёк 2 июля 2026)",
     "dates": "По согласованию с продакшеном (съёмки в Великобритании)",
     "pay": "Оплачиваемая роль (Paid, независимый короткометражный фильм)",
     "support": [
@@ -1360,7 +1360,7 @@
     "summary": "Кастинг на главную женскую роль (Роми) в независимом короткометражном фильме в Великобритании. Требуется уверенное владение верховой ездой.",
     "desc": "Доступность: виза UK · Язык: английский (французский будет плюсом) · Подача: через портал Project Casting",
     "url": "https://projectcasting.com/job/fallow-short-film-casting-call-for-lead-actress",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -1381,7 +1381,7 @@
     "country": "USA (CA / TX)",
     "age": "18–30 лет",
     "minAge": 18,
-    "deadline": "26 июня 2026",
+    "deadline": "Закрыт (истёк 26 июня 2026)",
     "dates": "Июль 2026 (съёмки в Калифорнии и Техасе)",
     "pay": "До ),000 за проект",
     "support": [
@@ -1390,8 +1390,8 @@
     "summary": "Кастинг на главную мужскую роль (Люк, ковбой) в полнометражной драме Love in the Wind от Moviehead Pictures. Желательны навыки верховой езды.",
     "desc": "Доступность: виза США · Язык: английский · Подача: через портал Mandy.com",
     "url": "https://www.mandy.com/aa/project/3168995/love-in-the-wind/",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "Application via Mandy.com portal",
@@ -1411,7 +1411,7 @@
     "country": "USA (CA / TX)",
     "age": "18–30 лет",
     "minAge": 18,
-    "deadline": "26 июня 2026",
+    "deadline": "Закрыт (истёк 26 июня 2026)",
     "dates": "Июль 2026 (съёмки в Калифорнии и Техасе)",
     "pay": "До ),000 за проект",
     "support": [
@@ -1420,8 +1420,8 @@
     "summary": "Кастинг на главную женскую роль (Саванна, помощница на ранчо) в полнометражной драме Love in the Wind. Желательны навыки верховой езды.",
     "desc": "Доступность: виза США · Язык: английский · Подача: через портал Mandy.com",
     "url": "https://www.mandy.com/aa/project/3168995/love-in-the-wind/",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "Application via Mandy.com portal",
@@ -2870,7 +2870,7 @@
     "country": "USA (Atlanta, GA)",
     "age": "13–17 (featured teen); Trey male 15–17",
     "minAge": 13,
-    "deadline": "28 июня 2026",
+    "deadline": "Закрыт (истёк 28 июня 2026)",
     "dates": "Filming in Atlanta area (2026)",
     "pay": "Paid project; IMDb + on-screen credit; meals & craft services on set",
     "support": [
@@ -2880,8 +2880,8 @@
     "summary": "Кастинг featured teen-ролей (Shanay, Jasmine, Paris, Carson, Miyah, Haley, Trey) в драматическом сериале SisterGirls. Atlanta, оплачиваемо.",
     "desc": "Тип: TV series · USA (Atlanta) · Актёрство: featured teen · Оплата: да · Контакт: Project Casting / Yarbrough Media",
     "url": "https://projectcasting.com/job/teen-casting-call-for-coming-of-age-drama-series",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "Application via Project Casting portal",
@@ -2901,7 +2901,7 @@
     "country": "UK (London)",
     "age": "14–22 (playing 14–16); 16+ если convincingly younger teen",
     "minAge": 14,
-    "deadline": "5 июля 2026 (rolling)",
+    "deadline": "Закрыт (истёк 5 июля 2026)",
     "dates": "4 weeks from ~3 August 2026, London",
     "pay": "£4,104 lead (PACT-Equity Very Low Budget Film Agreement)",
     "support": [
@@ -2910,7 +2910,7 @@
     "summary": "Главная роль аутистичного подростка в независимом британском feature о Special Educational Needs. Оплачиваемый lead.",
     "desc": "Тип: feature film · UK (London) · Актёрство: lead · Оплата: да · Контакт: Gilbert and Covell via Project Casting",
     "url": "https://projectcasting.com/job/feature-film-open-casting-call-for-lead-roles",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -2932,7 +2932,7 @@
     "country": "France / UK / Europe",
     "age": "12–16 лет",
     "minAge": 12,
-    "deadline": "13 июня 2026",
+    "deadline": "Закрыт (истёк 13 июня 2026)",
     "dates": "Shoot UK/Europe (FKA Twigs biopic, dir. Maïmouna Doucouré)",
     "pay": "Paid principal role (rate on selection)",
     "support": [
@@ -2941,8 +2941,8 @@
     "summary": "Кастинг молодой актрисы на роль 12-летней Josephine Baker в биopic с FKA Twigs. Танец + American accent обязательны.",
     "desc": "Тип: feature film · France/Europe · Актёрство: lead · Оплата: да · Контакт: Joanna Levinger Casting / Project Casting",
     "url": "https://projectcasting.com/job/josephine-baker-biopic-starring-fka-twigs-principal-role-open-casting-call",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "Application via Project Casting portal",
@@ -2963,7 +2963,7 @@
     "country": "USA (NYC / NJ)",
     "age": "14–16 лет (male, African-American)",
     "minAge": 14,
-    "deadline": "21 июня 2026",
+    "deadline": "Закрыт (истёк 21 июня 2026)",
     "dates": "Shoot July 18–20, 2026 (NYC/NJ)",
     "pay": "Meals + screen credit + reel footage (proof-of-concept)",
     "support": [
@@ -2972,8 +2972,8 @@
     "summary": "Lead teenage boy ANTWON в feature A Bit of Heaven. LOCAL NY/NJ only. Reel + credit, без cash rate.",
     "desc": "Тип: feature film · USA (NYC/NJ) · Актёрство: lead · Оплата: reel/credit (не cash) · Контакт: KidsCasting portal",
     "url": "https://kidscasting.com/castingcall/605628",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "Application via KidsCasting portal (ID 605628)",
@@ -2992,7 +2992,7 @@
     "country": "USA (Hawaii)",
     "age": "16–25 (playing high school 15–18)",
     "minAge": 16,
-    "deadline": "30 июня 2026",
+    "deadline": "Закрыт (истёк 30 июня 2026)",
     "dates": "Filming July 20 – mid-September 2026, Hawaii",
     "pay": "Paid opportunity (Hawaii local production)",
     "support": [
@@ -3001,7 +3001,7 @@
     "summary": "Teen drama series в Гавайях — ищут authentic local teens 16–25, опыт не обязателен. Paid, writers include Bryson Chun.",
     "desc": "Тип: TV series · USA (Hawaii) · Актёрство: ensemble/principal · Оплата: да · Контакт: tinyurl.com/HawaiiTeenDrama",
     "url": "https://4filming.com/hawaii-teen-drama-casting-call-2026-alessi-hartigan/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -3022,7 +3022,7 @@
     "country": "USA",
     "age": "9–17 лет",
     "minAge": 9,
-    "deadline": "Rolling (без публичного дедлайна)",
+    "deadline": "Закрыт (истёк 19 марта 2026)",
     "dates": "Ongoing talent search 2026",
     "pay": "Future Disney Channel / Disney+ consideration (не гарантированная роль)",
     "support": [
@@ -3031,7 +3031,7 @@
     "summary": "Открытый talent search Disney-branded TV для детей и подростков 9–17: acting, singing, dance, musicians.",
     "desc": "Тип: talent search · USA · Актёрство: talent_search · Оплата: при cast · Контакт: Project Casting",
     "url": "https://projectcasting.com/job/disney-television-talent-search-2026-open-casting-call",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -3052,7 +3052,7 @@
     "country": "Ireland (Galway / Mayo)",
     "age": "Teen (native Irish speaker)",
     "minAge": 14,
-    "deadline": "Rolling (съёмки конец июня – август 2026)",
+    "deadline": "Закрыт (съёмки начались, конец июня 2026)",
     "dates": "Filming late June – early August 2026, Galway",
     "pay": "Paid TV production (rate on selection)",
     "support": [
@@ -3061,7 +3061,7 @@
     "summary": "TG4 youth drama Ar Ais Arís — кастинг irish-speaking teens из Galway/Mayo/Connacht. Одна роль: Portuguese + Irish.",
     "desc": "Тип: TV series · Ireland (Galway) · Актёрство: featured · Оплата: да · Контакт: laura@maureenhughescasting.com",
     "url": "https://thisisgalway.ie/galway-teens-sought-for-ambitious-new-tg4-youth-drama/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -3141,7 +3141,7 @@
     "country": "USA (Hudson, FL)",
     "age": "6–13 (youth roles); audition 18 July 2026",
     "minAge": 6,
-    "deadline": "18 июля 2026 (live audition)",
+    "deadline": "Закрыт (анонс снят, переиздан без youth-фокуса)",
     "dates": "Audition July 18, 2026; season Nov 2026 – May 2027",
     "pay": "$150/week (NON-UNION youth season)",
     "support": [
@@ -3150,7 +3150,7 @@
     "summary": "Musical theater youth auditions: Christmas Carol, Les Mis youth tracks, Young Elvis. Hudson FL, in-person July 18.",
     "desc": "Тип: theater · USA (Hudson, FL) · Актёрство: featured · Оплата: да · Контакт: youthinpersonauditions2026-27season.cheddarup.com",
     "url": "https://playbill.com/job/suncoast-broadway-local-auditions-for-youth-actors/0e5a42b1-1587-445b-8ab8-8831a1b44a32",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -3172,7 +3172,7 @@
     "country": "UK (London / South East)",
     "age": "15–16 playing; 16–18 if convincingly younger",
     "minAge": 16,
-    "deadline": "5 июля 2026",
+    "deadline": "Закрыт (истёк 5 июля 2026)",
     "dates": "TBC production schedule",
     "pay": "Paid featured role (ITV drama)",
     "support": [
@@ -3181,7 +3181,7 @@
     "summary": "Featured teen Jake — partially deaf/hard of hearing, learning BSL. Genuine lived experience required. Paid ITV role.",
     "desc": "Тип: TV drama · UK · Актёрство: featured · Оплата: да · Контакт: Andy Pryor Casting / Project Casting",
     "url": "https://projectcasting.com/job/itv-drama-casting-call-for-partially-deaf-hard-of-hearing-actors",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -3319,7 +3319,7 @@
     "country": "New Zealand (New Plymouth)",
     "age": "15–21 лет",
     "minAge": 15,
-    "deadline": "13 июня 2026 (live audition)",
+    "deadline": "Закрыт (истёк 13 июня 2026)",
     "dates": "Auditions 13 June 2026; performances 10–19 September 2026 at Little Theatre",
     "pay": "Community theater production (non-paid ensemble; professional rehearsal process)",
     "support": [
@@ -3328,8 +3328,8 @@
     "summary": "Ensemble-кastинг The Laramie Project для youth 15–21 в New Plymouth, NZ. Аудиции 13 июня через Cast98.",
     "desc": "Тип: theater · New Zealand (New Plymouth) · Актёрство: ensemble · Оплата: нет · Контакт: youbeyoungamotu@gmail.com / Cast98",
     "url": "https://app.cast98.com/shows/the-laramie-project-2026-youbeyoungamotu",
-    "closed": false,
-    "urgent": true,
+    "closed": true,
+    "urgent": false,
     "check": null,
     "documents": [
       "Free Cast98 account + audition signup on app.cast98.com",
@@ -3439,7 +3439,7 @@
     "country": "Denmark (Jylland shoot)",
     "age": "15–18 лет (male)",
     "minAge": 15,
-    "deadline": "Rolling (съёмки maj/juni 2026)",
+    "deadline": "Закрыт (период съёмок май/июнь 2026 истёк)",
     "dates": "Shoot May/June 2026 in Jylland, Denmark",
     "pay": "Paid feature film roles (rate via dask-online profile application)",
     "support": [
@@ -3448,7 +3448,7 @@
     "summary": "Stor dansk spillefilm — два больших teen male roles, 15–18, съёмки в Jylland. Опыт не обязателен.",
     "desc": "Тип: feature film · Denmark (Jylland) · Актёрство: lead · Оплата: да · Контакт: dask-online.dk profile",
     "url": "https://www.dask-online.dk/nyhed.asp?id=1039658",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null,
     "documents": [
@@ -3609,6 +3609,94 @@
       "Parent/guardian required at all auditions (Israel minors law)",
       "Audition prep: memorized scene + dance/singing if requested",
       "Verify agency license (משרד התעשייה והמסחר) before signing"
+    ]
+  },
+  {
+    "id": 1046,
+    "domain": "castings",
+    "name": "Miss American Vampire — Saylor (Feature Film)",
+    "org": "Project Manager: Olivia Bronwyn",
+    "category": "Кастинги",
+    "baseCountry": "Canada",
+    "country": "Canada (Woodstock, ON)",
+    "age": "15–22 лет (Saylor / Emily)",
+    "minAge": 15,
+    "deadline": "Закрыт (истёк 3 июля 2026)",
+    "dates": "Filming 15–20 days, August 2026, Woodstock ON",
+    "pay": "Saylor (lead): CA$4,500 flat rate; Emily (supporting): ACTRA low-budget rate",
+    "support": [
+      "Оплата"
+    ],
+    "summary": "Главная роль Saylor в подростковом фэнтези-фильме о двух тинейджерах, нашедших убежище в старой плавучей хижине. Paid lead, Канада.",
+    "desc": "Тип: feature film · Canada (Woodstock, ON) · Актёрство: lead · Оплата: да (CA$4,500). Контакт: через Mandy.com",
+    "url": "https://www.mandy.com/aa/project/3182094/miss-american-vampire/",
+    "closed": true,
+    "urgent": false,
+    "check": null,
+    "documents": [
+      "Free Mandy.com account + apply to listing",
+      "Self-tape / showreel link",
+      "Acting CV / resume",
+      "Headshots",
+      "Parental consent if under 18"
+    ]
+  },
+  {
+    "id": 1047,
+    "domain": "castings",
+    "name": "Shades of Identity — Lena (Short Film)",
+    "org": "Brianna Gray, Writer-Director",
+    "category": "Кастинги",
+    "baseCountry": "USA",
+    "country": "USA (Boston, MA)",
+    "age": "17–23 лет (Lena / Camilla / Aaron)",
+    "minAge": 17,
+    "deadline": "Закрыт (истёк 13 июля 2026)",
+    "dates": "Filming 17 August – 18 September 2026, Boston",
+    "pay": "Неоплачиваемо (local indie short; LOCAL Boston only)",
+    "support": [],
+    "summary": "Главная роль Lena в короткометражке о девушке, которую травят из-за тёмного цвета кожи. LOCAL Boston, без оплаты, инди-проект.",
+    "desc": "Тип: short film · USA (Boston, MA) · Актёрство: lead · Оплата: нет (local). Контакт: через Mandy.com",
+    "url": "https://www.mandy.com/aa/project/3178734/shades-of-identity/",
+    "closed": true,
+    "urgent": false,
+    "check": null,
+    "documents": [
+      "Free Mandy.com account + apply to listing",
+      "Self-tape / showreel link",
+      "Acting CV / resume",
+      "Headshots",
+      "Parental consent if under 18; LOCAL Boston only"
+    ]
+  },
+  {
+    "id": 1048,
+    "domain": "castings",
+    "name": "BeCasting AR — Comedia Juvenil (Largometraje)",
+    "org": "BeCasting Argentina",
+    "category": "Кастинги",
+    "baseCountry": "Аргентина",
+    "country": "Argentina (Palermo, Buenos Aires)",
+    "age": "Внешность ~18 лет (playing ~18)",
+    "minAge": 16,
+    "deadline": "Закрыт (истёк 5 июля 2026)",
+    "dates": "Filming early December 2026 – early January 2027, Buenos Aires",
+    "pay": "Remuneración en pesos por jornada (según rol, монто не указан)",
+    "support": [
+      "Оплата"
+    ],
+    "summary": "Главные и второстепенные роли в молодёжной комедии для актрис/актёров, выглядящих на 18 лет. Buenos Aires, LOCAL.",
+    "desc": "Тип: feature film · Argentina (Buenos Aires) · Актёрство: lead · Оплата: да. Контакт: BeCasting.com.ar",
+    "url": "https://www.becasting.com.ar/castings/cine-ficcion/216358-casting-actrices-y-actores-que-aparenten-18-anos-para-largometraje-de-comedia-juvenil-en-buenos-aires",
+    "closed": true,
+    "urgent": false,
+    "check": null,
+    "documents": [
+      "Email submission via BeCasting.com.ar listing",
+      "Photos + CV / reel",
+      "Personal data: name, age, contact",
+      "LOCAL Buenos Aires only",
+      "Parental consent if under 18"
     ]
   },
   {

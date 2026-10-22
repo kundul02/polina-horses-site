@@ -1,27 +1,19 @@
-# База мониторинга — актёрские кастинги 16–18+
+# База мониторинга — актёрские кастинги 17–20
 
-**Обновлено:** 12 июня 2026  
-**Профиль:** 16 лет, UA паспорт (Шенген), виза США ✓  
-**Фокус:** кастинги 16+ (playing age 15–18 допустимо)
+**Обновлено:** 22 октября 2026  
+**Профиль:** **17 лет** (август 2026), UA паспорт (Шенген), виза США ✓, учится в Израиле (A/2)  
+**Фокус:** роли **17–20** (или 16+ / playing 17–18); роли 13–15 и playing 14–16 больше не подходят
 
 ## Открытые (active)
 
-| ID | Название | Страна | Возраст | Дедлайн | URL |
-|----|----------|--------|---------|---------|-----|
-| 1023 | Josephine Baker — Young Josephine | FR/EU | 12–16 | **13 июня** ⚠️ | [Project Casting](https://projectcasting.com/job/josephine-baker-biopic-starring-fka-twigs-principal-role-open-casting-call) |
-| 1024 | A Bit of Heaven — ANTWON | USA NJ | 14–16 M | **21 июня** | [KidsCasting](https://kidscasting.com/castingcall/605628) |
-| 1021 | SisterGirls — Teen Roles | USA GA | 13–17 | **28 июня** | [Project Casting](https://projectcasting.com/job/teen-casting-call-for-coming-of-age-drama-series) |
-| 1025 | Hawaii Teen Drama | USA HI | 16–25 | **30 июня** | [4filming](https://4filming.com/hawaii-teen-drama-casting-call-2026-alessi-hartigan/) |
-| 1022 | UK Feature — Autistic Teen Lead | UK | 14–22 | 5 июля | [Project Casting](https://projectcasting.com/job/feature-film-open-casting-call-for-lead-roles) |
-| 1031 | ITV — Jake (partially deaf) | UK | 15–16 | 5 июля | [Project Casting](https://projectcasting.com/job/itv-drama-casting-call-for-partially-deaf-hard-of-hearing-actors) |
-| 1030 | Suncoast Broadway Youth | USA FL | theater | 18 июля (ауд.) | [Playbill](https://playbill.com/job/suncoast-broadway-local-auditions-for-youth-actors/0e5a42b1-1587-445b-8ab8-8831a1b44a32) |
-| 1036 | The Laramie Project — Youth | **New Zealand** | 15–21 | **13 июня** ⚠️ | [Cast98](https://app.cast98.com/shows/the-laramie-project-2026-youbeyoungamotu) |
-| 1040 | Danish Feature — Boys 15–18 | Denmark | 15–18 M | rolling | [dask-online.dk](https://www.dask-online.dk/nyhed.asp?id=1039658) |
+Активных нет (обход 2026-10-22). Всё, что было открыто летом, — в архиве (автоархивация 20.09.2026).
 
 ## Мониторинг (watch)
 
 | ID | Название | Регион | Примечание |
 |----|----------|--------|------------|
+| — | MyTalent aud 2308 — Short Film, Girl 17.5 | **Israel** (Бкеят Оно) | роль «17,5», съёмки 23–29 нояб., без оплаты; подтвердить актуальность |
+| — | מורה בהסוואה (Nickelodeon IL) | **Israel** | новая молодёжная серия; открытый кастинг не объявлен — мониторить |
 | 1026 | Disney TV Talent Search 2026 | USA | 9–17, rolling |
 | 1027 | Ar Ais Arís TG4 | Ireland | Irish language; laura@maureenhughescasting.com |
 | 1028 | Cast Istanbul — Lise Kaydı | **Turkey** | 14–18, agency pool |
@@ -41,6 +33,8 @@
 
 | ID | Причина |
 |----|---------|
+| — | SKAM Hawai'i (Alessi Hartigan, co-leads 17–25) — окно self-tape закрыто 30.09.2026 |
+| 1022, 1031, 1046–1048 | автоархивация 20.09.2026 (дедлайны июль) |
 | 1034 | Teatr Ochoty Młodzi — дедлайн 10.06.2026 |
 | 1035 | BeCasting AR short film — истёк 12.05.2026 |
 
