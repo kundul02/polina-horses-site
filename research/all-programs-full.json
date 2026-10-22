@@ -1668,7 +1668,7 @@
     "country": "USA",
     "age": "18+",
     "minAge": 18,
-    "deadline": "2026-06-14",
+    "deadline": "Закрыт (истёк 14 июня 2026)",
     "dates": "Уточнить на сайте",
     "pay": "Salary + travel allowance",
     "support": [
@@ -1680,7 +1680,7 @@
     "summary": "Summer job (mid-June to mid-August) as horseback riding instructor at girls' sleepaway camp; includes salary, travel allowance, and room/board.",
     "desc": "Summer job (mid-June to mid-August) as horseback riding instructor at girls' sleepaway camp; includes salary, travel allowance, and room/board.",
     "url": "https://career.ship.edu/jobs/camp-wicosuta-summer-equestrian-internship/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null
   },
@@ -1766,7 +1766,7 @@
     "country": "USA",
     "age": "High school seniors",
     "minAge": 17,
-    "deadline": "2026-07-31",
+    "deadline": "Закрыт (истёк 31 июля 2026)",
     "dates": "Уточнить на сайте",
     "pay": "$2,500 scholarship",
     "support": [
@@ -1775,7 +1775,7 @@
     "summary": "Two $2,500 scholarships for graduating seniors continuing equestrian involvement in college; funds paid to educational institution.",
     "desc": "Two $2,500 scholarships for graduating seniors continuing equestrian involvement in college; funds paid to educational institution.",
     "url": "https://www.usef.org/media/press-releases/apply-now-for-2026-usef-higher-education",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null
   },
@@ -1837,7 +1837,7 @@
     "country": "Австралия",
     "age": "18+",
     "minAge": 18,
-    "deadline": "2026-03-31",
+    "deadline": "Закрыт (истёк 31 марта 2026)",
     "dates": "Уточнить на сайте",
     "pay": "Paid traineeship (full-time wage)",
     "support": [
@@ -1847,7 +1847,7 @@
     "summary": "12-month paid traineeship + Certificate III in Horse Breeding; 2-week block in Scone; applications close 31 March 2026.",
     "desc": "12-month paid traineeship + Certificate III in Horse Breeding; 2-week block in Scone; applications close 31 March 2026.",
     "url": "https://www.tbaus.com/fast-track-program/about/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null
   },
@@ -1861,7 +1861,7 @@
     "country": "USA",
     "age": "18+",
     "minAge": 18,
-    "deadline": "2026-06-15",
+    "deadline": "Закрыт (истёк 15 июня 2026)",
     "dates": "Уточнить на сайте",
     "pay": "Starting at $18/hour + tips",
     "support": [
@@ -1870,7 +1870,7 @@
     "summary": "8-week summer job in Washington State teaching riding lessons; competitive pay starting at $18/hour plus tips and paid sick leave.",
     "desc": "8-week summer job in Washington State teaching riding lessons; competitive pay starting at $18/hour plus tips and paid sick leave.",
     "url": "https://ascc.wsu.edu/jobs/langs-horse-and-pony-farm-summer-horse-camp-counselor/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null
   },
@@ -2048,7 +2048,7 @@
     "country": "USA",
     "age": "Girls 8-18",
     "minAge": 8,
-    "deadline": "Summer sessions start 2026-07-07",
+    "deadline": "Закрыт (истёк 7 июля 2026)",
     "dates": "Уточнить на сайте",
     "pay": "Free or low-cost for qualifying participants",
     "support": [
@@ -2057,7 +2057,7 @@
     "summary": "High-fit accessible youth training with explicit free/low-cost access and financial assistance focus.",
     "desc": "High-fit accessible youth training with explicit free/low-cost access and financial assistance focus.",
     "url": "https://takingthereins.org/summer-2026-programs/",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null
   },
@@ -2118,7 +2118,7 @@
     "country": "Ирландия",
     "age": "18+",
     "minAge": 18,
-    "deadline": "2026-07-01 (for 2027 scholarship cycle)",
+    "deadline": "Закрыт (истёк 1 июля 2026)",
     "dates": "Уточнить на сайте",
     "pay": "Fully paid tuition + room and board (plus travel support limits)",
     "support": [
@@ -2129,7 +2129,7 @@
     "summary": "Direct scholarship pathway that converts a premium training course into near-fully funded participation.",
     "desc": "Direct scholarship pathway that converts a premium training course into near-fully funded participation.",
     "url": "https://www.gerrydilgerequine.com/applications/kemi-irish-national-stud-scholarship",
-    "closed": false,
+    "closed": true,
     "urgent": false,
     "check": null
   },
