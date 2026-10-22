@@ -2281,6 +2281,29 @@
     "check": null
   },
   {
+    "id": 83,
+    "domain": "equestrian",
+    "name": "Pinetrees Riding Centre — Student Work Experience",
+    "org": "Pinetrees Riding Centre — Student Work Experience",
+    "category": "Стажировки",
+    "baseCountry": "Португалия",
+    "country": "Португалия",
+    "age": "16+",
+    "minAge": 16,
+    "deadline": "Rolling (минимум 1 месяц, 5 дней/нед)",
+    "dates": "Уточнить на сайте",
+    "pay": "Нет оплаты; проживание, питание и ежедневная верховая езда",
+    "support": [
+      "Оплата"
+    ],
+    "summary": "Work experience для студентов 16+ в Португалии (-pinhetrees, Pinhel): жизнь на вилле, питание, ежедневная езда. Заявка: CV + опыт + фото на bevpinetrees@gmail.com. Верховая езда: обязательна (уверенные 3 аллюра).",
+    "desc": "Work experience для студентов 16+ в Португалии (-pinhetrees, Pinhel): жизнь на вилле, питание, ежедневная езда. Заявка: CV + опыт + фото на bevpinetrees@gmail.com. Верховая езда: обязательна (уверенные 3 аллюра).",
+    "url": "https://www.pinetrees.pt/about/volunteering/",
+    "closed": false,
+    "urgent": false,
+    "check": null
+  },
+  {
     "id": 1001,
     "domain": "acting",
     "name": "Interlochen Arts Camp — Theater",
@@ -3771,6 +3794,53 @@
     ]
   },
   {
+    "id": 1049,
+    "domain": "acting",
+    "name": "Neighborhood Playhouse — Pre-College Conservatory (Meisner)",
+    "org": "Neighborhood Playhouse — Pre-College Conservatory (Meisner)",
+    "category": "Интенсивы",
+    "baseCountry": "USA",
+    "country": "USA",
+    "age": "15-18",
+    "minAge": 15,
+    "deadline": "Rolling (до заполнения; ранняя подача настоятельно рекомендуется)",
+    "dates": "Уточнить на сайте",
+    "pay": "Нет; платная программа $3,400",
+    "support": [
+      "Жильё",
+      "Оплата"
+    ],
+    "summary": "Pre-College Conservatory в NYC (19 июля – 7 августа 2027): набор на лето 2027 ОТКРЫТ, rolling. Возраст 15-18 (rising sophomores – graduating seniors). Заявка: форма + $50 + statement + рекомендация + монолог 1 мин и песня. Доступно: виза США ✓.",
+    "desc": "Pre-College Conservatory в NYC (19 июля – 7 августа 2027): набор на лето 2027 ОТКРЫТ, rolling. Возраст 15-18 (rising sophomores – graduating seniors). Заявка: форма + $50 + statement + рекомендация + монолог 1 мин и песня. Доступно: виза США ✓.",
+    "url": "https://www.neighborhoodplayhouse.org/pre-college-conservatory",
+    "closed": false,
+    "urgent": false,
+    "check": null
+  },
+  {
+    "id": 1050,
+    "domain": "acting",
+    "name": "Anthony Quinn Foundation Scholarship 2027 (summer intensives)",
+    "org": "Anthony Quinn Foundation Scholarship 2027 (summer intensives)",
+    "category": "Стипендии",
+    "baseCountry": "USA",
+    "country": "USA",
+    "age": "high school students",
+    "minAge": 15,
+    "deadline": "2026-11-30 (регистрация) → 2027-01-05 (заявка)",
+    "dates": "Уточнить на сайте",
+    "pay": "Стипендия до $3,000 на любой летний интенсив (в т.ч. theatre)",
+    "support": [
+      "Оплата"
+    ],
+    "summary": "Конкурсная стипендия для школьников на летние интенсивы (макс. $3,000). Регистрация до 30 ноября 2026, полная заявка до 5 января 2027. Можно комбинировать с Neighborhood Playhouse, RADA и др. Доступно: виза США ✓ (программа может быть любой страной).",
+    "desc": "Конкурсная стипендия для школьников на летние интенсивы (макс. $3,000). Регистрация до 30 ноября 2026, полная заявка до 5 января 2027. Можно комбинировать с Neighborhood Playhouse, RADA и др. Доступно: виза США ✓ (программа может быть любой страной).",
+    "url": "https://anthonyquinnfoundation.submittable.com/submit/367048/anthony-quinn-foundation-scholarship-2027",
+    "closed": false,
+    "urgent": false,
+    "check": null
+  },
+  {
     "id": 2001,
     "domain": "volunteering",
     "name": "Workaway — Horse Sanctuary, Vogesen, France",
@@ -3990,5 +4060,28 @@
       "Parental consent for under 18"
     ],
     "audience": "teen"
+  },
+  {
+    "id": 2008,
+    "domain": "volunteering",
+    "name": "Workcamp на ослином питомнике — Costa Blanca (rausvonzuhaus)",
+    "org": "Workcamp на ослином питомнике — Costa Blanca (rausvonzuhaus)",
+    "category": "Обмен",
+    "baseCountry": "Испания",
+    "country": "Испания",
+    "age": "16-26",
+    "minAge": 16,
+    "deadline": "2026-12-06",
+    "dates": "Уточнить на сайте",
+    "pay": "Нет оплаты; полностью покрыто фондом KJP",
+    "support": [
+      "Оплата"
+    ],
+    "summary": "Workcamp Les Murtes (17 июля – 7 августа 2027, Costa Blanca): уход за ослами, страховка, дорога, проживание и питание покрыты. Заявка до 6 декабря 2026 через rausvonzuhaus (немецкая программа KJP). Верховая езда: не требуется (ослы).",
+    "desc": "Workcamp Les Murtes (17 июля – 7 августа 2027, Costa Blanca): уход за ослами, страховка, дорога, проживание и питание покрыты. Заявка до 6 декабря 2026 через rausvonzuhaus (немецкая программа KJP). Верховая езда: не требуется (ослы).",
+    "url": "https://www.rausvonzuhaus.de/lastminute/detail/3378",
+    "closed": false,
+    "urgent": false,
+    "check": null
   }
 ]

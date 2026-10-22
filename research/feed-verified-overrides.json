@@ -565,5 +565,74 @@
     ],
     "closed": false,
     "profileFit": "Членство AQHA/AQHYA международное (можно вступить онлайн). Большинство стипендий — для выпускного класса школы (senior year) или студентов: целевое окно подачи — осень 2027 – январь 2028 (ежегодно)"
+  },
+  "https://www.pinetrees.pt/about/volunteering/": {
+    "summary": "Student work experience в конном центре (Португалия, Пинел): 16+, минимум месяц, ежедневная верховая езда, жизнь в вилле с питанием.",
+    "desc": "Доступно: Шенген (UA безвиз) · Подача: email bevpinetrees@gmail.com · Верховая езда: обязательна (уверенные 3 аллюра, опыт ухода) · Оплата: нет (жильё + питание + езда ежедневно)",
+    "dates": "Rolling; минимум 1 месяц, 5 дней/нед, 2 выходных",
+    "deadline": "Rolling",
+    "pay": "Нет оплаты; проживание в вилле, все приёмы пищи, ежедневная езда, обучение",
+    "documents": [
+      "Email на bevpinetrees@gmail.com: CV + описание опыта верховой езды",
+      "Указать доступные даты (минимум 1 месяц) и языки",
+      "Рост и вес (для подбора лошадей)",
+      "Фото: head + shoulders и action shot на лошади"
+    ],
+    "sources": [
+      "https://www.pinetrees.pt/about/volunteering/"
+    ],
+    "closed": false
+  },
+  "https://www.rausvonzuhaus.de/lastminute/detail/3378": {
+    "summary": "Workcamp на ослином питомнике Les Murtes (Costa Blanca, Испания): 16-26 лет, 17 июля – 7 августа 2027. Уход за ~70 ослами, дорога/питание/страховка/проживание покрыты фондом KJP.",
+    "desc": "Доступно: Шенген (UA безвиз) · Подача: через rausvonzuhaus.de (немецкая программа KJP) · Верховая езда: не требуется (ослы, не лошади) · Оплата: нет (всё покрыто)",
+    "dates": "17 июля – 7 августа 2027 (3 недели)",
+    "deadline": "2026-12-06",
+    "pay": "Нет; покрыты проживание, питание, дорога, страховка, Vor-/Nachbereitung",
+    "documents": [
+      "Заявка через rausvonzuhaus.de (Last-Minute-Markt, проект 3378)",
+      "Короткое мотивационное письмо (на немецком или английском)",
+      "Опыт общения с животными — желателен"
+    ],
+    "sources": [
+      "https://www.rausvonzuhaus.de/lastminute/detail/3378"
+    ],
+    "closed": false
+  },
+  "https://www.neighborhoodplayhouse.org/pre-college-conservatory": {
+    "summary": "Pre-College Conservatory в Neighborhood Playhouse (NYC): 3 недели Meisner-техники для 15-18 лет. Лето 2027: 19 июля – 7 августа.",
+    "desc": "Доступно: виза США ✓ · Подача: онлайн-форма на neighborhoodplayhouse.org · Актёрство: intensive · Оплата: нет ($3,400 tuition)",
+    "dates": "19 июля – 7 августа 2027 (3 недели, ~37 ч/нед)",
+    "deadline": "Rolling (до заполнения)",
+    "pay": "Нет; программа платная ($3,400, включая депозит $400)",
+    "documents": [
+      "Онлайн-заявка + $50 application fee",
+      "Personal statement до 250 слов",
+      "Одна рекомендация",
+      "Актуальное фото (профессиональный headshot не обязателен)",
+      "После заявки: Zoom-интервью + аудитция (монолог 1 мин + короткая песня)"
+    ],
+    "sources": [
+      "https://www.neighborhoodplayhouse.org/pre-college-conservatory"
+    ],
+    "closed": false
+  },
+  "https://anthonyquinnfoundation.submittable.com/submit/367048/anthony-quinn-foundation-scholarship-2027": {
+    "summary": "Стипендия Anthony Quinn Foundation — до $3,000 на любой летний arts-intensive (в т.ч. театральный) для школьников.",
+    "desc": "Доступно: виза США ✓ · Подача: Submittable (регистрация → заявка) · Актёрство: funding для intensives · Оплата: стипендия до $3,000",
+    "dates": "Регистрация до 30 ноября 2026; полная заявка до 5 января 2027",
+    "deadline": "2026-11-30 (регистрация)",
+    "pay": "До $3,000 (перечисляется напрямую на программу)",
+    "documents": [
+      "Регистрация на Submittable + Parent/Guardian Form (до 30.11.2026)",
+      "Application Form + Artistic Statement",
+      "Рекомендательное письмо",
+      "Work samples (видео/фото работ) + Work Sample Information",
+      "Фото заявителя"
+    ],
+    "sources": [
+      "https://anthonyquinnfoundation.submittable.com/submit/367048/anthony-quinn-foundation-scholarship-2027"
+    ],
+    "closed": false
   }
 }

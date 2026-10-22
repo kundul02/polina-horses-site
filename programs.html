@@ -1379,7 +1379,36 @@ const ACTING_BASE_PROGRAMS = [
   }
 ];
 
-const ACTING_LATEST_FEED = [];
+const ACTING_LATEST_FEED = [{
+  title: "Neighborhood Playhouse — Pre-College Conservatory (Meisner)",
+  country: "USA",
+  age_range: "15-18",
+  min_age: 15,
+  type: "Intensive",
+  pay: "Нет; платная программа $3,400",
+  travel_support: "Not specified",
+  accommodation: "Not specified (жильё не включено)",
+  training: "3 недели Meisner-техники: acting, movement, voice; ~37 часов/нед; Zoom-кастинг после заявки",
+  deadline: "Rolling (до заполнения; ранняя подача настоятельно рекомендуется)",
+  link: "https://www.neighborhoodplayhouse.org/pre-college-conservatory",
+  reason_fit: "Pre-College Conservatory в NYC (19 июля – 7 августа 2027): набор на лето 2027 ОТКРЫТ, rolling. Возраст 15-18 (rising sophomores – graduating seniors). Заявка: форма + $50 + statement + рекомендация + монолог 1 мин и песня. Доступно: виза США ✓.",
+  status: "new"
+}, {
+  title: "Anthony Quinn Foundation Scholarship 2027 (summer intensives)",
+  country: "USA",
+  age_range: "high school students",
+  min_age: 15,
+  type: "Scholarship",
+  pay: "Стипендия до $3,000 на любой летний интенсив (в т.ч. theatre)",
+  travel_support: "Не покрывается",
+  accommodation: "Not applicable",
+  training: "Финансирование pre-college / summer intensive arts программ (theatre, dance, film и др.)",
+  deadline: "2026-11-30 (регистрация) → 2027-01-05 (заявка)",
+  link: "https://anthonyquinnfoundation.submittable.com/submit/367048/anthony-quinn-foundation-scholarship-2027",
+  reason_fit: "Конкурсная стипендия для школьников на летние интенсивы (макс. $3,000). Регистрация до 30 ноября 2026, полная заявка до 5 января 2027. Можно комбинировать с Neighborhood Playhouse, RADA и др. Доступно: виза США ✓ (программа может быть любой страной).",
+  status: "new"
+}
+];
 
 const VOLUNTEERING_BASE_PROGRAMS = [
   {
@@ -1489,7 +1518,23 @@ const VOLUNTEERING_BASE_PROGRAMS = [
   }
 ];
 
-const VOLUNTEERING_FEED = [];
+const VOLUNTEERING_FEED = [
+  {
+  title: "Workcamp на ослином питомнике — Costa Blanca (rausvonzuhaus)",
+  country: "Spain",
+  age_range: "16-26",
+  min_age: 16,
+  type: "Volunteering",
+  pay: "Нет оплаты; полностью покрыто фондом KJP",
+  travel_support: "Reisekosten покрыты",
+  accommodation: "Проживание на территории питомника, communal self-catering",
+  training: "Уход за ~70 ослами, работа на ферме, треккинг с ослами; Allein-Aktivitäten",
+  deadline: "2026-12-06",
+  link: "https://www.rausvonzuhaus.de/lastminute/detail/3378",
+  reason_fit: "Workcamp Les Murtes (17 июля – 7 августа 2027, Costa Blanca): уход за ослами, страховка, дорога, проживание и питание покрыты. Заявка до 6 декабря 2026 через rausvonzuhaus (немецкая программа KJP). Верховая езда: не требуется (ослы).",
+  status: "new"
+}
+];
 
 const BASE_PROGRAMS = [
   {
@@ -2754,6 +2799,21 @@ const LATEST_FEED = [
     reason_fit: "Стипендии AQHF для членов AQHA/AQHYA (членство международное): академия + вовлечённость в Quarter Horse индустрию. Онлайн-заявка по шаблонам AQHF; при опоздании — дисквалификация.",
     status: "new"
   }
+, {
+  title: "Pinetrees Riding Centre — Student Work Experience",
+  country: "Portugal",
+  age_range: "16+",
+  min_age: 16,
+  type: "Internship",
+  pay: "Нет оплаты; проживание, питание и ежедневная верховая езда",
+  travel_support: "Not specified",
+  accommodation: "Жизнь в вилле на территории центра, все приёмы пищи",
+  training: "Верховая езда ежедневно; специализация: therapeutic riding или equestrian tourism; работа под наблюдением",
+  deadline: "Rolling (минимум 1 месяц, 5 дней/нед)",
+  link: "https://www.pinetrees.pt/about/volunteering/",
+  reason_fit: "Work experience для студентов 16+ в Португалии (-pinhetrees, Pinhel): жизнь на вилле, питание, ежедневная езда. Заявка: CV + опыт + фото на bevpinetrees@gmail.com. Верховая езда: обязательна (уверенные 3 аллюра).",
+  status: "new"
+}
 ];
 
 function normalizeKey(value) {
@@ -4847,6 +4907,27 @@ const VERIFIED_REGISTRY = {
     "closed": false,
     "profileFit": "Членство AQHA/AQHYA международное (можно вступить онлайн). Большинство стипендий — для выпускного класса школы (senior year) или студентов: целевое окно подачи — осень 2027 – январь 2028 (ежегодно)"
   },
+  "83": {
+    "summary": "Student work experience в конном центре (Португалия, Пинел): 16+, минимум месяц, ежедневная верховая езда, жизнь в вилле с питанием.",
+    "desc": "Доступно: Шенген (UA безвиз) · Подача: email bevpinetrees@gmail.com · Верховая езда: обязательна (уверенные 3 аллюра, опыт ухода) · Оплата: нет (жильё + питание + езда ежедневно)",
+    "dates": "Rolling; минимум 1 месяц, 5 дней/нед, 2 выходных",
+    "deadline": "Rolling",
+    "pay": "Нет оплаты; проживание в вилле, все приёмы пищи, ежедневная езда, обучение",
+    "support": [
+      "Оплата"
+    ],
+    "documents": [
+      "Email на bevpinetrees@gmail.com: CV + описание опыта верховой езды",
+      "Указать доступные даты (минимум 1 месяц) и языки",
+      "Рост и вес (для подбора лошадей)",
+      "Фото: head + shoulders и action shot на лошади"
+    ],
+    "sources": [
+      "https://www.pinetrees.pt/about/volunteering/"
+    ],
+    "verifiedAt": "2026-10-22",
+    "closed": false
+  },
   "1001": {
     "summary": "Интенсивный летний театральный лагерь в Мичигане для школьников (3–12 классы), предлагающий программы по актерскому мастерству, музыкальному театру и дизайну.",
     "desc": "Доступно: виза США F-1 (для программ от 2 недель) · Язык: английский (свободный) · Возраст: 3–12 классы (примерно 8–18 лет) · Подача: онлайн-форма на сайте Interlochen Education Community.",
@@ -5359,6 +5440,61 @@ const VERIFIED_REGISTRY = {
     "verifiedAt": "2026-06-11",
     "closed": false,
     "check": null
+  },
+  "1049": {
+    "summary": "Pre-College Conservatory в Neighborhood Playhouse (NYC): 3 недели Meisner-техники для 15-18 лет. Лето 2027: 19 июля – 7 августа.",
+    "desc": "Доступно: виза США ✓ · Подача: онлайн-форма на neighborhoodplayhouse.org · Актёрство: intensive · Оплата: нет ($3,400 tuition)",
+    "dates": "19 июля – 7 августа 2027 (3 недели, ~37 ч/нед)",
+    "deadline": "Rolling (до заполнения)",
+    "pay": "Нет; программа платная ($3,400, включая депозит $400)",
+    "documents": [
+      "Онлайн-заявка + $50 application fee",
+      "Personal statement до 250 слов",
+      "Одна рекомендация",
+      "Актуальное фото (профессиональный headshot не обязателен)",
+      "После заявки: Zoom-интервью + аудитция (монолог 1 мин + короткая песня)"
+    ],
+    "sources": [
+      "https://www.neighborhoodplayhouse.org/pre-college-conservatory"
+    ],
+    "verifiedAt": "2026-10-22",
+    "closed": false
+  },
+  "1050": {
+    "summary": "Стипендия Anthony Quinn Foundation — до $3,000 на любой летний arts-intensive (в т.ч. театральный) для школьников.",
+    "desc": "Доступно: виза США ✓ · Подача: Submittable (регистрация → заявка) · Актёрство: funding для intensives · Оплата: стипендия до $3,000",
+    "dates": "Регистрация до 30 ноября 2026; полная заявка до 5 января 2027",
+    "deadline": "2026-11-30 (регистрация)",
+    "pay": "До $3,000 (перечисляется напрямую на программу)",
+    "documents": [
+      "Регистрация на Submittable + Parent/Guardian Form (до 30.11.2026)",
+      "Application Form + Artistic Statement",
+      "Рекомендательное письмо",
+      "Work samples (видео/фото работ) + Work Sample Information",
+      "Фото заявителя"
+    ],
+    "sources": [
+      "https://anthonyquinnfoundation.submittable.com/submit/367048/anthony-quinn-foundation-scholarship-2027"
+    ],
+    "verifiedAt": "2026-10-22",
+    "closed": false
+  },
+  "2008": {
+    "summary": "Workcamp на ослином питомнике Les Murtes (Costa Blanca, Испания): 16-26 лет, 17 июля – 7 августа 2027. Уход за ~70 ослами, дорога/питание/страховка/проживание покрыты.",
+    "desc": "Доступно: Шенген (UA безвиз) · Подача: через rausvonzuhaus.de (немецкая программа KJP) · Верховая езда: не требуется (ослы) · Оплата: нет (всё покрыто)",
+    "dates": "17 июля – 7 августа 2027 (3 недели)",
+    "deadline": "2026-12-06",
+    "pay": "Нет; покрыты проживание, питание, дорога, страховка",
+    "documents": [
+      "Заявка через rausvonzuhaus.de (Last-Minute-Markt, проект 3378)",
+      "Короткое мотивационное письмо (немецкий или английский)",
+      "Опыт общения с животными — желателен"
+    ],
+    "sources": [
+      "https://www.rausvonzuhaus.de/lastminute/detail/3378"
+    ],
+    "verifiedAt": "2026-10-22",
+    "closed": false
   }
 };
 
